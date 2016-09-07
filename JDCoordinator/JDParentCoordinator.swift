@@ -20,10 +20,15 @@ public class JDParentCoordinator: JDCoordinator {
         childCoordinator.append(coordinator)
     }
     
-    /// Remove a child
+    /// Remove a child JDCoordinator
     public func removeChildCoordinator(coordinator: JDCoordinator) {
         if let index = childCoordinator.indexOf(coordinator) {
             childCoordinator.removeAtIndex(index)
         }
+    }
+    
+    /// Remove all child JDCoordinator
+    public func removeAllChildCoordinator() {
+        childCoordinator.removeAll()
     }
 }
