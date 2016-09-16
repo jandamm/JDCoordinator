@@ -9,7 +9,7 @@
 import JDCoordinator
 
 protocol MainCoordinatorDelegate: JDCoordinatorDelegate {
-    func reloadData(finishedCoordinator: JDCoordinator)
+    func reloadData(_ finishedCoordinator: JDCoordinator)
 }
 
 class MainCoordinator: JDCoordinator, MainDelegate {

@@ -11,19 +11,19 @@ import UIKit
 
 /// JDParentCoordinator are meant to coordinate one or more JDCoordinators and ViewControllers.
 @objc
-public class JDParentCoordinator: JDCoordinator {
+open class JDParentCoordinator: JDCoordinator {
     
-    private var childCoordinator = [JDCoordinator]()
+    fileprivate var childCoordinator = [JDCoordinator]()
     
     /// Add a JDCoordinator as a child
-    public func addChildCoordinator(coordinator: JDCoordinator) {
+    public func addChildCoordinator(_ coordinator: JDCoordinator) {
         childCoordinator.append(coordinator)
     }
     
     /// Remove a child JDCoordinator
-    public func removeChildCoordinator(coordinator: JDCoordinator) {
-        if let index = childCoordinator.indexOf(coordinator) {
-            childCoordinator.removeAtIndex(index)
+    public func removeChildCoordinator(_ coordinator: JDCoordinator) {
+        if let index = childCoordinator.index(of: coordinator) {
+            childCoordinator.remove(at: index)
         }
     }
     

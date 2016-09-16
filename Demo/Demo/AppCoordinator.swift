@@ -20,21 +20,21 @@ class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
         setViewControllers(introVC, animated: true)
     }
     
-    func getData(completion: (Bool)->()) {
+    func getData(_ completion: @escaping (Bool)->()) {
         
         // This function "downloads" data for three seconds
         
-        let dispatchTime: dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
-        dispatch_after(dispatchTime, dispatch_get_main_queue(), { completion(true) })
+        let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: { completion(true) })
     }
     
-    func reloadData(finishedCoordinator: JDCoordinator) {
+    func reloadData(_ finishedCoordinator: JDCoordinator) {
         removeChildCoordinator(finishedCoordinator)
         
         start()
     }
     
-    private func showMainVC() {
+    fileprivate func showMainVC() {
         let coord = MainCoordinator(withNavigationController: navigationController)
         
         coord.delegate = self

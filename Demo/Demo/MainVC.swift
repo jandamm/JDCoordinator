@@ -16,7 +16,7 @@ class MainVC: UIViewController {
     
     weak var delegate: MainDelegate?
 
-    @IBAction func reloadData(sender: UIButton) {
+    @IBAction func reloadData(_ sender: UIButton) {
         delegate?.reloadData()
     }
 

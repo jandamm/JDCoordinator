@@ -25,32 +25,32 @@ public protocol JDCoordinatorProtocol: NSObjectProtocol {
 public extension JDCoordinatorProtocol {
     
     /// Convenience method to pushViewController directly within JDCoordinator
-    public func pushViewController(viewController: UIViewController, animated: Bool) {
+    public func pushViewController(_ viewController: UIViewController, animated: Bool) {
         navigationController.pushViewController(viewController, animated: animated)
     }
     
-    /// Convenience method to popViewControllerAnimated directly within JDCoordinator
-    public func popViewControllerAnimated(animated: Bool) -> UIViewController? {
-        return navigationController.popViewControllerAnimated(animated)
+    /// Convenience method to popViewController directly within JDCoordinator
+    public func popViewController(animated animated: Bool) -> UIViewController? {
+        return navigationController.popViewController(animated: animated)
     }
     
     /// Convenience method to popToViewController directly within JDCoordinator
-    public func popToViewController(viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+    public func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
         return navigationController.popToViewController(viewController, animated: animated)
     }
     
-    /// Convenience method to popToRootViewControllerAnimated directly within JDCoordinator
-    public func popToRootViewControllerAnimated(animated: Bool) -> [UIViewController]? {
-        return navigationController.popToRootViewControllerAnimated(animated)
+    /// Convenience method to popToRootViewController directly within JDCoordinator
+    public func popToRootViewController(animated animated: Bool) -> [UIViewController]? {
+        return navigationController.popToRootViewController(animated: animated)
     }
     
     /// Convenience method to setViewControllers directly within JDCoordinator
-    public func setViewControllers(viewControllers: [UIViewController], animated: Bool) {
+    public func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
         navigationController.setViewControllers(viewControllers, animated: animated)
     }
     
-    /// Convenience method to setViewControllers directly within JDCoordinator
-    public func setViewControllers(viewController: UIViewController, animated: Bool) {
+    /// Convenience method to setViewControllers directly within JDCoordinator with only one ViewController
+    public func setViewControllers(_ viewController: UIViewController, animated: Bool) {
         navigationController.setViewControllers([viewController], animated: animated)
     }
 }

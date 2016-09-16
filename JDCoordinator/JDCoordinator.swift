@@ -11,7 +11,7 @@ import UIKit
 
 /// JDCoordinator are meant to coordinate one or more ViewControllers
 @objc
-public class JDCoordinator: NSObject, JDCoordinatorProtocol {
+open class JDCoordinator: NSObject, JDCoordinatorProtocol {
     
     /// This navigationController pushes all ViewControllers
     public let navigationController: UINavigationController
@@ -24,7 +24,7 @@ public class JDCoordinator: NSObject, JDCoordinatorProtocol {
     }
     
     /// You need to override this method so it pushes the initial ViewController.
-    public func start() {
+    open func start() {
         NSLog("Error: Start method of JDCoordinator hasn't been overridden")
     }
 }
