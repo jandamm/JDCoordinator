@@ -10,8 +10,7 @@
 		13280DA61D7DFD8300ACD62B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280DA51D7DFD8300ACD62B /* AppDelegate.swift */; };
 		13280DAD1D7DFD8300ACD62B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13280DAC1D7DFD8300ACD62B /* Assets.xcassets */; };
 		13280DB01D7DFD8300ACD62B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13280DAE1D7DFD8300ACD62B /* LaunchScreen.storyboard */; };
-		13DFB0F31D7DFE03002D55D7 /* JDCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13DFB0F21D7DFE03002D55D7 /* JDCoordinator.framework */; };
-		13DFB0F41D7DFE03002D55D7 /* JDCoordinator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 13DFB0F21D7DFE03002D55D7 /* JDCoordinator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		13D9A7681D99885600844A1A /* JDCoordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D9A7671D99885600844A1A /* JDCoordinator.framework */; };
 		13DFB0F71D7DFE7E002D55D7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFB0F61D7DFE7E002D55D7 /* AppCoordinator.swift */; };
 		13DFB0FA1D7DFEFE002D55D7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DFB0F81D7DFEFE002D55D7 /* MainVC.swift */; };
 		13DFB0FB1D7DFEFE002D55D7 /* MainVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13DFB0F91D7DFEFE002D55D7 /* MainVC.xib */; };
@@ -27,7 +26,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				13DFB0F41D7DFE03002D55D7 /* JDCoordinator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,7 +38,7 @@
 		13280DAC1D7DFD8300ACD62B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13280DAF1D7DFD8300ACD62B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13280DB11D7DFD8300ACD62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		13DFB0F21D7DFE03002D55D7 /* JDCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = JDCoordinator.framework; path = "/Users/charmaex/Library/Developer/Xcode/DerivedData/JDCoordinator-deuwzvhkcreqogaeznwjbounrrip/Build/Products/Debug-iphonesimulator/JDCoordinator.framework"; sourceTree = "<absolute>"; };
+		13D9A7671D99885600844A1A /* JDCoordinator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JDCoordinator.framework; path = "../../../../Library/Developer/Xcode/DerivedData/JDCoordinator-bcvclmqnbcsnwubnnrkzliukdvki/Build/Products/Debug-iphonesimulator/JDCoordinator.framework"; sourceTree = "<group>"; };
 		13DFB0F61D7DFE7E002D55D7 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		13DFB0F81D7DFEFE002D55D7 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		13DFB0F91D7DFEFE002D55D7 /* MainVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainVC.xib; sourceTree = "<group>"; };
@@ -54,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13DFB0F31D7DFE03002D55D7 /* JDCoordinator.framework in Frameworks */,
+				13D9A7681D99885600844A1A /* JDCoordinator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,9 +62,9 @@
 		13280D991D7DFD8300ACD62B = {
 			isa = PBXGroup;
 			children = (
-				13DFB0F21D7DFE03002D55D7 /* JDCoordinator.framework */,
 				13280DA41D7DFD8300ACD62B /* Demo */,
 				13280DA31D7DFD8300ACD62B /* Products */,
+				13D9A7661D99885600844A1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +88,14 @@
 				13280DB11D7DFD8300ACD62B /* Info.plist */,
 			);
 			path = Demo;
+			sourceTree = "<group>";
+		};
+		13D9A7661D99885600844A1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13D9A7671D99885600844A1A /* JDCoordinator.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		13DFB1021D7E03EE002D55D7 /* Coordinator */ = {
