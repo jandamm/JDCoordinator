@@ -9,18 +9,18 @@
 import JDCoordinator
 
 protocol MainDelegate: JDCoordinatorDelegate {
-    func reloadData()
+	func reloadData()
 }
 
 class MainVC: UIViewController {
-    
-    weak var delegate: MainDelegate?
 
-    @IBAction func reloadData(_ sender: UIButton) {
-        delegate?.reloadData()
-    }
+	weak var delegate: MainDelegate?
 
-    deinit {
-        NSLog("MainVC got deinitialized")
-    }
+	@IBAction func reloadData(_ sender: UIButton) {
+		delegate?.reloadData()
+	}
+
+	deinit {
+		NSLog("MainVC got deinitialized")
+	}
 }

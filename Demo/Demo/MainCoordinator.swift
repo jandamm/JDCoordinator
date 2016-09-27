@@ -9,26 +9,26 @@
 import JDCoordinator
 
 protocol MainCoordinatorDelegate: JDCoordinatorDelegate {
-    func reloadData(_ finishedCoordinator: JDCoordinator)
+	func reloadData(_ finishedCoordinator: JDCoordinator)
 }
 
 class MainCoordinator: JDCoordinator, MainDelegate {
-    
-    weak var delegate: MainCoordinatorDelegate?
-    
-    override func start() {
-        let mainVC = MainVC()
-        
-        mainVC.delegate = self
-        
-        setViewControllers(mainVC, animated: true)
-    }
-    
-    func reloadData() {
-        delegate?.reloadData(self)
-    }
-    
-    deinit {
-        NSLog("MainCoordinator got deinitialized")
-    }
+
+	weak var delegate: MainCoordinatorDelegate?
+
+	override func start() {
+		let mainVC = MainVC()
+
+		mainVC.delegate = self
+
+		setViewControllers(mainVC, animated: true)
+	}
+
+	func reloadData() {
+		delegate?.reloadData(self)
+	}
+
+	deinit {
+		NSLog("MainCoordinator got deinitialized")
+	}
 }

@@ -10,8 +10,7 @@ import UIKit
 
 class IntroVC: UIViewController {
 
-    deinit {
-        NSLog("IntroVC got deinitialized")
-    }
-    
+	deinit {
+		NSLog("IntroVC got deinitialized")
+	}
 }
