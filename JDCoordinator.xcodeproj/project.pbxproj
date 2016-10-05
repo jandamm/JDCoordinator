@@ -11,6 +11,7 @@
 		13280D941D7DFBF500ACD62B /* JDCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280D931D7DFBF500ACD62B /* JDCoordinator.swift */; };
 		13280D961D7DFC1800ACD62B /* JDCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280D951D7DFC1800ACD62B /* JDCoordinatorProtocol.swift */; };
 		13280D981D7DFC7E00ACD62B /* JDParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280D971D7DFC7E00ACD62B /* JDParentCoordinator.swift */; };
+		13A41CFB1DA58F370064ED96 /* JDBasicNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A41CFA1DA58F370064ED96 /* JDBasicNavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		13280D931D7DFBF500ACD62B /* JDCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCoordinator.swift; sourceTree = "<group>"; };
 		13280D951D7DFC1800ACD62B /* JDCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		13280D971D7DFC7E00ACD62B /* JDParentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinator.swift; sourceTree = "<group>"; };
+		13A41CFA1DA58F370064ED96 /* JDBasicNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDBasicNavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		13280D8A1D7DFA5600ACD62B /* JDCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				13A41CFC1DA58F3C0064ED96 /* Navigation Controller */,
 				13280D951D7DFC1800ACD62B /* JDCoordinatorProtocol.swift */,
 				13280D931D7DFBF500ACD62B /* JDCoordinator.swift */,
 				13280D971D7DFC7E00ACD62B /* JDParentCoordinator.swift */,
@@ -59,6 +62,14 @@
 				13280D8D1D7DFA5600ACD62B /* Info.plist */,
 			);
 			path = JDCoordinator;
+			sourceTree = "<group>";
+		};
+		13A41CFC1DA58F3C0064ED96 /* Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13A41CFA1DA58F370064ED96 /* JDBasicNavController.swift */,
+			);
+			name = "Navigation Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 			files = (
 				13280D961D7DFC1800ACD62B /* JDCoordinatorProtocol.swift in Sources */,
 				13280D981D7DFC7E00ACD62B /* JDParentCoordinator.swift in Sources */,
+				13A41CFB1DA58F370064ED96 /* JDBasicNavController.swift in Sources */,
 				13280D941D7DFBF500ACD62B /* JDCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
