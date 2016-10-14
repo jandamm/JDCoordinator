@@ -15,7 +15,7 @@ open class JDParentCoordinator: JDCoordinator {
 	fileprivate var _childCoordinator = [JDCoordinator]()
     
     /// List of all loaded ChildCoordinators
-    var childCoordinator: [JDCoordinator] {
+    public var childCoordinator: [JDCoordinator] {
         return _childCoordinator
     }
 
