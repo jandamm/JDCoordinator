@@ -12,22 +12,27 @@ import UIKit
 @objc
 open class JDParentCoordinator: JDCoordinator {
 
-	fileprivate var childCoordinator = [JDCoordinator]()
+	fileprivate var _childCoordinator = [JDCoordinator]()
+    
+    /// List of all loaded ChildCoordinators
+    var childCoordinator: [JDCoordinator] {
+        return _childCoordinator
+    }
 
 	/// Add a JDCoordinator as a child
 	public func addChildCoordinator(_ coordinator: JDCoordinator) {
-		childCoordinator.append(coordinator)
+		_childCoordinator.append(coordinator)
 	}
 
 	/// Remove a child JDCoordinator
 	public func removeChildCoordinator(_ coordinator: JDCoordinator) {
-		if let index = childCoordinator.index(of: coordinator) {
-			childCoordinator.remove(at: index)
+		if let index = _childCoordinator.index(of: coordinator) {
+			_childCoordinator.remove(at: index)
 		}
 	}
 
 	/// Remove all child JDCoordinator
 	public func removeAllChildCoordinator() {
-		childCoordinator.removeAll()
+		_childCoordinator.removeAll()
 	}
 }
