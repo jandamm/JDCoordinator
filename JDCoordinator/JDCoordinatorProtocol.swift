@@ -50,4 +50,9 @@ public extension JDCoordinatorProtocol {
 	public func setViewControllers(_ viewController: UIViewController, animated: Bool) {
 		navigationController.setViewControllers([viewController], animated: animated)
 	}
+
+    /// Convenience method to popToViewController directly within JDCoordinator
+    public func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        navigationController.present(viewControllerToPresent, animated: flag, completion: completion)
+    }
 }
