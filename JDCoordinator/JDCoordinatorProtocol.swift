@@ -19,6 +19,15 @@ public protocol JDCoordinatorProtocol: NSObjectProtocol {
 	func start()
 }
 
+/// Blueprint of JDParentCoordinators
+@objc
+public protocol JDParentCoordinatorProtocol: JDCoordinatorProtocol {
+    var childCoordinator: [JDCoordinator] { get }
+    func addChildCoordinator(_ coordinator: JDCoordinator)
+    func removeChildCoordinator(_ coordinator: JDCoordinator)
+    func removeAllChildCoordinator()
+}
+
 public extension JDCoordinatorProtocol {
 
 	/// Convenience method to pushViewController directly within JDCoordinator
