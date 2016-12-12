@@ -13,7 +13,7 @@ import UIKit
 open class JDCoordinator: NSObject, JDCoordinatorProtocol {
 
 	/// This navigationController pushes all ViewControllers
-	public let navigationController: UINavigationController
+	public unowned let navigationController: UINavigationController
 
 	/// Initialize the JDCoordinator a UINavigationController
 	public required init(withNavigationController navigationController: UINavigationController) {

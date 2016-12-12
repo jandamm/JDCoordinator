@@ -22,7 +22,7 @@ public protocol JDCoordinatorProtocol: NSObjectProtocol {
 /// Blueprint of JDParentCoordinators
 @objc
 public protocol JDParentCoordinatorProtocol: JDCoordinatorProtocol {
-    var childCoordinator: [JDCoordinator] { get }
+    var childCoordinators: [JDCoordinator] { get }
     func addChildCoordinator(_ coordinator: JDCoordinator)
     func removeChildCoordinator(_ coordinator: JDCoordinator)
     func removeAllChildCoordinator()
