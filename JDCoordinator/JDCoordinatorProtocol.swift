@@ -36,17 +36,17 @@ public extension JDCoordinatorProtocol {
 	}
 
 	/// Convenience method to popViewController directly within JDCoordinator
-	public func popViewController(animated: Bool) -> UIViewController? {
+	@discardableResult public func popViewController(animated: Bool) -> UIViewController? {
 		return navigationController.popViewController(animated: animated)
 	}
 
 	/// Convenience method to popToViewController directly within JDCoordinator
-	public func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+	@discardableResult public func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
 		return navigationController.popToViewController(viewController, animated: animated)
 	}
 
 	/// Convenience method to popToRootViewController directly within JDCoordinator
-	public func popToRootViewController(animated: Bool) -> [UIViewController]? {
+	@discardableResult public func popToRootViewController(animated: Bool) -> [UIViewController]? {
 		return navigationController.popToRootViewController(animated: animated)
 	}
 
