@@ -15,8 +15,10 @@ public typealias JDCoordinatorDelegate = JDCoordinatorProtocol
 @objc
 public protocol JDCoordinatorProtocol: NSObjectProtocol {
 	var navigationController: UINavigationController { get }
+    var previousViewController: UIViewController? { get set }
 	init(withNavigationController navigationController: UINavigationController)
 	func start()
+    func setPreviousViewControllerToCurrent()
 }
 
 /// Blueprint of JDParentCoordinators
