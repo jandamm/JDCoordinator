@@ -8,15 +8,16 @@
 
 import JDCoordinator
 
-class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
+class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate, SplitViewCoordinatorDelegate {
 
 	override func start() {
-		let introVC = IntroVC()
+        super.start()
 
 		getData { (successful) in
-			self.showMainVC()
+			self.showInterface()
 		}
 
+        let introVC = IntroVC()
 		setViewControllers(introVC, animated: true)
 	}
 
@@ -34,13 +35,13 @@ class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
 		start()
 	}
 
-	fileprivate func showMainVC() {
-		let coord = MainCoordinator(withNavigationController: navigationController)
+    func showInterface() {
+        let coord = SplitViewCoordinator(withNavigationController: navigationController)
 
-		coord.delegate = self
+        coord.delegate = self
 
-		addChildCoordinator(coord)
+        addChildCoordinator(coord)
 
-		coord.start()
-	}
+        coord.start()
+    }
 }

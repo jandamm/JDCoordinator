@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B9AECC41E0812E400CC8F49 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECC21E0812E400CC8F49 /* DetailViewController.swift */; };
+		0B9AECC51E0812E400CC8F49 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B9AECC31E0812E400CC8F49 /* DetailViewController.xib */; };
+		0B9AECC71E0814BF00CC8F49 /* SplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECC61E0814BF00CC8F49 /* SplitViewCoordinator.swift */; };
+		0B9AECC91E08162100CC8F49 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECC81E08162100CC8F49 /* DetailCoordinator.swift */; };
+		0B9AECCE1E0825DD00CC8F49 /* SplitViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECCD1E0825DD00CC8F49 /* SplitViewManager.swift */; };
 		13280DA61D7DFD8300ACD62B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280DA51D7DFD8300ACD62B /* AppDelegate.swift */; };
 		13280DAD1D7DFD8300ACD62B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13280DAC1D7DFD8300ACD62B /* Assets.xcassets */; };
 		13280DB01D7DFD8300ACD62B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13280DAE1D7DFD8300ACD62B /* LaunchScreen.storyboard */; };
@@ -33,6 +38,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B9AECC21E0812E400CC8F49 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0B9AECC31E0812E400CC8F49 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		0B9AECC61E0814BF00CC8F49 /* SplitViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewCoordinator.swift; sourceTree = "<group>"; };
+		0B9AECC81E08162100CC8F49 /* DetailCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		0B9AECCD1E0825DD00CC8F49 /* SplitViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewManager.swift; sourceTree = "<group>"; };
 		13280DA21D7DFD8300ACD62B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13280DA51D7DFD8300ACD62B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13280DAC1D7DFD8300ACD62B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,7 +112,10 @@
 			isa = PBXGroup;
 			children = (
 				13DFB0F61D7DFE7E002D55D7 /* AppCoordinator.swift */,
+				0B9AECC61E0814BF00CC8F49 /* SplitViewCoordinator.swift */,
 				13DFB1001D7E01B6002D55D7 /* MainCoordinator.swift */,
+				0B9AECC81E08162100CC8F49 /* DetailCoordinator.swift */,
+				0B9AECCD1E0825DD00CC8F49 /* SplitViewManager.swift */,
 			);
 			name = Coordinator;
 			sourceTree = "<group>";
@@ -112,6 +125,7 @@
 			children = (
 				13DFB0F81D7DFEFE002D55D7 /* MainVC.swift */,
 				13DFB0FC1D7DFFD7002D55D7 /* IntroVC.swift */,
+				0B9AECC21E0812E400CC8F49 /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -121,6 +135,7 @@
 			children = (
 				13DFB0F91D7DFEFE002D55D7 /* MainVC.xib */,
 				13DFB0FD1D7DFFD7002D55D7 /* IntroVC.xib */,
+				0B9AECC31E0812E400CC8F49 /* DetailViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -187,6 +202,7 @@
 			files = (
 				13DFB0FB1D7DFEFE002D55D7 /* MainVC.xib in Resources */,
 				13DFB0FF1D7DFFD7002D55D7 /* IntroVC.xib in Resources */,
+				0B9AECC51E0812E400CC8F49 /* DetailViewController.xib in Resources */,
 				13280DB01D7DFD8300ACD62B /* LaunchScreen.storyboard in Resources */,
 				13280DAD1D7DFD8300ACD62B /* Assets.xcassets in Resources */,
 			);
@@ -199,9 +215,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B9AECCE1E0825DD00CC8F49 /* SplitViewManager.swift in Sources */,
+				0B9AECC71E0814BF00CC8F49 /* SplitViewCoordinator.swift in Sources */,
+				0B9AECC91E08162100CC8F49 /* DetailCoordinator.swift in Sources */,
 				13DFB0F71D7DFE7E002D55D7 /* AppCoordinator.swift in Sources */,
 				13DFB0FE1D7DFFD7002D55D7 /* IntroVC.swift in Sources */,
 				13DFB0FA1D7DFEFE002D55D7 /* MainVC.swift in Sources */,
+				0B9AECC41E0812E400CC8F49 /* DetailViewController.swift in Sources */,
 				13DFB1011D7E01B6002D55D7 /* MainCoordinator.swift in Sources */,
 				13280DA61D7DFD8300ACD62B /* AppDelegate.swift in Sources */,
 			);

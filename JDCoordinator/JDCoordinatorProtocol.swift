@@ -30,6 +30,15 @@ public protocol JDParentCoordinatorProtocol: JDCoordinatorProtocol {
     func removeAllChildCoordinator()
 }
 
+/// Blueprint of JDSplitViewCoordinatorProtocol
+public protocol JDSplitViewCoordinatorProtocol: JDParentCoordinatorProtocol {
+    var manager: JDSplitViewManager { get }
+    var splitViewPresenter: UIViewController? { get }
+    var splitViewController: JDSplitViewController { get }
+    var leftController: UINavigationController { get }
+    var rightController: UINavigationController { get }
+}
+
 public extension JDCoordinatorProtocol {
 
 	/// Convenience method to pushViewController directly within JDCoordinator
@@ -70,5 +79,24 @@ public extension JDCoordinatorProtocol {
     /// Convenience method to dismiss directly within JDCoordinator
     func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         navigationController.dismiss(animated: flag, completion: completion)
+    }
+}
+
+extension JDSplitViewCoordinatorProtocol {
+
+    public var splitViewPresenter: UIViewController? {
+        return manager.splitViewPresenter
+    }
+
+    public var splitViewController: JDSplitViewController {
+        return manager.splitViewController
+    }
+
+    public var leftController: UINavigationController {
+        return manager.leftController
+    }
+
+    public var rightController: UINavigationController {
+        return manager.rightController
     }
 }

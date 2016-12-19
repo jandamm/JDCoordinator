@@ -17,6 +17,8 @@ class MainCoordinator: JDCoordinator, MainDelegate {
 	weak var delegate: MainCoordinatorDelegate?
 
 	override func start() {
+        super.start()
+
 		let mainVC = MainVC()
 
 		mainVC.delegate = self
