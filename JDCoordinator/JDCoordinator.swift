@@ -27,8 +27,15 @@ open class JDCoordinator: NSObject, JDCoordinatorProtocol {
 
 	/// You need to override this method so it pushes the initial ViewController.
 	open func start() {
-		NSLog("Error: Start method of JDCoordinator hasn't been overridden")
+        notOverriddenError()
 	}
+    
+    private func notOverriddenError() {
+        let type = type(of: self)
+        if type == JDCoordinator.self || type == JDParentCoordinator.self {
+            NSLog("Error: Start method of JDCoordinator hasn't been overridden")
+        }
+    }
     
     /// This method sets the currently presented ViewController of navigationController to previousViewController
     public func setPreviousViewControllerToCurrent() {
