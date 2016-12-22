@@ -10,8 +10,8 @@ import UIKit
 
 /// JDCoordinator are meant to coordinate one or more ViewControllers
 @objc
-open class JDCoordinator: NSObject, JDCoordinatorProtocol {
-    
+open class JDCoordinator: NSObject, JDCoordinatorProtocol, JDCoordinatorViewControllerDelegate {
+
     /// You can use this value to save the ViewController which were presented when you started the Coordinator
     public weak var previousViewController: UIViewController?
 
@@ -29,14 +29,14 @@ open class JDCoordinator: NSObject, JDCoordinatorProtocol {
 	open func start() {
         notOverriddenError()
 	}
-    
+
     private func notOverriddenError() {
         let type = type(of: self)
         if type == JDCoordinator.self || type == JDParentCoordinator.self {
             NSLog("Error: Start method of JDCoordinator hasn't been overridden")
         }
     }
-    
+
     /// This method sets the currently presented ViewController of navigationController to previousViewController
     public func setPreviousViewControllerToCurrent() {
         previousViewController = navigationController.topViewController

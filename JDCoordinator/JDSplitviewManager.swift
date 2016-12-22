@@ -1,5 +1,5 @@
 //
-//  JDSplitviewManager.swift
+//  JDSplitViewManager.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 19.12.2016.
@@ -57,7 +57,7 @@ open class JDSplitViewManager: NSObject, JDSplitViewManagerProtocol {
     }()
     private lazy var left: UINavigationController = { UINavigationController() }()
     private lazy var right: UINavigationController = { UINavigationController() }()
-    
+
     // MARK: - Initializers
     public required init(withNavigationController navigationController: UINavigationController, andMode mode: JDSplitViewManager.SplitViewMode, leftNavigationController left: UINavigationController? = nil, rightNavigationController right: UINavigationController? = nil) {
         self.navigation = navigationController

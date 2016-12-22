@@ -8,8 +8,15 @@
 
 import UIKit
 
-/// Use this protocol for weak delegates of JDCoordinators to ViewControllers and other JDCoordinators.
-public typealias JDCoordinatorDelegate = JDCoordinatorProtocol
+/// Use this protocol for weak delegates of JDCoordinators to ViewControllers.
+@objc
+public protocol JDCoordinatorViewControllerDelegate: JDCoordinatorProtocol {
+    @objc optional func presentedVC(_ vc: UIViewController, movedTo parent: UIViewController?)
+}
+
+/// Use this protocol for weak delegates of JDCoordinators to JDParentCoordinators.
+@objc
+public protocol JDCoordinatorCoordinatorDelegate: JDParentCoordinatorProtocol {}
 
 /// Blueprint of JDCoordinators
 @objc
@@ -75,9 +82,9 @@ public extension JDCoordinatorProtocol {
     public func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
         navigationController.present(viewControllerToPresent, animated: flag, completion: completion)
     }
-    
+
     /// Convenience method to dismiss directly within JDCoordinator
-    func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+    public func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         navigationController.dismiss(animated: flag, completion: completion)
     }
 }

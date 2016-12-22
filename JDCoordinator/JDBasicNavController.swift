@@ -12,34 +12,37 @@ import UIKit
 /// The NavigationBar is hidden.
 /// Use disableSwipeBack() and enableSwipeBack() or toggleSwipeBack()
 open class JDBasicNavController: UINavigationController {
-    
+
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupNavigationController()
     }
-    
+
     private func setupNavigationController() {
-        navigationBar.isHidden = true
-        
+        setNavigationBarHidden(true, animated: false)
+
         disableSwipeBack()
     }
-    
+
+    /// returns swipe gestures state
+    public var isSwipeBackEnabled: Bool {
+        return interactivePopGestureRecognizer?.isEnabled ?? false
+    }
+
     /// disables swipe gestures
     public func disableSwipeBack() {
         interactivePopGestureRecognizer?.isEnabled = false
     }
-    
+
     /// enables swipe gestures
     public func enableSwipeBack() {
         interactivePopGestureRecognizer?.isEnabled = true
     }
-    
-    /// toggles swipe gestures
-    public func toggleSwipeBack() {
-        guard let status = interactivePopGestureRecognizer?.isEnabled else {
-            return
-        }
-        interactivePopGestureRecognizer?.isEnabled = !status
+
+    /// toggles swipe gestures and returns previous state
+    @discardableResult public func toggleSwipeBack() -> Bool {
+        interactivePopGestureRecognizer?.isEnabled = !isSwipeBackEnabled
+        return isSwipeBackEnabled
     }
 }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B9AECC11E08097A00CC8F49 /* JDSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECC01E08097A00CC8F49 /* JDSplitViewController.swift */; };
 		0B9AECCC1E081E0B00CC8F49 /* JDSplitViewManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECCB1E081E0B00CC8F49 /* JDSplitViewManagerProtocol.swift */; };
-		0B9AECD21E08287000CC8F49 /* JDSplitviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECD11E08287000CC8F49 /* JDSplitviewManager.swift */; };
+		0B9AECD21E08287000CC8F49 /* JDSplitViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECD11E08287000CC8F49 /* JDSplitViewManager.swift */; };
 		13280D8C1D7DFA5600ACD62B /* JDCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 13280D8B1D7DFA5600ACD62B /* JDCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13280D941D7DFBF500ACD62B /* JDCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280D931D7DFBF500ACD62B /* JDCoordinator.swift */; };
 		13280D961D7DFC1800ACD62B /* JDCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280D951D7DFC1800ACD62B /* JDCoordinatorProtocol.swift */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		0B9AECC01E08097A00CC8F49 /* JDSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewController.swift; sourceTree = "<group>"; };
 		0B9AECCB1E081E0B00CC8F49 /* JDSplitViewManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewManagerProtocol.swift; sourceTree = "<group>"; };
-		0B9AECD11E08287000CC8F49 /* JDSplitviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitviewManager.swift; sourceTree = "<group>"; };
+		0B9AECD11E08287000CC8F49 /* JDSplitViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewManager.swift; sourceTree = "<group>"; };
 		13280D881D7DFA5600ACD62B /* JDCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JDCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13280D8B1D7DFA5600ACD62B /* JDCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCoordinator.h; sourceTree = "<group>"; };
 		13280D8D1D7DFA5600ACD62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				0B9AECCB1E081E0B00CC8F49 /* JDSplitViewManagerProtocol.swift */,
-				0B9AECD11E08287000CC8F49 /* JDSplitviewManager.swift */,
+				0B9AECD11E08287000CC8F49 /* JDSplitViewManager.swift */,
 				0B9AECC01E08097A00CC8F49 /* JDSplitViewController.swift */,
 			);
 			name = JDSplitViewManager;
@@ -168,7 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B9AECD21E08287000CC8F49 /* JDSplitviewManager.swift in Sources */,
+				0B9AECD21E08287000CC8F49 /* JDSplitViewManager.swift in Sources */,
 				13280D961D7DFC1800ACD62B /* JDCoordinatorProtocol.swift in Sources */,
 				13280D981D7DFC7E00ACD62B /* JDParentCoordinator.swift in Sources */,
 				0B9AECC11E08097A00CC8F49 /* JDSplitViewController.swift in Sources */,

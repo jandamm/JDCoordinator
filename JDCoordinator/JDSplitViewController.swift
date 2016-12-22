@@ -8,19 +8,11 @@
 
 import UIKit
 
-public protocol JDSplitViewDelegate: JDCoordinatorDelegate {
-    func splitViewClosed()
-}
-
 public class JDSplitViewController: UISplitViewController {
 
-    public weak var coordinator: JDSplitViewDelegate!
+    public weak var coordinator: JDCoordinatorViewControllerDelegate?
 
     override public func didMove(toParentViewController parent: UIViewController?) {
-        guard parent == nil else {
-            return
-        }
-
-        coordinator.splitViewClosed()
+        coordinator?.presentedVC?(self, movedTo: parent)
     }
 }
