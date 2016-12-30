@@ -8,11 +8,20 @@
 
 import UIKit
 
-public class JDSplitViewController: UISplitViewController {
+open class JDSplitViewController: UISplitViewController {
 
+    /// Reference to JDSplitViewControllers presenting coordinator
     public weak var coordinator: JDCoordinatorViewControllerDelegate?
 
-    override public func didMove(toParentViewController parent: UIViewController?) {
+    /// If you override, call coordinator?.presentedVC?(self, movedTo: parent)
+    override open func didMove(toParentViewController parent: UIViewController?) {
+        super.didMove(toParentViewController: parent)
         coordinator?.presentedVC?(self, movedTo: parent)
+    }
+
+    /// Method to set the masterViewController
+    public func showMasterViewController(_ vc: UIViewController) {
+        // TODO: - ensure that given vc is always first in stack
+        addChildViewController(vc)
     }
 }

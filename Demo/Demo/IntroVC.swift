@@ -11,6 +11,6 @@ import UIKit
 class IntroVC: UIViewController {
 
 	deinit {
-		NSLog("IntroVC got deinitialized")
+		NSLog("\(type(of: self)) got deinitialized")
 	}
 }

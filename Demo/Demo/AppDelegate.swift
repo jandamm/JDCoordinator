@@ -27,17 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		appCoordinator = AppCoordinator(withNavigationController: rootViewController)
 
-		if let window = self.window {
-			window.rootViewController = rootViewController
-
-			appCoordinator.start()
-
-			window.makeKeyAndVisible()
-
-			return true
+		guard let window = self.window else {
+			return false
 		}
 
-		return false
+        window.rootViewController = rootViewController
+        
+        appCoordinator.start()
+        
+        window.makeKeyAndVisible()
+        
+        return true
 	}
 
 	func applicationWillResignActive(_ application: UIApplication) {

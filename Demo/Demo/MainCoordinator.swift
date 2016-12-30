@@ -8,11 +8,11 @@
 
 import JDCoordinator
 
-protocol MainCoordinatorDelegate: JDCoordinatorDelegate {
-	func reloadData(_ finishedCoordinator: JDCoordinator)
+protocol MainCoordinatorDelegate: JDCoordinatorCoordinatorDelegate {
+	func reloadData()
 }
 
-class MainCoordinator: JDCoordinator, MainDelegate {
+class MainCoordinator: JDParentCoordinator, MainDelegate {
 
 	weak var delegate: MainCoordinatorDelegate?
 
@@ -27,10 +27,22 @@ class MainCoordinator: JDCoordinator, MainDelegate {
 	}
 
 	func reloadData() {
-		delegate?.reloadData(self)
+        delegate?.removeChildCoordinator(self)
+		delegate?.reloadData()
 	}
+    
+    func showSplit() {
+        showInterface()
+    }
+    
+    func showInterface() {
+        let coord = SplitViewCoordinator(withNavigationController: navigationController)
+        coord.delegate = self
+        addChildCoordinator(coord)
+        coord.start()
+    }
 
 	deinit {
-		NSLog("MainCoordinator got deinitialized")
+		NSLog("\(type(of: self)) got deinitialized")
 	}
 }

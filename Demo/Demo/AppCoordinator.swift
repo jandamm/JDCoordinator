@@ -8,13 +8,13 @@
 
 import JDCoordinator
 
-class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate, SplitViewCoordinatorDelegate {
+class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
 
 	override func start() {
         super.start()
 
 		getData { (successful) in
-			self.showInterface()
+			self.showMain()
 		}
 
         let introVC = IntroVC()
@@ -24,24 +24,19 @@ class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate, SplitViewCoo
 	func getData(_ completion: @escaping(Bool) -> ()) {
 
 		// This function "downloads" data for three seconds
-
-		let dispatchTime: DispatchTime = DispatchTime.now() + Double(Int64(3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-		DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: { completion(true) })
+		DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            completion(true)
+        }
 	}
 
-	func reloadData(_ finishedCoordinator: JDCoordinator) {
-		removeChildCoordinator(finishedCoordinator)
-
+	func reloadData() {
 		start()
 	}
-
-    func showInterface() {
-        let coord = SplitViewCoordinator(withNavigationController: navigationController)
-
+    
+    func showMain() {
+        let coord = MainCoordinator(withNavigationController: navigationController)
         coord.delegate = self
-
         addChildCoordinator(coord)
-
         coord.start()
     }
 }

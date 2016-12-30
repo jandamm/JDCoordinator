@@ -8,8 +8,9 @@
 
 import JDCoordinator
 
-protocol MainDelegate: JDCoordinatorDelegate {
+protocol MainDelegate: JDCoordinatorViewControllerDelegate {
 	func reloadData()
+    func showSplit()
 }
 
 class MainVC: UIViewController {
@@ -19,8 +20,12 @@ class MainVC: UIViewController {
 	@IBAction func reloadData(_ sender: UIButton) {
 		delegate?.reloadData()
 	}
+    
+    @IBAction func showSplit(_ sender: UIButton) {
+        delegate?.showSplit()
+    }
 
 	deinit {
-		NSLog("MainVC got deinitialized")
+		NSLog("\(type(of: self)) got deinitialized")
 	}
 }

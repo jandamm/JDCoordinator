@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  SubDetailViewController.swift
 //  SplitViewCoordinator
 //
 //  Created by Jan Dammshäuser on 24.12.16.
@@ -8,26 +8,18 @@
 
 import JDCoordinator
 
-protocol DetailViewDelegate: JDCoordinatorViewControllerDelegate {
-    func showSubDetails()
-}
-
-class DetailViewController: UIViewController {
+class SubDetailViewController: UIViewController {
     
-    weak var delegate: DetailViewDelegate!
+    weak var delegate: JDCoordinatorViewControllerDelegate!
 
+    @IBOutlet weak var dataLbl: UILabel!
+    
     var data: String?
-    
-    @IBOutlet weak var dataLbl: UIButton!
-    
-    @IBAction func btnPressed(_ sender: UIButton) {
-        delegate.showSubDetails()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dataLbl.setTitle(data, for: .normal)
+        
+        dataLbl.text = data
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {

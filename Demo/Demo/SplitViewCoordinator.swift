@@ -1,61 +1,48 @@
 //
-//  SplitViewCoordinator.swift
-//  Demo
+//  SplitCoord.swift
+//  SplitViewCoordinator
 //
-//  Created by Jan Dammshäuser on 19.12.2016.
+//  Created by Jan Dammshäuser on 24.12.16.
 //  Copyright © 2016 Jan Dammshäuser. All rights reserved.
 //
 
 import JDCoordinator
 
-protocol SplitViewCoordinatorDelegate: MainCoordinatorDelegate {}
-
-class SplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorProtocol {
-
-    weak var delegate: SplitViewCoordinatorDelegate!
+class SplitViewCoordinator: JDSplitViewCoordinator {
     
-    lazy var manager: JDSplitViewManager = { SplitViewManager(withNavigationController: self.navigationController, andMode: .always) }()
-
+    weak var delegate: JDCoordinatorCoordinatorDelegate!
+    
     override func start() {
         super.start()
-
-        if let vc = manager.splitViewPresenter {
-            showMainVC()
-            showDetailVC()
-
-            setViewControllers(vc, animated: true)
-        } else {
-            showMainVC()
-        }
-    }
-
-    fileprivate func showMainVC() {
-        let coord = MainCoordinator(withNavigationController: manager.leftController)
+        
+        let vc = UINavigationController()
+        let coord = MasterCoordinator(withNavigationController: vc)
         coord.delegate = self
-
-        addChildCoordinator(coord)
-
-        coord.start()
+        
+        showMasterViewController(vc, withMasterCoordinator: coord, andStart: true)
+        
+        pushViewController(splitViewPresenter, animated: true)
     }
-
-    fileprivate func showDetailVC() {
-        let coord = DetailCoordinator(withNavigationController: manager.rightController)
-        coord.delegate = self
-
-        addChildCoordinator(coord)
-        coord.start()
-    }
-
+    
     deinit {
-        NSLog("SplitViewCoordinator got deinitialized")
+        NSLog("\(type(of: self)) got deinitialized")
     }
 }
 
-extension SplitViewCoordinator: MainCoordinatorDelegate, DetailCoordinatorDelegate {
+extension SplitViewCoordinator: MasterDelegate {
+    
+    func close() {
+        navigationController.popViewController(animated: true)
+        delegate.removeChildCoordinator(self)
+    }
+    
+    func showDetail(withData data: String?) {
+        let dvc = UINavigationController()
+        let coord = DetailCoordinator(withNavigationController: dvc)
 
-    func reloadData(_ finishedCoordinator: JDCoordinator) {
-        removeChildCoordinator(finishedCoordinator)
-        
-        delegate.reloadData(self)
+        coord.delegate = self
+        coord.data = data
+
+        showDetailViewController(dvc, withDetailCoordinator: coord, andStart: true)
     }
 }
