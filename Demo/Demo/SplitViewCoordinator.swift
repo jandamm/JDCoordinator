@@ -25,7 +25,7 @@ class SplitViewCoordinator: JDSplitViewCoordinator {
         let coord = MasterCoordinator(withNavigationController: vc)
         coord.delegate = self
 
-        setMasterViewController(vc, withMasterCoordinator: coord, andStart: true)
+        setMasterNavigationController(vc, withMasterCoordinator: coord, andStart: true)
     }
     
     deinit {
