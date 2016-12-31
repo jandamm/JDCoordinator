@@ -21,7 +21,10 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
 
     /// You can modify the splitViewController behaviour or set your custom JDSplitViewController with its initializer.
     /// Don't forget to set splitViews.coordinator to self.
-    public private(set) lazy var splitViewController: JDSplitViewController = {
+    public var splitViewController: JDSplitViewController {
+        return svc
+    }
+    private lazy var svc: JDSplitViewController = {
         let svc = JDSplitViewController()
         svc.delegate = self
         svc.coordinator = self
@@ -29,7 +32,10 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
     }()
 
     /// Use the splitViewPresenter to present the splitViewController within the navigationController
-    public private(set) lazy var splitViewPresenter: UIViewController = {
+    public var splitViewPresenter: UIViewController {
+        return svp
+    }
+    private lazy var svp: UIViewController = {
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.clear
         vc.addChildViewController(self.splitViewController)
@@ -41,25 +47,30 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
     public convenience init(withNavigationController navigationController: UINavigationController, andSplitViewController splitView: JDSplitViewController) {
         self.init(withNavigationController: navigationController)
 
-        splitViewController = splitView
+        svc = splitView
     }
 
     /// Override this method to start your custom SplitViewController.
-    /// You should call super.start, setMasterViewController, showDetailViewController and push/set/present splitViewPresenter.
+    /// You should call super.start, showMasterViewController, showDetailViewController and push/set/present splitViewPresenter.
     open override func start() {
         super.start()
         navigationController.setNavigationBarHidden(true, animated: true)
     }
-    
-    public func showMasterViewController(_ vc: UINavigationController, withMasterCoordinator coord: JDCoordinator? = nil, andStart start: Bool = false) {
-        
-        addChildCoordinator(coord, andStart: start)
+
+    /// Sets the given ViewController as MasterViewController and sets the MasterCoordinator.
+    /// You can start the coordinator within this method.
+    public func showMasterViewController(_ vc: UINavigationController, withMasterCoordinator masterCoord: JDCoordinator? = nil, andStart start: Bool = false) {
+        removeMasterCoordinator()
+
+        addChildCoordinator(masterCoord, andStart: start)
         splitViewController.showMasterViewController(vc)
-        
+
         masterNavigationController = vc
-        masterCoordinator = coord
+        masterCoordinator = masterCoord
     }
-    
+
+    /// Sets the given ViewController as DetailViewController and removes all previous DetailCoordinators.
+    /// You can start the coordinator within this method.
     public func showDetailViewController(_ vc: UIViewController, withDetailCoordinator coord: JDCoordinator?, andStart start: Bool = false, sender: Any? = nil) {
         removeAllDetailCoordinator()
 
@@ -68,12 +79,20 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
         splitViewController.showDetailViewController(vc, sender: sender)
     }
     
+    private func removeMasterCoordinator() {
+        guard let masterCoordinator = masterCoordinator else {
+            return
+        }
+
+        removeChildCoordinator(masterCoordinator)
+    }
+    
     private func addChildCoordinator(_ coord: JDCoordinator?, andStart start: Bool) {
 
         guard let coord = coord else {
             return
         }
-        
+
         addChildCoordinator(coord)
             
         if start {

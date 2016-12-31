@@ -10,7 +10,7 @@ import UIKit
 
 /// JDCoordinator are meant to coordinate one or more ViewControllers
 @objc
-open class JDCoordinator: NSObject, JDCoordinatorProtocol, JDCoordinatorViewControllerDelegate {
+open class JDCoordinator: NSObject, JDCoordinatorProtocol {
 
     /// You can use this value to save the ViewController which were presented when you started the Coordinator
     public weak var previousViewController: UIViewController?
@@ -19,7 +19,7 @@ open class JDCoordinator: NSObject, JDCoordinatorProtocol, JDCoordinatorViewCont
 	public unowned let navigationController: UINavigationController
 
 	/// Initialize the JDCoordinator a UINavigationController
-	public required init(withNavigationController navigationController: UINavigationController) {
+	public init(withNavigationController navigationController: UINavigationController) {
 		self.navigationController = navigationController
 
 		super.init()

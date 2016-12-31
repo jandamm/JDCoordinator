@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let windowFrame = UIScreen.main.bounds
 		window = UIWindow(frame: windowFrame)
 
-		rootViewController = UINavigationController()
+		rootViewController = JDBasicNavigationController()
 
 		appCoordinator = AppCoordinator(withNavigationController: rootViewController)
 

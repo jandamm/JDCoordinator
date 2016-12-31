@@ -15,12 +15,11 @@ public protocol JDCoordinatorViewControllerDelegate: NSObjectProtocol {
 }
 
 /// Use this protocol for weak pointers to delegates of JDParentCoordinators in JDCoordinators.
-@objc
-public protocol JDCoordinatorCoordinatorDelegate: JDParentCoordinatorProtocol {}
+public typealias JDCoordinatorCoordinatorDelegate = JDParentCoordinatorProtocol
 
 /// Blueprint of JDCoordinators
 @objc
-public protocol JDCoordinatorProtocol: NSObjectProtocol {
+public protocol JDCoordinatorProtocol: JDCoordinatorViewControllerDelegate {
     var navigationController: UINavigationController { get }
     var previousViewController: UIViewController? { get set }
     func setPreviousViewControllerToCurrent()
@@ -38,6 +37,7 @@ public protocol JDParentCoordinatorProtocol: JDCoordinatorProtocol {
 }
 
 /// Blueprint of JDSplitViewCoordinatorProtocol
+@objc
 public protocol JDSplitViewCoordinatorProtocol: JDParentCoordinatorProtocol {
     var splitViewPresenter: UIViewController { get }
     var splitViewController: JDSplitViewController { get }

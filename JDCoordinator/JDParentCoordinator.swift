@@ -10,7 +10,7 @@ import UIKit
 
 /// JDParentCoordinator are meant to coordinate one or more JDCoordinators and ViewControllers.
 @objc
-open class JDParentCoordinator: JDCoordinator, JDParentCoordinatorProtocol, JDCoordinatorCoordinatorDelegate {
+open class JDParentCoordinator: JDCoordinator, JDParentCoordinatorProtocol {
 
     /// List of all loaded ChildCoordinators
     public private(set) var childCoordinators = [JDCoordinator]()

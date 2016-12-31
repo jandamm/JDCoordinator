@@ -20,6 +20,7 @@ open class JDSplitViewController: UISplitViewController {
     }
 
     /// Method to set the masterViewController
+    /// Don't call this method directly - call it on the SplitViewCoordinator.
     public func showMasterViewController(_ vc: UIViewController) {
         // TODO: - ensure that given vc is always first in stack
         addChildViewController(vc)

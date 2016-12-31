@@ -23,6 +23,7 @@ class SubDetailViewController: UIViewController {
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
+        super.didMove(toParentViewController: parent)
         delegate?.presentedVC?(self, movedTo: parent)
     }
     
