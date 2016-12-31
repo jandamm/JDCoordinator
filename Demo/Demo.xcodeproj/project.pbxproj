@@ -119,10 +119,10 @@
 		13DFB1021D7E03EE002D55D7 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				133460321E16E167004CE124 /* MasterCoordinator.swift */,
 				13DFB0F61D7DFE7E002D55D7 /* AppCoordinator.swift */,
 				0B9AECC61E0814BF00CC8F49 /* SplitViewCoordinator.swift */,
 				13DFB1001D7E01B6002D55D7 /* MainCoordinator.swift */,
+				133460321E16E167004CE124 /* MasterCoordinator.swift */,
 				0B9AECC81E08162100CC8F49 /* DetailCoordinator.swift */,
 			);
 			name = Coordinator;

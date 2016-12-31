@@ -9,6 +9,10 @@
 import UIKit
 
 open class JDSplitViewController: UISplitViewController {
+    
+    public enum SetMasterVCError: Error {
+        case alreadySet(String)
+    }
 
     /// Reference to JDSplitViewControllers presenting coordinator
     public weak var coordinator: JDCoordinatorViewControllerDelegate?
@@ -21,8 +25,11 @@ open class JDSplitViewController: UISplitViewController {
 
     /// Method to set the masterViewController
     /// Don't call this method directly - call it on the SplitViewCoordinator.
-    public func showMasterViewController(_ vc: UIViewController) {
-        // TODO: - ensure that given vc is always first in stack
+    public func setMasterViewController(_ vc: UIViewController) throws {
+        guard viewControllers.count == 0 else {
+            throw SetMasterVCError.alreadySet("[JDCoordinator] Could not set MasterViewController as it's already set.")
+        }
+
         addChildViewController(vc)
     }
 }

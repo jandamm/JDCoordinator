@@ -15,13 +15,17 @@ class SplitViewCoordinator: JDSplitViewCoordinator {
     override func start() {
         super.start()
         
+        setupMaster()
+
+        pushViewController(splitViewPresenter, animated: true)
+    }
+    
+    func setupMaster() {
         let vc = UINavigationController()
         let coord = MasterCoordinator(withNavigationController: vc)
         coord.delegate = self
-        
-        showMasterViewController(vc, withMasterCoordinator: coord, andStart: true)
-        
-        pushViewController(splitViewPresenter, animated: true)
+
+        setMasterViewController(vc, withMasterCoordinator: coord, andStart: true)
     }
     
     deinit {
