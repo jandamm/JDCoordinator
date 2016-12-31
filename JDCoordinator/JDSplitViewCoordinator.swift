@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// JDSplitViewCoordinator are meant to coordinate one or more JDCoordinators and ViewControllers within an UISplitViewController and presented within an UINavigationController.
+@objc
 open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorProtocol, UISplitViewControllerDelegate {
 
     /// Set Master Coordinator if needed with setMasterViewController
@@ -31,7 +33,7 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
         return svc
     }()
 
-    /// Use the splitViewPresenter to present the splitViewController within the navigationController
+    /// Use the splitViewPresenter to push/present the splitViewController within the navigationController
     public var splitViewPresenter: UIViewController {
         return _splitViewPresenter
     }
@@ -60,7 +62,7 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
     /// Sets the given ViewController as MasterViewController and sets the MasterCoordinator.
     /// You can only set the masterViewController once. If you need to change the masters view, implement it into MasterCoordinator and use masterNavigationController to do so.
     /// You can start the coordinator within this method.
-    public func setMasterViewController(_ vc: UINavigationController, withMasterCoordinator masterCoord: JDCoordinator? = nil, andStart start: Bool = false) {
+    public func setMasterNavigationController(_ vc: UINavigationController, withMasterCoordinator masterCoord: JDCoordinator? = nil, andStart start: Bool = false) {
         
         do {
             try splitViewController.setMasterViewController(vc)
@@ -79,14 +81,21 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
 
     /// Sets the given ViewController as DetailViewController and removes all previous DetailCoordinators.
     /// You can start the coordinator within this method.
-    public func showDetailViewController(_ vc: UIViewController, withDetailCoordinator coord: JDCoordinator?, andStart start: Bool = false, sender: Any? = nil) {
+    public func showDetailNavigationController(_ vc: UINavigationController, withDetailCoordinator coord: JDCoordinator?, andStart start: Bool = false, fromSender sender: Any? = nil) {
         removeAllDetailCoordinator()
+
+        detailNavigationController = vc
 
         addChildCoordinator(coord, andStart: start)
 
         splitViewController.showDetailViewController(vc, sender: sender)
     }
-    
+
+    /// Removes all DetailCoordinators
+    public func removeAllDetailCoordinator() {
+        removeAllChildCoordinators(except: masterCoordinator)
+    }
+
     private func removeMasterCoordinator() {
         guard let coord = masterCoordinator else {
             return

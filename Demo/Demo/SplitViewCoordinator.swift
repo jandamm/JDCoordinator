@@ -47,6 +47,6 @@ extension SplitViewCoordinator: MasterDelegate {
         coord.delegate = self
         coord.data = data
 
-        showDetailViewController(dvc, withDetailCoordinator: coord, andStart: true)
+        showDetailNavigationController(dvc, withDetailCoordinator: coord, andStart: true)
     }
 }

@@ -28,16 +28,15 @@ open class JDParentCoordinator: JDCoordinator, JDParentCoordinatorProtocol {
 	}
 
     /// Remove all child JDCoordinator except the given one
-    public func removeAllChildCoordinator(except coordinator: JDCoordinator) {
-        let wasInStack = childCoordinators.index(of: coordinator) != nil
-        removeAllChildCoordinator()
-        if wasInStack {
-            childCoordinators.append(coordinator)
+    public func removeAllChildCoordinators(except coordinator: JDCoordinator? = nil) {
+        let oldCoordinators = childCoordinators
+
+        childCoordinators.removeAll()
+
+        guard let coordinator = coordinator, let _ = oldCoordinators.index(of: coordinator) else {
+            return
         }
+
+        childCoordinators.append(coordinator)
     }
-    
-	/// Remove all child JDCoordinator
-	public func removeAllChildCoordinator() {
-		childCoordinators.removeAll()
-	}
 }
