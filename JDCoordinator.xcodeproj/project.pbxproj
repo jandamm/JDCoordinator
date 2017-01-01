@@ -13,6 +13,7 @@
 		13280D961D7DFC1800ACD62B /* JDCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280D951D7DFC1800ACD62B /* JDCoordinatorProtocol.swift */; };
 		13280D981D7DFC7E00ACD62B /* JDParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280D971D7DFC7E00ACD62B /* JDParentCoordinator.swift */; };
 		133460311E16DF76004CE124 /* JDSplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133460301E16DF76004CE124 /* JDSplitViewCoordinator.swift */; };
+		133F881B1E19458C00A4BCD2 /* JDRootSplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133F881A1E19458C00A4BCD2 /* JDRootSplitViewCoordinator.swift */; };
 		13A41CFB1DA58F370064ED96 /* JDBasicNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A41CFA1DA58F370064ED96 /* JDBasicNavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		13280D951D7DFC1800ACD62B /* JDCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCoordinatorProtocol.swift; sourceTree = "<group>"; };
 		13280D971D7DFC7E00ACD62B /* JDParentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinator.swift; sourceTree = "<group>"; };
 		133460301E16DF76004CE124 /* JDSplitViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinator.swift; sourceTree = "<group>"; };
+		133F881A1E19458C00A4BCD2 /* JDRootSplitViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDRootSplitViewCoordinator.swift; sourceTree = "<group>"; };
 		13A41CFA1DA58F370064ED96 /* JDBasicNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDBasicNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				13280D931D7DFBF500ACD62B /* JDCoordinator.swift */,
 				13280D971D7DFC7E00ACD62B /* JDParentCoordinator.swift */,
 				133460301E16DF76004CE124 /* JDSplitViewCoordinator.swift */,
+				133F881A1E19458C00A4BCD2 /* JDRootSplitViewCoordinator.swift */,
 				13280D8B1D7DFA5600ACD62B /* JDCoordinator.h */,
 				13280D8D1D7DFA5600ACD62B /* Info.plist */,
 			);
@@ -159,6 +162,7 @@
 			files = (
 				13280D961D7DFC1800ACD62B /* JDCoordinatorProtocol.swift in Sources */,
 				13280D981D7DFC7E00ACD62B /* JDParentCoordinator.swift in Sources */,
+				133F881B1E19458C00A4BCD2 /* JDRootSplitViewCoordinator.swift in Sources */,
 				0B9AECC11E08097A00CC8F49 /* JDSplitViewController.swift in Sources */,
 				13A41CFB1DA58F370064ED96 /* JDBasicNavigationController.swift in Sources */,
 				133460311E16DF76004CE124 /* JDSplitViewCoordinator.swift in Sources */,

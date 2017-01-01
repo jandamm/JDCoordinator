@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// JDCoordinator are meant to coordinate one or more ViewControllers
+/// JDCoordinators are meant to coordinate one or more ViewControllers
 @objc
 open class JDCoordinator: NSObject, JDCoordinatorProtocol {
 
@@ -16,11 +16,14 @@ open class JDCoordinator: NSObject, JDCoordinatorProtocol {
     public weak var previousViewController: UIViewController?
 
 	/// This navigationController pushes all ViewControllers
-	public unowned let navigationController: UINavigationController
+    public var navigationController: UINavigationController {
+        return _navigationController
+    }
+	private unowned let _navigationController: UINavigationController
 
 	/// Initialize the JDCoordinator a UINavigationController
 	public init(withNavigationController navigationController: UINavigationController) {
-		self.navigationController = navigationController
+		_navigationController = navigationController
 
 		super.init()
 	}

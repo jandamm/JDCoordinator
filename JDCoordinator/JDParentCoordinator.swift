@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// JDParentCoordinator are meant to coordinate one or more JDCoordinators and ViewControllers.
+/// JDParentCoordinators are meant to coordinate one or more JDCoordinators and ViewControllers.
 @objc
 open class JDParentCoordinator: JDCoordinator, JDParentCoordinatorProtocol {
 

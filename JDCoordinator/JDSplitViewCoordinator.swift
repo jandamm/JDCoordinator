@@ -8,9 +8,11 @@
 
 import UIKit
 
-/// JDSplitViewCoordinator are meant to coordinate one or more JDCoordinators and ViewControllers within an UISplitViewController and presented within an UINavigationController.
+/// JDSplitViewCoordinators are meant to coordinate one or more JDCoordinators and ViewControllers within an UISplitViewController and presented within an UINavigationController.
 @objc
 open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorProtocol, UISplitViewControllerDelegate {
+    
+    var _rootSplitViewCoordinator = false
 
     /// Set Master Coordinator if needed with setMasterViewController
     public private(set) weak var masterCoordinator: JDCoordinator?
@@ -26,7 +28,7 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
     public var splitViewController: JDSplitViewController {
         return _splitViewController
     }
-    private lazy var _splitViewController: JDSplitViewController = {
+    lazy var _splitViewController: JDSplitViewController = {
         let svc = JDSplitViewController()
         svc.delegate = self
         svc.coordinator = self
@@ -56,6 +58,9 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
     /// You should call super.start, setMasterViewController, showDetailViewController and push/set/present splitViewPresenter.
     open override func start() {
         super.start()
+        guard !_rootSplitViewCoordinator else {
+            return
+        }
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 
