@@ -1,5 +1,5 @@
 //
-//  JDBasicNavigationController.swift
+//  JDNavigationController.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05.10.16.
@@ -8,22 +8,8 @@
 
 import UIKit
 
-/// UINavigationController with disabled pop to swipe gestures.
-/// The NavigationBar is hidden.
-/// Use disableSwipeBack() and enableSwipeBack() or toggleSwipeBack()
-open class JDBasicNavigationController: UINavigationController {
-
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupNavigationController()
-    }
-
-    private func setupNavigationController() {
-        setNavigationBarHidden(true, animated: false)
-
-        disableSwipeBack()
-    }
+/// UINavigationController with where you can en/disable pop to swipe gestures.
+open class JDNavigationController: UINavigationController {
 
     /// Swipe back gestures state
     public var isSwipeBackEnabled: Bool {

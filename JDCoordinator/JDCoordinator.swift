@@ -12,9 +12,6 @@ import UIKit
 @objc
 open class JDCoordinator: NSObject, JDCoordinatorProtocol {
 
-    /// You can use this value to save the ViewController which were presented when you started the Coordinator
-    public weak var previousViewController: UIViewController?
-
 	/// This navigationController pushes all ViewControllers
     public var navigationController: UINavigationController {
         return _navigationController
@@ -31,7 +28,10 @@ open class JDCoordinator: NSObject, JDCoordinatorProtocol {
 	/// You need to override this method so it pushes the initial ViewController.
     open func start() {}
 
-    /// This method sets the currently presented ViewController of navigationController to previousViewController
+    /// You can use this value to save the ViewController which were presented when you started the Coordinator
+    public weak var previousViewController: UIViewController?
+
+    /// This method sets navigationController.topViewController to previousViewController
     public func setPreviousViewControllerToCurrent() {
         previousViewController = navigationController.topViewController
     }

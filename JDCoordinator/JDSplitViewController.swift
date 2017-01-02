@@ -10,7 +10,7 @@ import UIKit
 
 open class JDSplitViewController: UISplitViewController {
     
-    public enum SetMasterVCError: Error {
+    private enum SetMasterVCError: Error {
         case alreadySet(String)
     }
 
