@@ -14,6 +14,14 @@ protocol DetailViewDelegate: JDCoordinatorViewControllerDelegate {
 
 class DetailViewController: UIViewController {
     
+    // needed on iOS 8
+    init() {
+        super.init(nibName: "DetailViewController", bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     weak var delegate: DetailViewDelegate!
 
     var data: String?

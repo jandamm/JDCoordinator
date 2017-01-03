@@ -15,6 +15,14 @@ protocol MasterDelegate: JDCoordinatorViewControllerDelegate {
 
 class MasterViewController: UIViewController {
     
+    // needed on iOS 8
+    init() {
+        super.init(nibName: "MasterViewController", bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     weak var delegate: MasterDelegate!
 
     @IBAction func btnPressed(_ sender: UIButton) {

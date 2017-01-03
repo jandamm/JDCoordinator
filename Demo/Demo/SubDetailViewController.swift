@@ -10,6 +10,14 @@ import JDCoordinator
 
 class SubDetailViewController: UIViewController {
     
+    // needed on iOS 8
+    init() {
+        super.init(nibName: "SubDetailViewController", bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     weak var delegate: JDCoordinatorViewControllerDelegate!
 
     @IBOutlet weak var dataLbl: UILabel!

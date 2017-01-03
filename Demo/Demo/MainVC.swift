@@ -14,6 +14,14 @@ protocol MainDelegate: JDCoordinatorViewControllerDelegate {
 }
 
 class MainVC: UIViewController {
+    
+    // needed on iOS 8
+    init() {
+        super.init(nibName: "MainVC", bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
 	weak var delegate: MainDelegate?
 

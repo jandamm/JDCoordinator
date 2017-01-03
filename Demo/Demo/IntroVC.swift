@@ -9,6 +9,14 @@
 import UIKit
 
 class IntroVC: UIViewController {
+    
+    // needed on iOS 8
+    init() {
+        super.init(nibName: "IntroVC", bundle: nil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
 	deinit {
 		NSLog("\(type(of: self)) got deinitialized")

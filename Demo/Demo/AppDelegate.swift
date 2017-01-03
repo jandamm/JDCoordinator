@@ -21,22 +21,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
 		let windowFrame = UIScreen.main.bounds
-		window = UIWindow(frame: windowFrame)
+		let window = UIWindow(frame: windowFrame)
 
-		rootViewController = JDBasicNavigationController()
+		rootViewController = JDNavigationController()
+//        rootViewController.setNavigationBarHidden(true, animated: false)
 
 		appCoordinator = AppCoordinator(withNavigationController: rootViewController)
 
-		guard let window = self.window else {
-			return false
-		}
-
         window.rootViewController = rootViewController
-        
+
         appCoordinator.start()
-        
+
         window.makeKeyAndVisible()
-        
+
+        self.window = window
+
         return true
 	}
 
