@@ -44,6 +44,7 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
         vc.view.backgroundColor = UIColor.clear
         vc.addChildViewController(self.splitViewController)
         vc.view.addSubview(self.splitViewController.view)
+        self.splitViewController.didMove(toParentViewController: vc)
         return vc
     }()
 

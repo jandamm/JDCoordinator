@@ -16,8 +16,7 @@ class DetailCoordinator: JDCoordinator {
     
     override func start() {
         super.start()
-        
-        
+
         let vc = DetailViewController()
         vc.delegate = self
         vc.data = data
