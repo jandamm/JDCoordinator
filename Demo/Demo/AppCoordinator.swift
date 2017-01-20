@@ -18,7 +18,7 @@ class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
 		}
 
         let introVC = IntroVC()
-		setViewControllers(introVC, animated: true)
+		setViewController(introVC, animated: true)
 	}
 
 	func getData(_ completion: @escaping(Bool) -> ()) {

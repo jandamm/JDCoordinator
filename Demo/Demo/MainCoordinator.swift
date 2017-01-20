@@ -23,7 +23,7 @@ class MainCoordinator: JDParentCoordinator, MainDelegate {
 
 		mainVC.delegate = self
 
-		setViewControllers(mainVC, animated: true)
+		setViewController(mainVC, animated: true)
 	}
 
 	func reloadData() {
