@@ -13,19 +13,19 @@ import UIKit
 open class JDParentCoordinator: JDCoordinator, JDParentCoordinatorProtocol {
 
     /// List of all loaded ChildCoordinators
-    public private(set) var childCoordinators = [JDCoordinator]()
+    private(set) public var childCoordinators = [JDCoordinator]()
 
-	/// Add a JDCoordinator as a child
-	public func addChildCoordinator(_ coordinator: JDCoordinator) {
-		childCoordinators.append(coordinator)
-	}
+    /// Add a JDCoordinator as a child
+    public func addChildCoordinator(_ coordinator: JDCoordinator) {
+        childCoordinators.append(coordinator)
+    }
 
-	/// Remove a child JDCoordinator
-	public func removeChildCoordinator(_ coordinator: JDCoordinator) {
-		if let index = childCoordinators.index(of: coordinator) {
-			childCoordinators.remove(at: index)
-		}
-	}
+    /// Remove a child JDCoordinator
+    public func removeChildCoordinator(_ coordinator: JDCoordinator) {
+        if let index = childCoordinators.index(of: coordinator) {
+            childCoordinators.remove(at: index)
+        }
+    }
 
     /// Remove all child JDCoordinator except the given one
     public func removeAllChildCoordinators(except coordinator: JDCoordinator? = nil) {

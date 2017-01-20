@@ -11,23 +11,24 @@ import UIKit
 /// JDSplitViewCoordinators are meant to coordinate one or more JDCoordinators and ViewControllers within an UISplitViewController and presented within an UINavigationController.
 @objc
 open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorProtocol, UISplitViewControllerDelegate {
-    
+
     var _rootSplitViewCoordinator = false
 
     /// Set Master Coordinator if needed with setMasterViewController
-    public private(set) weak var masterCoordinator: JDCoordinator?
-    
+    private(set) public weak var masterCoordinator: JDCoordinator?
+
     /// Reference to the masterNavigationController
-    public private(set) weak var masterNavigationController: UINavigationController!
-    
+    private(set) public weak var masterNavigationController: UINavigationController!
+
     /// Reference to the detailNavigationController
-    public private(set) weak var detailNavigationController: UINavigationController!
+    private(set) public weak var detailNavigationController: UINavigationController!
 
     /// You can modify the splitViewController behaviour or set your custom JDSplitViewController with its initializer.
     /// Don't forget to set splitViews.coordinator to self.
     public var splitViewController: JDSplitViewController {
         return _splitViewController
     }
+
     lazy var _splitViewController: JDSplitViewController = {
         let svc = JDSplitViewController()
         svc.delegate = self
@@ -39,6 +40,7 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
     public var splitViewPresenter: UIViewController {
         return _splitViewPresenter
     }
+
     private lazy var _splitViewPresenter: UIViewController = {
         let vc = UIViewController()
         vc.view.backgroundColor = UIColor.clear
@@ -69,13 +71,13 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
     /// You can only set the masterViewController once. If you need to change the masters view, implement it into MasterCoordinator and use masterNavigationController to do so.
     /// You can start the coordinator within this method.
     public func setMasterNavigationController(_ vc: UINavigationController, withMasterCoordinator masterCoord: JDCoordinator? = nil, andStart start: Bool = false) {
-        
+
         do {
             try splitViewController.setMasterViewController(vc)
-            
+
             removeMasterCoordinator()
             addChildCoordinator(masterCoord, andStart: start)
-            
+
             masterNavigationController = vc
             masterCoordinator = masterCoord
         } catch JDSplitViewController.SetMasterVCError.alreadySet(let error) {
@@ -109,7 +111,7 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
 
         removeChildCoordinator(coord)
     }
-    
+
     private func addChildCoordinator(_ coord: JDCoordinator?, andStart start: Bool) {
 
         guard let coord = coord else {
@@ -117,7 +119,7 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
         }
 
         addChildCoordinator(coord)
-            
+
         if start {
             coord.start()
         }

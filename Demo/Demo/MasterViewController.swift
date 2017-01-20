@@ -14,31 +14,31 @@ protocol MasterDelegate: JDCoordinatorViewControllerDelegate {
 }
 
 class MasterViewController: UIViewController {
-    
+
     // needed on iOS 8
     init() {
         super.init(nibName: "MasterViewController", bundle: nil)
     }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     weak var delegate: MasterDelegate!
 
     @IBAction func btnPressed(_ sender: UIButton) {
         delegate.showDetail(withData: sender.title(for: .normal))
     }
-    
-    @IBAction func closePressed(_ sender: UIButton) {
+
+    @IBAction func closePressed(_: UIButton) {
         delegate.close()
     }
-    
+
     override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
         delegate?.presentedVC?(self, movedTo: parent)
     }
 
-    
     deinit {
         NSLog("\(type(of: self)) got deinitialized")
     }

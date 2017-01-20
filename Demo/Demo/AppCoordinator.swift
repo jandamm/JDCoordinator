@@ -10,29 +10,29 @@ import JDCoordinator
 
 class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
 
-	override func start() {
+    override func start() {
         super.start()
 
-		getData { (successful) in
-			self.showMain()
-		}
+        getData { _ in
+            self.showMain()
+        }
 
         let introVC = IntroVC()
-		setViewController(introVC, animated: true)
-	}
+        setViewController(introVC, animated: true)
+    }
 
-	func getData(_ completion: @escaping(Bool) -> ()) {
+    func getData(_ completion: @escaping (Bool) -> Void) {
 
-		// This function "downloads" data for three seconds
-		DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        // This function "downloads" data for three seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             completion(true)
         }
-	}
+    }
 
-	func reloadData() {
-		start()
-	}
-    
+    func reloadData() {
+        start()
+    }
+
     func showMain() {
         let coord = MainCoordinator(withNavigationController: navigationController)
         coord.delegate = self
