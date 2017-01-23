@@ -21,6 +21,7 @@ public typealias JDCoordinatorCoordinatorDelegate = JDParentCoordinatorProtocol
 @objc
 public protocol JDCoordinatorProtocol: JDCoordinatorViewControllerDelegate {
     var navigationController: UINavigationController { get }
+    var previousViewController: UIViewController? { get }
     func start()
 }
 
@@ -86,5 +87,29 @@ public extension JDCoordinatorProtocol {
     /// Convenience method to dismiss directly within JDCoordinators navigationController
     public func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
         navigationController.dismiss(animated: animated, completion: completion)
+    }
+
+    public func replaceViewControllersAfterPrevious(withNewViewController newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(after: previousViewController, withNewViewController: newVC, animated: animated)
+    }
+
+    public func replaceCurrentViewController(withNewViewController newVC: UIViewController, animated: Bool = true) {
+        navigationController.replaceCurrentViewController(withNewViewController: newVC, animated: animated)
+    }
+
+    public func replaceViewController(_ vc: UIViewController?, withNewViewController newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewController(vc, withNewViewController: newVC, animated: animated)
+    }
+
+    public func replaceViewControllers(last count: Int, withNewViewController newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(last: count, withNewViewController: newVC, animated: animated)
+    }
+
+    public func replaceViewControllers(after vc: UIViewController?, withNewViewController newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(after: vc, withNewViewController: newVC, animated: animated)
+    }
+
+    public func replaceViewControllers(_ vcs: [UIViewController?], withNewViewController newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(vcs, withNewViewController: newVC, animated: animated)
     }
 }
