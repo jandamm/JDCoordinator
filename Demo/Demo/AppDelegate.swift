@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         rootViewController = JDNavigationController()
         // rootViewController.setNavigationBarHidden(true, animated: false)
 
-        appCoordinator = AppCoordinator(withNavigationController: rootViewController)
+        appCoordinator = AppCoordinator(with: rootViewController)
 
         window.rootViewController = rootViewController
 

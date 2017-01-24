@@ -34,7 +34,7 @@ class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
     }
 
     func showMain() {
-        let coord = MainCoordinator(withNavigationController: navigationController)
+        let coord = MainCoordinator(with: navigationController)
         coord.delegate = self
         addChildCoordinator(coord)
         coord.start()

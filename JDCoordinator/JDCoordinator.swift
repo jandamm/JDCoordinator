@@ -20,7 +20,7 @@ open class JDCoordinator: NSObject, JDCoordinatorProtocol {
     private unowned let _navigationController: UINavigationController
 
     /// Initialize the JDCoordinator a UINavigationController
-    public init(withNavigationController navigationController: UINavigationController) {
+    public init(with navigationController: UINavigationController) {
         _navigationController = navigationController
 
         super.init()

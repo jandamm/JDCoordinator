@@ -22,7 +22,7 @@ class SplitViewCoordinator: JDSplitViewCoordinator {
 
     func setupMaster() {
         let vc = UINavigationController()
-        let coord = MasterCoordinator(withNavigationController: vc)
+        let coord = MasterCoordinator(with: vc)
         coord.delegate = self
 
         setMasterNavigationController(vc, withMasterCoordinator: coord, andStart: true)
@@ -42,7 +42,7 @@ extension SplitViewCoordinator: MasterDelegate {
 
     func showDetail(withData data: String?) {
         let dvc = UINavigationController()
-        let coord = DetailCoordinator(withNavigationController: dvc)
+        let coord = DetailCoordinator(with: dvc)
 
         coord.delegate = self
         coord.data = data

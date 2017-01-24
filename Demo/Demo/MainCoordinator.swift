@@ -36,7 +36,7 @@ class MainCoordinator: JDParentCoordinator, MainDelegate {
     }
 
     func showInterface() {
-        let coord = SplitViewCoordinator(withNavigationController: navigationController)
+        let coord = SplitViewCoordinator(with: navigationController)
         coord.delegate = self
         addChildCoordinator(coord)
         coord.start()

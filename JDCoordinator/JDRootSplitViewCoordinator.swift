@@ -35,7 +35,7 @@ open class JDRootSplitViewCoordinator: JDSplitViewCoordinator {
     }
 
     public init() {
-        super.init(withNavigationController: UINavigationController())
+        super.init(with: UINavigationController())
         _rootSplitViewCoordinator = true
     }
 

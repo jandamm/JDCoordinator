@@ -51,8 +51,8 @@ open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorPr
     }()
 
     /// Use this convenience init to set a custom SplitViewController
-    public convenience init(withNavigationController navigationController: UINavigationController, andSplitViewController splitView: JDSplitViewController) {
-        self.init(withNavigationController: navigationController)
+    public convenience init(with navigationController: UINavigationController, andSplitViewController splitView: JDSplitViewController) {
+        self.init(with: navigationController)
 
         _splitViewController = splitView
     }
