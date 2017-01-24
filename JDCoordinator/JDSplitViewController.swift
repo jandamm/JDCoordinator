@@ -9,7 +9,7 @@
 import UIKit
 
 open class JDSplitViewController: UISplitViewController {
-    
+
     public enum SetMasterVCError: Error {
         case alreadySet(String)
     }
@@ -18,7 +18,7 @@ open class JDSplitViewController: UISplitViewController {
     public weak var coordinator: JDCoordinatorViewControllerDelegate?
 
     /// If you override, call coordinator?.presentedVC?(self, movedTo: parent)
-    override open func didMove(toParentViewController parent: UIViewController?) {
+    open override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
         coordinator?.presentedVC?(self, movedTo: parent)
     }

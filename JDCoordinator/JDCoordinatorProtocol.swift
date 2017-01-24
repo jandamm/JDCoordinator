@@ -21,6 +21,7 @@ public typealias JDCoordinatorCoordinatorDelegate = JDParentCoordinatorProtocol
 @objc
 public protocol JDCoordinatorProtocol: JDCoordinatorViewControllerDelegate {
     var navigationController: UINavigationController { get }
+    var previousViewController: UIViewController? { get }
     func start()
 }
 
@@ -43,48 +44,80 @@ public protocol JDSplitViewCoordinatorProtocol: JDParentCoordinatorProtocol {
     func setMasterNavigationController(_ vc: UINavigationController, withMasterCoordinator masterCoord: JDCoordinator?, andStart start: Bool)
 
     var detailNavigationController: UINavigationController! { get }
-    func showDetailNavigationController(_ vc: UINavigationController, withDetailCoordinator coord: JDCoordinator?, andStart start: Bool, fromSender  sender: Any?)
+    func showDetailNavigationController(_ vc: UINavigationController, withDetailCoordinator coord: JDCoordinator?, andStart start: Bool, fromSender sender: Any?)
 }
 
+// MARK: - Default Methods
 public extension JDCoordinatorProtocol {
-    
+
     /// Convenience method to pushViewController directly within JDCoordinators navigationController
-    public func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.pushViewController(viewController, animated: animated)
     }
-    
+
     /// Convenience method to popViewController directly within JDCoordinators navigationController
-    @discardableResult public func popViewController(animated: Bool) -> UIViewController? {
+    @discardableResult func popViewController(animated: Bool = true) -> UIViewController? {
         return navigationController.popViewController(animated: animated)
     }
-    
+
     /// Convenience method to popToViewController directly within JDCoordinators navigationController
-    @discardableResult public func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
+    @discardableResult func popToViewController(_ viewController: UIViewController, animated: Bool = true) -> [UIViewController]? {
         return navigationController.popToViewController(viewController, animated: animated)
     }
-    
+
     /// Convenience method to popToRootViewController directly within JDCoordinators navigationController
-    @discardableResult public func popToRootViewController(animated: Bool) -> [UIViewController]? {
+    @discardableResult func popToRootViewController(animated: Bool = true) -> [UIViewController]? {
         return navigationController.popToRootViewController(animated: animated)
     }
-    
+
     /// Convenience method to setViewControllers directly within JDCoordinators navigationController
-    public func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+    func setViewControllers(_ viewControllers: [UIViewController], animated: Bool = true) {
         navigationController.setViewControllers(viewControllers, animated: animated)
     }
-    
-    /// Convenience method to setViewControllers directly within JDCoordinators navigationController with only one ViewController
-    public func setViewControllers(_ viewController: UIViewController, animated: Bool) {
-        navigationController.setViewControllers([viewController], animated: animated)
-    }
-    
+
     /// Convenience method to present directly within JDCoordinators navigationController
-    public func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-        navigationController.present(viewControllerToPresent, animated: flag, completion: completion)
+    func present(_ viewControllerToPresent: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+        navigationController.present(viewControllerToPresent, animated: animated, completion: completion)
     }
-    
+
     /// Convenience method to dismiss directly within JDCoordinators navigationController
-    public func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        navigationController.dismiss(animated: flag, completion: completion)
+    func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
+        navigationController.dismiss(animated: animated, completion: completion)
+    }
+}
+
+// MARK: - Custom Methods
+public extension JDCoordinatorProtocol {
+
+    func setViewController(_ viewController: UIViewController, animated: Bool = true) {
+        navigationController.setViewController(viewController, animated: animated)
+    }
+
+    func replaceViewController(currentWithNew newVC: UIViewController, animated: Bool = true) {
+        navigationController.replaceViewController(currentWithNew: newVC, animated: animated)
+    }
+
+    func replaceViewController(_ vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewController(vc, withNew: newVC, animated: animated)
+    }
+
+    func replaceViewControllers(last count: Int, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(last: count, withNew: newVC, animated: animated)
+    }
+
+    func replaceViewControllers(_ vcs: [UIViewController?], withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(vcs, withNew: newVC, animated: animated)
+    }
+
+    func replaceViewControllers(after vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(after: vc, withNew: newVC, animated: animated)
+    }
+
+    func replaceViewControllers(afterAndIncluding vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(afterAndIncluding: vc, withNew: newVC, animated: animated)
+    }
+
+    func replaceViewControllers(afterPreviousWithNew newVC: UIViewController? = nil, animated: Bool = true) {
+        navigationController.replaceViewControllers(after: previousViewController, withNew: newVC, animated: animated)
     }
 }

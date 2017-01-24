@@ -12,20 +12,21 @@ import UIKit
 @objc
 open class JDCoordinator: NSObject, JDCoordinatorProtocol {
 
-	/// This navigationController pushes all ViewControllers
+    /// This navigationController pushes all ViewControllers
     public var navigationController: UINavigationController {
         return _navigationController
     }
-	private unowned let _navigationController: UINavigationController
 
-	/// Initialize the JDCoordinator a UINavigationController
-	public init(withNavigationController navigationController: UINavigationController) {
-		_navigationController = navigationController
+    private unowned let _navigationController: UINavigationController
 
-		super.init()
-	}
+    /// Initialize the JDCoordinator a UINavigationController
+    public init(with navigationController: UINavigationController) {
+        _navigationController = navigationController
 
-	/// You need to override this method so it pushes the initial ViewController.
+        super.init()
+    }
+
+    /// You need to override this method so it pushes the initial ViewController.
     open func start() {}
 
     /// You can use this value to save the ViewController which were presented when you started the Coordinator

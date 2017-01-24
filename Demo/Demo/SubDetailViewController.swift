@@ -9,32 +9,33 @@
 import JDCoordinator
 
 class SubDetailViewController: UIViewController {
-    
+
     // needed on iOS 8
     init() {
         super.init(nibName: "SubDetailViewController", bundle: nil)
     }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     weak var delegate: JDCoordinatorViewControllerDelegate!
 
     @IBOutlet weak var dataLbl: UILabel!
-    
+
     var data: String?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         dataLbl.text = data
     }
-    
+
     override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
         delegate?.presentedVC?(self, movedTo: parent)
     }
-    
+
     deinit {
         NSLog("\(type(of: self)) \(data ?? "") got deinitialized")
     }

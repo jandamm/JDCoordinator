@@ -9,40 +9,40 @@
 import JDCoordinator
 
 class SplitViewCoordinator: JDSplitViewCoordinator {
-    
+
     weak var delegate: JDCoordinatorCoordinatorDelegate!
-    
+
     override func start() {
         super.start()
-        
+
         setupMaster()
 
         pushViewController(splitViewPresenter, animated: true)
     }
-    
+
     func setupMaster() {
         let vc = UINavigationController()
-        let coord = MasterCoordinator(withNavigationController: vc)
+        let coord = MasterCoordinator(with: vc)
         coord.delegate = self
 
         setMasterNavigationController(vc, withMasterCoordinator: coord, andStart: true)
     }
-    
+
     deinit {
         NSLog("\(type(of: self)) got deinitialized")
     }
 }
 
 extension SplitViewCoordinator: MasterDelegate {
-    
+
     func close() {
         navigationController.popViewController(animated: true)
         delegate.removeChildCoordinator(self)
     }
-    
+
     func showDetail(withData data: String?) {
         let dvc = UINavigationController()
-        let coord = DetailCoordinator(withNavigationController: dvc)
+        let coord = DetailCoordinator(with: dvc)
 
         coord.delegate = self
         coord.data = data

@@ -9,40 +9,40 @@
 import JDCoordinator
 
 protocol MainCoordinatorDelegate: JDCoordinatorCoordinatorDelegate {
-	func reloadData()
+    func reloadData()
 }
 
 class MainCoordinator: JDParentCoordinator, MainDelegate {
 
-	weak var delegate: MainCoordinatorDelegate?
+    weak var delegate: MainCoordinatorDelegate?
 
-	override func start() {
+    override func start() {
         super.start()
 
-		let mainVC = MainVC()
+        let mainVC = MainVC()
 
-		mainVC.delegate = self
+        mainVC.delegate = self
 
-		setViewControllers(mainVC, animated: true)
-	}
+        setViewController(mainVC, animated: true)
+    }
 
-	func reloadData() {
+    func reloadData() {
         delegate?.removeChildCoordinator(self)
-		delegate?.reloadData()
-	}
-    
+        delegate?.reloadData()
+    }
+
     func showSplit() {
         showInterface()
     }
-    
+
     func showInterface() {
-        let coord = SplitViewCoordinator(withNavigationController: navigationController)
+        let coord = SplitViewCoordinator(with: navigationController)
         coord.delegate = self
         addChildCoordinator(coord)
         coord.start()
     }
 
-	deinit {
-		NSLog("\(type(of: self)) got deinitialized")
-	}
+    deinit {
+        NSLog("\(type(of: self)) got deinitialized")
+    }
 }

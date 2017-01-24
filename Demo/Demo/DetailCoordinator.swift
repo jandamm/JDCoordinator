@@ -9,19 +9,18 @@
 import JDCoordinator
 
 class DetailCoordinator: JDCoordinator {
-    
+
     var data: String?
-    
+
     weak var delegate: JDCoordinatorCoordinatorDelegate!
-    
+
     override func start() {
         super.start()
-        
-        
+
         let vc = DetailViewController()
         vc.delegate = self
         vc.data = data
-        
+
         pushViewController(vc, animated: true)
     }
 
@@ -31,12 +30,12 @@ class DetailCoordinator: JDCoordinator {
 }
 
 extension DetailCoordinator: DetailViewDelegate {
-    
+
     func showSubDetails() {
         let vc = SubDetailViewController()
         vc.delegate = self
         vc.data = data
-        
+
         pushViewController(vc, animated: true)
     }
 }

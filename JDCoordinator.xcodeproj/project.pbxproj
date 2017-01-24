@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0C0D601E367A2300D3124E /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0C0D5F1E367A2300D3124E /* UINavigationController.swift */; };
 		0B9AECC11E08097A00CC8F49 /* JDSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9AECC01E08097A00CC8F49 /* JDSplitViewController.swift */; };
 		13280D8C1D7DFA5600ACD62B /* JDCoordinator.h in Headers */ = {isa = PBXBuildFile; fileRef = 13280D8B1D7DFA5600ACD62B /* JDCoordinator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13280D941D7DFBF500ACD62B /* JDCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13280D931D7DFBF500ACD62B /* JDCoordinator.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0C0D5F1E367A2300D3124E /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		0B9AECC01E08097A00CC8F49 /* JDSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewController.swift; sourceTree = "<group>"; };
 		13280D881D7DFA5600ACD62B /* JDCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JDCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13280D8B1D7DFA5600ACD62B /* JDCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDCoordinator.h; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				13A41CFA1DA58F370064ED96 /* JDNavigationController.swift */,
 				0B9AECC01E08097A00CC8F49 /* JDSplitViewController.swift */,
+				0B0C0D5F1E367A2300D3124E /* UINavigationController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13280D961D7DFC1800ACD62B /* JDCoordinatorProtocol.swift in Sources */,
+				0B0C0D601E367A2300D3124E /* UINavigationController.swift in Sources */,
 				13280D981D7DFC7E00ACD62B /* JDParentCoordinator.swift in Sources */,
 				133F881B1E19458C00A4BCD2 /* JDRootSplitViewCoordinator.swift in Sources */,
 				0B9AECC11E08097A00CC8F49 /* JDSplitViewController.swift in Sources */,
