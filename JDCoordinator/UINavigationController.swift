@@ -8,6 +8,51 @@
 
 import Foundation
 
+public enum ViewControllerType {
+    case current
+    case previous
+
+    func vc(for coord: JDCoordinatorProtocol) -> UIViewController? {
+        switch self {
+        case .current: return coord.navigationController.topViewController
+        case .previous: return coord.previousViewController
+        }
+    }
+}
+
+// MARK: - Default Methods
+public extension UINavigationController {
+    
+    func pushViewController(_ viewController: UIViewController) {
+        pushViewController(viewController, animated: true)
+    }
+    
+    @discardableResult func popViewController() -> UIViewController? {
+        return popViewController(animated: true)
+    }
+    
+    @discardableResult func popToViewController(_ viewController: UIViewController) -> [UIViewController]? {
+        return popToViewController(viewController, animated: true)
+    }
+    
+    @discardableResult func popToRootViewController() -> [UIViewController]? {
+        return popToRootViewController(animated: true)
+    }
+    
+    @nonobjc func setViewControllers(_ viewControllers: [UIViewController]) {
+        setViewControllers(viewControllers, animated: true)
+    }
+    
+    func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
+        present(viewControllerToPresent, animated: true, completion: completion)
+    }
+    
+    func dismiss(completion: (() -> Void)? = nil) {
+        dismiss(animated: true, completion: completion)
+    }
+}
+
+// MARK: - Custom Methods
 public extension UINavigationController {
 
     public func setViewController(_ viewController: UIViewController, animated: Bool = true) {
@@ -15,7 +60,7 @@ public extension UINavigationController {
     }
 
     /// Use method to replace current UINavigationControllers topViewController
-    public func replaceViewController(currentWithNew newVC: UIViewController? = nil, animated: Bool = true) {
+    public func replaceViewController(currentWithNew newVC: UIViewController?, animated: Bool = true) {
         replaceViewController(topViewController, withNew: newVC, animated: animated)
     }
 
