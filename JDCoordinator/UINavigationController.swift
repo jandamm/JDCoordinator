@@ -21,6 +21,17 @@ public enum ViewControllerType {
 }
 
 // MARK: - Default Methods
+public extension UIViewController {
+
+    func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
+        present(viewControllerToPresent, animated: true, completion: completion)
+    }
+    
+    func dismiss(completion: (() -> Void)? = nil) {
+        dismiss(animated: true, completion: completion)
+    }
+}
+
 public extension UINavigationController {
     
     func pushViewController(_ viewController: UIViewController) {
@@ -41,14 +52,6 @@ public extension UINavigationController {
     
     @nonobjc func setViewControllers(_ viewControllers: [UIViewController]) {
         setViewControllers(viewControllers, animated: true)
-    }
-    
-    func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
-        present(viewControllerToPresent, animated: true, completion: completion)
-    }
-    
-    func dismiss(completion: (() -> Void)? = nil) {
-        dismiss(animated: true, completion: completion)
     }
 }
 
