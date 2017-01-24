@@ -118,7 +118,7 @@ public extension JDCoordinatorProtocol {
         navigationController.replaceViewControllers(afterAndIncluding: vc, withNew: newVC, animated: animated)
     }
 
-    func replaceViewControllers(after type: ViewControllerType, withNew newVC: UIViewController?, animated: Bool = true) {
+    func replaceViewControllers(after type: ViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         let vc = type.vc(for: self)
         navigationController.replaceViewControllers(after: vc, withNew: newVC, animated: animated)
     }
