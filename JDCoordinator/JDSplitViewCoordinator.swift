@@ -9,8 +9,7 @@
 import UIKit
 
 /// JDSplitViewCoordinators are meant to coordinate one or more JDCoordinators and ViewControllers within an UISplitViewController and presented within an UINavigationController.
-@objc
-open class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorProtocol, UISplitViewControllerDelegate {
+@objc class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorProtocol, UISplitViewControllerDelegate {
 
     var _rootSplitViewCoordinator = false
 

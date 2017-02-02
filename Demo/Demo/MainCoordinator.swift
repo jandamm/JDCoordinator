@@ -31,16 +31,16 @@ class MainCoordinator: JDParentCoordinator, MainDelegate {
         delegate?.reloadData()
     }
 
-    func showSplit() {
-        showInterface()
-    }
+//    func showSplit() {
+//        showInterface()
+//    }
 
-    func showInterface() {
-        let coord = SplitViewCoordinator(with: navigationController)
-        coord.delegate = self
-        addChildCoordinator(coord)
-        coord.start()
-    }
+//    func showInterface() {
+//        let coord = SplitViewCoordinator(with: navigationController)
+//        coord.delegate = self
+//        addChildCoordinator(coord)
+//        coord.start()
+//    }
 
     deinit {
         NSLog("\(type(of: self)) got deinitialized")
