@@ -31,15 +31,12 @@ open class JDCoordinator: NSObject, JDCoordinatorProtocol {
     }
 
     /// This navigationController pushes all ViewControllers
-    public var navigationController: UINavigationController {
-        return _navigationController
-    }
-
-    private unowned let _navigationController: UINavigationController
+    public unowned let navigationController: UINavigationController
 
     /// Initialize the JDCoordinator a UINavigationController
+    /// - parameter navigationController: NavigationController where every navigation should start from.
     public init(with navigationController: UINavigationController) {
-        _navigationController = navigationController
+        self.navigationController = navigationController
 
         super.init()
     }
