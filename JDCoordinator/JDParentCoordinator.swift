@@ -18,6 +18,7 @@ open class JDParentCoordinator: JDCoordinator, JDParentCoordinatorProtocol {
     /// Add a JDCoordinator as a child
     public func addChildCoordinator(_ coordinator: JDCoordinator) {
         childCoordinators.append(coordinator)
+        coordinator.parentCoordinator = self
     }
 
     /// Remove a child JDCoordinator
