@@ -11,17 +11,32 @@ import UIKit
 /// JDCoordinators are meant to coordinate one or more ViewControllers
 @objc
 open class JDCoordinator: NSObject, JDCoordinatorProtocol {
+    
+    /// Returns direct parentCoordinator
+    public internal(set) var parentCoordinator: JDParentCoordinator?
+    
+    /// Returns every parentCoordinator.
+    /// 
+    /// .first is .parentCoordinator. .last is uppermost Coordinator in stack (AppCoordinator in a default setup).
+    public var parentCoordinators: [JDParentCoordinator] {
+        var coords: [JDParentCoordinator] = []
+        var coord = self
 
-    /// This navigationController pushes all ViewControllers
-    public var navigationController: UINavigationController {
-        return _navigationController
+        while let parent = coord.parentCoordinator {
+            coords.append(parent)
+            coord = parent
+        }
+
+        return coords
     }
 
-    private unowned let _navigationController: UINavigationController
+    /// This navigationController pushes all ViewControllers
+    public unowned let navigationController: UINavigationController
 
     /// Initialize the JDCoordinator a UINavigationController
+    /// - parameter navigationController: NavigationController where every navigation should start from.
     public init(with navigationController: UINavigationController) {
-        _navigationController = navigationController
+        self.navigationController = navigationController
 
         super.init()
     }
