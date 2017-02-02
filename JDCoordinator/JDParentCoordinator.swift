@@ -12,22 +12,27 @@ import UIKit
 @objc
 open class JDParentCoordinator: JDCoordinator, JDParentCoordinatorProtocol {
 
-    /// List of all loaded ChildCoordinators
+    /// List of all ChildCoordinators
     private(set) public var childCoordinators = [JDCoordinator]()
 
-    /// Add a JDCoordinator as a child
+    /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
+    /// - parameter coordinator: The Coordinator that should be added as child.
     public func addChildCoordinator(_ coordinator: JDCoordinator) {
+        coordinator.parentCoordinator?.removeChildCoordinator(coordinator)
         childCoordinators.append(coordinator)
+        coordinator.parentCoordinator = self
     }
 
-    /// Remove a child JDCoordinator
+    /// Removes a child JDCoordinator.
+    /// - parameter coordinator: The Coordinator that should be removed childCoordinators.
     public func removeChildCoordinator(_ coordinator: JDCoordinator) {
         if let index = childCoordinators.index(of: coordinator) {
             childCoordinators.remove(at: index)
         }
     }
 
-    /// Remove all child JDCoordinator except the given one
+    /// Removes all childCoordinators.
+    /// - parameter coordinator: The Coordinator that shouldn't be removed from childCoordinators.
     public func removeAllChildCoordinators(except coordinator: JDCoordinator? = nil) {
         let oldCoordinators = childCoordinators
 
