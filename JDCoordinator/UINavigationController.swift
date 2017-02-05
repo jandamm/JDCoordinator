@@ -26,30 +26,30 @@ public extension UIViewController {
     func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
         present(viewControllerToPresent, animated: true, completion: completion)
     }
-    
+
     func dismiss(completion: (() -> Void)? = nil) {
         dismiss(animated: true, completion: completion)
     }
 }
 
 public extension UINavigationController {
-    
+
     func pushViewController(_ viewController: UIViewController) {
         pushViewController(viewController, animated: true)
     }
-    
+
     @discardableResult func popViewController() -> UIViewController? {
         return popViewController(animated: true)
     }
-    
+
     @discardableResult func popToViewController(_ viewController: UIViewController) -> [UIViewController]? {
         return popToViewController(viewController, animated: true)
     }
-    
+
     @discardableResult func popToRootViewController() -> [UIViewController]? {
         return popToRootViewController(animated: true)
     }
-    
+
     @nonobjc func setViewControllers(_ viewControllers: [UIViewController]) {
         setViewControllers(viewControllers, animated: true)
     }

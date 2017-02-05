@@ -11,12 +11,12 @@ import UIKit
 /// JDCoordinators are meant to coordinate one or more ViewControllers
 @objc
 open class JDCoordinator: NSObject, JDCoordinatorProtocol {
-    
+
     /// Returns direct parentCoordinator
-    public internal(set) var parentCoordinator: JDParentCoordinator?
-    
+    internal(set) public var parentCoordinator: JDParentCoordinator?
+
     /// Returns every parentCoordinator.
-    /// 
+    ///
     /// .first is .parentCoordinator. .last is uppermost Coordinator in stack (AppCoordinator in a default setup).
     public var parentCoordinators: [JDParentCoordinator] {
         var coords: [JDParentCoordinator] = []

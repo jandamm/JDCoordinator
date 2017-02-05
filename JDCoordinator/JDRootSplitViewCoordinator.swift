@@ -11,7 +11,7 @@ import UIKit
 /// JDRootSplitViewCoordinators are meant to coordinate one or more JDCoordinators and ViewControllers within an UISplitViewController and used as rootViewController.
 /// JDRootSplitViewCoordinator will work like JDSplitViewCoordinator but you have to set it as rootViewController and cannot implement it into an UINavigationController.
 /// JDRootSplitViewController will crash whenever you try to access the navigationController or splitViewPresenter as they shouldn't be used.
-//@objc class JDRootSplitViewCoordinator: JDSplitViewCoordinator {
+// @objc class JDRootSplitViewCoordinator: JDSplitViewCoordinator {
 //
 //    private enum Errors: String {
 //        case navigationController, splitViewPresenter
@@ -44,4 +44,4 @@ import UIKit
 //
 //        _splitViewController = splitView
 //    }
-//}
+// }
