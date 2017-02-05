@@ -12,7 +12,7 @@ public enum ViewControllerType {
     case current
     case previous
 
-    func vc(for coord: JDCoordinatorProtocol) -> UIViewController? {
+    func vc(for coord: JDNavigationCoordinator) -> UIViewController? {
         switch self {
         case .current: return coord.navigationController.topViewController
         case .previous: return coord.previousViewController

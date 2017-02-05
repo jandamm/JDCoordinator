@@ -1,54 +1,34 @@
 //
-//  JDCoordinatorProtocol.swift
+//  JDNavigationCoordinator.swift
 //  JDCoordinator
 //
-//  Created by Jan Dammshäuser on 05.09.16.
-//  Copyright © 2016 Jan Dammshäuser. All rights reserved.
+//  Created by Jan Dammshäuser on 05/02/2017.
+//  Copyright © 2017 Jan Dammshäuser. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-/// Use this protocol for weak pointers to delegates of JDCoordinators in ViewControllers.
-@objc
-public protocol JDCoordinatorViewControllerDelegate: NSObjectProtocol {
-    @objc optional func presentedVC(_ vc: UIViewController, movedTo parent: UIViewController?)
-}
-
-/// Use this protocol for weak pointers to delegates of JDParentCoordinators in JDCoordinators.
-public typealias JDCoordinatorCoordinatorDelegate = JDParentCoordinatorProtocol
-
-/// Blueprint of JDCoordinators
-@objc
-public protocol JDCoordinatorProtocol: JDCoordinatorViewControllerDelegate {
+public protocol JDNavigationCoordinator: JDBaseCoordinatorProtocol {
+    /// This navigationController pushes all ViewControllers
     var navigationController: UINavigationController { get }
-    var previousViewController: UIViewController? { get }
-    func start()
+
+    /// You can use this value to save the ViewController which were presented when you started the Coordinator
+    var previousViewController: UIViewController? { get set }
+
+    /// This method sets navigationController.topViewController to previousViewController
+    func setPreviousViewControllerToCurrent()
 }
 
-/// Blueprint of JDParentCoordinators
-@objc
-public protocol JDParentCoordinatorProtocol: JDCoordinatorProtocol {
-    var childCoordinators: [JDCoordinator] { get }
-    func addChildCoordinator(_ coordinator: JDCoordinator)
-    func removeChildCoordinator(_ coordinator: JDCoordinator)
-}
+public extension JDNavigationCoordinator {
 
-/// Blueprint of JDSplitViewCoordinatorProtocol
-@objc
-public protocol JDSplitViewCoordinatorProtocol: JDParentCoordinatorProtocol {
-    var splitViewPresenter: UIViewController { get }
-    var splitViewController: JDSplitViewController { get }
-    var masterCoordinator: JDCoordinator? { get }
-
-    var masterNavigationController: UINavigationController! { get }
-    func setMasterNavigationController(_ vc: UINavigationController, withMasterCoordinator masterCoord: JDCoordinator?, andStart start: Bool)
-
-    var detailNavigationController: UINavigationController! { get }
-    func showDetailNavigationController(_ vc: UINavigationController, withDetailCoordinator coord: JDCoordinator?, andStart start: Bool, fromSender sender: Any?)
+    /// This method sets navigationController.topViewController to previousViewController
+    func setPreviousViewControllerToCurrent() {
+        previousViewController = navigationController.topViewController
+    }
 }
 
 // MARK: - Default Methods
-public extension JDCoordinatorProtocol {
+public extension JDNavigationCoordinator {
 
     /// Convenience method to pushViewController directly within JDCoordinators navigationController
     func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
@@ -87,7 +67,7 @@ public extension JDCoordinatorProtocol {
 }
 
 // MARK: - Custom Methods
-public extension JDCoordinatorProtocol {
+public extension JDNavigationCoordinator {
 
     func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.setViewController(viewController, animated: animated)

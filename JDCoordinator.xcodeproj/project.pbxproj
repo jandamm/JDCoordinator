@@ -11,10 +11,14 @@
 		A787012F1E479CB500718A61 /* JDCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787012A1E479CB500718A61 /* JDCoordinator.swift */; };
 		A78701301E479CB500718A61 /* JDNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787012B1E479CB500718A61 /* JDNavigationController.swift */; };
 		A78701311E479CB500718A61 /* JDParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787012C1E479CB500718A61 /* JDParentCoordinator.swift */; };
-		A78701321E479CB500718A61 /* JDRootSplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787012D1E479CB500718A61 /* JDRootSplitViewCoordinator.swift */; };
 		A78701331E479CB500718A61 /* JDSplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787012E1E479CB500718A61 /* JDSplitViewCoordinator.swift */; };
 		A78701351E479CC500718A61 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78701341E479CC500718A61 /* UINavigationController.swift */; };
-		A78701371E479CD700718A61 /* JDCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78701361E479CD700718A61 /* JDCoordinatorProtocol.swift */; };
+		A78701391E479D0D00718A61 /* JDParentCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78701381E479D0D00718A61 /* JDParentCoordinatorProtocol.swift */; };
+		A787013B1E47A12900718A61 /* JDBaseCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787013A1E47A12900718A61 /* JDBaseCoordinatorProtocol.swift */; };
+		A787013D1E47A37D00718A61 /* JDChildCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787013C1E47A37D00718A61 /* JDChildCoordinatorProtocol.swift */; };
+		A787013F1E47A42B00718A61 /* JDNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A787013E1E47A42B00718A61 /* JDNavigationCoordinator.swift */; };
+		A78701411E47AC7100718A61 /* JDAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78701401E47AC7100718A61 /* JDAppCoordinator.swift */; };
+		A78701431E47CDF100718A61 /* JDSplitViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78701421E47CDF100718A61 /* JDSplitViewCoordinatorProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +28,14 @@
 		A787012A1E479CB500718A61 /* JDCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCoordinator.swift; sourceTree = "<group>"; };
 		A787012B1E479CB500718A61 /* JDNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationController.swift; sourceTree = "<group>"; };
 		A787012C1E479CB500718A61 /* JDParentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinator.swift; sourceTree = "<group>"; };
-		A787012D1E479CB500718A61 /* JDRootSplitViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDRootSplitViewCoordinator.swift; sourceTree = "<group>"; };
 		A787012E1E479CB500718A61 /* JDSplitViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinator.swift; sourceTree = "<group>"; };
 		A78701341E479CC500718A61 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		A78701361E479CD700718A61 /* JDCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		A78701381E479D0D00718A61 /* JDParentCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		A787013A1E47A12900718A61 /* JDBaseCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDBaseCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		A787013C1E47A37D00718A61 /* JDChildCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		A787013E1E47A42B00718A61 /* JDNavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationCoordinator.swift; sourceTree = "<group>"; };
+		A78701401E47AC7100718A61 /* JDAppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAppCoordinator.swift; sourceTree = "<group>"; };
+		A78701421E47CDF100718A61 /* JDSplitViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +80,10 @@
 		A78701271E479C8B00718A61 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				A787012A1E479CB500718A61 /* JDCoordinator.swift */,
 				A787012B1E479CB500718A61 /* JDNavigationController.swift */,
+				A78701401E47AC7100718A61 /* JDAppCoordinator.swift */,
+				A787012A1E479CB500718A61 /* JDCoordinator.swift */,
 				A787012C1E479CB500718A61 /* JDParentCoordinator.swift */,
-				A787012D1E479CB500718A61 /* JDRootSplitViewCoordinator.swift */,
 				A787012E1E479CB500718A61 /* JDSplitViewCoordinator.swift */,
 			);
 			path = Classes;
@@ -92,7 +100,11 @@
 		A78701291E479C9F00718A61 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A78701361E479CD700718A61 /* JDCoordinatorProtocol.swift */,
+				A787013A1E47A12900718A61 /* JDBaseCoordinatorProtocol.swift */,
+				A787013E1E47A42B00718A61 /* JDNavigationCoordinator.swift */,
+				A787013C1E47A37D00718A61 /* JDChildCoordinatorProtocol.swift */,
+				A78701381E479D0D00718A61 /* JDParentCoordinatorProtocol.swift */,
+				A78701421E47CDF100718A61 /* JDSplitViewCoordinatorProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -194,13 +206,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A78701321E479CB500718A61 /* JDRootSplitViewCoordinator.swift in Sources */,
 				A787012F1E479CB500718A61 /* JDCoordinator.swift in Sources */,
 				A78701311E479CB500718A61 /* JDParentCoordinator.swift in Sources */,
+				A787013B1E47A12900718A61 /* JDBaseCoordinatorProtocol.swift in Sources */,
+				A78701411E47AC7100718A61 /* JDAppCoordinator.swift in Sources */,
+				A78701431E47CDF100718A61 /* JDSplitViewCoordinatorProtocol.swift in Sources */,
 				A78701351E479CC500718A61 /* UINavigationController.swift in Sources */,
-				A78701371E479CD700718A61 /* JDCoordinatorProtocol.swift in Sources */,
 				A78701301E479CB500718A61 /* JDNavigationController.swift in Sources */,
+				A78701391E479D0D00718A61 /* JDParentCoordinatorProtocol.swift in Sources */,
+				A787013D1E47A37D00718A61 /* JDChildCoordinatorProtocol.swift in Sources */,
 				A78701331E479CB500718A61 /* JDSplitViewCoordinator.swift in Sources */,
+				A787013F1E47A42B00718A61 /* JDNavigationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
