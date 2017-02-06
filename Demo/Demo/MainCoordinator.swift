@@ -27,7 +27,7 @@ class MainCoordinator: JDParentCoordinator, MainDelegate {
     }
 
     func reloadData() {
-        delegate?.removeChildCoordinator(self)
+        parentCoordinator.removeChild(self)
         delegate?.reloadData()
     }
 

@@ -9,6 +9,6 @@
 import UIKit
 
 /// JDParentCoordinators are meant to coordinate one or more JDCoordinators and ViewControllers.
-open class JDParentCoordinator: JDCoordinator, JDParentCoordinatorProtocol, JDParentCoordinatorProtocolHelper {
+open class JDParentCoordinator: JDCoordinator, _JDParentCoordinatorProtocol, JDCoordinatorCoordinatorDelegate {
     internal(set) public var childCoordinators: [JDChildCoordinatorProtocol] = []
 }

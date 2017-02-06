@@ -8,11 +8,11 @@
 
 import UIKit
 
-/// JDCoordinators are meant to coordinate one or more ViewControllers
-open class JDCoordinator: NSObject, JDChildCoordinatorProtocol, JDChildCoordinatorProtocolHelper, JDCoordinatorViewControllerDelegate, JDNavigationCoordinator {
+/// JDCoordinators (JDChildCoordinators) are meant to coordinate one or more ViewControllers and have a parent
+open class JDCoordinator: NSObject, JDNavigationCoordinator, _JDChildCoordinatorProtocol, JDCoordinatorViewControllerDelegate {
 
     /// Returns direct parentCoordinator
-    internal(set) public weak var parentCoordinator: JDParentCoordinatorProtocol?
+    internal(set) public weak var parentCoordinator: JDParentCoordinatorProtocol!
 
     /// This navigationController pushes all ViewControllers
     public unowned let navigationController: UINavigationController

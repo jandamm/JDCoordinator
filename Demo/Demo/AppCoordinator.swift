@@ -8,11 +8,13 @@
 
 import JDCoordinator
 
-class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
+class AppCoordinator: JDAppCoordinator, MainCoordinatorDelegate {
+    private static var _navigationController = UINavigationController()
+    static let main = AppCoordinator(with: AppCoordinator._navigationController)
 
     override func start() {
         super.start()
-
+        
         getData { _ in
 //            self.showMain()
         }
@@ -33,10 +35,10 @@ class AppCoordinator: JDParentCoordinator, MainCoordinatorDelegate {
         start()
     }
 
-//    func showMain() {
-//        let coord = MainCoordinator(with: navigationController)
-//        coord.delegate = self
-//        addChildCoordinator(coord)
-//        coord.start()
-//    }
+    func showMain() {
+        let coord = MainCoordinator(with: navigationController)
+        coord.delegate = self
+        addChild(coord)
+        coord.start()
+    }
 }

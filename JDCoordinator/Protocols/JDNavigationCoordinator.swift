@@ -8,10 +8,24 @@
 
 import Foundation
 
-public protocol JDNavigationCoordinator: JDBaseCoordinatorProtocol {
+public enum JDViewControllerType {
+    case current
+    case previous
+
+    func vc(for coord: JDNavigationCoordinator) -> UIViewController? {
+        switch self {
+        case .current: return coord.navigationController.topViewController
+        case .previous: return coord.previousViewController
+        }
+    }
+}
+
+public protocol JDRootNavigationCoordinator: JDBaseCoordinatorProtocol {
     /// This navigationController pushes all ViewControllers
     var navigationController: UINavigationController { get }
+}
 
+public protocol JDNavigationCoordinator: JDRootNavigationCoordinator {
     /// You can use this value to save the ViewController which were presented when you started the Coordinator
     var previousViewController: UIViewController? { get set }
 
@@ -25,11 +39,21 @@ public extension JDNavigationCoordinator {
     func setPreviousViewControllerToCurrent() {
         previousViewController = navigationController.topViewController
     }
+
+    func replaceViewControllers(after type: JDViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        let vc = type.vc(for: self)
+        navigationController.replaceViewControllers(after: vc, withNew: newVC, animated: animated)
+    }
+
+    func replaceViewController(_ type: JDViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        let vc = type.vc(for: self)
+        navigationController.replaceViewController(vc, withNew: newVC, animated: animated)
+    }
 }
 
-// MARK: - Default Methods
-public extension JDNavigationCoordinator {
+public extension JDRootNavigationCoordinator {
 
+    // MARK: - Default Methods
     /// Convenience method to pushViewController directly within JDCoordinators navigationController
     func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.pushViewController(viewController, animated: animated)
@@ -64,18 +88,10 @@ public extension JDNavigationCoordinator {
     func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
         navigationController.dismiss(animated: animated, completion: completion)
     }
-}
 
-// MARK: - Custom Methods
-public extension JDNavigationCoordinator {
-
+    // MARK: - Custom Methods
     func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.setViewController(viewController, animated: animated)
-    }
-
-    func replaceViewController(_ type: ViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
-        let vc = type.vc(for: self)
-        navigationController.replaceViewController(vc, withNew: newVC, animated: animated)
     }
 
     func replaceViewController(_ vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
@@ -96,10 +112,5 @@ public extension JDNavigationCoordinator {
 
     func replaceViewControllers(afterAndIncluding vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewControllers(afterAndIncluding: vc, withNew: newVC, animated: animated)
-    }
-
-    func replaceViewControllers(after type: ViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
-        let vc = type.vc(for: self)
-        navigationController.replaceViewControllers(after: vc, withNew: newVC, animated: animated)
     }
 }

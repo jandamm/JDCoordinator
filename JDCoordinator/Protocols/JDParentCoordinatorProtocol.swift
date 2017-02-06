@@ -8,51 +8,56 @@
 
 import Foundation
 
-public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
-    var childCoordinators: [JDChildCoordinatorProtocol] { get }
-    func addChildCoordinator(_ coordinator: JDChildCoordinatorProtocol)
-    func removeChildCoordinator(_ coordinator: JDChildCoordinatorProtocol)
+public enum JDChildCoordinatorType {
+    case all, except(JDChildCoordinatorProtocol)
 }
 
-protocol JDParentCoordinatorProtocolHelper: JDParentCoordinatorProtocol {
+public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
+    var childCoordinators: [JDChildCoordinatorProtocol] { get }
+    func addChild(_ coordinator: JDChildCoordinatorProtocol)
+    func removeChild(_ coordinator: JDChildCoordinatorProtocol)
+}
+
+protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
     var childCoordinators: [JDChildCoordinatorProtocol] { get set }
 }
 
-public extension JDParentCoordinatorProtocol {
+// Wait for Swift 3.1
+// public extension Array where Element == JDChildCoordinatorProtocol {
+//
+//    func index(for coordinator: JDChildCoordinatorProtocol) -> Int? {
+//        return self.index(where: { $0 === coordinator })
+//    }
+// }
+
+extension _JDParentCoordinatorProtocol {
 
     /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
-    /// - parameter coordinator: The Coordinator that should be added as child.
-    func addChildCoordinator(_ coordinator: JDChildCoordinatorProtocol) {
-        guard let s = self as? JDParentCoordinatorProtocolHelper, let coordinator = coordinator as? JDChildCoordinatorProtocolHelper else {
-            return
-        }
-        coordinator.parentCoordinator?.removeChildCoordinator(coordinator)
-        s.childCoordinators.append(coordinator)
-        coordinator.parentCoordinator = self
+    /// - parameter coordinator: Has to be a subclass of JDCoordinator default classes.
+    public func addChild(_ coordinator: JDChildCoordinatorProtocol) {
+        coordinator.parentCoordinator?.removeChild(coordinator)
+        childCoordinators.append(coordinator)
+        coordinator.setParent(to: self)
     }
 
     /// Removes a child JDCoordinator.
     /// - parameter coordinator: The Coordinator that should be removed childCoordinators.
-    func removeChildCoordinator(_ coordinator: JDChildCoordinatorProtocol) {
-        guard let s = self as? JDParentCoordinatorProtocolHelper, let index = childCoordinators.index(where: { $0 === coordinator }) else {
+    public func removeChild(_ coordinator: JDChildCoordinatorProtocol) {
+        guard let index = childCoordinators.index(where: { $0 === coordinator }) else {
             return
         }
-        s.childCoordinators.remove(at: index)
+        childCoordinators.remove(at: index)
     }
 
     /// Removes all childCoordinators.
     /// - parameter coordinator: The Coordinator that shouldn't be removed from childCoordinators.
-    func removeAllChildCoordinators(except coordinator: JDChildCoordinatorProtocol? = nil) {
-        guard let x = self as? JDParentCoordinatorProtocolHelper else {
-            return
-        }
-
+    public func removeChilds(_ type: JDChildCoordinatorType) {
         let oldCoordinators = childCoordinators
-        x.childCoordinators.removeAll()
+        childCoordinators.removeAll()
 
-        guard let coordinator = coordinator, let _ = oldCoordinators.index(where: { $0 === coordinator }) else {
+        guard case JDChildCoordinatorType.except(let coordinator) = type, let _ = oldCoordinators.index(where: { $0 === coordinator }) else {
             return
         }
-        x.childCoordinators.append(coordinator)
+        childCoordinators.append(coordinator)
     }
 }

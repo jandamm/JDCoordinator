@@ -14,7 +14,7 @@ import Foundation
 }
 
 /// Use this protocol for weak pointers to delegates of JDParentCoordinators in JDCoordinators.
-public protocol JDCoordinatorCoordinatorDelegate: JDParentCoordinatorProtocol {}
+public protocol JDCoordinatorCoordinatorDelegate: class {}
 
 public protocol JDBaseCoordinatorProtocol: class {
     /// You need to override this method so it pushes the initial ViewController.
