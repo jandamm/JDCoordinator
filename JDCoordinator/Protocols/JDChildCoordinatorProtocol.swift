@@ -12,16 +12,6 @@ public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
     /// Returns direct parentCoordinator
     var parentCoordinator: JDParentCoordinatorProtocol! { get }
 
-    /// Returns every parentCoordinator.
-    ///
-    /// .first is .parentCoordinator. .last is uppermost ChildCoordinator in stack (AppCoordinator in a default setup).
-    var parentCoordinators: [JDParentCoordinatorProtocol] { get }
-
-    /// Returns every parentCoordinator that is a JDChildCoordinator.
-    ///
-    /// .first is .parentCoordinator. .last is uppermost ParentCoordinator in stack. Which should be the AppCoordinators childCoordinator.
-    var childStack: [JDChildCoordinatorProtocol] { get }
-
     func setParent(to coordinator: JDParentCoordinatorProtocol)
 }
 
@@ -60,7 +50,7 @@ public extension JDChildCoordinatorProtocol {
     /// Returns every parentCoordinator that is a JDChildCoordinator.
     ///
     /// .first is .parentCoordinator. .last is uppermost ParentCoordinator in stack. Which should be the AppCoordinators childCoordinator.
-    var childStack: [JDChildCoordinatorProtocol] {
+    internal var childStack: [JDChildCoordinatorProtocol] {
         var coords: [JDChildCoordinatorProtocol] = []
         var coord: JDChildCoordinatorProtocol = self
 

@@ -22,7 +22,7 @@ protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
     var childCoordinators: [JDChildCoordinatorProtocol] { get set }
 }
 
-// Wait for Swift 3.1
+// MARK: - Wait for Swift 3.1
 // public extension Array where Element == JDChildCoordinatorProtocol {
 //
 //    func index(for coordinator: JDChildCoordinatorProtocol) -> Int? {

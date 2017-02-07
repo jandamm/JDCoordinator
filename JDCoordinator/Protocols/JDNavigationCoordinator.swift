@@ -28,9 +28,6 @@ public protocol JDRootNavigationCoordinator: JDBaseCoordinatorProtocol {
 public protocol JDNavigationCoordinator: JDRootNavigationCoordinator {
     /// You can use this value to save the ViewController which were presented when you started the Coordinator
     var previousViewController: UIViewController? { get set }
-
-    /// This method sets navigationController.topViewController to previousViewController
-    func setPreviousViewControllerToCurrent()
 }
 
 public extension JDNavigationCoordinator {
