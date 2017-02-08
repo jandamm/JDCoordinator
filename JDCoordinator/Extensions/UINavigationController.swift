@@ -8,18 +8,6 @@
 
 import Foundation
 
-public enum ViewControllerType {
-    case current
-    case previous
-
-    func vc(for coord: JDCoordinatorProtocol) -> UIViewController? {
-        switch self {
-        case .current: return coord.navigationController.topViewController
-        case .previous: return coord.previousViewController
-        }
-    }
-}
-
 // MARK: - Default Methods
 public extension UIViewController {
 

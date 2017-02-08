@@ -33,7 +33,7 @@ extension MasterCoordinator: MasterDelegate {
     }
 
     func close() {
-        delegate.removeChildCoordinator(self)
+        parentCoordinator.removeChild(self)
         delegate.close()
     }
 }

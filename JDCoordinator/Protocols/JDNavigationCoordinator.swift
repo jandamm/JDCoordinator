@@ -1,55 +1,56 @@
 //
-//  JDCoordinatorProtocol.swift
+//  JDNavigationCoordinator.swift
 //  JDCoordinator
 //
-//  Created by Jan Dammshäuser on 05.09.16.
-//  Copyright © 2016 Jan Dammshäuser. All rights reserved.
+//  Created by Jan Dammshäuser on 05/02/2017.
+//  Copyright © 2017 Jan Dammshäuser. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-/// Use this protocol for weak pointers to delegates of JDCoordinators in ViewControllers.
-@objc
-public protocol JDCoordinatorViewControllerDelegate: NSObjectProtocol {
-    @objc optional func presentedVC(_ vc: UIViewController, movedTo parent: UIViewController?)
+public enum JDViewControllerType {
+    case current
+    case previous
+
+    func vc(for coord: JDNavigationCoordinator) -> UIViewController? {
+        switch self {
+        case .current: return coord.navigationController.topViewController
+        case .previous: return coord.previousViewController
+        }
+    }
 }
 
-/// Use this protocol for weak pointers to delegates of JDParentCoordinators in JDCoordinators.
-public typealias JDCoordinatorCoordinatorDelegate = JDParentCoordinatorProtocol
-
-/// Blueprint of JDCoordinators
-@objc
-public protocol JDCoordinatorProtocol: JDCoordinatorViewControllerDelegate {
+public protocol JDRootNavigationCoordinator: JDBaseCoordinatorProtocol {
+    /// This navigationController pushes all ViewControllers
     var navigationController: UINavigationController { get }
-    var previousViewController: UIViewController? { get }
-    func start()
 }
 
-/// Blueprint of JDParentCoordinators
-@objc
-public protocol JDParentCoordinatorProtocol: JDCoordinatorProtocol {
-    var childCoordinators: [JDCoordinator] { get }
-    func addChildCoordinator(_ coordinator: JDCoordinator)
-    func removeChildCoordinator(_ coordinator: JDCoordinator)
+public protocol JDNavigationCoordinator: JDRootNavigationCoordinator {
+    /// You can use this value to save the ViewController which were presented when you started the Coordinator
+    var previousViewController: UIViewController? { get set }
 }
 
-/// Blueprint of JDSplitViewCoordinatorProtocol
-@objc
-public protocol JDSplitViewCoordinatorProtocol: JDParentCoordinatorProtocol {
-    var splitViewPresenter: UIViewController { get }
-    var splitViewController: JDSplitViewController { get }
-    var masterCoordinator: JDCoordinator? { get }
+public extension JDNavigationCoordinator {
 
-    var masterNavigationController: UINavigationController! { get }
-    func setMasterNavigationController(_ vc: UINavigationController, withMasterCoordinator masterCoord: JDCoordinator?, andStart start: Bool)
+    /// This method sets navigationController.topViewController to previousViewController
+    func setPreviousViewControllerToCurrent() {
+        previousViewController = navigationController.topViewController
+    }
 
-    var detailNavigationController: UINavigationController! { get }
-    func showDetailNavigationController(_ vc: UINavigationController, withDetailCoordinator coord: JDCoordinator?, andStart start: Bool, fromSender sender: Any?)
+    func replaceViewControllers(after type: JDViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        let vc = type.vc(for: self)
+        navigationController.replaceViewControllers(after: vc, withNew: newVC, animated: animated)
+    }
+
+    func replaceViewController(_ type: JDViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+        let vc = type.vc(for: self)
+        navigationController.replaceViewController(vc, withNew: newVC, animated: animated)
+    }
 }
 
-// MARK: - Default Methods
-public extension JDCoordinatorProtocol {
+public extension JDRootNavigationCoordinator {
 
+    // MARK: - Default Methods
     /// Convenience method to pushViewController directly within JDCoordinators navigationController
     func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.pushViewController(viewController, animated: animated)
@@ -84,18 +85,10 @@ public extension JDCoordinatorProtocol {
     func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
         navigationController.dismiss(animated: animated, completion: completion)
     }
-}
 
-// MARK: - Custom Methods
-public extension JDCoordinatorProtocol {
-
+    // MARK: - Custom Methods
     func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.setViewController(viewController, animated: animated)
-    }
-
-    func replaceViewController(_ type: ViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
-        let vc = type.vc(for: self)
-        navigationController.replaceViewController(vc, withNew: newVC, animated: animated)
     }
 
     func replaceViewController(_ vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
@@ -116,10 +109,5 @@ public extension JDCoordinatorProtocol {
 
     func replaceViewControllers(afterAndIncluding vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewControllers(afterAndIncluding: vc, withNew: newVC, animated: animated)
-    }
-
-    func replaceViewControllers(after type: ViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
-        let vc = type.vc(for: self)
-        navigationController.replaceViewControllers(after: vc, withNew: newVC, animated: animated)
     }
 }

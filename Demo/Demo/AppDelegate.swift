@@ -16,21 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var rootViewController: UINavigationController!
 
-    var appCoordinator: JDCoordinator!
-
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         let windowFrame = UIScreen.main.bounds
         let window = UIWindow(frame: windowFrame)
 
-        rootViewController = JDNavigationController()
+        rootViewController = AppCoordinator.main.navigationController
         // rootViewController.setNavigationBarHidden(true, animated: false)
-
-        appCoordinator = AppCoordinator(with: rootViewController)
 
         window.rootViewController = rootViewController
 
-        appCoordinator.start()
+        AppCoordinator.main.start()
 
         window.makeKeyAndVisible()
 
