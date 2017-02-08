@@ -23,12 +23,31 @@ protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
 }
 
 // MARK: - Wait for Swift 3.1
-// public extension Array where Element == JDChildCoordinatorProtocol {
+// public extension Array where Element == JDBaseCoordinatorProtocol {
 //
 //    func index(for coordinator: JDChildCoordinatorProtocol) -> Int? {
 //        return self.index(where: { $0 === coordinator })
 //    }
 // }
+
+public extension JDParentCoordinatorProtocol {
+
+    func addChild(andStart coordinator: JDChildCoordinatorProtocol) {
+        addChild(coordinator)
+        coordinator.start()
+    }
+
+    func removeChilds(_ coordinators: [JDChildCoordinatorProtocol]) {
+        for coordinator in coordinators {
+            removeChild(coordinator)
+        }
+    }
+
+    func removeChilds(withStackOf coordinator: JDChildCoordinatorProtocol) {
+        // TODO: - Improve removing Stack
+        removeChilds(coordinator.childStack)
+    }
+}
 
 extension _JDParentCoordinatorProtocol {
 

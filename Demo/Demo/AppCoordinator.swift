@@ -38,7 +38,6 @@ class AppCoordinator: JDAppCoordinator, MainCoordinatorDelegate {
     func showMain() {
         let coord = MainCoordinator(with: navigationController)
         coord.delegate = self
-        addChild(coord)
-        coord.start()
+        addChild(andStart: coord)
     }
 }
