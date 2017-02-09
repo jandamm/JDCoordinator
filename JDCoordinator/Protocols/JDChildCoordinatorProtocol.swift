@@ -26,10 +26,12 @@ protocol _JDChildCoordinatorProtocol: JDChildCoordinatorProtocol {
 extension _JDChildCoordinatorProtocol {
 
     public func setParent(to coordinator: JDParentCoordinatorProtocol) {
-        guard let _ = coordinator.childCoordinators.index(where: { $0 === self }) else {
+        guard parentCoordinator !== coordinator else {
             return
         }
-        parentCoordinator.removeChild(self)
+        guard coordinator.childCoordinators.index(where: { $0 === self }) != nil else {
+            return coordinator.addChild(self)
+        }
         parentCoordinator = coordinator
     }
 }

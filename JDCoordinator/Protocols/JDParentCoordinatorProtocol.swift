@@ -73,6 +73,9 @@ public extension JDParentCoordinatorProtocol {
 extension _JDParentCoordinatorProtocol {
 
     public func addChild(_ coordinator: JDChildCoordinatorProtocol) {
+        guard childCoordinators.index(where: { $0 === coordinator }) == nil else {
+            return
+        }
         coordinator.parentCoordinator.removeChild(coordinator)
         childCoordinators.append(coordinator)
         coordinator.setParent(to: self)
