@@ -7,13 +7,11 @@
 //
 
 import Foundation
+
+/// Use this class only once in your app. It should be the Coordinator where every navigation is started from.
+///
 /// You may want to create a static let main: Self singleton.
-open class JDAppCoordinator: NSObject, JDRootNavigationCoordinator, _JDParentCoordinatorProtocol, JDCoordinatorCoordinatorDelegate, JDCoordinatorViewControllerDelegate {
-
-    internal(set) public var childCoordinators: [JDChildCoordinatorProtocol] = []
-
-    /// This navigationController pushes all ViewControllers
-    public unowned let navigationController: UINavigationController
+open class JDAppCoordinator: NSObject, JDRootNavigationCoordinatorProtocol, _JDParentCoordinatorProtocol, JDCoordinatorCoordinatorDelegate, JDCoordinatorViewControllerDelegate {
 
     /// Initialize the JDCoordinator a UINavigationController
     /// - parameter navigationController: NavigationController where every navigation should start from.
@@ -23,6 +21,8 @@ open class JDAppCoordinator: NSObject, JDRootNavigationCoordinator, _JDParentCoo
         super.init()
     }
 
-    /// You need to override this method so it pushes the initial ViewController.
+    // MARK: - Protocols
+    internal(set) public var childCoordinators: [JDChildCoordinatorProtocol] = []
+    public unowned let navigationController: UINavigationController
     open func start() {}
 }

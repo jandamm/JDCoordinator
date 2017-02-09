@@ -16,7 +16,7 @@ class AppCoordinator: JDAppCoordinator, MainCoordinatorDelegate {
         super.start()
         
         getData { _ in
-//            self.showMain()
+            self.showMain()
         }
 
         let introVC = IntroVC()
@@ -36,7 +36,7 @@ class AppCoordinator: JDAppCoordinator, MainCoordinatorDelegate {
     }
 
     func showMain() {
-        let coord = MainCoordinator(with: navigationController)
+        let coord = MainCoordinator(with: navigationController, andParent: self)
         coord.delegate = self
         addChild(andStart: coord)
     }

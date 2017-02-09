@@ -12,9 +12,18 @@ public enum JDChildCoordinatorType {
     case all, except(JDChildCoordinatorProtocol)
 }
 
+/// Defines Coordinator which can have children.
 public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
+
+    /// Array of all childCoordinators
     var childCoordinators: [JDChildCoordinatorProtocol] { get }
+
+    /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
+    /// - parameter coordinator: Coordinator which should be added as child.
     func addChild(_ coordinator: JDChildCoordinatorProtocol)
+
+    /// Removes coordinator from childCoordinators
+    /// - parameter coordinator: Coordinator which should be removed
     func removeChild(_ coordinator: JDChildCoordinatorProtocol)
 }
 
@@ -32,17 +41,23 @@ protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
 
 public extension JDParentCoordinatorProtocol {
 
+    /// Adds a JDCoordinator as a child, removes it from previous parentCoordinator and starts it.
+    /// - parameter coordinator: Coordinator which should be added as child.
     func addChild(andStart coordinator: JDChildCoordinatorProtocol) {
         addChild(coordinator)
         coordinator.start()
     }
 
+    /// Removes multiple Coordinators
+    /// - parameter coordinators: Coordinators which should be removed
     func removeChilds(_ coordinators: [JDChildCoordinatorProtocol]) {
         for coordinator in coordinators {
             removeChild(coordinator)
         }
     }
 
+    /// Removes a whole branch of coordinators by giving one child within this tree.
+    /// - parameter coordinator: ChildCoordinator whose tree should be removed.
     func removeChilds(withStackOf coordinator: JDChildCoordinatorProtocol) {
         guard coordinator.parentCoordinator !== self else {
             return removeChild(coordinator)
@@ -57,16 +72,12 @@ public extension JDParentCoordinatorProtocol {
 
 extension _JDParentCoordinatorProtocol {
 
-    /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
-    /// - parameter coordinator: Has to be a subclass of JDCoordinator default classes.
     public func addChild(_ coordinator: JDChildCoordinatorProtocol) {
-        coordinator.parentCoordinator?.removeChild(coordinator)
+        coordinator.parentCoordinator.removeChild(coordinator)
         childCoordinators.append(coordinator)
         coordinator.setParent(to: self)
     }
 
-    /// Removes a child JDCoordinator.
-    /// - parameter coordinator: The Coordinator that should be removed childCoordinators.
     public func removeChild(_ coordinator: JDChildCoordinatorProtocol) {
         guard let index = childCoordinators.index(where: { $0 === coordinator }) else {
             return
@@ -75,7 +86,7 @@ extension _JDParentCoordinatorProtocol {
     }
 
     /// Removes all childCoordinators.
-    /// - parameter coordinator: The Coordinator that shouldn't be removed from childCoordinators.
+    /// - parameter type: Define which type of ChildCoordinators should stay childs.
     public func removeChilds(_ type: JDChildCoordinatorType) {
         let oldCoordinators = childCoordinators
         childCoordinators.removeAll()

@@ -8,47 +8,61 @@
 
 import Foundation
 
+/// Defines viewController for JDNavigationCoordinatorProtocol
+/// - current: navigationController.topViewController
+/// - previous: previousViewController
+/// - visible: navigationController.visibleViewController
 public enum JDViewControllerType {
     case current
     case previous
+    case visible
 
-    func vc(for coord: JDNavigationCoordinator) -> UIViewController? {
+    func vc(for coord: JDNavigationCoordinatorProtocol) -> UIViewController? {
         switch self {
         case .current: return coord.navigationController.topViewController
         case .previous: return coord.previousViewController
+        case .visible: return coord.navigationController.visibleViewController
         }
     }
 }
 
-public protocol JDRootNavigationCoordinator: JDBaseCoordinatorProtocol {
+/// A Coordinator that has a navigationController
+public protocol JDRootNavigationCoordinatorProtocol: JDBaseCoordinatorProtocol {
+
     /// This navigationController pushes all ViewControllers
     var navigationController: UINavigationController { get }
 }
 
-public protocol JDNavigationCoordinator: JDRootNavigationCoordinator {
+/// A Coordinator that has a navigationController and wasn't the first Coordinator in stack.
+public protocol JDNavigationCoordinatorProtocol: JDRootNavigationCoordinatorProtocol {
+
     /// You can use this value to save the ViewController which were presented when you started the Coordinator
     var previousViewController: UIViewController? { get set }
 }
 
-public extension JDNavigationCoordinator {
+public extension JDNavigationCoordinatorProtocol {
 
     /// This method sets navigationController.topViewController to previousViewController
     func setPreviousViewControllerToCurrent() {
         previousViewController = navigationController.topViewController
     }
 
+    /// Removes all ViewControllers newer than the given one and pushes to newViewController. Pops if no newVC is given.
+    ///
+    /// If no newVC and no replaceVCs are given or replaceVC is on top of stack it does nothing
     func replaceViewControllers(after type: JDViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         let vc = type.vc(for: self)
         navigationController.replaceViewControllers(after: vc, withNew: newVC, animated: animated)
     }
 
+    /// Use method to replace the given UIViewController, nil will pushViewController
     func replaceViewController(_ type: JDViewControllerType, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         let vc = type.vc(for: self)
         navigationController.replaceViewController(vc, withNew: newVC, animated: animated)
     }
 }
 
-public extension JDRootNavigationCoordinator {
+public extension JDRootNavigationCoordinatorProtocol {
 
     // MARK: - Default Methods
     /// Convenience method to pushViewController directly within JDCoordinators navigationController
@@ -87,26 +101,36 @@ public extension JDRootNavigationCoordinator {
     }
 
     // MARK: - Custom Methods
+    /// Convenience method to setViewController directly within JDCoordinators navigationController
     func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.setViewController(viewController, animated: animated)
     }
 
+    /// Use method to replace the given UIViewController, nil will pushViewController
     func replaceViewController(_ vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewController(vc, withNew: newVC, animated: animated)
     }
 
+    /// Use method to replace UINavigationControllers last x topViewController
     func replaceViewControllers(last count: Int, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewControllers(last: count, withNew: newVC, animated: animated)
     }
 
+    /// Use method to replace the given Array of UIViewController, nil will pushViewController
     func replaceViewControllers(_ vcs: [UIViewController?], withNew newVC: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewControllers(vcs, withNew: newVC, animated: animated)
     }
 
+    /// Removes all ViewControllers newer than the given one and pushes to newViewController. Pops if no newVC is given.
+    ///
+    /// If no newVC and no replaceVCs are given or replaceVC is on top of stack it does nothing
     func replaceViewControllers(after vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewControllers(after: vc, withNew: newVC, animated: animated)
     }
 
+    /// Removes the given and all newer ViewControllers and pushes to newViewController. Pops if no newVC is given.
+    ///
+    /// If no newVC and no replaceVCs are given or replaceVC is on top of stack it does nothing
     func replaceViewControllers(afterAndIncluding vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewControllers(afterAndIncluding: vc, withNew: newVC, animated: animated)
     }

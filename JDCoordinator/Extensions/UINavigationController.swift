@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Default Methods
-public extension UIViewController {
+extension UIViewController {
 
     func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
         present(viewControllerToPresent, animated: true, completion: completion)
@@ -20,7 +20,7 @@ public extension UIViewController {
     }
 }
 
-public extension UINavigationController {
+extension UINavigationController {
 
     func pushViewController(_ viewController: UIViewController) {
         pushViewController(viewController, animated: true)
@@ -44,7 +44,7 @@ public extension UINavigationController {
 }
 
 // MARK: - Custom Methods
-public extension UINavigationController {
+extension UINavigationController {
 
     public func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         setViewControllers([viewController], animated: animated)
@@ -104,12 +104,14 @@ public extension UINavigationController {
     }
 
     /// Removes the given and all newer ViewControllers and pushes to newViewController. Pops if no newVC is given.
+    ///
     /// If no newVC and no replaceVCs are given or replaceVC is on top of stack it does nothing
     public func replaceViewControllers(afterAndIncluding vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         replaceViewControllersAfter(vc, including: true, newVC: newVC, animated: animated)
     }
 
     /// Removes all ViewControllers newer than the given one and pushes to newViewController. Pops if no newVC is given.
+    ///
     /// If no newVC and no replaceVCs are given or replaceVC is on top of stack it does nothing
     public func replaceViewControllers(after vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         replaceViewControllersAfter(vc, including: false, newVC: newVC, animated: animated)

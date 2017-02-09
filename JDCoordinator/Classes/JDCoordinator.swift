@@ -9,25 +9,23 @@
 import UIKit
 
 /// JDCoordinators (JDChildCoordinators) are meant to coordinate one or more ViewControllers and have a parent
-open class JDCoordinator: NSObject, JDNavigationCoordinator, _JDChildCoordinatorProtocol, JDCoordinatorViewControllerDelegate {
-
-    /// Returns direct parentCoordinator
-    internal(set) public weak var parentCoordinator: JDParentCoordinatorProtocol!
-
-    /// This navigationController pushes all ViewControllers
-    public unowned let navigationController: UINavigationController
-
-    /// You can use this value to save the ViewController which were presented when you started the Coordinator
-    public weak var previousViewController: UIViewController?
+open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoordinatorProtocol, JDCoordinatorViewControllerDelegate {
 
     /// Initialize the JDCoordinator a UINavigationController
     /// - parameter navigationController: NavigationController where every navigation should start from.
-    public init(with navigationController: UINavigationController) {
+    /// - parameter parentCoordinator: Coordinator that should be set as parent and where this coordinator will be added as child.
+    public init(with navigationController: UINavigationController, andParent parentCoordinator: JDParentCoordinatorProtocol) {
         self.navigationController = navigationController
+        self.parentCoordinator = parentCoordinator
 
         super.init()
+
+        parentCoordinator.addChild(self)
     }
 
-    /// You need to override this method so it pushes the initial ViewController.
+    // MARK: - Protocols
+    internal(set) public unowned var parentCoordinator: JDParentCoordinatorProtocol
+    public unowned let navigationController: UINavigationController
+    public weak var previousViewController: UIViewController?
     open func start() {}
 }
