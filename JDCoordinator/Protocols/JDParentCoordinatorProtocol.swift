@@ -44,8 +44,14 @@ public extension JDParentCoordinatorProtocol {
     }
 
     func removeChilds(withStackOf coordinator: JDChildCoordinatorProtocol) {
-        // TODO: - Improve removing Stack
-        removeChilds(coordinator.childStack)
+        guard coordinator.parentCoordinator !== self else {
+            return removeChild(coordinator)
+        }
+        guard let index = coordinator.parentCoordinators.index(where: { $0 === coordinator }) else {
+            return
+        }
+        let coordinator = coordinator.childStack[index]
+        removeChild(coordinator)
     }
 }
 
