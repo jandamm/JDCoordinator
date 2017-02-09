@@ -27,13 +27,17 @@ class MainCoordinator: JDParentCoordinator, MainDelegate {
     }
 
     func reloadData() {
-        parentCoordinator.removeChild(self)
-        delegate?.reloadData()
+//        parentCoordinator.removeChild(self)
+//        delegate?.reloadData()
+        
+        let coord = MainCoordinator(with: navigationController, andParent: self)
+        coord.start()
     }
 
-//    func showSplit() {
+    func showSplit() {
+        print("deactivated for now")
 //        showInterface()
-//    }
+    }
 
 //    func showInterface() {
 //        let coord = SplitViewCoordinator(with: navigationController)

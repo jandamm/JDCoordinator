@@ -10,7 +10,7 @@ import JDCoordinator
 
 protocol MainDelegate: JDCoordinatorViewControllerDelegate {
     func reloadData()
-//    func showSplit()
+    func showSplit()
 }
 
 class MainVC: UIViewController {
@@ -24,15 +24,14 @@ class MainVC: UIViewController {
         super.init(coder: aDecoder)
     }
 
-    weak var delegate: MainDelegate?
+    weak var delegate: MainDelegate!
 
     @IBAction func reloadData(_: UIButton) {
-        delegate?.reloadData()
+        delegate.reloadData()
     }
 
     @IBAction func showSplit(_: UIButton) {
-        print("deactivated for now")
-//        delegate?.showSplit()
+        delegate.showSplit()
     }
 
     deinit {
