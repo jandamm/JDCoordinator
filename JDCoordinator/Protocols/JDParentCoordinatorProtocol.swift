@@ -62,7 +62,7 @@ public extension JDParentCoordinatorProtocol {
         guard coordinator.parentCoordinator !== self else {
             return removeChild(coordinator)
         }
-        guard let index = coordinator.parentCoordinators.index(where: { $0 === coordinator }) else {
+        guard let index = coordinator.parentCoordinators.index(where: { $0 === self }) else {
             return
         }
         let coordinator = coordinator.childStack[index]
