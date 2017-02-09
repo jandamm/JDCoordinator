@@ -76,7 +76,9 @@ extension _JDParentCoordinatorProtocol {
         guard childCoordinators.index(where: { $0 === coordinator }) == nil else {
             return
         }
-        coordinator.parentCoordinator.removeChild(coordinator)
+        if coordinator.parentCoordinator !== self {
+            coordinator.parentCoordinator.removeChild(coordinator)
+        }
         childCoordinators.append(coordinator)
         coordinator.setParent(to: self)
     }
