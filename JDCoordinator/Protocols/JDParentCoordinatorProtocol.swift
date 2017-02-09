@@ -32,10 +32,14 @@ protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
 }
 
 // MARK: - Wait for Swift 3.1
-// public extension Array where Element == JDBaseCoordinatorProtocol {
+// public extension Array where Element == JDChildCoordinatorProtocol {
 //
 //    func index(for coordinator: JDChildCoordinatorProtocol) -> Int? {
 //        return self.index(where: { $0 === coordinator })
+//    }
+//
+//    func contains(_ coordinator: JDChildCoordinatorProtocol) -> Bool {
+//        return self.index(for: coordinator) != nil
 //    }
 // }
 

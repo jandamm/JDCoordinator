@@ -42,29 +42,29 @@ public extension JDChildCoordinatorProtocol {
     ///
     /// .first is .parentCoordinator. .last is uppermost ParentCoordinator in stack. Which should be a JDAppCoordinator.
     var parentCoordinators: [JDParentCoordinatorProtocol] {
-        var coords: [JDParentCoordinatorProtocol] = []
-        var coord: JDChildCoordinatorProtocol? = self
+        var coordinators: [JDParentCoordinatorProtocol] = []
+        var coordinator: JDChildCoordinatorProtocol? = self
 
-        while let parent = coord?.parentCoordinator {
-            coords.append(parent)
-            coord = parent as? JDChildCoordinatorProtocol
+        while let parentCoordinator = coordinator?.parentCoordinator {
+            coordinators.append(parentCoordinator)
+            coordinator = parentCoordinator as? JDChildCoordinatorProtocol
         }
 
-        return coords
+        return coordinators
     }
 
     /// Returns every parentCoordinator that is a JDChildCoordinator.
     ///
     /// .first is self. .last is uppermost ParentCoordinator in stack. Which should be the AppCoordinators childCoordinator.
     internal var childStack: [JDChildCoordinatorProtocol] {
-        var coords: [JDChildCoordinatorProtocol] = [self]
-        var coord: JDChildCoordinatorProtocol = self
+        var coordinators: [JDChildCoordinatorProtocol] = [self]
+        var coordinator: JDChildCoordinatorProtocol = self
 
-        while let parent = coord.parentCoordinator as? JDChildCoordinatorProtocol {
-            coords.append(parent)
-            coord = parent
+        while let parentCoordinator = coordinator.parentCoordinator as? JDChildCoordinatorProtocol {
+            coordinators.append(parentCoordinator)
+            coordinator = parentCoordinator
         }
 
-        return coords
+        return coordinators
     }
 }

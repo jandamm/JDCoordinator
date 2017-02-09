@@ -18,9 +18,9 @@ import Foundation
     /// Implement it into UIViewController.didMove(to:)
     ///
     /// - parameters:
-    ///     - vc: self / presented ViewController
-    ///     - parent: The parent given by didMove(to:)
-    @objc optional func presentedViewController(_ vc: UIViewController, movedTo parent: UIViewController?)
+    ///     - viewController: self / presented ViewController
+    ///     - parentViewController: The parent given by didMove(to:)
+    @objc optional func presentedViewController(_ viewController: UIViewController, didMoveTo parentViewController: UIViewController?)
 }
 
 /// Use this protocol for weak pointers to delegates of JDParentCoordinators in JDCoordinators.

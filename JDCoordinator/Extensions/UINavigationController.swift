@@ -44,24 +44,24 @@ extension UINavigationController {
 }
 
 // MARK: - Custom Methods
-extension UINavigationController {
+public extension UINavigationController {
 
-    public func setViewController(_ viewController: UIViewController, animated: Bool = true) {
+    func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         setViewControllers([viewController], animated: animated)
     }
 
     /// Use method to replace current UINavigationControllers topViewController
-    public func replaceViewController(currentWithNew newVC: UIViewController?, animated: Bool = true) {
+    func replaceViewController(currentWithNew newVC: UIViewController?, animated: Bool = true) {
         replaceViewController(topViewController, withNew: newVC, animated: animated)
     }
 
     /// Use method to replace the given UIViewController, nil will pushViewController
-    public func replaceViewController(_ vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+    func replaceViewController(_ vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         replaceViewControllers([vc], withNew: newVC, animated: animated)
     }
 
     /// Use method to replace UINavigationControllers last x topViewController
-    public func replaceViewControllers(last count: Int, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+    func replaceViewControllers(last count: Int, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         guard count > 0 else {
             if let newVC = newVC {
                 pushViewController(newVC, animated: animated)
@@ -82,7 +82,7 @@ extension UINavigationController {
     }
 
     /// Use method to replace the given Array of UIViewController, nil will pushViewController
-    public func replaceViewControllers(_ vcs: [UIViewController?], withNew newVC: UIViewController? = nil, animated: Bool = true) {
+    func replaceViewControllers(_ vcs: [UIViewController?], withNew newVC: UIViewController? = nil, animated: Bool = true) {
         let vcs = vcs.unwrapped
         var vcStack = viewControllers
 
@@ -106,14 +106,14 @@ extension UINavigationController {
     /// Removes the given and all newer ViewControllers and pushes to newViewController. Pops if no newVC is given.
     ///
     /// If no newVC and no replaceVCs are given or replaceVC is on top of stack it does nothing
-    public func replaceViewControllers(afterAndIncluding vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+    func replaceViewControllers(afterAndIncluding vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         replaceViewControllersAfter(vc, including: true, newVC: newVC, animated: animated)
     }
 
     /// Removes all ViewControllers newer than the given one and pushes to newViewController. Pops if no newVC is given.
     ///
     /// If no newVC and no replaceVCs are given or replaceVC is on top of stack it does nothing
-    public func replaceViewControllers(after vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
+    func replaceViewControllers(after vc: UIViewController?, withNew newVC: UIViewController? = nil, animated: Bool = true) {
         replaceViewControllersAfter(vc, including: false, newVC: newVC, animated: animated)
     }
 
@@ -157,6 +157,7 @@ protocol OptionalType {
 extension Optional: OptionalType {}
 
 extension Sequence where Iterator.Element: OptionalType {
+
     var unwrapped: [Iterator.Element.Wrapped] {
         var result: [Iterator.Element.Wrapped] = []
         for element in self {

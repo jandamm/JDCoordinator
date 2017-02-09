@@ -33,7 +33,7 @@ class SubDetailViewController: UIViewController {
 
     override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
-        delegate?.presentedViewController?(self, movedTo: parent)
+        delegate?.presentedViewController?(self, didMoveTo: parent)
     }
 
     deinit {
