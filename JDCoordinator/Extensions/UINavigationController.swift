@@ -12,10 +12,12 @@ import Foundation
 // MARK: - Default Methods
 extension UIViewController {
 
+    /// Convenience method that will call equally named method with animated: true
     func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
         present(viewControllerToPresent, animated: true, completion: completion)
     }
 
+    /// Convenience method that will call equally named method with animated: true
     func dismiss(completion: (() -> Void)? = nil) {
         dismiss(animated: true, completion: completion)
     }
@@ -23,32 +25,38 @@ extension UIViewController {
 
 extension UINavigationController {
 
+    /// Convenience method that will call equally named method with animated: true
     func pushViewController(_ viewController: UIViewController) {
         pushViewController(viewController, animated: true)
     }
 
+    /// Convenience method that will call equally named method with animated: true
     @discardableResult func popViewController() -> UIViewController? {
         return popViewController(animated: true)
     }
 
+    /// Convenience method that will call equally named method with animated: true
     @discardableResult func popToViewController(_ viewController: UIViewController) -> [UIViewController]? {
         return popToViewController(viewController, animated: true)
     }
 
+    /// Convenience method that will call equally named method with animated: true
     @discardableResult func popToRootViewController() -> [UIViewController]? {
         return popToRootViewController(animated: true)
     }
 
+    /// Convenience method that will call equally named method with animated: true
     @nonobjc func setViewControllers(_ viewControllers: [UIViewController]) {
         setViewControllers(viewControllers, animated: true)
+// MARK: - Public Methods
     }
 
+    /// Convenience method that will call equally named method with animated: true
     func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         setViewControllers([viewController], animated: animated)
     }
 }
 
-// MARK: - Public Methods
 // MARK: - Custom Methods
 public extension UINavigationController {
 
