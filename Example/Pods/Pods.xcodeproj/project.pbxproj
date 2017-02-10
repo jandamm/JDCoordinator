@@ -129,22 +129,14 @@
 			path = "Target Support Files/Pods-JDCoordinator_Example";
 			sourceTree = "<group>";
 		};
-		064AF352C208C2945CA7969E59693E32 /* JDCoordinator */ = {
+		0A5029B1320B717236E98853BB24DEB0 /* JDCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				9BB825E07FE8E5AEDE9F1544C7DFD293 /* JDCoordinator */,
-				2DA88938EE489E3556327879AA81C5FF /* Support Files */,
+				5C6E690E614B333DF233B1B88CD5FA03 /* Classes */,
+				0BD3AD4A1E4E0AEB002A3E9E /* Extensions */,
+				0BD3AD4B1E4E0AFB002A3E9E /* Protocols */,
 			);
 			name = JDCoordinator;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		0A5029B1320B717236E98853BB24DEB0 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				064AF352C208C2945CA7969E59693E32 /* JDCoordinator */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		0BD3AD4A1E4E0AEB002A3E9E /* Extensions */ = {
@@ -152,7 +144,8 @@
 			children = (
 				0BD3AD4C1E4E0B10002A3E9E /* UINavigationController.swift */,
 			);
-			path = Extensions;
+			name = Extensions;
+			path = ../../JDCoordinator/Extensions;
 			sourceTree = "<group>";
 		};
 		0BD3AD4B1E4E0AFB002A3E9E /* Protocols */ = {
@@ -164,7 +157,8 @@
 				0BD3AD511E4E0B20002A3E9E /* JDParentCoordinatorProtocol.swift */,
 				0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinatorProtocol.swift */,
 			);
-			path = Protocols;
+			name = Protocols;
+			path = ../../JDCoordinator/Protocols;
 			sourceTree = "<group>";
 		};
 		2DA88938EE489E3556327879AA81C5FF /* Support Files */ = {
@@ -178,12 +172,13 @@
 				ADE3AD2674394630414E6EB51D803130 /* JDCoordinator-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "Example/Pods/Target Support Files/JDCoordinator";
+			path = "Target Support Files/JDCoordinator";
 			sourceTree = "<group>";
 		};
 		2E4CA4765956E1518057594E3A36144E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DA88938EE489E3556327879AA81C5FF /* Support Files */,
 				05E3C1F251EB3B0C0A3291D3EBC7C35A /* Pods-JDCoordinator_Example */,
 				6CE2ACA3F14D1D278E987BD3BEAB1AC6 /* Pods-JDCoordinator_Tests */,
 			);
@@ -208,7 +203,8 @@
 				0BD3AD441E4E0AE7002A3E9E /* JDParentCoordinator.swift */,
 				0BD3AD451E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift */,
 			);
-			path = Classes;
+			name = Classes;
+			path = ../../JDCoordinator/Classes;
 			sourceTree = "<group>";
 		};
 		6CE2ACA3F14D1D278E987BD3BEAB1AC6 /* Pods-JDCoordinator_Tests */ = {
@@ -242,21 +238,11 @@
 			children = (
 				0BD3AD1F1E4E0932002A3E9E /* JDCoordinator.podspec */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				0A5029B1320B717236E98853BB24DEB0 /* Development Pods */,
+				0A5029B1320B717236E98853BB24DEB0 /* JDCoordinator */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				587C6D5B68E3198DECA51BABF23D8705 /* Products */,
 				2E4CA4765956E1518057594E3A36144E /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		9BB825E07FE8E5AEDE9F1544C7DFD293 /* JDCoordinator */ = {
-			isa = PBXGroup;
-			children = (
-				5C6E690E614B333DF233B1B88CD5FA03 /* Classes */,
-				0BD3AD4A1E4E0AEB002A3E9E /* Extensions */,
-				0BD3AD4B1E4E0AFB002A3E9E /* Protocols */,
-			);
-			path = JDCoordinator;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
