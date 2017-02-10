@@ -19,6 +19,9 @@ public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
     var childCoordinators: [JDChildCoordinatorProtocol] { get }
 
     /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
+    ///
+    /// You do not have to both setParent(to:) and addChild(:)
+    ///
     /// - parameter coordinator: Coordinator which should be added as child.
     func addChild(_ coordinator: JDChildCoordinatorProtocol)
 
@@ -66,9 +69,11 @@ public extension JDParentCoordinatorProtocol {
         guard coordinator.parentCoordinator !== self else {
             return removeChild(coordinator)
         }
+
         guard let index = coordinator.parentCoordinators.index(where: { $0 === self }) else {
             return
         }
+
         let coordinator = coordinator.childStack[index]
         removeChild(coordinator)
     }
@@ -80,10 +85,13 @@ extension _JDParentCoordinatorProtocol {
         guard childCoordinators.index(where: { $0 === coordinator }) == nil else {
             return
         }
+
         if coordinator.parentCoordinator !== self {
             coordinator.parentCoordinator.removeChild(coordinator)
         }
+
         childCoordinators.append(coordinator)
+
         coordinator.setParent(to: self)
     }
 
@@ -91,6 +99,7 @@ extension _JDParentCoordinatorProtocol {
         guard let index = childCoordinators.index(where: { $0 === coordinator }) else {
             return
         }
+
         childCoordinators.remove(at: index)
     }
 
@@ -98,11 +107,13 @@ extension _JDParentCoordinatorProtocol {
     /// - parameter type: Define which type of ChildCoordinators should stay childs.
     public func removeChilds(_ type: JDChildCoordinatorType) {
         let oldCoordinators = childCoordinators
+
         childCoordinators.removeAll()
 
         guard case JDChildCoordinatorType.except(let coordinator) = type, let _ = oldCoordinators.index(where: { $0 === coordinator }) else {
             return
         }
+
         childCoordinators.append(coordinator)
     }
 }

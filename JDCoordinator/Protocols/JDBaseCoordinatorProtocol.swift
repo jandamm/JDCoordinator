@@ -19,7 +19,7 @@ import Foundation
     ///
     /// - parameters:
     ///     - viewController: self / presented ViewController
-    ///     - parentViewController: The parent given by didMove(to:)
+    ///     - parentViewController: The parent given by didMove(toParentViewController:)
     @objc optional func presentedViewController(_ viewController: UIViewController, didMoveTo parentViewController: UIViewController?)
 }
 

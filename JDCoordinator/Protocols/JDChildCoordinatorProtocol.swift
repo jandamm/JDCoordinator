@@ -16,7 +16,7 @@ public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
     /// Set the parentCoordinator and add it to parentCoordinators childCoordinators.
     ///
-    /// You do not have to setParent(to:) and addChild(:)
+    /// You do not have to both setParent(to:) and addChild(:)
     ///
     /// - parameter coordinator: The new parentCoordinator
     func setParent(to coordinator: JDParentCoordinatorProtocol)
