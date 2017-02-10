@@ -1,0 +1,21 @@
+{
+  "name": "JDCoordinator",
+  "version": "0.7.0",
+  "summary": "Library for easier implementation of the coordinator concept by @khanlou.",
+  "homepage": "http://jandamm.de",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jan Dammshäuser": "jandammshaeuser@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/charmaex/JDCoordinator.git",
+    "tag": "0.7.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JDCoordinator/Classes/**/*"
+}

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JDCoordinator_Example' do
+  pod 'JDCoordinator', :path => '../'
+
+  target 'JDCoordinator_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
