@@ -11,10 +11,13 @@ import Foundation
 /// Defines Coordinators which can be children to other coordinators.
 public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
-    /// Returns direct parentCoordinator
+    /// Returns the parentCoordinator of this child.
     var parentCoordinator: JDParentCoordinatorProtocol { get }
 
-    /// Set the parentCoordinator and remove self from old parentCoordinator.
+    /// Set the parentCoordinator and add it to parentCoordinators childCoordinators.
+    ///
+    /// You do not have to setParent(to:) and addChild(:)
+    ///
     /// - parameter coordinator: The new parentCoordinator
     func setParent(to coordinator: JDParentCoordinatorProtocol)
 }
@@ -40,7 +43,7 @@ public extension JDChildCoordinatorProtocol {
 
     /// Returns every parentCoordinator.
     ///
-    /// .first is .parentCoordinator. .last is uppermost ParentCoordinator in stack. Which should be a JDAppCoordinator.
+    /// .first is .parentCoordinator. .last is the AppCoordinator.
     var parentCoordinators: [JDParentCoordinatorProtocol] {
         var coordinators: [JDParentCoordinatorProtocol] = []
         var coordinator: JDChildCoordinatorProtocol? = self
@@ -55,7 +58,7 @@ public extension JDChildCoordinatorProtocol {
 
     /// Returns every parentCoordinator that is a JDChildCoordinator.
     ///
-    /// .first is self. .last is uppermost ParentCoordinator in stack. Which should be the AppCoordinators childCoordinator.
+    /// .first is self. .last is uppermost parent which is also a child. Which is the AppCoordinators direct childCoordinator.
     internal var childStack: [JDChildCoordinatorProtocol] {
         var coordinators: [JDChildCoordinatorProtocol] = [self]
         var coordinator: JDChildCoordinatorProtocol = self

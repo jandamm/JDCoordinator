@@ -15,7 +15,7 @@ public enum JDChildCoordinatorType {
 /// Defines Coordinator which can have children.
 public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
-    /// Array of all childCoordinators
+    /// All ChildCoordinators.
     var childCoordinators: [JDChildCoordinatorProtocol] { get }
 
     /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
