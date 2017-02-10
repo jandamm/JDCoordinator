@@ -10,7 +10,7 @@ import UIKit
 
 /**
  The Coordinator is the simplest class in a NavigationController based application.
- 
+
  The coordinator structure in your app can be seen as a tree. In this example the Coordinator is the end of any branch.
  A Coordinator can only manage ViewControllers and should not reference any other coordinator (except as delegate).
  */

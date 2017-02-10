@@ -1,5 +1,7 @@
 .DS_Store
-/Example/Pods/Pods.xcodeproj/xcuserdata/
+/Example/Pods/Pods.xcodeproj/xcuserdata
+/Example/Pods/Pods.xcodeproj/project.xcworkspace/xcuserdata
 /Example/JDCoordinator.xcworkspace/xcuserdata
-/Example/JDCoordinator.xcodeproj/xcuserdata/
+/Example/JDCoordinator.xcodeproj/xcuserdata
 /Example/JDCoordinator.xcodeproj/project.xcworkspace/xcuserdata
+/Example/build

@@ -48,7 +48,7 @@ public extension JDNavigationCoordinatorProtocol {
     func setPreviousViewControllerToCurrent() {
         previousViewController = navigationController.topViewController
     }
-    
+
     /// Removes the given ViewController and pushes to newViewController.
     ///
     /// If no newViewController and type is empty or on top of stack it does nothing
@@ -167,7 +167,7 @@ public extension JDRootNavigationCoordinatorProtocol {
     func replaceViewControllers(afterAndIncluding viewController: UIViewController?, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewControllers(afterAndIncluding: viewController, withNew: newViewController, animated: animated)
     }
-    
+
     /// Removes the last n ViewControllers and pushes to newViewController.
     ///
     /// If no newViewController and type is empty or on top of stack it does nothing
