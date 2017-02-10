@@ -25,13 +25,14 @@ import Foundation
 
 /// Use this protocol for weak pointers to delegates of JDParentCoordinators in JDCoordinators.
 ///
-/// You only need to implement a delegate if you have to return values from the childCoordinator.
-/// Otherwise you can use parentCoordinator instead.
-public protocol JDCoordinatorCoordinatorDelegate: class {}
+/// You only need to implement a delegate if you have to return values from the childCoordinator or execute an action if the child is removed.
+/// Otherwise use its parentCoordinator.
+@objc public protocol JDCoordinatorCoordinatorDelegate: class {}
 
 /// BaseProtocol where every other CoordinatorProtocol inherits from.
 public protocol JDBaseCoordinatorProtocol: class {
 
     /// You need to override this method so it pushes the initial ViewController.
+    /// You can also load data in this method.
     func start()
 }

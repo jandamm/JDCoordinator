@@ -8,12 +8,17 @@
 
 import UIKit
 
-/// JDCoordinators (JDChildCoordinators) are meant to coordinate one or more ViewControllers and have a parent
+/**
+ The Coordinator is the simplest class in a NavigationController based application.
+
+ The coordinator structure in your app can be seen as a tree. In this example the Coordinator is the end of any branch.
+ A Coordinator can only manage ViewControllers and should not reference any other coordinator (except as delegate).
+ */
 open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoordinatorProtocol, JDCoordinatorViewControllerDelegate {
 
     /// Initialize the JDCoordinator with a UINavigationController and adds it to a parentCoordinator
-    /// - parameter navigationController: NavigationController where every navigation should start from.
-    /// - parameter parentCoordinator: Coordinator that should be set as parent and where this coordinator will be added as child.
+    /// - parameter navigationController: NavigationController where any further navigation should take place.
+    /// - parameter parentCoordinator: Coordinator that should reference this coordinator.
     public init(with navigationController: UINavigationController, andParent parentCoordinator: JDParentCoordinatorProtocol) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator

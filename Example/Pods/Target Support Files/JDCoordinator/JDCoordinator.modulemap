@@ -1,0 +1,6 @@
+framework module JDCoordinator {
+  umbrella header "JDCoordinator-umbrella.h"
+
+  export *
+  module * { export * }
+}
