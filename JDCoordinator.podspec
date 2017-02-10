@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/charmaex/JDCoordinator.git", :tag => "#{s.version}" }
   s.requires_arc = true
 
-  s.source_files  = "JDCoordinator/**/*.{swift}"
+  s.source_files  = "JDCoordinator/Classes/**/*", "JDCoordinator/Extensions/**/*", "JDCoordinator/Protocols/**/*"
 end
