@@ -27,11 +27,8 @@ class MainCoordinator: JDParentCoordinator, MainDelegate {
     }
 
     func reloadData() {
-        //        parentCoordinator.removeChild(self)
-        //        delegate?.reloadData()
-
-        let coord = MainCoordinator(with: navigationController, andParent: self)
-        coord.start()
+        parentCoordinator.removeChild(self)
+        delegate?.reloadData()
     }
 
     func showSplit() {
