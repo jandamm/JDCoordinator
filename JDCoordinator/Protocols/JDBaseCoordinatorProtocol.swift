@@ -27,7 +27,7 @@ import Foundation
 ///
 /// You only need to implement a delegate if you have to return values from the childCoordinator or execute an action if the child is removed.
 /// Otherwise use its parentCoordinator.
-public protocol JDCoordinatorCoordinatorDelegate: class {}
+@objc public protocol JDCoordinatorCoordinatorDelegate: class {}
 
 /// BaseProtocol where every other CoordinatorProtocol inherits from.
 public protocol JDBaseCoordinatorProtocol: class {

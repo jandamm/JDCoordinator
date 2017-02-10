@@ -8,9 +8,8 @@
 
 import Foundation
 
-// MARK: - Internal Methods
 // MARK: - Default Methods
-extension UIViewController {
+public extension UIViewController {
 
     /// Convenience method that will call equally named method with animated: true
     func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
@@ -23,7 +22,7 @@ extension UIViewController {
     }
 }
 
-extension UINavigationController {
+public extension UINavigationController {
 
     /// Convenience method that will call equally named method with animated: true
     func pushViewController(_ viewController: UIViewController) {
@@ -48,7 +47,6 @@ extension UINavigationController {
     /// Convenience method that will call equally named method with animated: true
     @nonobjc func setViewControllers(_ viewControllers: [UIViewController]) {
         setViewControllers(viewControllers, animated: true)
-// MARK: - Public Methods
     }
 
     /// Convenience method that will call equally named method with animated: true

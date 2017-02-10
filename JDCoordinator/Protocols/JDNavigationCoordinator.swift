@@ -8,10 +8,13 @@
 
 import Foundation
 
-/// Defines viewController for JDNavigationCoordinatorProtocol
-/// - current: navigationController.topViewController
+/// Defines viewController for JDRootNavigationCoordinatorProtocol and JDNavigationCoordinatorProtocol
+///
+/// Be aware that not all choices are available for JDRootNavigationCoordinatorProtocol.
+/// Every choice that is always available is bold.
+/// - **current**: navigationController.topViewController
 /// - previous: previousViewController
-/// - visible: navigationController.visibleViewController
+/// - **visible**: navigationController.visibleViewController
 public enum JDViewControllerType {
     case current
     case previous
@@ -19,10 +22,10 @@ public enum JDViewControllerType {
 
     /// Returns the viewController for its type.
     /// - parameter coordinator: The Coordinator whose controller should be returned.
-    public func viewController(for coordinator: JDNavigationCoordinatorProtocol) -> UIViewController? {
+    public func viewController(for coordinator: JDRootNavigationCoordinatorProtocol) -> UIViewController? {
         switch self {
         case .current: return coordinator.navigationController.topViewController
-        case .previous: return coordinator.previousViewController
+        case .previous: return (coordinator as? JDNavigationCoordinatorProtocol)?.previousViewController
         case .visible: return coordinator.navigationController.visibleViewController
         }
     }
@@ -48,6 +51,9 @@ public extension JDNavigationCoordinatorProtocol {
     func setPreviousViewControllerToCurrent() {
         previousViewController = navigationController.topViewController
     }
+}
+
+public extension JDRootNavigationCoordinatorProtocol {
 
     /// Removes the given ViewController and pushes to newViewController.
     ///
@@ -74,9 +80,6 @@ public extension JDNavigationCoordinatorProtocol {
         let vc = type.viewController(for: self)
         replaceViewControllers(after: vc, withNew: newViewController, animated: animated)
     }
-}
-
-public extension JDRootNavigationCoordinatorProtocol {
 
     // MARK: - Default Methods
     /// Convenience method to pushViewController directly within JDCoordinators navigationController
