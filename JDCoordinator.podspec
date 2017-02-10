@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "Jan Dammshäuser" => "jandammshaeuser@gmail.com" }
   s.platform     = :ios
   s.ios.deployment_target = '8.0'
-  s.source       = { :git => "https://github.com/charmaex/JDCoordinator.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/charmaex/JDCoordinator.git", :tag => "v" + s.version.to_s }
   s.requires_arc = true
 
   s.source_files  = "JDCoordinator/Classes/**/*", "JDCoordinator/Extensions/**/*", "JDCoordinator/Protocols/**/*"
