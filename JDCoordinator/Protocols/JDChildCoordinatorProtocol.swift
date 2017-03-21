@@ -12,7 +12,7 @@ import Foundation
 public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
     /// Returns the parentCoordinator of this child.
-    var parentCoordinator: JDParentCoordinatorProtocol { get }
+    var parentCoordinator: JDParentCoordinatorProtocol! { get }
 
     /// Set the parentCoordinator and add it to parentCoordinators childCoordinators.
     ///
@@ -23,7 +23,7 @@ public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
 }
 
 protocol _JDChildCoordinatorProtocol: JDChildCoordinatorProtocol {
-    var parentCoordinator: JDParentCoordinatorProtocol { get set }
+    var parentCoordinator: JDParentCoordinatorProtocol! { get set }
 }
 
 extension _JDChildCoordinatorProtocol {
