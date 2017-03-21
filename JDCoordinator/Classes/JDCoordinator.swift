@@ -29,7 +29,7 @@ open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoo
     }
 
     // MARK: - Protocols
-    internal(set) public unowned var parentCoordinator: JDParentCoordinatorProtocol
+    internal(set) public weak var parentCoordinator: JDParentCoordinatorProtocol!
     public unowned let navigationController: UINavigationController
     public weak var previousViewController: UIViewController?
     open func start() {}
