@@ -34,17 +34,27 @@ protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
     var childCoordinators: [JDChildCoordinatorProtocol] { get set }
 }
 
-// MARK: - Wait for Swift 3.1
-// public extension Array where Element == JDChildCoordinatorProtocol {
-//
-//    func index(for coordinator: JDChildCoordinatorProtocol) -> Int? {
-//        return self.index(where: { $0 === coordinator })
-//    }
-//
-//    func contains(_ coordinator: JDChildCoordinatorProtocol) -> Bool {
-//        return self.index(for: coordinator) != nil
-//    }
-// }
+public extension Array where Element == JDParentCoordinatorProtocol {
+
+    func index(for coordinator: Element) -> Int? {
+        return index(where: { $0 === coordinator })
+    }
+
+    func contains(_ coordinator: Element) -> Bool {
+        return self.index(for: coordinator) != nil
+    }
+}
+
+public extension Array where Element == JDChildCoordinatorProtocol {
+    
+    func index(for coordinator: Element) -> Int? {
+        return self.index(where: { $0 === coordinator })
+    }
+    
+    func contains(_ coordinator: Element) -> Bool {
+        return self.index(for: coordinator) != nil
+    }
+}
 
 public extension JDParentCoordinatorProtocol {
 
@@ -70,7 +80,7 @@ public extension JDParentCoordinatorProtocol {
             return removeChild(coordinator)
         }
 
-        guard let index = coordinator.parentCoordinators.index(where: { $0 === self }) else {
+        guard let index = coordinator.parentCoordinators.index(for: self) else {
             return
         }
 
@@ -82,7 +92,7 @@ public extension JDParentCoordinatorProtocol {
 extension _JDParentCoordinatorProtocol {
 
     public func addChild(_ coordinator: JDChildCoordinatorProtocol) {
-        guard childCoordinators.index(where: { $0 === coordinator }) == nil else {
+        guard !childCoordinators.contains(coordinator) else {
             return
         }
 
@@ -96,7 +106,7 @@ extension _JDParentCoordinatorProtocol {
     }
 
     public func removeChild(_ coordinator: JDChildCoordinatorProtocol) {
-        guard let index = childCoordinators.index(where: { $0 === coordinator }) else {
+        guard let index = childCoordinators.index(for: coordinator) else {
             return
         }
 
@@ -110,7 +120,7 @@ extension _JDParentCoordinatorProtocol {
 
         childCoordinators.removeAll()
 
-        guard case JDChildCoordinatorType.except(let coordinator) = type, let _ = oldCoordinators.index(where: { $0 === coordinator }) else {
+        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(coordinator) else {
             return
         }
 

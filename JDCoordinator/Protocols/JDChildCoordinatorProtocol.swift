@@ -32,7 +32,7 @@ extension _JDChildCoordinatorProtocol {
         guard parentCoordinator !== coordinator else {
             return
         }
-        guard coordinator.childCoordinators.index(where: { $0 === self }) != nil else {
+        guard !coordinator.childCoordinators.contains(self) else {
             return coordinator.addChild(self)
         }
         parentCoordinator = coordinator
