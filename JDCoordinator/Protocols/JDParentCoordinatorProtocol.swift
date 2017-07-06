@@ -41,18 +41,18 @@ public extension Array where Element == JDParentCoordinatorProtocol {
     }
 
     func contains(_ coordinator: Element) -> Bool {
-        return self.index(for: coordinator) != nil
+        return index(for: coordinator) != nil
     }
 }
 
 public extension Array where Element == JDChildCoordinatorProtocol {
-    
+
     func index(for coordinator: Element) -> Int? {
-        return self.index(where: { $0 === coordinator })
+        return index(where: { $0 === coordinator })
     }
-    
+
     func contains(_ coordinator: Element) -> Bool {
-        return self.index(for: coordinator) != nil
+        return index(for: coordinator) != nil
     }
 }
 
@@ -69,6 +69,14 @@ public extension JDParentCoordinatorProtocol {
     /// - parameter coordinators: Coordinators which should be removed
     func removeChilds(_ coordinators: [JDChildCoordinatorProtocol]) {
         for coordinator in coordinators {
+            removeChild(coordinator)
+        }
+    }
+
+    /// Removes all Coordinators except the given ones
+    /// - parameter coordinators: Coordinators which should not be removed
+    func removeChilds(except coordinators: [JDChildCoordinatorProtocol]) {
+        for coordinator in childCoordinators.filter({ !coordinators.contains($0) }) {
             removeChild(coordinator)
         }
     }
