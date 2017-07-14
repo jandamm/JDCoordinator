@@ -185,20 +185,17 @@ extension Array where Element: Comparable & Hashable {
 
 protocol OptionalType {
     associatedtype Wrapped
-    func map<U>(_ f: (Wrapped) throws -> U) rethrows -> U?
+    var value: Wrapped? { get }
 }
 
-extension Optional: OptionalType {}
+extension Optional: OptionalType {
+
+    var value: Wrapped? { return self }
+}
 
 extension Sequence where Iterator.Element: OptionalType {
 
     var unwrapped: [Iterator.Element.Wrapped] {
-        var result: [Iterator.Element.Wrapped] = []
-        for element in self {
-            if let element = element.map({ $0 }) {
-                result.append(element)
-            }
-        }
-        return result
+        return flatMap { $0.value }
     }
 }
