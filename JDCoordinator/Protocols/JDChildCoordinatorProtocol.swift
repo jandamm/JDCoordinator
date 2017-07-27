@@ -29,13 +29,13 @@ public extension JDChildCoordinatorProtocol where Self: NSObject {
     /// Returns every parentCoordinator.
     ///
     /// .first is .parentCoordinator. .last is the AppCoordinator.
-    var parentCoordinators: [JDParentCoordinatorProtocol] {
-        var coordinators: [JDParentCoordinatorProtocol] = []
-        var coordinator: JDChildCoordinatorProtocol? = self
+    var parentCoordinators: [JDParentCoordinatorClass] {
+        var coordinators: [JDParentCoordinatorClass] = []
+        var coordinator: JDChildCoordinatorClass? = self
 
         while let parentCoordinator = coordinator?.parentCoordinator {
             coordinators.append(parentCoordinator)
-            coordinator = parentCoordinator as? JDChildCoordinatorProtocol
+            coordinator = parentCoordinator as? JDChildCoordinatorClass
         }
 
         return coordinators

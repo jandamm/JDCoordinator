@@ -16,7 +16,7 @@ protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
 extension _JDParentCoordinatorProtocol {
 
     public func addChild(_ coordinator: JDChildCoordinatorClass) {
-        guard !childCoordinators.contains(where: {coordinator === $0}) else {
+        guard let selfClass = self as? JDParentCoordinatorClass, !childCoordinators.contains(coordinator) else {
             return
         }
 
@@ -26,11 +26,11 @@ extension _JDParentCoordinatorProtocol {
 
         childCoordinators.append(coordinator)
 
-        coordinator.setParent(to: self as! JDParentCoordinatorClass)  // Unsafe unwrapping as _JDParentCoordinatorProtocol can only be used internally
+        coordinator.setParent(to: selfClass)
     }
 
     public func removeChild(_ coordinator: JDChildCoordinatorClass) {
-        guard let index = childCoordinators.index(where: {coordinator === $0}) else {
+        guard let index = childCoordinators.index(for: coordinator) else {
             return
         }
 
@@ -44,7 +44,7 @@ extension _JDParentCoordinatorProtocol {
 
         childCoordinators.removeAll()
 
-        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(where: {coordinator === $0 }) else {
+        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(coordinator) else {
             return
         }
 

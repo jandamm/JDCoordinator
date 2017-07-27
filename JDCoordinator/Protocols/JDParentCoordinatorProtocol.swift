@@ -28,7 +28,7 @@ public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
     func removeChild(_ coordinator: JDChildCoordinatorClass)
 }
 
-public extension JDParentCoordinatorProtocol {
+public extension JDParentCoordinatorProtocol where Self: NSObject {
 
     /// Adds a JDCoordinator as a child, removes it from previous parentCoordinator and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.
@@ -48,7 +48,7 @@ public extension JDParentCoordinatorProtocol {
     /// Removes all Coordinators except the given ones
     /// - parameter coordinators: Coordinators which should not be removed
     func removeChilds(except coordinators: [JDChildCoordinatorClass]) {
-        for coordinator in childCoordinators.filter({ f in !coordinators.contains(where: { $0 === f }) }) {
+        for coordinator in childCoordinators.filter({ !coordinators.contains($0) }) {
             removeChild(coordinator)
         }
     }
@@ -69,7 +69,7 @@ public extension JDParentCoordinatorProtocol {
     }
 }
 
-public extension Array where Element == JDParentCoordinatorProtocol {
+public extension Array where Element == JDParentCoordinatorClass {
 
     func index(for coordinator: Element) -> Int? {
         return index(where: { $0 === coordinator })
@@ -80,7 +80,7 @@ public extension Array where Element == JDParentCoordinatorProtocol {
     }
 }
 
-public extension Array where Element == JDBaseCoordinatorClass {
+public extension Array where Element == JDChildCoordinatorClass {
 
     func index(for coordinator: Element) -> Int? {
         return index(where: { $0 === coordinator })

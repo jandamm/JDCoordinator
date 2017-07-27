@@ -16,12 +16,12 @@ protocol _JDChildCoordinatorProtocol: JDChildCoordinatorProtocol {
 extension _JDChildCoordinatorProtocol {
 
     public func setParent(to coordinator: JDParentCoordinatorClass) {
-        guard parentCoordinator !== coordinator else {
+        guard let selfClass = self as? JDChildCoordinatorClass, parentCoordinator !== coordinator else {
             return
         }
 
-        guard !coordinator.childCoordinators.contains( where: { self === $0 }) else {
-            return coordinator.addChild(self as! _JDChildCoordinatorClass) // Unsafe unwrapping as _JDChildCoordinatorProtocol can only be used internally
+        guard !coordinator.childCoordinators.contains(selfClass) else {
+            return coordinator.addChild(selfClass)
         }
 
         parentCoordinator = coordinator
