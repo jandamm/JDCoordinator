@@ -15,6 +15,7 @@ import Foundation
 /// - **current**: navigationController.topViewController
 /// - previous: previousViewController
 /// - **visible**: navigationController.visibleViewController
+/// - **root**: navigationController.visibleViewController.first
 public enum JDViewControllerType {
     case current
     case previous
