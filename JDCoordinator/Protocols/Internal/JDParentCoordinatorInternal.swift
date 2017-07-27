@@ -1,0 +1,53 @@
+//
+//  JDParentCoordinatorInternal.swift
+//  JDCoordinator
+//
+//  Created by Jan Dammshäuser on 27.07.17.
+//
+
+import Foundation
+
+typealias _JDParentCoordinatorClass = NSObject & _JDParentCoordinatorProtocol
+
+protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
+    var childCoordinators: [JDChildCoordinatorProtocol] { get set }
+}
+
+extension _JDParentCoordinatorProtocol {
+
+    public func addChild(_ coordinator: JDChildCoordinatorProtocol) {
+        guard !childCoordinators.contains(coordinator) else {
+            return
+        }
+
+        if coordinator.parentCoordinator !== self {
+            coordinator.parentCoordinator.removeChild(coordinator)
+        }
+
+        childCoordinators.append(coordinator)
+
+        coordinator.setParent(to: self)
+    }
+
+    public func removeChild(_ coordinator: JDChildCoordinatorProtocol) {
+        guard let index = childCoordinators.index(for: coordinator) else {
+            return
+        }
+
+        childCoordinators.remove(at: index)
+    }
+
+    /// Removes all childCoordinators.
+    /// - parameter type: Define which type of ChildCoordinators should stay childs.
+    public func removeChilds(_ type: JDChildCoordinatorType) {
+        let oldCoordinators = childCoordinators
+
+        childCoordinators.removeAll()
+
+        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(coordinator) else {
+            return
+        }
+
+        childCoordinators.append(coordinator)
+    }
+}

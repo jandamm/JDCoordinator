@@ -8,10 +8,6 @@
 
 import Foundation
 
-public enum JDChildCoordinatorType {
-    case all, except(JDChildCoordinatorProtocol)
-}
-
 public typealias JDParentCoordinatorClass = NSObject & JDParentCoordinatorProtocol
 
 /// Defines Coordinator which can have children.
@@ -30,32 +26,6 @@ public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
     /// Removes coordinator from childCoordinators
     /// - parameter coordinator: Coordinator which should be removed
     func removeChild(_ coordinator: JDChildCoordinatorProtocol)
-}
-
-protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
-    var childCoordinators: [JDChildCoordinatorProtocol] { get set }
-}
-
-public extension Array where Element == JDParentCoordinatorProtocol {
-
-    func index(for coordinator: Element) -> Int? {
-        return index(where: { $0 === coordinator })
-    }
-
-    func contains(_ coordinator: Element) -> Bool {
-        return index(for: coordinator) != nil
-    }
-}
-
-public extension Array where Element == JDChildCoordinatorProtocol {
-
-    func index(for coordinator: Element) -> Int? {
-        return index(where: { $0 === coordinator })
-    }
-
-    func contains(_ coordinator: Element) -> Bool {
-        return index(for: coordinator) != nil
-    }
 }
 
 public extension JDParentCoordinatorProtocol {
@@ -99,41 +69,24 @@ public extension JDParentCoordinatorProtocol {
     }
 }
 
-extension _JDParentCoordinatorProtocol {
+public extension Array where Element == JDParentCoordinatorProtocol {
 
-    public func addChild(_ coordinator: JDChildCoordinatorProtocol) {
-        guard !childCoordinators.contains(coordinator) else {
-            return
-        }
-
-        if coordinator.parentCoordinator !== self {
-            coordinator.parentCoordinator.removeChild(coordinator)
-        }
-
-        childCoordinators.append(coordinator)
-
-        coordinator.setParent(to: self)
+    func index(for coordinator: Element) -> Int? {
+        return index(where: { $0 === coordinator })
     }
 
-    public func removeChild(_ coordinator: JDChildCoordinatorProtocol) {
-        guard let index = childCoordinators.index(for: coordinator) else {
-            return
-        }
+    func contains(_ coordinator: Element) -> Bool {
+        return index(for: coordinator) != nil
+    }
+}
 
-        childCoordinators.remove(at: index)
+public extension Array where Element == JDChildCoordinatorProtocol {
+
+    func index(for coordinator: Element) -> Int? {
+        return index(where: { $0 === coordinator })
     }
 
-    /// Removes all childCoordinators.
-    /// - parameter type: Define which type of ChildCoordinators should stay childs.
-    public func removeChilds(_ type: JDChildCoordinatorType) {
-        let oldCoordinators = childCoordinators
-
-        childCoordinators.removeAll()
-
-        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(coordinator) else {
-            return
-        }
-
-        childCoordinators.append(coordinator)
+    func contains(_ coordinator: Element) -> Bool {
+        return index(for: coordinator) != nil
     }
 }
