@@ -14,17 +14,17 @@ public typealias JDChildCoordinatorClass = NSObject & JDChildCoordinatorProtocol
 public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
     /// Returns the parentCoordinator of this child.
-    var parentCoordinator: JDParentCoordinatorProtocol! { get }
+    var parentCoordinator: JDParentCoordinatorClass! { get }
 
     /// Set the parentCoordinator and add it to parentCoordinators childCoordinators.
     ///
     /// You do not have to both setParent(to:) and addChild(:)
     ///
     /// - parameter coordinator: The new parentCoordinator
-    func setParent(to coordinator: JDParentCoordinatorProtocol)
+    func setParent(to coordinator: JDParentCoordinatorClass)
 }
 
-public extension JDChildCoordinatorProtocol {
+public extension JDChildCoordinatorProtocol where Self: NSObject {
 
     /// Returns every parentCoordinator.
     ///
@@ -44,11 +44,11 @@ public extension JDChildCoordinatorProtocol {
     /// Returns every parentCoordinator that is a JDChildCoordinator.
     ///
     /// .first is self. .last is uppermost parent which is also a child. Which is the AppCoordinators direct childCoordinator.
-    internal var childStack: [JDChildCoordinatorProtocol] {
-        var coordinators: [JDChildCoordinatorProtocol] = [self]
-        var coordinator: JDChildCoordinatorProtocol = self
+    internal var childStack: [JDChildCoordinatorClass] {
+        var coordinators: [JDChildCoordinatorClass] = [self]
+        var coordinator: JDChildCoordinatorClass = self
 
-        while let parentCoordinator = coordinator.parentCoordinator as? JDChildCoordinatorProtocol {
+        while let parentCoordinator = coordinator.parentCoordinator as? JDChildCoordinatorClass {
             coordinators.append(parentCoordinator)
             coordinator = parentCoordinator
         }

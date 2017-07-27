@@ -14,32 +14,32 @@ public typealias JDParentCoordinatorClass = NSObject & JDParentCoordinatorProtoc
 public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
     /// All ChildCoordinators.
-    var childCoordinators: [JDChildCoordinatorProtocol] { get }
+    var childCoordinators: [JDChildCoordinatorClass] { get }
 
     /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
     ///
     /// You do not have to both setParent(to:) and addChild(:)
     ///
     /// - parameter coordinator: Coordinator which should be added as child.
-    func addChild(_ coordinator: JDChildCoordinatorProtocol)
+    func addChild(_ coordinator: JDChildCoordinatorClass)
 
     /// Removes coordinator from childCoordinators
     /// - parameter coordinator: Coordinator which should be removed
-    func removeChild(_ coordinator: JDChildCoordinatorProtocol)
+    func removeChild(_ coordinator: JDChildCoordinatorClass)
 }
 
 public extension JDParentCoordinatorProtocol {
 
     /// Adds a JDCoordinator as a child, removes it from previous parentCoordinator and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.
-    func addChild(andStart coordinator: JDChildCoordinatorProtocol) {
+    func addChild(andStart coordinator: JDChildCoordinatorClass) {
         addChild(coordinator)
         coordinator.start()
     }
 
     /// Removes multiple Coordinators
     /// - parameter coordinators: Coordinators which should be removed
-    func removeChilds(_ coordinators: [JDChildCoordinatorProtocol]) {
+    func removeChilds(_ coordinators: [JDChildCoordinatorClass]) {
         for coordinator in coordinators {
             removeChild(coordinator)
         }
@@ -47,15 +47,15 @@ public extension JDParentCoordinatorProtocol {
 
     /// Removes all Coordinators except the given ones
     /// - parameter coordinators: Coordinators which should not be removed
-    func removeChilds(except coordinators: [JDChildCoordinatorProtocol]) {
-        for coordinator in childCoordinators.filter({ !coordinators.contains($0) }) {
+    func removeChilds(except coordinators: [JDChildCoordinatorClass]) {
+        for coordinator in childCoordinators.filter({ f in !coordinators.contains(where: { $0 === f }) }) {
             removeChild(coordinator)
         }
     }
 
     /// Removes a whole branch of coordinators by giving one child within this tree.
     /// - parameter coordinator: ChildCoordinator whose tree should be removed.
-    func removeChilds(withStackOf coordinator: JDChildCoordinatorProtocol) {
+    func removeChilds(withStackOf coordinator: JDChildCoordinatorClass) {
         guard coordinator.parentCoordinator !== self else {
             return removeChild(coordinator)
         }
@@ -80,7 +80,7 @@ public extension Array where Element == JDParentCoordinatorProtocol {
     }
 }
 
-public extension Array where Element == JDChildCoordinatorProtocol {
+public extension Array where Element == JDBaseCoordinatorClass {
 
     func index(for coordinator: Element) -> Int? {
         return index(where: { $0 === coordinator })

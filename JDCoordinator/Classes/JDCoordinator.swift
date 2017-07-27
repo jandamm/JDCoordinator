@@ -19,7 +19,7 @@ open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoo
     /// Initialize the JDCoordinator with a UINavigationController and adds it to a parentCoordinator
     /// - parameter navigationController: NavigationController where any further navigation should take place.
     /// - parameter parentCoordinator: Coordinator that should reference this coordinator.
-    public init(with navigationController: UINavigationController, andAddToParent parentCoordinator: JDParentCoordinatorProtocol) {
+    public init(with navigationController: UINavigationController, andAddToParent parentCoordinator: JDParentCoordinatorClass) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator
 
@@ -29,7 +29,7 @@ open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoo
     }
 
     // MARK: - Protocols
-    internal(set) public weak var parentCoordinator: JDParentCoordinatorProtocol!
+    internal(set) public weak var parentCoordinator: JDParentCoordinatorClass!
     public unowned let navigationController: UINavigationController
     public weak var previousViewController: UIViewController?
     open func start() {}

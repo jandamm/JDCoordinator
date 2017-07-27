@@ -10,13 +10,13 @@ import Foundation
 typealias _JDParentCoordinatorClass = NSObject & _JDParentCoordinatorProtocol
 
 protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
-    var childCoordinators: [JDChildCoordinatorProtocol] { get set }
+    var childCoordinators: [JDChildCoordinatorClass] { get set }
 }
 
 extension _JDParentCoordinatorProtocol {
 
-    public func addChild(_ coordinator: JDChildCoordinatorProtocol) {
-        guard !childCoordinators.contains(coordinator) else {
+    public func addChild(_ coordinator: JDChildCoordinatorClass) {
+        guard !childCoordinators.contains(where: {coordinator === $0}) else {
             return
         }
 
@@ -26,11 +26,11 @@ extension _JDParentCoordinatorProtocol {
 
         childCoordinators.append(coordinator)
 
-        coordinator.setParent(to: self)
+        coordinator.setParent(to: self as! JDParentCoordinatorClass)  // Unsafe unwrapping as _JDParentCoordinatorProtocol can only be used internally
     }
 
-    public func removeChild(_ coordinator: JDChildCoordinatorProtocol) {
-        guard let index = childCoordinators.index(for: coordinator) else {
+    public func removeChild(_ coordinator: JDChildCoordinatorClass) {
+        guard let index = childCoordinators.index(where: {coordinator === $0}) else {
             return
         }
 
@@ -44,7 +44,7 @@ extension _JDParentCoordinatorProtocol {
 
         childCoordinators.removeAll()
 
-        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(coordinator) else {
+        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(where: {coordinator === $0 }) else {
             return
         }
 

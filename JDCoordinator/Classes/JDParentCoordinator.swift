@@ -15,5 +15,5 @@ import UIKit
  A ParentCoordinator can manage other Coordinators as childs and also manage ViewControllers. It is totally safe to add another ParentCoordinator as a child.
  */
 open class JDParentCoordinator: JDCoordinator, _JDParentCoordinatorProtocol, JDCoordinatorCoordinatorDelegate {
-    internal(set) public var childCoordinators: [JDChildCoordinatorProtocol] = []
+    internal(set) public var childCoordinators: [JDChildCoordinatorClass] = []
 }
