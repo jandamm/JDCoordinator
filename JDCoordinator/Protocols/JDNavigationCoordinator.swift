@@ -34,12 +34,16 @@ public enum JDViewControllerType {
     }
 }
 
+public typealias JDRootNavigationCoordinatorClass = NSObject & JDRootNavigationCoordinatorProtocol
+
 /// A Coordinator that has a navigationController
 public protocol JDRootNavigationCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
 }
+
+public typealias JDNavigationCoordinatorClass = NSObject & JDNavigationCoordinatorProtocol
 
 /// A Coordinator that has a navigationController and wasn't the first Coordinator in stack.
 public protocol JDNavigationCoordinatorProtocol: JDRootNavigationCoordinatorProtocol {

@@ -29,8 +29,10 @@ import Foundation
 /// Otherwise use its parentCoordinator.
 @objc public protocol JDCoordinatorCoordinatorDelegate: class {}
 
+public typealias JDBaseCoordinatorClass = NSObject & JDBaseCoordinatorProtocol
+
 /// BaseProtocol where every other CoordinatorProtocol inherits from.
-public protocol JDBaseCoordinatorProtocol: class {
+public protocol JDBaseCoordinatorProtocol: class, NSObjectProtocol {
 
     /// You need to override this method so it pushes the initial ViewController.
     /// You can also load data in this method.

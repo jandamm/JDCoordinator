@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias JDChildCoordinatorClass = NSObject & JDChildCoordinatorProtocol
+
 /// Defines Coordinators which can be children to other coordinators.
 public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
 

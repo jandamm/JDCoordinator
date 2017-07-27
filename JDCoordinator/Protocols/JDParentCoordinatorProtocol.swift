@@ -12,6 +12,8 @@ public enum JDChildCoordinatorType {
     case all, except(JDChildCoordinatorProtocol)
 }
 
+public typealias JDParentCoordinatorClass = NSObject & JDParentCoordinatorProtocol
+
 /// Defines Coordinator which can have children.
 public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
