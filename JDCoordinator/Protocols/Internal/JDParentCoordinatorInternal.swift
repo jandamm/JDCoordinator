@@ -10,7 +10,7 @@ import Foundation
 typealias _JDParentCoordinatorClass = NSObject & _JDParentCoordinatorProtocol
 
 protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
-    var childCoordinators: [JDChildCoordinatorClass] { get set }
+    var childCoordinators: JDChildCoordinatorStorage { get set }
 }
 
 extension _JDParentCoordinatorProtocol {
@@ -21,20 +21,16 @@ extension _JDParentCoordinatorProtocol {
         }
 
         if coordinator.parentCoordinator !== self {
-            coordinator.parentCoordinator.removeChild(coordinator)
+            coordinator.parentCoordinator?.removeChild(coordinator)
         }
 
-        childCoordinators.append(coordinator)
+        childCoordinators.add(coordinator)
 
         coordinator.setParent(to: selfClass)
     }
 
     public func removeChild(_ coordinator: JDChildCoordinatorClass) {
-        guard let index = childCoordinators.index(for: coordinator) else {
-            return
-        }
-
-        childCoordinators.remove(at: index)
+        childCoordinators.remove(coordinator)
     }
 
     /// Removes all childCoordinators.
@@ -48,6 +44,6 @@ extension _JDParentCoordinatorProtocol {
             return
         }
 
-        childCoordinators.append(coordinator)
+        childCoordinators.add(coordinator)
     }
 }

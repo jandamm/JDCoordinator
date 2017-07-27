@@ -30,6 +30,7 @@
 		A7BAD6681F2A348400FF72F0 /* JDChildCoordinatorProtocolInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6671F2A348400FF72F0 /* JDChildCoordinatorProtocolInternal.swift */; };
 		A7BAD66B1F2A354C00FF72F0 /* JDParentCoordinatorInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66A1F2A354C00FF72F0 /* JDParentCoordinatorInternal.swift */; };
 		A7BAD66D1F2A361700FF72F0 /* JDChildCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */; };
+		A7BAD66F1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */; };
 		C8BE2D7096C0E8AC7E2D55DC1F622EDE /* Pods-JDCoordinator_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5CDF9D704ECDB7A8CF979C705F33A8 /* Pods-JDCoordinator_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB76A1CF2E3E5329115076BE925F348E /* JDCoordinator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDC7A37A4A2AF4EC0796548E07E153 /* JDCoordinator-dummy.m */; };
 		D8CD509A8F5B8D6C07025BD443A1082B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
@@ -82,6 +83,7 @@
 		A7BAD6671F2A348400FF72F0 /* JDChildCoordinatorProtocolInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorProtocolInternal.swift; sourceTree = "<group>"; };
 		A7BAD66A1F2A354C00FF72F0 /* JDParentCoordinatorInternal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDParentCoordinatorInternal.swift; sourceTree = "<group>"; };
 		A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorType.swift; sourceTree = "<group>"; };
+		A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorStorage.swift; sourceTree = "<group>"; };
 		ADE3AD2674394630414E6EB51D803130 /* JDCoordinator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDCoordinator-umbrella.h"; sourceTree = "<group>"; };
 		C2D742151EFB8B3967F05CEC5160A2F2 /* Pods-JDCoordinator_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JDCoordinator_Tests.modulemap"; sourceTree = "<group>"; };
 		C3B8E1DA25E74A1841E1122595EC8AFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */,
 				A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */,
+				A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7BAD66F1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift in Sources */,
 				0BD3AD481E4E0AE7002A3E9E /* JDParentCoordinator.swift in Sources */,
 				0BD3AD461E4E0AE7002A3E9E /* JDAppCoordinator.swift in Sources */,
 				A7BAD6631F2A337900FF72F0 /* JDViewControllerType.swift in Sources */,

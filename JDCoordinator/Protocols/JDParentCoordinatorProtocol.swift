@@ -14,7 +14,7 @@ public typealias JDParentCoordinatorClass = NSObject & JDParentCoordinatorProtoc
 public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
     /// All ChildCoordinators.
-    var childCoordinators: [JDChildCoordinatorClass] { get }
+    var childCoordinators: JDChildCoordinatorStorage { get }
 
     /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
     ///
@@ -48,7 +48,7 @@ public extension JDParentCoordinatorProtocol where Self: NSObject {
     /// Removes all Coordinators except the given ones
     /// - parameter coordinators: Coordinators which should not be removed
     func removeChilds(except coordinators: [JDChildCoordinatorClass]) {
-        for coordinator in childCoordinators.filter({ !coordinators.contains($0) }) {
+        for coordinator in childCoordinators.subtracting(coordinators) {
             removeChild(coordinator)
         }
     }
