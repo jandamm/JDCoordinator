@@ -9,33 +9,52 @@ import Foundation
 
 // TODO: - This has to be improved before release.
 /// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
-public struct JDChildCoordinatorStorage {
-    private var store: Set<NSObject> = []
+public struct JDChildCoordinatorStorage: Sequence {
+    public typealias Element = Iterator.Element
+    public typealias Iterator = JDChildCoordinatorStorageIterator
 
-    var count: Int {
-        return store.count
+    public func makeIterator() -> JDChildCoordinatorStorage.Iterator {
+        return JDChildCoordinatorStorageIterator(iterator: storage.makeIterator())
     }
 
-    mutating func add(_ coordinator: JDChildCoordinatorClass) {
-        store.insert(coordinator as NSObject)
+    private var storage: Set<NSObject> = []
+
+    // TODO: - Replace the following stuff
+
+    public var count: Int {
+        return storage.count
     }
 
-    mutating func remove(_ coordinator: JDChildCoordinatorClass) {
-        store.remove(coordinator as NSObject)
+    public mutating func add(_ coordinator: JDChildCoordinatorClass) {
+        storage.insert(coordinator as NSObject)
     }
 
-    mutating func removeAll() {
-        store.removeAll()
+    public mutating func remove(_ coordinator: JDChildCoordinatorClass) {
+        storage.remove(coordinator as NSObject)
     }
 
-    func subtracting(_ coordinators: [JDChildCoordinatorClass]) -> [JDChildCoordinatorClass] {
+    public mutating func removeAll() {
+        storage.removeAll()
+    }
+
+    public func subtracting(_ coordinators: [JDChildCoordinatorClass]) -> [JDChildCoordinatorClass] {
         let coordinators = Set(coordinators as [NSObject])
-        let subtraction = store.subtracting(coordinators)
+        let subtraction = storage.subtracting(coordinators)
 
         return Array(subtraction) as! [JDChildCoordinatorClass] // Only JDCoordinatorClass can be added
     }
 
-    func contains(_ coordinator: JDChildCoordinatorClass) -> Bool {
-        return store.contains(coordinator as NSObject)
+    public func contains(_ coordinator: JDChildCoordinatorClass) -> Bool {
+        return storage.contains(coordinator as NSObject)
+    }
+}
+
+public struct JDChildCoordinatorStorageIterator: IteratorProtocol {
+    fileprivate var iterator: SetIterator<NSObject>
+
+    public typealias Element = JDChildCoordinatorClass
+
+    public mutating func next() -> JDChildCoordinatorStorage.Element? {
+        return iterator.next() as? Element
     }
 }
