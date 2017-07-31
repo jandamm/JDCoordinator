@@ -32,7 +32,7 @@ open class JDAppCoordinator: NSObject, JDRootNavigationCoordinatorProtocol, _JDP
     }
 
     // MARK: - Protocols
-    internal(set) public var childCoordinators = JDChildCoordinatorStorage()
+    public internal(set) var childCoordinators = JDChildCoordinatorStorage()
     public unowned let navigationController: UINavigationController
     open func start() {}
 }
