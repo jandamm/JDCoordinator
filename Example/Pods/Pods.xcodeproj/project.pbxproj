@@ -426,7 +426,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/../SwiftFormat ../.. --semicolons \"never\" --commas \"false\"";
+			shellScript = "${SRCROOT}/../SwiftFormat ../../JDCoordinator --semicolons \"never\"\n${SRCROOT}/../SwiftFormat ../JDCoordinator --semicolons \"never\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
