@@ -10,16 +10,20 @@ import Foundation
 // TODO: - This has to be improved before release.
 /// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
 public struct JDChildCoordinatorStorage: Sequence {
-    public typealias Element = Iterator.Element
-    public typealias Iterator = JDChildCoordinatorStorageIterator
+    public typealias Element = JDChildCoordinatorClass
 
-    public func makeIterator() -> JDChildCoordinatorStorage.Iterator {
-        return JDChildCoordinatorStorageIterator(iterator: storage.makeIterator())
+    public func makeIterator() -> AnyIterator<Element> {
+        var iterator = storage.makeIterator()
+        return AnyIterator {
+            iterator.next() as? Element
+        }
     }
 
     private var storage: Set<NSObject> = []
+}
 
-    // TODO: - Replace the following stuff
+// TODO: - Replace the following stuff
+public extension JDChildCoordinatorStorage {
 
     public var count: Int {
         return storage.count
@@ -46,15 +50,5 @@ public struct JDChildCoordinatorStorage: Sequence {
 
     public func contains(_ coordinator: JDChildCoordinatorClass) -> Bool {
         return storage.contains(coordinator as NSObject)
-    }
-}
-
-public struct JDChildCoordinatorStorageIterator: IteratorProtocol {
-    fileprivate var iterator: SetIterator<NSObject>
-
-    public typealias Element = JDChildCoordinatorClass
-
-    public mutating func next() -> JDChildCoordinatorStorage.Element? {
-        return iterator.next() as? Element
     }
 }
