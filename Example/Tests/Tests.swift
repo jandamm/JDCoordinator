@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import JDCoordinator
+@testable import JDCoordinator
 
 class Tests: XCTestCase {
 
