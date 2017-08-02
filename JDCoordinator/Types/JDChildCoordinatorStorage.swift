@@ -9,14 +9,20 @@ import Foundation
 
 // TODO: - This has to be improved before release.
 /// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
-public struct JDChildCoordinatorStorage: Sequence {
+public struct JDChildCoordinatorStorage: Sequence, ExpressibleByArrayLiteral {
+
     public typealias Element = JDChildCoordinatorClass
+    public typealias ArrayLiteralElement = Element
 
     public func makeIterator() -> AnyIterator<Element> {
         var iterator = storage.makeIterator()
         return AnyIterator {
             iterator.next() as? Element
         }
+    }
+
+    public init(arrayLiteral elements: JDChildCoordinatorStorage.Element...) {
+        storage = Set(elements as [NSObject])
     }
 
     private var storage: Set<NSObject> = []
