@@ -24,7 +24,7 @@ extension _JDParentCoordinatorProtocol {
             coordinator.parentCoordinator?.removeChild(coordinator)
         }
 
-        childCoordinators.add(coordinator)
+        childCoordinators.insert(coordinator)
 
         coordinator.setParent(to: selfClass)
     }
@@ -44,6 +44,6 @@ extension _JDParentCoordinatorProtocol {
             return
         }
 
-        childCoordinators.add(coordinator)
+        childCoordinators.insert(coordinator)
     }
 }
