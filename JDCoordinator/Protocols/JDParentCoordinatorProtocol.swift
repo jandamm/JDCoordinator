@@ -11,10 +11,9 @@ import Foundation
 public typealias JDParentCoordinatorClass = NSObject & JDParentCoordinatorProtocol
 
 /// Defines Coordinator which can have children.
+/// If you're adopting this protocol by yourself you have to add a strong reference to child coordinators.
+/// You can use JDChildCoordinatorStorage. It's based on a Set but can contain every ChildCoordinator.
 public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
-
-    /// All ChildCoordinators.
-    var childCoordinators: JDChildCoordinatorStorage { get }
 
     /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
     ///
@@ -26,6 +25,9 @@ public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
     /// Removes coordinator from childCoordinators
     /// - parameter coordinator: Coordinator which should be removed
     func removeChild(_ coordinator: JDChildCoordinatorClass)
+
+    /// Returns whether the given coordinator is a child of this parentCoordinator
+    func hasChild(_ coordinator: JDChildCoordinatorClass) -> Bool
 }
 
 public extension JDParentCoordinatorProtocol where Self: NSObject {
@@ -41,14 +43,6 @@ public extension JDParentCoordinatorProtocol where Self: NSObject {
     /// - parameter coordinators: Coordinators which should be removed
     func removeChilds(_ coordinators: [JDChildCoordinatorClass]) {
         for coordinator in coordinators {
-            removeChild(coordinator)
-        }
-    }
-
-    /// Removes all Coordinators except the given ones
-    /// - parameter coordinators: Coordinators which should not be removed
-    func removeChilds(except coordinators: [JDChildCoordinatorClass]) {
-        for coordinator in childCoordinators.subtracting(coordinators) {
             removeChild(coordinator)
         }
     }

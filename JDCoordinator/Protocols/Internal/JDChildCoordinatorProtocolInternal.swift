@@ -20,7 +20,7 @@ extension _JDChildCoordinatorProtocol {
             return
         }
 
-        guard !coordinator.childCoordinators.contains(selfClass) else {
+        guard !coordinator.hasChild(selfClass) else {
             return coordinator.addChild(selfClass)
         }
 

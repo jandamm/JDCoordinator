@@ -7,9 +7,11 @@
 
 import Foundation
 
+public protocol JDChildCoordinatorStorageProtocol: Collection where Element == JDChildCoordinatorClass {}
+
 // TODO: - This has to be improved before release.
 /// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
-public struct JDChildCoordinatorStorage: SetAlgebra, Collection, Equatable, ExpressibleByArrayLiteral {
+public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetAlgebra, Equatable, ExpressibleByArrayLiteral {
 
     // MARK: - Internal Storage
     private typealias StorageElement = NSObject

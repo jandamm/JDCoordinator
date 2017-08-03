@@ -33,6 +33,10 @@ extension _JDParentCoordinatorProtocol {
         childCoordinators.remove(coordinator)
     }
 
+    public func hasChild(_ coordinator: JDChildCoordinatorClass) -> Bool {
+        return childCoordinators.contains(coordinator)
+    }
+
     /// Removes all childCoordinators.
     /// - parameter type: Define which type of ChildCoordinators should stay childs.
     public func removeChilds(_ type: JDChildCoordinatorType) {
@@ -45,5 +49,13 @@ extension _JDParentCoordinatorProtocol {
         }
 
         childCoordinators.insert(coordinator)
+    }
+
+    /// Removes all Coordinators except the given ones
+    /// - parameter coordinators: Coordinators which should not be removed
+    func removeChilds(except coordinators: [JDChildCoordinatorClass]) {
+        for coordinator in childCoordinators.subtracting(coordinators) {
+            removeChild(coordinator)
+        }
     }
 }
