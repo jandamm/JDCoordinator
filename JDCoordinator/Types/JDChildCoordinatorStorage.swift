@@ -9,7 +9,7 @@ import Foundation
 
 // TODO: - This has to be improved before release.
 /// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
-public struct JDChildCoordinatorStorage: Collection, ExpressibleByArrayLiteral {
+public struct JDChildCoordinatorStorage: Collection, Equatable, ExpressibleByArrayLiteral {
     private var storage: Set<NSObject>
 
     public init() {
@@ -48,6 +48,11 @@ public struct JDChildCoordinatorStorage: Collection, ExpressibleByArrayLiteral {
     // MARK: - ExpressibleByArrayLiteral
     public init(arrayLiteral elements: JDChildCoordinatorStorage.Element...) {
         storage = Set(elements as [NSObject])
+    }
+
+    // MARK: - Equatable
+    public static func ==(lhs: JDChildCoordinatorStorage, rhs: JDChildCoordinatorStorage) -> Bool {
+        return lhs.storage == rhs.storage
     }
 }
 
