@@ -31,13 +31,6 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetA
     // MARK: - Sequence
     public typealias Element = JDChildCoordinatorClass
 
-    public func makeIterator() -> AnyIterator<Element> {
-        var iterator = storage.makeIterator()
-        return AnyIterator {
-            iterator.next() as? Element
-        }
-    }
-
     // MARK: - Collection
     public typealias Index = Set<NSObject>.Index
 
