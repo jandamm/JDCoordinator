@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JDCoordinator"
-  s.version      = "0.8.0"
+  s.version      = "0.8.1"
   s.summary      = "Library for easier implementation of the coordinator concept by @khanlou."
   s.homepage     = "http://jandamm.de"
   s.license      = { :type => "MIT", :file => "LICENSE" }
