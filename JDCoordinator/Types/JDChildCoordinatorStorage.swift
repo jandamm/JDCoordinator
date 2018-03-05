@@ -24,6 +24,10 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetA
         storage = []
     }
 
+    private init(elements: [Element]) {
+        self.init(storage: Set(elements as [StorageElement]))
+    }
+
     private init(storage: Storage) {
         self.storage = storage
     }
@@ -52,7 +56,7 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetA
 
     // MARK: - ExpressibleByArrayLiteral
     public init(arrayLiteral elements: Element...) {
-        storage = Set(elements as [StorageElement])
+        self.init(elements: elements)
     }
 
     // MARK: - Equatable
@@ -111,13 +115,12 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetA
 
 public extension JDChildCoordinatorStorage {
 
-    public mutating func removeAll() {
-        storage.removeAll()
+    mutating func removeAll(keepingCapacity keepCapacity: Bool = false) {
+        storage.removeAll(keepingCapacity: keepCapacity)
     }
 
-    public func subtracting(_ coordinators: [Element]) -> JDChildCoordinatorStorage {
-        let coordinators = Set(coordinators as [StorageElement])
-        let other = JDChildCoordinatorStorage(storage: coordinators)
+    func subtracting(_ coordinators: [Element]) -> JDChildCoordinatorStorage {
+        let other = JDChildCoordinatorStorage(elements: coordinators)
 
         return subtracting(other)
     }
