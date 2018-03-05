@@ -21,14 +21,10 @@ public enum JDViewControllerType {
     case visible
     case root
 
-    /// Returns the viewController for its type.
+	/// Calls viewController(for:) on the Coordinator.
     /// - parameter coordinator: The Coordinator whose controller should be returned.
-    public func viewController(for coordinator: JDRootNavigationCoordinatorProtocol) -> UIViewController? {
-        switch self {
-        case .current: return coordinator.navigationController.topViewController
-        case .previous: return (coordinator as? JDNavigationCoordinatorProtocol)?.previousViewController
-        case .visible: return coordinator.navigationController.visibleViewController
-        case .root: return coordinator.navigationController.viewControllers.first
-        }
+	/// - returns: The viewController for its type.
+    public func viewController(from coordinator: JDRootNavigationCoordinatorProtocol) -> UIViewController? {
+        return coordinator.viewController(for: self)
     }
 }

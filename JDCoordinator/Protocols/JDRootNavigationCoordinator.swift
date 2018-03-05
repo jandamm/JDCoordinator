@@ -14,9 +14,36 @@ public protocol JDRootNavigationCoordinatorProtocol: JDBaseCoordinatorProtocol {
 
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
+
+    /// Provides the ViewController for the given type.
+    /// This method is called by some methods to replace ViewControllers.
+    ///
+    /// A default implementation is provided. Overwrite if you need to modify its behavior.
+    /// - parameter type: The requested type of ViewController.
+    /// - returns: The viewController matching the given type.
+    func viewController(for type: JDViewControllerType) -> UIViewController?
 }
 
 public extension JDRootNavigationCoordinatorProtocol {
+
+    /// Provides the ViewController for the given type.
+    /// This method is called by some methods to replace ViewControllers.
+    ///
+    /// A default implementation is provided. Overwrite if you need to modify its behavior.
+    /// - parameter type: The requested type of ViewController.
+    /// - returns: The viewController matching the given type.
+    func viewController(for type: JDViewControllerType) -> UIViewController? {
+        switch type {
+        case .current:
+            return navigationController.topViewController
+        case .previous:
+            return (self as? JDNavigationCoordinatorProtocol)?.previousViewController
+        case .visible:
+            return navigationController.visibleViewController
+        case .root:
+            return navigationController.viewControllers.first
+        }
+    }
 
     /// Removes the given ViewController and pushes to newViewController.
     ///
@@ -27,8 +54,8 @@ public extension JDRootNavigationCoordinatorProtocol {
     ///     - newViewController: The viewController you want to push to. nil to pop.
     ///     - animated: Whether it should be animated or not.
     func replaceViewController(_ type: JDViewControllerType, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
-        let vc = type.viewController(for: self)
-        replaceViewController(vc, withNew: newViewController, animated: animated)
+        let viewController = self.viewController(for: type)
+        replaceViewController(viewController, withNew: newViewController, animated: animated)
     }
 
     /// Removes all ViewControllers newer than the given one and pushes to newViewController.
@@ -40,8 +67,8 @@ public extension JDRootNavigationCoordinatorProtocol {
     ///     - newViewController: The viewController you want to push to. nil to pop.
     ///     - animated: Whether it should be animated or not.
     func replaceViewControllers(after type: JDViewControllerType, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
-        let vc = type.viewController(for: self)
-        replaceViewControllers(after: vc, withNew: newViewController, animated: animated)
+        let viewController = self.viewController(for: type)
+        replaceViewControllers(after: viewController, withNew: newViewController, animated: animated)
     }
 
     // MARK: - Default Methods
