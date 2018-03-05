@@ -140,7 +140,7 @@ extension Array where Element: Comparable & Hashable {
 
     var noDuplicatesAndSorted: [Element] {
         let array = Array(Set(self))
-        return array.sorted(by: { $0 < $1 })
+        return array.sorted(by: <)
     }
 }
 
@@ -154,9 +154,9 @@ extension Optional: OptionalType {
     var value: Wrapped? { return self }
 }
 
-extension Sequence where Iterator.Element: OptionalType {
+extension Sequence where Element: OptionalType {
 
-    var unwrapped: [Iterator.Element.Wrapped] {
+    var unwrapped: [Element.Wrapped] {
         return flatMap { $0.value }
     }
 }
