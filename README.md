@@ -1,10 +1,10 @@
 # JDCoordinator
 
+[![GitHub release](https://img.shields.io/github/release/jandamm/JDCoordinator.svg)](https://github.com/jandamm/JDCoordinator/releases)
 [![Version](https://img.shields.io/cocoapods/v/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
 [![License](https://img.shields.io/cocoapods/l/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
 [![Platform](https://img.shields.io/cocoapods/p/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![GitHub release](https://img.shields.io/github/release/jandamm/JDCoordinator.svg)](https://github.com/jandamm/JDCoordinator/releases)
 
 Library for easier implementation of the [coordinator concept](http://khanlou.com/2015/10/coordinators-redux/) by [@khanlou](https://twitter.com/khanlou).
 
