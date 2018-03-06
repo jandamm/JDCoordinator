@@ -1,9 +1,10 @@
 # JDCoordinator
 
-[![CI Status](http://img.shields.io/travis/charmaex/JDCoordinator.svg?style=flat)](https://travis-ci.org/charmaex/JDCoordinator)
 [![Version](https://img.shields.io/cocoapods/v/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
 [![License](https://img.shields.io/cocoapods/l/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
 [![Platform](https://img.shields.io/cocoapods/p/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![GitHub release](https://img.shields.io/github/release/jandamm/JDCoordinator.svg)](https://github.com/jandamm/JDCoordinator/releases)
 
 Library for easier implementation of the [coordinator concept](http://khanlou.com/2015/10/coordinators-redux/) by [@khanlou](https://twitter.com/khanlou).
 
@@ -30,10 +31,17 @@ You do not have to use any protocol if you’re satisfied with the default class
 
 ## Installation
 
-JDCoordinator is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+JDCoordinator is available through [Carthage](https://github.com/Carthage/Carthage) and [CocoaPods](https://cocoapods.org). 
 
-```ruby
+#### Carthage:
+
+```
+github "jandamm/JDCoordinator"
+```
+
+#### CocoaPods:
+
+```
 pod "JDCoordinator"
 ```
 
