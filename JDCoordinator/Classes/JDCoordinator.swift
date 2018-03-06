@@ -28,6 +28,12 @@ open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoo
         parentCoordinator.addChild(self)
     }
 
+    /// Initializes the JDCoordinator by calling init(with:andAddToParent:) using the parentCoordinators navigationController.
+    /// - parameter parentCoordinator: The parent of this Coordinator and the provider of the navigationController.
+    public convenience init<ParentCoordinator>(withParent parentCoordinator: ParentCoordinator) where ParentCoordinator: JDParentCoordinatorClass & JDRootNavigationCoordinatorProtocol {
+        self.init(with: parentCoordinator.navigationController, andAddToParent: parentCoordinator)
+    }
+
     // MARK: - Protocols
     public internal(set) weak var parentCoordinator: JDParentCoordinatorClass!
     public let navigationController: UINavigationController
