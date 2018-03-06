@@ -4,25 +4,61 @@ import XCTest
 
 class Tests: XCTestCase {
 
+    var appCoordinator: JDAppCoordinator!
+    weak var appNavigationController: UINavigationController?
+    weak var parentCoordinator: JDParentCoordinator?
+    weak var parentNavigationController: UINavigationController?
+    weak var childCoordinator: JDCoordinator?
+    weak var childNavigationController: UINavigationController?
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        appCoordinator = JDAppCoordinator(with: createNavigationController())
+        appNavigationController = appCoordinator.navigationController
+        parentCoordinator = JDParentCoordinator(with: appCoordinator.navigationController, andAddToParent: appCoordinator)
+        parentNavigationController = parentCoordinator?.navigationController
+        childCoordinator = JDCoordinator(with: createNavigationController(), andAddToParent: parentCoordinator!)
+        childNavigationController = childCoordinator?.navigationController
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        appCoordinator = nil
         super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
+    func testRemoveChildAndReferencing() {
+        XCTAssertNotNil(appCoordinator)
+        XCTAssertNotNil(appNavigationController)
+        XCTAssertNotNil(parentCoordinator)
+        XCTAssertNotNil(parentNavigationController)
+        XCTAssertNotNil(childCoordinator)
+        XCTAssertNotNil(childNavigationController)
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        //        self.measure() {
-        //            // Put the code you want to measure the time of here.
-        //        }
+        XCTAssertEqual(appNavigationController, parentNavigationController)
+
+        // Should deallocate childCoordinator and childNavigationController
+        parentCoordinator?.removeChild(childCoordinator!)
+
+        XCTAssertNil(childCoordinator)
+        XCTAssertNil(childNavigationController)
+        XCTAssertNotNil(parentCoordinator)
+
+        // Should deallocate parentCoordinator but not parentNavigationController (=== appNavigationController)
+        appCoordinator.removeChild(parentCoordinator!)
+
+        XCTAssertNil(parentCoordinator)
+        XCTAssertNotNil(parentNavigationController)
+
+        // Should deallocate everything
+        appCoordinator = nil
+
+        XCTAssertNil(appCoordinator)
+        XCTAssertNil(appNavigationController)
+        XCTAssertNil(parentNavigationController)
     }
+}
+
+private func createNavigationController() -> UINavigationController {
+    return UINavigationController()
 }
