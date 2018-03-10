@@ -14,8 +14,7 @@ public protocol JDChildCoordinatorStoring: Collection where Element == JDChildCo
 public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, Equatable, ExpressibleByArrayLiteral {
 
     // MARK: - Internal Storage
-    private typealias StorageElement = NSObject
-    private typealias Storage = Set<StorageElement>
+    public typealias Storage = Set<AnyHashable>
 
     private var storage: Storage
 
@@ -25,8 +24,9 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
     }
 
     private init(elements: [Element]) {
-        // TODO: - correct Types
-        self.init(storage: Set(elements as! [StorageElement]))
+        storage = elements.reduce(into: []) { storage, element in
+            storage.insert(element.anyHashable)
+        }
     }
 
     private init(storage: Storage) {
@@ -37,7 +37,7 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
     public typealias Element = JDChildCoordinating
 
     // MARK: - Collection
-    public typealias Index = Set<NSObject>.Index
+    public typealias Index = Storage.Index
 
     public var startIndex: Index {
         return storage.startIndex
@@ -52,7 +52,7 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
     }
 
     public subscript(position: Index) -> Element {
-        return storage[position] as! Element
+        return storage[position].element
     }
 
     // MARK: - ExpressibleByArrayLiteral
@@ -76,8 +76,7 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
     }
 
     @discardableResult public mutating func update(with newMember: Element) -> Element? {
-        // TODO: - correct Types
-        return storage.update(with: newMember as! StorageElement) as? Element
+        return storage.update(with: newMember.anyHashable)?.element
     }
 
     public mutating func formUnion(_ other: JDChildCoordinatorStorage) {
@@ -93,18 +92,16 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
     }
 
     public func contains(_ element: Element) -> Bool {
-        // TODO: - correct Types
-        return storage.contains(element as! StorageElement)
+        return storage.contains(element.anyHashable)
     }
 
     @discardableResult public mutating func remove(_ member: Element) -> Element? {
-        // TODO: - correct Types
-        return storage.remove(member as! StorageElement) as? Element
+        return storage.remove(member.anyHashable)?.element
     }
 
     @discardableResult public mutating func insert(_ newMember: Element) -> (inserted: Bool, memberAfterInsert: Element) {
-        // TODO: - correct Types
-        return storage.insert(newMember as! StorageElement) as! (Bool, Element)
+        let (inserted, memberAfterInsert) = storage.insert(newMember.anyHashable)
+        return (inserted, memberAfterInsert.element)
     }
 
     public func union(_ other: JDChildCoordinatorStorage) -> JDChildCoordinatorStorage {
@@ -128,5 +125,12 @@ public extension JDChildCoordinatorStorage {
         let other = JDChildCoordinatorStorage(elements: coordinators)
 
         return subtracting(other)
+    }
+}
+
+private extension AnyHashable {
+
+    var element: JDChildCoordinating {
+        return base as! JDChildCoordinating
     }
 }
