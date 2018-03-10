@@ -32,24 +32,23 @@ class CoordinatorTests: XCTestCase {
     }
 
     func testStart() {
+        func expectations(for startable: _JDStartTestable, count: Int = 1) {
+            XCTAssertTrue(startable.isStarted)
+            XCTAssertEqual(startable.startedCount, count)
+        }
 
-		XCTAssertFalse(appCoordinator.isStarted)
-		XCTAssertFalse(coordinator.isStarted)
+        XCTAssertFalse(appCoordinator.isStarted)
+        XCTAssertFalse(coordinator.isStarted)
 
         appCoordinator.start()
         coordinator.start()
 
-		startExpectations(for: appCoordinator)
-		startExpectations(for: coordinator)
+        expectations(for: appCoordinator)
+        expectations(for: coordinator)
 
-		coordinator.start()
+        coordinator.start()
 
-		startExpectations(for: coordinator, count: 2)
-    }
-
-    func startExpectations(for startable: _JDStartTestable, count: Int = 1) {
-        XCTAssertTrue(startable.isStarted)
-        XCTAssertEqual(startable.startedCount, count)
+        expectations(for: coordinator, count: 2)
     }
 
     func testNavigationControllerSetup() {
@@ -102,23 +101,23 @@ class CoordinatorTests: XCTestCase {
     func testAddChild() {
         let formerParent = coordinator.getFormerParent(parentIsNot: appCoordinator)
 
-		// Adding child twice should not change anything
-		(1...2).forEach { _ in
-        	appCoordinator.addChild(coordinator)
+        // Adding child twice should not change anything
+        (1 ... 2).forEach { _ in
+            appCoordinator.addChild(coordinator)
 
-        	childParentExpectations(with: formerParent)
-		}
+            childParentExpectations(with: formerParent)
+        }
     }
 
     func testSetParent() {
         let formerParent = coordinator.getFormerParent(parentIsNot: appCoordinator)
 
-		// Setting parent twice should not change anything
-		(1...2).forEach { _ in
-			coordinator.setParent(to: appCoordinator)
+        // Setting parent twice should not change anything
+        (1 ... 2).forEach { _ in
+            coordinator.setParent(to: appCoordinator)
 
-			childParentExpectations(with: formerParent)
-		}
+            childParentExpectations(with: formerParent)
+        }
     }
 
     func childParentExpectations(with formerParent: JDParentCoordinating) {
@@ -136,7 +135,7 @@ class CoordinatorTests: XCTestCase {
 private extension JDChildCoordinating {
     func getFormerParent(parentIsNot potentialParent: JDParentCoordinating) -> JDParentCoordinating {
         let formerParent = parentCoordinator!
-        XCTAssertFalse(potentialParent === formerParent)
+        XCTAssertTrue(potentialParent !== formerParent)
         return formerParent
     }
 }

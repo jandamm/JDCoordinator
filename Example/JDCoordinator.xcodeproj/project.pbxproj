@@ -30,6 +30,8 @@
 		E566E8146C72F8AB6894ED12 /* Pods_JDCoordinator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966468E81CE515E56ADE37DA /* Pods_JDCoordinator_Example.framework */; };
 		FD723FAD2054803F00388975 /* ReferencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FAC2054803F00388975 /* ReferencingTests.swift */; };
 		FD723FB1205480C100388975 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FAF205480BE00388975 /* TestHelper.swift */; };
+		FDBDF15A20549D6600A36BFC /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDF15920549D6600A36BFC /* StorageTests.swift */; };
+		FDBDF15C20549D9300A36BFC /* ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDF15B20549D9300A36BFC /* ControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		F7D2C75947A161A685893E3F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FD723FAC2054803F00388975 /* ReferencingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencingTests.swift; sourceTree = "<group>"; };
 		FD723FAF205480BE00388975 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		FDBDF15920549D6600A36BFC /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
+		FDBDF15B20549D9300A36BFC /* ControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,8 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				FDBDF15B20549D9300A36BFC /* ControllerTests.swift */,
 				607FACEB1AFB9204008FA782 /* CoordinatorTests.swift */,
 				FD723FAC2054803F00388975 /* ReferencingTests.swift */,
+				FDBDF15920549D6600A36BFC /* StorageTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -476,6 +482,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD723FB1205480C100388975 /* TestHelper.swift in Sources */,
+				FDBDF15A20549D6600A36BFC /* StorageTests.swift in Sources */,
+				FDBDF15C20549D9300A36BFC /* ControllerTests.swift in Sources */,
 				FD723FAD2054803F00388975 /* ReferencingTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* CoordinatorTests.swift in Sources */,
 			);
