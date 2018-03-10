@@ -17,7 +17,7 @@ extension _JDChildCoordinating {
             return
         }
 
-        guard !coordinator.hasChild(self) else {
+        if !coordinator.hasChild(self) {
             return coordinator.addChild(self)
         }
 
