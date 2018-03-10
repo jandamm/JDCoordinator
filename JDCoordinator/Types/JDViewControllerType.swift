@@ -10,16 +10,15 @@ import Foundation
 /// Defines viewController for JDRootNavigationCoordinatorProtocol and JDNavigationCoordinatorProtocol
 ///
 /// Be aware that not all choices are available for JDRootNavigationCoordinatorProtocol.
-/// Every choice that is always available is bold.
-/// - **current**: navigationController.topViewController
+/// - current: navigationController.topViewController
 /// - previous: previousViewController
-/// - **visible**: navigationController.visibleViewController
-/// - **root**: navigationController.visibleViewController.first
+/// - root: navigationController.visibleViewController.first
+/// - visible: navigationController.visibleViewController
 public enum JDViewControllerType {
     case current
     case previous
-    case visible
     case root
+    case visible
 
     /// Calls viewController(for:) on the Coordinator.
     /// - parameter coordinator: The Coordinator whose controller should be returned.
