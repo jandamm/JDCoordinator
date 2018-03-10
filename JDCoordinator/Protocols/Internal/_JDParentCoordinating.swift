@@ -1,5 +1,5 @@
 //
-//  JDParentCoordinatorInternal.swift
+//  _JDParentCoordinatoring.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-typealias _JDParentCoordinatorClass = NSObject & _JDParentCoordinatorProtocol
+typealias _JDParentCoordinatorClass = NSObject & _JDParentCoordinating
 
-protocol _JDParentCoordinatorProtocol: JDParentCoordinatorProtocol {
+protocol _JDParentCoordinating: JDParentCoordinating {
     var childCoordinators: JDChildCoordinatorStorage { get set }
 }
 
-extension _JDParentCoordinatorProtocol {
+extension _JDParentCoordinating {
 
     public func addChild(_ coordinator: JDChildCoordinatorClass) {
         guard let selfClass = self as? JDParentCoordinatorClass, !childCoordinators.contains(coordinator) else {

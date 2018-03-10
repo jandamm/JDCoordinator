@@ -21,7 +21,7 @@ import Foundation
 
  Depending on your apps navigation structure, you may want to make it a singleton.
  */
-open class JDAppCoordinator: NSObject, JDRootNavigationCoordinatorProtocol, _JDParentCoordinatorProtocol, JDCoordinatorCoordinatorDelegate, JDCoordinatorViewControllerDelegate {
+open class JDAppCoordinator: NSObject, JDRootNavigationCoordinating, _JDParentCoordinating, JDCoordinatorCoordinatorDelegate, JDCoordinatorViewControllerDelegate {
 
     /// Initialize the JDAppCoordinator a UINavigationController
     /// - parameter navigationController: NavigationController which is keyWindow.rootViewController

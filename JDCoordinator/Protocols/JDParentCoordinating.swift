@@ -1,5 +1,5 @@
 //
-//  JDParentCoordinatorProtocol.swift
+//  JDParentCoordinatoring.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-public typealias JDParentCoordinatorClass = NSObject & JDParentCoordinatorProtocol
+public typealias JDParentCoordinatorClass = NSObject & JDParentCoordinating
 
 /// Defines Coordinator which can have children.
 /// If you're adopting this protocol by yourself you have to add a strong reference to child coordinators.
 /// You can use JDChildCoordinatorStorage. It's based on a Set but can contain every ChildCoordinator.
-public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
+public protocol JDParentCoordinating: JDBaseCoordinating {
 
     /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
     ///
@@ -30,7 +30,7 @@ public protocol JDParentCoordinatorProtocol: JDBaseCoordinatorProtocol {
     func hasChild(_ coordinator: JDChildCoordinatorClass) -> Bool
 }
 
-public extension JDParentCoordinatorProtocol where Self: NSObject {
+public extension JDParentCoordinating where Self: NSObject {
 
     /// Adds a JDCoordinator as a child, removes it from previous parentCoordinator and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.

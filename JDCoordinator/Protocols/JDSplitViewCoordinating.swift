@@ -1,16 +1,16 @@
+////
+////  JDSplitViewCoordinating.swift
+////  JDCoordinator
+////
+////  Created by Jan Dammshäuser on 05/02/2017.
+////  Copyright © 2017 Jan Dammshäuser. All rights reserved.
+////
 //
-//  JDSplitViewCoordinatorProtocol.swift
-//  JDCoordinator
+// import Foundation
 //
-//  Created by Jan Dammshäuser on 05/02/2017.
-//  Copyright © 2017 Jan Dammshäuser. All rights reserved.
+///// Blueprint of JDSplitViewCoordinating
 //
-
-import Foundation
-
-/// Blueprint of JDSplitViewCoordinatorProtocol
-
-// public protocol JDSplitViewCoordinatorProtocol: JDBaseCoordinator {
+// public protocol JDSplitViewCoordinating: JDBaseCoordinator {
 //    var splitViewPresenter: UIViewController { get }
 //    //    var splitViewController: JDSplitViewController { get }
 //    var masterCoordinator: JDCoordinator? { get }
@@ -21,3 +21,4 @@ import Foundation
 //    var detailNavigationController: UINavigationController! { get }
 //    func showDetailNavigationController(_ vc: UINavigationController, withDetailCoordinator coord: JDCoordinator?, andStart start: Bool, fromSender sender: Any?)
 // }
+//

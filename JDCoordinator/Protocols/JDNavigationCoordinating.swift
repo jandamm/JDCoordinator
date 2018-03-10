@@ -1,5 +1,5 @@
 //
-//  JDNavigationCoordinator.swift
+//  JDNavigationCoordinatoring.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-public typealias JDNavigationCoordinatorClass = NSObject & JDNavigationCoordinatorProtocol
+public typealias JDNavigationCoordinatorClass = NSObject & JDNavigationCoordinating
 
 /// A Coordinator that has a navigationController and wasn't the first Coordinator in stack.
-public protocol JDNavigationCoordinatorProtocol: JDRootNavigationCoordinatorProtocol {
+public protocol JDNavigationCoordinating: JDRootNavigationCoordinating {
 
     /// You can use this value to save the ViewController where you want to return to when this coordinator is done.
     var previousViewController: UIViewController? { get set }
 }
 
-public extension JDNavigationCoordinatorProtocol {
+public extension JDNavigationCoordinating {
 
     /// This method sets previousViewController to navigationController.topViewController
     func setPreviousViewControllerToCurrent() {

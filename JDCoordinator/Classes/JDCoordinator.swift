@@ -14,7 +14,7 @@ import UIKit
  The coordinator structure in your app can be seen as a tree. In this example the Coordinator is the end of any branch.
  A Coordinator can only manage ViewControllers and should not reference any other coordinator (except as delegate).
  */
-open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoordinatorProtocol, JDCoordinatorViewControllerDelegate {
+open class JDCoordinator: NSObject, JDNavigationCoordinating, _JDChildCoordinating, JDCoordinatorViewControllerDelegate {
 
     /// Initialize the JDCoordinator with a UINavigationController and adds it to a parentCoordinator
     /// - parameter navigationController: NavigationController where any further navigation should take place.
@@ -30,7 +30,7 @@ open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoo
 
     /// Initializes the JDCoordinator by calling init(with:andAddToParent:) using the parentCoordinators navigationController.
     /// - parameter parentCoordinator: The parent of this Coordinator and the provider of the navigationController.
-    public convenience init<ParentCoordinator>(withParent parentCoordinator: ParentCoordinator) where ParentCoordinator: JDParentCoordinatorClass & JDRootNavigationCoordinatorProtocol {
+    public convenience init<ParentCoordinator>(withParent parentCoordinator: ParentCoordinator) where ParentCoordinator: JDParentCoordinatorClass & JDRootNavigationCoordinating {
         self.init(with: parentCoordinator.navigationController, andAddToParent: parentCoordinator)
     }
 

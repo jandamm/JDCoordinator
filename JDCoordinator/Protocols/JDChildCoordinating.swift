@@ -1,5 +1,5 @@
 //
-//  JDChildCoordinatorProtocol.swift
+//  JDChildCoordinatoring.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-public typealias JDChildCoordinatorClass = NSObject & JDChildCoordinatorProtocol
+public typealias JDChildCoordinatorClass = NSObject & JDChildCoordinating
 
 /// Defines Coordinators which can be children to other coordinators.
-public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
+public protocol JDChildCoordinating: JDBaseCoordinating {
 
     /// Returns the parentCoordinator of this child.
     var parentCoordinator: JDParentCoordinatorClass! { get }
@@ -24,7 +24,7 @@ public protocol JDChildCoordinatorProtocol: JDBaseCoordinatorProtocol {
     func setParent(to coordinator: JDParentCoordinatorClass)
 }
 
-public extension JDChildCoordinatorProtocol where Self: NSObject {
+public extension JDChildCoordinating where Self: NSObject {
 
     /// Returns every parentCoordinator.
     ///

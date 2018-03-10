@@ -11,7 +11,7 @@ import UIKit
 // TODO: - Implement Protocol
 
 /// JDSplitViewCoordinators are meant to coordinate one or more JDCoordinators and ViewControllers within an UISplitViewController and presented within an UINavigationController.
-// @objc class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinatorProtocol, UISplitViewControllerDelegate {
+// @objc class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinating, UISplitViewControllerDelegate {
 //
 //    var _rootSplitViewCoordinator = false
 //

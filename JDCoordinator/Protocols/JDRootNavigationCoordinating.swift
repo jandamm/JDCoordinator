@@ -1,5 +1,5 @@
 //
-//  JDRootNavigationCoordinator.swift
+//  JDRootNavigationCoordinatoring.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-public typealias JDRootNavigationCoordinatorClass = NSObject & JDRootNavigationCoordinatorProtocol
+public typealias JDRootNavigationCoordinatorClass = NSObject & JDRootNavigationCoordinating
 
 /// A Coordinator that has a navigationController
-public protocol JDRootNavigationCoordinatorProtocol: JDBaseCoordinatorProtocol {
+public protocol JDRootNavigationCoordinating: JDBaseCoordinating {
 
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
@@ -24,7 +24,7 @@ public protocol JDRootNavigationCoordinatorProtocol: JDBaseCoordinatorProtocol {
     func viewController(for type: JDViewControllerType) -> UIViewController?
 }
 
-public extension JDRootNavigationCoordinatorProtocol {
+public extension JDRootNavigationCoordinating {
 
     /// Provides the ViewController for the given type.
     /// This method is called by some methods to replace ViewControllers.
@@ -37,7 +37,7 @@ public extension JDRootNavigationCoordinatorProtocol {
         case .current:
             return navigationController.topViewController
         case .previous:
-            return (self as? JDNavigationCoordinatorProtocol)?.previousViewController
+            return (self as? JDNavigationCoordinating)?.previousViewController
         case .visible:
             return navigationController.visibleViewController
         case .root:
