@@ -9,7 +9,6 @@
 import JDCoordinator
 
 class AppCoordinator: JDAppCoordinator, MainCoordinatorDelegate {
-
     weak var main: MainCoordinator!
 
     override func start() {
@@ -24,7 +23,6 @@ class AppCoordinator: JDAppCoordinator, MainCoordinatorDelegate {
     }
 
     func getData(_ completion: @escaping (Bool) -> Void) {
-
         // This function "downloads" data for three seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             completion(true)

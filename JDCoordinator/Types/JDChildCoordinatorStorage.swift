@@ -14,11 +14,13 @@ public protocol JDChildCoordinatorStoring: Collection where Element == JDChildCo
 public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, Equatable, ExpressibleByArrayLiteral {
 
     // MARK: - Internal Storage
+
     public typealias Storage = Set<AnyHashable>
 
     private var storage: Storage
 
     // MARK: - Initializers
+
     public init() {
         storage = []
     }
@@ -34,9 +36,11 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
     }
 
     // MARK: - Sequence
+
     public typealias Element = JDChildCoordinating
 
     // MARK: - Collection
+
     public typealias Index = Storage.Index
 
     public var startIndex: Index {
@@ -56,16 +60,19 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
     }
 
     // MARK: - ExpressibleByArrayLiteral
+
     public init(arrayLiteral elements: Element...) {
         self.init(elements: elements)
     }
 
     // MARK: - Equatable
-    public static func ==(lhs: JDChildCoordinatorStorage, rhs: JDChildCoordinatorStorage) -> Bool {
+
+    public static func == (lhs: JDChildCoordinatorStorage, rhs: JDChildCoordinatorStorage) -> Bool {
         return lhs.storage == rhs.storage
     }
 
     // MARK: - SetAlgebra
+
     public var isEmpty: Bool {
         return storage.isEmpty
     }
@@ -116,7 +123,6 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
 }
 
 public extension JDChildCoordinatorStorage {
-
     mutating func removeAll(keepingCapacity keepCapacity: Bool = false) {
         storage.removeAll(keepingCapacity: keepCapacity)
     }
@@ -129,7 +135,6 @@ public extension JDChildCoordinatorStorage {
 }
 
 private extension AnyHashable {
-
     var element: JDChildCoordinating {
         return base as! JDChildCoordinating
     }

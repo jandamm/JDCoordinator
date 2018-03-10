@@ -14,7 +14,6 @@ protocol MasterDelegate: JDCoordinatorViewControllerDelegate {
 }
 
 class MasterViewController: UIViewController {
-
     // needed on iOS 8
     init() {
         super.init(nibName: "MasterViewController", bundle: nil)

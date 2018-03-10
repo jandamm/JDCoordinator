@@ -9,7 +9,6 @@ import Foundation
 
 /// A Coordinator that has a navigationController
 public protocol JDRootNavigationCoordinating: JDBaseCoordinating {
-
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
 
@@ -23,7 +22,6 @@ public protocol JDRootNavigationCoordinating: JDBaseCoordinating {
 }
 
 public extension JDRootNavigationCoordinating {
-
     /// Provides the ViewController for the given type.
     /// This method is called by some methods to replace ViewControllers.
     ///
@@ -70,6 +68,7 @@ public extension JDRootNavigationCoordinating {
     }
 
     // MARK: - Default Methods
+
     /// Convenience method to pushViewController directly within JDCoordinators navigationController
     func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.pushViewController(viewController, animated: animated)
@@ -106,6 +105,7 @@ public extension JDRootNavigationCoordinating {
     }
 
     // MARK: - Custom Methods
+
     /// Convenience method to setViewController directly within JDCoordinators navigationController
     func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.setViewController(viewController, animated: animated)

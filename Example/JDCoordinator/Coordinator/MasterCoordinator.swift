@@ -9,7 +9,6 @@
 import JDCoordinator
 
 class MasterCoordinator: JDCoordinator {
-
     weak var delegate: (JDCoordinatorCoordinatorDelegate & MasterDelegate)!
 
     override func start() {
@@ -27,7 +26,6 @@ class MasterCoordinator: JDCoordinator {
 }
 
 extension MasterCoordinator: MasterDelegate {
-
     func showDetail(withData data: String?) {
         delegate.showDetail(withData: data)
     }

@@ -15,7 +15,6 @@ public protocol AnyHashableConvertible {
 }
 
 extension AnyHashableConvertible where Self: Hashable {
-
     public var anyHashable: AnyHashable {
         return self as AnyHashable
     }

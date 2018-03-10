@@ -9,7 +9,6 @@ import Foundation
 
 /// Use this protocol for weak pointers to delegates of JDCoordinators in ViewControllers.
 @objc public protocol JDCoordinatorViewControllerDelegate: class {
-
     /// Call this method in your ViewController to tell the Coordinator that their state has changed.
     ///
     /// You may want to check if parent == nil and remove the coordinator from it's parent.

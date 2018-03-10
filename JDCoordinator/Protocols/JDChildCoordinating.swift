@@ -10,7 +10,6 @@ import Foundation
 
 /// Defines Coordinators which can be children to other coordinators.
 public protocol JDChildCoordinating: JDBaseCoordinating {
-
     /// Returns the parentCoordinator of this child.
     var parentCoordinator: JDParentCoordinating! { get }
 
@@ -23,7 +22,6 @@ public protocol JDChildCoordinating: JDBaseCoordinating {
 }
 
 public extension JDChildCoordinating {
-
     /// Returns every parentCoordinator.
     ///
     /// .first is .parentCoordinator. .last is the AppCoordinator.

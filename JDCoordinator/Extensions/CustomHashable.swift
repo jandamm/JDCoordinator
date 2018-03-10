@@ -10,7 +10,6 @@ import Foundation
 protocol CustomHashable: Hashable {}
 
 extension CustomHashable {
-
     func calculateHash(for hashables: [AnyHashable?]) -> Int {
         let cleanHashables = hashables.flatMap { $0 }
         return calculateHash(for: cleanHashables)

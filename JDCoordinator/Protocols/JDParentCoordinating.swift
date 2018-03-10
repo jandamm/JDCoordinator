@@ -12,7 +12,6 @@ import Foundation
 /// If you're adopting this protocol by yourself you have to add a strong reference to child coordinators.
 /// You can use JDChildCoordinatorStorage. It's based on a Set but can contain every ChildCoordinator.
 public protocol JDParentCoordinating: JDBaseCoordinating {
-
     /// Adds a JDCoordinator as a child and removes it from previous parentCoordinator.
     ///
     /// You do not have to both setParent(to:) and addChild(:)
@@ -29,7 +28,6 @@ public protocol JDParentCoordinating: JDBaseCoordinating {
 }
 
 public extension JDParentCoordinating {
-
     /// Adds a JDCoordinator as a child, removes it from previous parentCoordinator and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.
     func addChild(andStart coordinator: JDChildCoordinating) {
@@ -62,7 +60,6 @@ public extension JDParentCoordinating {
 }
 
 public extension Array where Element == JDParentCoordinating {
-
     func index(for coordinator: Element) -> Int? {
         return index(where: { $0 === coordinator })
     }
@@ -73,7 +70,6 @@ public extension Array where Element == JDParentCoordinating {
 }
 
 public extension Array where Element == JDChildCoordinating {
-
     func index(for coordinator: Element) -> Int? {
         return index(where: { $0 === coordinator })
     }

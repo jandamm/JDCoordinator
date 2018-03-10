@@ -9,7 +9,6 @@
 import UIKit
 
 class IntroVC: UIViewController {
-
     // needed on iOS 8
     init() {
         super.init(nibName: "IntroVC", bundle: nil)

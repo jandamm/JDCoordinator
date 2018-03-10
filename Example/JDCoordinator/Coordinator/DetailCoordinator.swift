@@ -9,7 +9,6 @@
 import JDCoordinator
 
 class DetailCoordinator: JDCoordinator {
-
     var data: String?
 
     weak var delegate: JDCoordinatorCoordinatorDelegate!
@@ -30,7 +29,6 @@ class DetailCoordinator: JDCoordinator {
 }
 
 extension DetailCoordinator: DetailViewDelegate {
-
     func showSubDetails() {
         let vc = SubDetailViewController()
         vc.delegate = self

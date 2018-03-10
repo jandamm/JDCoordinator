@@ -14,7 +14,6 @@ protocol MainDelegate: JDCoordinatorViewControllerDelegate {
 }
 
 class MainVC: UIViewController {
-
     // needed on iOS 8
     init() {
         super.init(nibName: "MainVC", bundle: nil)

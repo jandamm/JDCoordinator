@@ -13,7 +13,6 @@ protocol DetailViewDelegate: JDCoordinatorViewControllerDelegate {
 }
 
 class DetailViewController: UIViewController {
-
     // needed on iOS 8
     init() {
         super.init(nibName: "DetailViewController", bundle: nil)
@@ -27,7 +26,7 @@ class DetailViewController: UIViewController {
 
     var data: String?
 
-    @IBOutlet weak var dataLbl: UIButton!
+    @IBOutlet var dataLbl: UIButton!
 
     @IBAction func btnPressed(_: UIButton) {
         delegate.showSubDetails()

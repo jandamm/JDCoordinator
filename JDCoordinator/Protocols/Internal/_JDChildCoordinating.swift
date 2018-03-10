@@ -12,7 +12,6 @@ protocol _JDChildCoordinating: JDChildCoordinating {
 }
 
 extension _JDChildCoordinating {
-
     public func setParent(to coordinator: JDParentCoordinating) {
         guard parentCoordinator !== coordinator else {
             return

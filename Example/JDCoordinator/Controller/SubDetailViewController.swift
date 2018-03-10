@@ -9,7 +9,6 @@
 import JDCoordinator
 
 class SubDetailViewController: UIViewController {
-
     // needed on iOS 8
     init() {
         super.init(nibName: "SubDetailViewController", bundle: nil)
@@ -21,7 +20,7 @@ class SubDetailViewController: UIViewController {
 
     weak var delegate: JDCoordinatorViewControllerDelegate!
 
-    @IBOutlet weak var dataLbl: UILabel!
+    @IBOutlet var dataLbl: UILabel!
 
     var data: String?
 
