@@ -23,7 +23,6 @@
 		8BB632FD6367327D236358B9B3ED0408 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		90696490712FC2F86A4D44BC839B994B /* Pods-JDCoordinator_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C982110F1DEC51AC48A0B12760B1EF /* Pods-JDCoordinator_Example-dummy.m */; };
 		98A82FAF0735BC9FAF07D5DFF787B83E /* Pods-JDCoordinator_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BC0B399BECC240CDE2CB67A7FB88F62 /* Pods-JDCoordinator_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7BAD65F1F2A2A6500FF72F0 /* CustomHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD65E1F2A2A6500FF72F0 /* CustomHashable.swift */; };
 		A7BAD6611F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6601F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift */; };
 		A7BAD6631F2A337900FF72F0 /* JDViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */; };
 		A7BAD6661F2A343B00FF72F0 /* JDCoordinatorDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6651F2A343B00FF72F0 /* JDCoordinatorDelegates.swift */; };
@@ -77,7 +76,6 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D72E5300AB6793686A361CCCE6E28C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A686B225ED59FA35D20FD9D050FAFE3E /* Pods-JDCoordinator_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDCoordinator_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A7BAD65E1F2A2A6500FF72F0 /* CustomHashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHashable.swift; sourceTree = "<group>"; };
 		A7BAD6601F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDRootNavigationCoordinating.swift; sourceTree = "<group>"; };
 		A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDViewControllerType.swift; sourceTree = "<group>"; };
 		A7BAD6651F2A343B00FF72F0 /* JDCoordinatorDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDCoordinatorDelegates.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				0BD3AD4C1E4E0B10002A3E9E /* UINavigationController.swift */,
-				A7BAD65E1F2A2A6500FF72F0 /* CustomHashable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,7 +456,6 @@
 				0BD3AD481E4E0AE7002A3E9E /* JDParentCoordinator.swift in Sources */,
 				0BD3AD461E4E0AE7002A3E9E /* JDAppCoordinator.swift in Sources */,
 				A7BAD6631F2A337900FF72F0 /* JDViewControllerType.swift in Sources */,
-				A7BAD65F1F2A2A6500FF72F0 /* CustomHashable.swift in Sources */,
 				A7BAD6611F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift in Sources */,
 				0BD3AD571E4E0B20002A3E9E /* JDSplitViewCoordinating.swift in Sources */,
 				0BD3AD551E4E0B20002A3E9E /* JDNavigationCoordinating.swift in Sources */,
