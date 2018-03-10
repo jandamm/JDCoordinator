@@ -1,8 +1,15 @@
+//
+//  ReferencingTests.swift
+//  JDCoordinator_Tests
+//
+//  Created by Jan Dammshäuser on 10.03.18.
+//  Copyright © 2018 CocoaPods. All rights reserved.
+//
+
 @testable import JDCoordinator
-import UIKit
 import XCTest
 
-class Tests: XCTestCase {
+class ReferencingTests: XCTestCase {
     var appCoordinator: JDAppCoordinator!
     weak var appNavigationController: UINavigationController?
     weak var parentCoordinator: JDParentCoordinator?
@@ -13,20 +20,19 @@ class Tests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        appCoordinator = JDAppCoordinator(with: createNavigationController())
+        appCoordinator = JDAppCoordinator(with: UINavigationController())
         appNavigationController = appCoordinator.navigationController
         parentCoordinator = JDParentCoordinator(with: appCoordinator.navigationController, andAddToParent: appCoordinator)
         parentNavigationController = parentCoordinator?.navigationController
-        childCoordinator = JDCoordinator(with: createNavigationController(), andAddToParent: parentCoordinator!)
+        childCoordinator = JDCoordinator(with: UINavigationController(), andAddToParent: parentCoordinator!)
         childNavigationController = childCoordinator?.navigationController
     }
 
     override func tearDown() {
-        appCoordinator = nil
         super.tearDown()
     }
 
-    func testRemoveChildAndReferencing() {
+    func testReferencing() {
         XCTAssertNotNil(appCoordinator)
         XCTAssertNotNil(appNavigationController)
         XCTAssertNotNil(parentCoordinator)
@@ -35,6 +41,7 @@ class Tests: XCTestCase {
         XCTAssertNotNil(childNavigationController)
 
         XCTAssertEqual(appNavigationController, parentNavigationController)
+        XCTAssertTrue(appNavigationController === parentNavigationController)
 
         // Should deallocate childCoordinator and childNavigationController
         parentCoordinator?.removeChild(childCoordinator!)
@@ -56,8 +63,4 @@ class Tests: XCTestCase {
         XCTAssertNil(appNavigationController)
         XCTAssertNil(parentNavigationController)
     }
-}
-
-private func createNavigationController() -> UINavigationController {
-    return UINavigationController()
 }

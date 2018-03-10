@@ -25,9 +25,11 @@
 		0BD3AD411E4E0AD5002A3E9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BD3AD3F1E4E0AD5002A3E9E /* LaunchScreen.storyboard */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Assets.xcassets */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		607FACEC1AFB9204008FA782 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* CoordinatorTests.swift */; };
 		9F56F65128EF9532925DB8B9 /* Pods_JDCoordinator_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590826EE71D58C42D7CAFB60 /* Pods_JDCoordinator_Tests.framework */; };
 		E566E8146C72F8AB6894ED12 /* Pods_JDCoordinator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966468E81CE515E56ADE37DA /* Pods_JDCoordinator_Example.framework */; };
+		FD723FAD2054803F00388975 /* ReferencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FAC2054803F00388975 /* ReferencingTests.swift */; };
+		FD723FB1205480C100388975 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FAF205480BE00388975 /* TestHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,14 +67,16 @@
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* JDCoordinator_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JDCoordinator_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		607FACEB1AFB9204008FA782 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		6341BCC7CA2FB32DC9212BE6 /* Pods-JDCoordinator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDCoordinator_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-JDCoordinator_Example/Pods-JDCoordinator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8F5E45540EF1DFB824ECA408 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		95F3F7217C7A9F578F7AAA92 /* JDCoordinator.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JDCoordinator.podspec; path = ../JDCoordinator.podspec; sourceTree = "<group>"; };
 		966468E81CE515E56ADE37DA /* Pods_JDCoordinator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDCoordinator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		992290B49F434B76F584D1A8 /* Pods-JDCoordinator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDCoordinator_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JDCoordinator_Example/Pods-JDCoordinator_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D2C75947A161A685893E3F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FD723FAC2054803F00388975 /* ReferencingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencingTests.swift; sourceTree = "<group>"; };
+		FD723FAF205480BE00388975 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACE91AFB9204008FA782 /* Supporting Files */,
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				607FACEB1AFB9204008FA782 /* CoordinatorTests.swift */,
+				FD723FAC2054803F00388975 /* ReferencingTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -196,8 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACEA1AFB9204008FA782 /* Info.plist */,
+				FD723FAF205480BE00388975 /* TestHelper.swift */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
@@ -469,7 +475,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				FD723FB1205480C100388975 /* TestHelper.swift in Sources */,
+				FD723FAD2054803F00388975 /* ReferencingTests.swift in Sources */,
+				607FACEC1AFB9204008FA782 /* CoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
