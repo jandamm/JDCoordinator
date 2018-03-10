@@ -1,9 +1,8 @@
+@testable import JDCoordinator
 import UIKit
 import XCTest
-@testable import JDCoordinator
 
 class Tests: XCTestCase {
-
     var appCoordinator: JDAppCoordinator!
     weak var appNavigationController: UINavigationController?
     weak var parentCoordinator: JDParentCoordinator?

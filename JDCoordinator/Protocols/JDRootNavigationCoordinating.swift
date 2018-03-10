@@ -75,17 +75,20 @@ public extension JDRootNavigationCoordinating {
     }
 
     /// Convenience method to popViewController directly within JDCoordinators navigationController
-    @discardableResult func popViewController(animated: Bool = true) -> UIViewController? {
+    @discardableResult
+func popViewController(animated: Bool = true) -> UIViewController? {
         return navigationController.popViewController(animated: animated)
     }
 
     /// Convenience method to popToViewController directly within JDCoordinators navigationController
-    @discardableResult func popToViewController(_ viewController: UIViewController, animated: Bool = true) -> [UIViewController]? {
+    @discardableResult
+func popToViewController(_ viewController: UIViewController, animated: Bool = true) -> [UIViewController]? {
         return navigationController.popToViewController(viewController, animated: animated)
     }
 
     /// Convenience method to popToRootViewController directly within JDCoordinators navigationController
-    @discardableResult func popToRootViewController(animated: Bool = true) -> [UIViewController]? {
+    @discardableResult
+func popToRootViewController(animated: Bool = true) -> [UIViewController]? {
         return navigationController.popToRootViewController(animated: animated)
     }
 

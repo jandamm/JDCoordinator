@@ -82,7 +82,8 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
         return JDChildCoordinatorStorage(storage: difference)
     }
 
-    @discardableResult public mutating func update(with newMember: Element) -> Element? {
+    @discardableResult
+    public mutating func update(with newMember: Element) -> Element? {
         return storage.update(with: newMember.anyHashable)?.element
     }
 
@@ -102,11 +103,13 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
         return storage.contains(element.anyHashable)
     }
 
-    @discardableResult public mutating func remove(_ member: Element) -> Element? {
+    @discardableResult
+    public mutating func remove(_ member: Element) -> Element? {
         return storage.remove(member.anyHashable)?.element
     }
 
-    @discardableResult public mutating func insert(_ newMember: Element) -> (inserted: Bool, memberAfterInsert: Element) {
+    @discardableResult
+    public mutating func insert(_ newMember: Element) -> (inserted: Bool, memberAfterInsert: Element) {
         let (inserted, memberAfterInsert) = storage.insert(newMember.anyHashable)
         return (inserted, memberAfterInsert.element)
     }

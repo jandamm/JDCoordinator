@@ -150,10 +150,10 @@
 		0A5029B1320B717236E98853BB24DEB0 /* JDCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				A7BAD6641F2A33BE00FF72F0 /* Types */,
 				5C6E690E614B333DF233B1B88CD5FA03 /* Classes */,
 				0BD3AD4A1E4E0AEB002A3E9E /* Extensions */,
 				0BD3AD4B1E4E0AFB002A3E9E /* Protocols */,
+				A7BAD6641F2A33BE00FF72F0 /* Types */,
 			);
 			name = JDCoordinator;
 			path = ../../JDCoordinator;
