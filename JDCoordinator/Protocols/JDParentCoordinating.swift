@@ -54,7 +54,7 @@ public extension JDParentCoordinating {
             return
         }
 
-        let coordinator = coordinator.childStack[index]
+        let coordinator = coordinator.parentChildStack[index]
         removeChild(coordinator)
     }
 }

@@ -40,7 +40,7 @@ public extension JDChildCoordinating {
     /// Returns every parentCoordinator that is a JDChildCoordinator.
     ///
     /// .first is self. .last is uppermost parent which is also a child. Which is the AppCoordinators direct childCoordinator.
-    internal var childStack: [JDChildCoordinating] {
+    internal var parentChildStack: [JDChildCoordinating] {
         var coordinators: [JDChildCoordinating] = [self]
         var coordinator: JDChildCoordinating = self
 
