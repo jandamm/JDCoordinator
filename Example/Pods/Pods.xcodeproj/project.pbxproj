@@ -34,6 +34,7 @@
 		C8BE2D7096C0E8AC7E2D55DC1F622EDE /* Pods-JDCoordinator_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5CDF9D704ECDB7A8CF979C705F33A8 /* Pods-JDCoordinator_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB76A1CF2E3E5329115076BE925F348E /* JDCoordinator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDC7A37A4A2AF4EC0796548E07E153 /* JDCoordinator-dummy.m */; };
 		D8CD509A8F5B8D6C07025BD443A1082B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		FD723FA920544FF800388975 /* AnyHashableConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FA820544FF800388975 /* AnyHashableConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		EFD4D4C671AE7263EE98AECF3E23816D /* Pods-JDCoordinator_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JDCoordinator_Example.modulemap"; sourceTree = "<group>"; };
 		F5D02BC31633E17404CFD1274791E0E5 /* Pods-JDCoordinator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F634E10F03F00C076E77918E7F31CC30 /* Pods-JDCoordinator_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Example-frameworks.sh"; sourceTree = "<group>"; };
+		FD723FA820544FF800388975 /* AnyHashableConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyHashableConvertible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 		A7BAD6641F2A33BE00FF72F0 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				FD723FA820544FF800388975 /* AnyHashableConvertible.swift */,
 				A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */,
 				A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */,
 				A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */,
@@ -451,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD723FA920544FF800388975 /* AnyHashableConvertible.swift in Sources */,
 				A7BAD66F1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift in Sources */,
 				0BD3AD481E4E0AE7002A3E9E /* JDParentCoordinator.swift in Sources */,
 				0BD3AD461E4E0AE7002A3E9E /* JDAppCoordinator.swift in Sources */,
