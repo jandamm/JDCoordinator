@@ -19,7 +19,7 @@ open class JDCoordinator: NSObject, JDNavigationCoordinating, _JDChildCoordinati
     /// Initialize the JDCoordinator with a UINavigationController and adds it to a parentCoordinator
     /// - parameter navigationController: NavigationController where any further navigation should take place.
     /// - parameter parentCoordinator: Coordinator that should reference this coordinator.
-    public init(with navigationController: UINavigationController, andAddToParent parentCoordinator: JDParentCoordinatorClass) {
+    public init(with navigationController: UINavigationController, andAddToParent parentCoordinator: JDParentCoordinating) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator
 
@@ -30,12 +30,12 @@ open class JDCoordinator: NSObject, JDNavigationCoordinating, _JDChildCoordinati
 
     /// Initializes the JDCoordinator by calling init(with:andAddToParent:) using the parentCoordinators navigationController.
     /// - parameter parentCoordinator: The parent of this Coordinator and the provider of the navigationController.
-    public convenience init<ParentCoordinator>(withParent parentCoordinator: ParentCoordinator) where ParentCoordinator: JDParentCoordinatorClass & JDRootNavigationCoordinating {
+    public convenience init<ParentCoordinator>(withParent parentCoordinator: ParentCoordinator) where ParentCoordinator: JDParentCoordinating & JDRootNavigationCoordinating {
         self.init(with: parentCoordinator.navigationController, andAddToParent: parentCoordinator)
     }
 
     // MARK: - Protocols
-    public internal(set) weak var parentCoordinator: JDParentCoordinatorClass!
+    public internal(set) weak var parentCoordinator: JDParentCoordinating!
     public let navigationController: UINavigationController
     public weak var previousViewController: UIViewController?
     open func start() {}

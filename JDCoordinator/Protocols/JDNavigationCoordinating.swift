@@ -1,5 +1,5 @@
 //
-//  JDNavigationCoordinatoring.swift
+//  JDNavigationCoordinating.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-public typealias JDNavigationCoordinatorClass = NSObject & JDNavigationCoordinating
 
 /// A Coordinator that has a navigationController and wasn't the first Coordinator in stack.
 public protocol JDNavigationCoordinating: JDRootNavigationCoordinating {

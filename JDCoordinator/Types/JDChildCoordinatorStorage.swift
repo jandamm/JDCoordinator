@@ -7,11 +7,11 @@
 
 import Foundation
 
-public protocol JDChildCoordinatorStorageProtocol: Collection where Element == JDChildCoordinatorClass {}
+public protocol JDChildCoordinatorStoring: Collection where Element == JDChildCoordinating {}
 
 // TODO: - This has to be improved before release.
 /// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
-public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetAlgebra, Equatable, ExpressibleByArrayLiteral {
+public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, Equatable, ExpressibleByArrayLiteral {
 
     // MARK: - Internal Storage
     private typealias StorageElement = NSObject
@@ -25,7 +25,8 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetA
     }
 
     private init(elements: [Element]) {
-        self.init(storage: Set(elements as [StorageElement]))
+        // TODO: - correct Types
+        self.init(storage: Set(elements as! [StorageElement]))
     }
 
     private init(storage: Storage) {
@@ -33,7 +34,7 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetA
     }
 
     // MARK: - Sequence
-    public typealias Element = JDChildCoordinatorClass
+    public typealias Element = JDChildCoordinating
 
     // MARK: - Collection
     public typealias Index = Set<NSObject>.Index
@@ -75,7 +76,8 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetA
     }
 
     @discardableResult public mutating func update(with newMember: Element) -> Element? {
-        return storage.update(with: newMember as StorageElement) as? Element
+        // TODO: - correct Types
+        return storage.update(with: newMember as! StorageElement) as? Element
     }
 
     public mutating func formUnion(_ other: JDChildCoordinatorStorage) {
@@ -91,15 +93,18 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStorageProtocol, SetA
     }
 
     public func contains(_ element: Element) -> Bool {
-        return storage.contains(element as StorageElement)
+        // TODO: - correct Types
+        return storage.contains(element as! StorageElement)
     }
 
     @discardableResult public mutating func remove(_ member: Element) -> Element? {
-        return storage.remove(member as StorageElement) as? Element
+        // TODO: - correct Types
+        return storage.remove(member as! StorageElement) as? Element
     }
 
     @discardableResult public mutating func insert(_ newMember: Element) -> (inserted: Bool, memberAfterInsert: Element) {
-        return storage.insert(newMember as StorageElement) as! (Bool, Element)
+        // TODO: - correct Types
+        return storage.insert(newMember as! StorageElement) as! (Bool, Element)
     }
 
     public func union(_ other: JDChildCoordinatorStorage) -> JDChildCoordinatorStorage {

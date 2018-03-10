@@ -1,5 +1,5 @@
 //
-//  JDParentCoordinatoring.swift
+//  JDParentCoordinating.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-public typealias JDParentCoordinatorClass = NSObject & JDParentCoordinating
 
 /// Defines Coordinator which can have children.
 /// If you're adopting this protocol by yourself you have to add a strong reference to child coordinators.
@@ -20,28 +18,28 @@ public protocol JDParentCoordinating: JDBaseCoordinating {
     /// You do not have to both setParent(to:) and addChild(:)
     ///
     /// - parameter coordinator: Coordinator which should be added as child.
-    func addChild(_ coordinator: JDChildCoordinatorClass)
+    func addChild(_ coordinator: JDChildCoordinating)
 
     /// Removes coordinator from childCoordinators
     /// - parameter coordinator: Coordinator which should be removed
-    func removeChild(_ coordinator: JDChildCoordinatorClass)
+    func removeChild(_ coordinator: JDChildCoordinating)
 
     /// Returns whether the given coordinator is a child of this parentCoordinator
-    func hasChild(_ coordinator: JDChildCoordinatorClass) -> Bool
+    func hasChild(_ coordinator: JDChildCoordinating) -> Bool
 }
 
-public extension JDParentCoordinating where Self: NSObject {
+public extension JDParentCoordinating {
 
     /// Adds a JDCoordinator as a child, removes it from previous parentCoordinator and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.
-    func addChild(andStart coordinator: JDChildCoordinatorClass) {
+    func addChild(andStart coordinator: JDChildCoordinating) {
         addChild(coordinator)
         coordinator.start()
     }
 
     /// Removes multiple Coordinators
     /// - parameter coordinators: Coordinators which should be removed
-    func removeChilds(_ coordinators: [JDChildCoordinatorClass]) {
+    func removeChilds(_ coordinators: [JDChildCoordinating]) {
         for coordinator in coordinators {
             removeChild(coordinator)
         }
@@ -49,7 +47,7 @@ public extension JDParentCoordinating where Self: NSObject {
 
     /// Removes a whole branch of coordinators by giving one child within this tree.
     /// - parameter coordinator: ChildCoordinator whose tree should be removed.
-    func removeChilds(withStackOf coordinator: JDChildCoordinatorClass) {
+    func removeChilds(withStackOf coordinator: JDChildCoordinating) {
         guard coordinator.parentCoordinator !== self else {
             return removeChild(coordinator)
         }
@@ -63,7 +61,7 @@ public extension JDParentCoordinating where Self: NSObject {
     }
 }
 
-public extension Array where Element == JDParentCoordinatorClass {
+public extension Array where Element == JDParentCoordinating {
 
     func index(for coordinator: Element) -> Int? {
         return index(where: { $0 === coordinator })
@@ -74,7 +72,7 @@ public extension Array where Element == JDParentCoordinatorClass {
     }
 }
 
-public extension Array where Element == JDChildCoordinatorClass {
+public extension Array where Element == JDChildCoordinating {
 
     func index(for coordinator: Element) -> Int? {
         return index(where: { $0 === coordinator })

@@ -1,5 +1,5 @@
 //
-//  JDBaseCoordinatoring.swift
+//  JDBaseCoordinating.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-public typealias JDBaseCoordinatorClass = NSObject & JDBaseCoordinating
 
 /// BaseProtocol where every other CoordinatorProtocol inherits from.
 public protocol JDBaseCoordinating: class, AnyHashableConvertible {

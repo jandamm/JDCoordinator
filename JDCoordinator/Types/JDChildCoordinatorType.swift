@@ -8,5 +8,5 @@
 import Foundation
 
 public enum JDChildCoordinatorType {
-    case all, except(JDChildCoordinatorClass)
+    case all, except(JDChildCoordinating)
 }
