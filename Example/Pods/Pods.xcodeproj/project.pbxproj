@@ -34,6 +34,7 @@
 		CB76A1CF2E3E5329115076BE925F348E /* JDCoordinator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDC7A37A4A2AF4EC0796548E07E153 /* JDCoordinator-dummy.m */; };
 		D8CD509A8F5B8D6C07025BD443A1082B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		FD723FA920544FF800388975 /* AnyHashableConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FA820544FF800388975 /* AnyHashableConvertible.swift */; };
+		FDBDF15820549A5600A36BFC /* _JDStartTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		F5D02BC31633E17404CFD1274791E0E5 /* Pods-JDCoordinator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F634E10F03F00C076E77918E7F31CC30 /* Pods-JDCoordinator_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Example-frameworks.sh"; sourceTree = "<group>"; };
 		FD723FA820544FF800388975 /* AnyHashableConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyHashableConvertible.swift; sourceTree = "<group>"; };
+		FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _JDStartTestable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 		A7BAD6691F2A34A500FF72F0 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */,
 				A7BAD6671F2A348400FF72F0 /* _JDChildCoordinating.swift */,
 				A7BAD66A1F2A354C00FF72F0 /* _JDParentCoordinating.swift */,
 			);
@@ -463,6 +466,7 @@
 				A7BAD6661F2A343B00FF72F0 /* JDCoordinatorDelegates.swift in Sources */,
 				A7BAD6681F2A348400FF72F0 /* _JDChildCoordinating.swift in Sources */,
 				A7BAD66B1F2A354C00FF72F0 /* _JDParentCoordinating.swift in Sources */,
+				FDBDF15820549A5600A36BFC /* _JDStartTestable.swift in Sources */,
 				A7BAD66D1F2A361700FF72F0 /* JDChildCoordinatorType.swift in Sources */,
 				CB76A1CF2E3E5329115076BE925F348E /* JDCoordinator-dummy.m in Sources */,
 				0BD3AD4D1E4E0B10002A3E9E /* UINavigationController.swift in Sources */,

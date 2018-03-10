@@ -21,7 +21,7 @@ import Foundation
 
  Depending on your apps navigation structure, you may want to make it a singleton.
  */
-open class JDAppCoordinator: NSObject, JDRootNavigationCoordinating, _JDParentCoordinating, JDCoordinatorCoordinatorDelegate, JDCoordinatorViewControllerDelegate {
+open class JDAppCoordinator: NSObject, JDRootNavigationCoordinating, _JDParentCoordinating, JDCoordinatorCoordinatorDelegate, JDCoordinatorViewControllerDelegate, _JDStartTestable {
     /// Initialize the JDAppCoordinator a UINavigationController
     /// - parameter navigationController: NavigationController which is keyWindow.rootViewController
     public init(with navigationController: UINavigationController) {
@@ -34,5 +34,9 @@ open class JDAppCoordinator: NSObject, JDRootNavigationCoordinating, _JDParentCo
 
     public internal(set) var childCoordinators = JDChildCoordinatorStorage()
     public let navigationController: UINavigationController
-    open func start() {}
+    open func start() {
+        started()
+    }
+
+    var startedCount = 0
 }

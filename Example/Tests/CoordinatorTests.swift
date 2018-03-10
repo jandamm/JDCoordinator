@@ -32,9 +32,24 @@ class CoordinatorTests: XCTestCase {
     }
 
     func testStart() {
-        // Just call start as it does nothing but counts to testcoverage
+
+		XCTAssertFalse(appCoordinator.isStarted)
+		XCTAssertFalse(coordinator.isStarted)
+
         appCoordinator.start()
         coordinator.start()
+
+		startExpectations(for: appCoordinator)
+		startExpectations(for: coordinator)
+
+		coordinator.start()
+
+		startExpectations(for: coordinator, count: 2)
+    }
+
+    func startExpectations(for startable: _JDStartTestable, count: Int = 1) {
+        XCTAssertTrue(startable.isStarted)
+        XCTAssertEqual(startable.startedCount, count)
     }
 
     func testNavigationControllerSetup() {
