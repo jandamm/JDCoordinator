@@ -29,6 +29,8 @@ class ReferencingTests: XCTestCase {
     }
 
     override func tearDown() {
+        appCoordinator = nil
+
         super.tearDown()
     }
 
