@@ -14,7 +14,6 @@ protocol MasterDelegate: JDCoordinatorViewControllerDelegate {
 }
 
 class MasterViewController: UIViewController {
-
     // needed on iOS 8
     init() {
         super.init(nibName: "MasterViewController", bundle: nil)
@@ -36,7 +35,7 @@ class MasterViewController: UIViewController {
 
     override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
-        delegate?.presentedViewController?(self, didMoveTo: parent)
+        delegate?.presentedViewController(self, didMoveTo: parent)
     }
 
     deinit {

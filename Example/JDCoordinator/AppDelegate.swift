@@ -6,27 +6,22 @@
 //  Copyright © 2016 Jan Dammshäuser. All rights reserved.
 //
 
-import UIKit
 import JDCoordinator
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-    var rootViewController: UINavigationController!
+    let appCoordinator = AppCoordinator(with: UINavigationController())
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         let windowFrame = UIScreen.main.bounds
         let window = UIWindow(frame: windowFrame)
 
-        rootViewController = AppCoordinator.main.navigationController
-        // rootViewController.setNavigationBarHidden(true, animated: false)
+        window.rootViewController = appCoordinator.navigationController
 
-        window.rootViewController = rootViewController
-
-        AppCoordinator.main.start()
+        appCoordinator.start()
 
         window.makeKeyAndVisible()
 

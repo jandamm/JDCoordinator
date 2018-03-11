@@ -13,7 +13,6 @@ protocol MainCoordinatorDelegate: JDCoordinatorCoordinatorDelegate {
 }
 
 class MainCoordinator: JDParentCoordinator, MainDelegate {
-
     weak var delegate: MainCoordinatorDelegate?
 
     override func start() {

@@ -8,18 +8,22 @@
 
 import UIKit
 
+// TODO: - remove NSObject inheritance once Swift 4.1 is released. Using Hashable instead.
+#if swift(>=4.1)
+    extension JDCoordinator: Hashable {}
+#endif
+
 /**
  The Coordinator is the simplest class in a NavigationController based application.
 
  The coordinator structure in your app can be seen as a tree. In this example the Coordinator is the end of any branch.
  A Coordinator can only manage ViewControllers and should not reference any other coordinator (except as delegate).
  */
-open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoordinatorProtocol, JDCoordinatorViewControllerDelegate {
-
+open class JDCoordinator: NSObject, JDNavigationCoordinating, _JDChildCoordinating, JDCoordinatorViewControllerDelegate, _JDStartTestable {
     /// Initialize the JDCoordinator with a UINavigationController and adds it to a parentCoordinator
     /// - parameter navigationController: NavigationController where any further navigation should take place.
     /// - parameter parentCoordinator: Coordinator that should reference this coordinator.
-    public init(with navigationController: UINavigationController, andAddToParent parentCoordinator: JDParentCoordinatorProtocol) {
+    public init(with navigationController: UINavigationController, andAddToParent parentCoordinator: JDParentCoordinating) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator
 
@@ -28,9 +32,22 @@ open class JDCoordinator: NSObject, JDNavigationCoordinatorProtocol, _JDChildCoo
         parentCoordinator.addChild(self)
     }
 
+    /// Initializes the JDCoordinator by calling init(with:andAddToParent:) using the parentCoordinators navigationController.
+    /// - parameter parentCoordinator: The parent of this Coordinator and the provider of the navigationController.
+    public convenience init<ParentCoordinator>(withParent parentCoordinator: ParentCoordinator) where ParentCoordinator: JDParentCoordinating & JDRootNavigationCoordinating {
+        self.init(with: parentCoordinator.navigationController, andAddToParent: parentCoordinator)
+    }
+
     // MARK: - Protocols
-    internal(set) public weak var parentCoordinator: JDParentCoordinatorProtocol!
-    public unowned let navigationController: UINavigationController
+
+    public internal(set) weak var parentCoordinator: JDParentCoordinating!
+    public let navigationController: UINavigationController
     public weak var previousViewController: UIViewController?
-    open func start() {}
+    open func start() {
+        started()
+    }
+
+    open func presentedViewController(_: UIViewController, didMoveTo _: UIViewController?) {}
+
+    var startedCount: Int = 0
 }

@@ -1,6 +1,9 @@
 # Mac OS X
 .DS_Store
 
+# Sublime
+*.sublime-workspace
+
 # Xcode
 
 ## Build generated

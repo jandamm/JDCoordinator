@@ -8,56 +8,16 @@
 
 import Foundation
 
-// MARK: - Default Methods
-public extension UIViewController {
-
-    /// Convenience method that will call equally named method with animated: true
-    func present(_ viewControllerToPresent: UIViewController, completion: (() -> Void)? = nil) {
-        present(viewControllerToPresent, animated: true, completion: completion)
-    }
-
-    /// Convenience method that will call equally named method with animated: true
-    func dismiss(completion: (() -> Void)? = nil) {
-        dismiss(animated: true, completion: completion)
-    }
-}
-
 public extension UINavigationController {
-
-    /// Convenience method that will call equally named method with animated: true
-    func pushViewController(_ viewController: UIViewController) {
-        pushViewController(viewController, animated: true)
-    }
-
-    /// Convenience method that will call equally named method with animated: true
-    @discardableResult func popViewController() -> UIViewController? {
-        return popViewController(animated: true)
-    }
-
-    /// Convenience method that will call equally named method with animated: true
-    @discardableResult func popToViewController(_ viewController: UIViewController) -> [UIViewController]? {
-        return popToViewController(viewController, animated: true)
-    }
-
-    /// Convenience method that will call equally named method with animated: true
-    @discardableResult func popToRootViewController() -> [UIViewController]? {
-        return popToRootViewController(animated: true)
-    }
-
-    /// Convenience method that will call equally named method with animated: true
-    @nonobjc func setViewControllers(_ viewControllers: [UIViewController]) {
-        setViewControllers(viewControllers, animated: true)
-    }
-
-    /// Convenience method that will call equally named method with animated: true
+    /// Convenience method that will set the given ViewController.
     func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         setViewControllers([viewController], animated: animated)
     }
 }
 
 // MARK: - Custom Methods
-public extension UINavigationController {
 
+public extension UINavigationController {
     /// Removes the given ViewController and pushes to newViewController.
     ///
     /// If no newViewController and type is empty or on top of stack it does nothing
@@ -176,10 +136,9 @@ public extension UINavigationController {
 }
 
 extension Array where Element: Comparable & Hashable {
-
     var noDuplicatesAndSorted: [Element] {
         let array = Array(Set(self))
-        return array.sorted(by: { $0 < $1 })
+        return array.sorted(by: <)
     }
 }
 
@@ -189,13 +148,11 @@ protocol OptionalType {
 }
 
 extension Optional: OptionalType {
-
     var value: Wrapped? { return self }
 }
 
-extension Sequence where Iterator.Element: OptionalType {
-
-    var unwrapped: [Iterator.Element.Wrapped] {
+extension Sequence where Element: OptionalType {
+    var unwrapped: [Element.Wrapped] {
         return flatMap { $0.value }
     }
 }

@@ -12,21 +12,29 @@
 		0BD3AD481E4E0AE7002A3E9E /* JDParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD441E4E0AE7002A3E9E /* JDParentCoordinator.swift */; };
 		0BD3AD491E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD451E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift */; };
 		0BD3AD4D1E4E0B10002A3E9E /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD4C1E4E0B10002A3E9E /* UINavigationController.swift */; };
-		0BD3AD531E4E0B20002A3E9E /* JDBaseCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinatorProtocol.swift */; };
-		0BD3AD541E4E0B20002A3E9E /* JDChildCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinatorProtocol.swift */; };
-		0BD3AD551E4E0B20002A3E9E /* JDNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinator.swift */; };
-		0BD3AD561E4E0B20002A3E9E /* JDParentCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD511E4E0B20002A3E9E /* JDParentCoordinatorProtocol.swift */; };
-		0BD3AD571E4E0B20002A3E9E /* JDSplitViewCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinatorProtocol.swift */; };
+		0BD3AD531E4E0B20002A3E9E /* JDBaseCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinating.swift */; };
+		0BD3AD541E4E0B20002A3E9E /* JDChildCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinating.swift */; };
+		0BD3AD551E4E0B20002A3E9E /* JDNavigationCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinating.swift */; };
+		0BD3AD561E4E0B20002A3E9E /* JDParentCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD511E4E0B20002A3E9E /* JDParentCoordinating.swift */; };
+		0BD3AD571E4E0B20002A3E9E /* JDSplitViewCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinating.swift */; };
 		40E0B37E1622BB7152125BD1B0943482 /* JDCoordinator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE3AD2674394630414E6EB51D803130 /* JDCoordinator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AF6727992BDAA6089E152DC529E2DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		699772CF51E91D6CA6CA713C13F94E71 /* Pods-JDCoordinator_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3495D2003DF4B6A1FB4C6FC24A7E6099 /* Pods-JDCoordinator_Tests-dummy.m */; };
 		8BB632FD6367327D236358B9B3ED0408 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		90696490712FC2F86A4D44BC839B994B /* Pods-JDCoordinator_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C982110F1DEC51AC48A0B12760B1EF /* Pods-JDCoordinator_Example-dummy.m */; };
 		98A82FAF0735BC9FAF07D5DFF787B83E /* Pods-JDCoordinator_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BC0B399BECC240CDE2CB67A7FB88F62 /* Pods-JDCoordinator_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7BAD65F1F2A2A6500FF72F0 /* CustomHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD65E1F2A2A6500FF72F0 /* CustomHashable.swift */; };
+		A7BAD6611F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6601F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift */; };
+		A7BAD6631F2A337900FF72F0 /* JDViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */; };
+		A7BAD6661F2A343B00FF72F0 /* JDCoordinatorDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6651F2A343B00FF72F0 /* JDCoordinatorDelegates.swift */; };
+		A7BAD6681F2A348400FF72F0 /* _JDChildCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6671F2A348400FF72F0 /* _JDChildCoordinating.swift */; };
+		A7BAD66B1F2A354C00FF72F0 /* _JDParentCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66A1F2A354C00FF72F0 /* _JDParentCoordinating.swift */; };
+		A7BAD66D1F2A361700FF72F0 /* JDChildCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */; };
+		A7BAD66F1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */; };
 		C8BE2D7096C0E8AC7E2D55DC1F622EDE /* Pods-JDCoordinator_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5CDF9D704ECDB7A8CF979C705F33A8 /* Pods-JDCoordinator_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB76A1CF2E3E5329115076BE925F348E /* JDCoordinator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDC7A37A4A2AF4EC0796548E07E153 /* JDCoordinator-dummy.m */; };
 		D8CD509A8F5B8D6C07025BD443A1082B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		FD723FA920544FF800388975 /* AnyHashableConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FA820544FF800388975 /* AnyHashableConvertible.swift */; };
+		FDBDF15820549A5600A36BFC /* _JDStartTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,11 +55,11 @@
 		0BD3AD441E4E0AE7002A3E9E /* JDParentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinator.swift; sourceTree = "<group>"; };
 		0BD3AD451E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinator.swift; sourceTree = "<group>"; };
 		0BD3AD4C1E4E0B10002A3E9E /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDBaseCoordinatorProtocol.swift; sourceTree = "<group>"; };
-		0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorProtocol.swift; sourceTree = "<group>"; };
-		0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationCoordinator.swift; sourceTree = "<group>"; };
-		0BD3AD511E4E0B20002A3E9E /* JDParentCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinatorProtocol.swift; sourceTree = "<group>"; };
-		0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDBaseCoordinating.swift; sourceTree = "<group>"; };
+		0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDChildCoordinating.swift; sourceTree = "<group>"; };
+		0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationCoordinating.swift; sourceTree = "<group>"; };
+		0BD3AD511E4E0B20002A3E9E /* JDParentCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinating.swift; sourceTree = "<group>"; };
+		0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinating.swift; sourceTree = "<group>"; };
 		0E6CE4E537B760BCD5361B1610AEEB35 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17DA5167EDBF02FBC9729B497AD89611 /* Pods-JDCoordinator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1898084ED57092AF40D9E0B235B34C5A /* Pods-JDCoordinator_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDCoordinator_Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -69,7 +77,13 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D72E5300AB6793686A361CCCE6E28C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A686B225ED59FA35D20FD9D050FAFE3E /* Pods-JDCoordinator_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDCoordinator_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A7BAD65E1F2A2A6500FF72F0 /* CustomHashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHashable.swift; sourceTree = "<group>"; };
+		A7BAD6601F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDRootNavigationCoordinating.swift; sourceTree = "<group>"; };
+		A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDViewControllerType.swift; sourceTree = "<group>"; };
+		A7BAD6651F2A343B00FF72F0 /* JDCoordinatorDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDCoordinatorDelegates.swift; sourceTree = "<group>"; };
+		A7BAD6671F2A348400FF72F0 /* _JDChildCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _JDChildCoordinating.swift; sourceTree = "<group>"; };
+		A7BAD66A1F2A354C00FF72F0 /* _JDParentCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _JDParentCoordinating.swift; sourceTree = "<group>"; };
+		A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorType.swift; sourceTree = "<group>"; };
+		A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorStorage.swift; sourceTree = "<group>"; };
 		ADE3AD2674394630414E6EB51D803130 /* JDCoordinator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDCoordinator-umbrella.h"; sourceTree = "<group>"; };
 		C2D742151EFB8B3967F05CEC5160A2F2 /* Pods-JDCoordinator_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JDCoordinator_Tests.modulemap"; sourceTree = "<group>"; };
 		C3B8E1DA25E74A1841E1122595EC8AFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +97,8 @@
 		EFD4D4C671AE7263EE98AECF3E23816D /* Pods-JDCoordinator_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JDCoordinator_Example.modulemap"; sourceTree = "<group>"; };
 		F5D02BC31633E17404CFD1274791E0E5 /* Pods-JDCoordinator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F634E10F03F00C076E77918E7F31CC30 /* Pods-JDCoordinator_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Example-frameworks.sh"; sourceTree = "<group>"; };
+		FD723FA820544FF800388975 /* AnyHashableConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyHashableConvertible.swift; sourceTree = "<group>"; };
+		FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _JDStartTestable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,31 +153,33 @@
 				5C6E690E614B333DF233B1B88CD5FA03 /* Classes */,
 				0BD3AD4A1E4E0AEB002A3E9E /* Extensions */,
 				0BD3AD4B1E4E0AFB002A3E9E /* Protocols */,
+				A7BAD6641F2A33BE00FF72F0 /* Types */,
 			);
 			name = JDCoordinator;
+			path = ../../JDCoordinator;
 			sourceTree = "<group>";
 		};
 		0BD3AD4A1E4E0AEB002A3E9E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				0BD3AD4C1E4E0B10002A3E9E /* UINavigationController.swift */,
-				A7BAD65E1F2A2A6500FF72F0 /* CustomHashable.swift */,
 			);
-			name = Extensions;
-			path = ../../JDCoordinator/Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0BD3AD4B1E4E0AFB002A3E9E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinatorProtocol.swift */,
-				0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinatorProtocol.swift */,
-				0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinator.swift */,
-				0BD3AD511E4E0B20002A3E9E /* JDParentCoordinatorProtocol.swift */,
-				0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinatorProtocol.swift */,
+				A7BAD6691F2A34A500FF72F0 /* Internal */,
+				A7BAD6651F2A343B00FF72F0 /* JDCoordinatorDelegates.swift */,
+				0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinating.swift */,
+				0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinating.swift */,
+				0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinating.swift */,
+				0BD3AD511E4E0B20002A3E9E /* JDParentCoordinating.swift */,
+				A7BAD6601F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift */,
+				0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinating.swift */,
 			);
-			name = Protocols;
-			path = ../../JDCoordinator/Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		2DA88938EE489E3556327879AA81C5FF /* Support Files */ = {
@@ -206,8 +224,7 @@
 				0BD3AD441E4E0AE7002A3E9E /* JDParentCoordinator.swift */,
 				0BD3AD451E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift */,
 			);
-			name = Classes;
-			path = ../../JDCoordinator/Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		6CE2ACA3F14D1D278E987BD3BEAB1AC6 /* Pods-JDCoordinator_Tests */ = {
@@ -246,6 +263,27 @@
 				587C6D5B68E3198DECA51BABF23D8705 /* Products */,
 				2E4CA4765956E1518057594E3A36144E /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		A7BAD6641F2A33BE00FF72F0 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				FD723FA820544FF800388975 /* AnyHashableConvertible.swift */,
+				A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */,
+				A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */,
+				A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		A7BAD6691F2A34A500FF72F0 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */,
+				A7BAD6671F2A348400FF72F0 /* _JDChildCoordinating.swift */,
+				A7BAD66A1F2A354C00FF72F0 /* _JDParentCoordinating.swift */,
+			);
+			path = Internal;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -346,7 +384,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0920;
 				TargetAttributes = {
 					058B8E9A80F8AC4FF8F5AA064BCC29AD = {
 						LastSwiftMigration = 0820;
@@ -391,7 +429,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/../SwiftFormat ../.. --semicolons \"never\" --commas \"false\"";
+			shellScript = "${SRCROOT}/../SwiftFormat ../../JDCoordinator --semicolons \"never\"\n${SRCROOT}/../SwiftFormat ../JDCoordinator --semicolons \"never\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -416,17 +454,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD723FA920544FF800388975 /* AnyHashableConvertible.swift in Sources */,
+				A7BAD66F1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift in Sources */,
 				0BD3AD481E4E0AE7002A3E9E /* JDParentCoordinator.swift in Sources */,
 				0BD3AD461E4E0AE7002A3E9E /* JDAppCoordinator.swift in Sources */,
-				A7BAD65F1F2A2A6500FF72F0 /* CustomHashable.swift in Sources */,
-				0BD3AD571E4E0B20002A3E9E /* JDSplitViewCoordinatorProtocol.swift in Sources */,
-				0BD3AD551E4E0B20002A3E9E /* JDNavigationCoordinator.swift in Sources */,
-				0BD3AD531E4E0B20002A3E9E /* JDBaseCoordinatorProtocol.swift in Sources */,
+				A7BAD6631F2A337900FF72F0 /* JDViewControllerType.swift in Sources */,
+				A7BAD6611F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift in Sources */,
+				0BD3AD571E4E0B20002A3E9E /* JDSplitViewCoordinating.swift in Sources */,
+				0BD3AD551E4E0B20002A3E9E /* JDNavigationCoordinating.swift in Sources */,
+				0BD3AD531E4E0B20002A3E9E /* JDBaseCoordinating.swift in Sources */,
+				A7BAD6661F2A343B00FF72F0 /* JDCoordinatorDelegates.swift in Sources */,
+				A7BAD6681F2A348400FF72F0 /* _JDChildCoordinating.swift in Sources */,
+				A7BAD66B1F2A354C00FF72F0 /* _JDParentCoordinating.swift in Sources */,
+				FDBDF15820549A5600A36BFC /* _JDStartTestable.swift in Sources */,
+				A7BAD66D1F2A361700FF72F0 /* JDChildCoordinatorType.swift in Sources */,
 				CB76A1CF2E3E5329115076BE925F348E /* JDCoordinator-dummy.m in Sources */,
 				0BD3AD4D1E4E0B10002A3E9E /* UINavigationController.swift in Sources */,
 				0BD3AD471E4E0AE7002A3E9E /* JDCoordinator.swift in Sources */,
-				0BD3AD541E4E0B20002A3E9E /* JDChildCoordinatorProtocol.swift in Sources */,
-				0BD3AD561E4E0B20002A3E9E /* JDParentCoordinatorProtocol.swift in Sources */,
+				0BD3AD541E4E0B20002A3E9E /* JDChildCoordinating.swift in Sources */,
+				0BD3AD561E4E0B20002A3E9E /* JDParentCoordinating.swift in Sources */,
 				0BD3AD491E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
