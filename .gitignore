@@ -5,3 +5,4 @@
 /Example/JDCoordinator.xcodeproj/xcuserdata
 /Example/JDCoordinator.xcodeproj/project.xcworkspace/xcuserdata
 /Example/build
+*.sublime-workspace
