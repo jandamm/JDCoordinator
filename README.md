@@ -1,13 +1,14 @@
 # JDCoordinator
 
 [![GitHub release](https://img.shields.io/github/release/jandamm/JDCoordinator.svg)](https://github.com/jandamm/JDCoordinator/releases)
-[![Swift 4.0](https://img.shields.io/badge/swift-4.0-yellow.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift 4.0](https://img.shields.io/badge/swift-4.0-red.svg?style=flat)](https://developer.apple.com/swift)
+![License](https://img.shields.io/github/license/jandamm/JDCoordinator.svg)
 [![Build Status](https://travis-ci.org/jandamm/JDCoordinator.svg?branch=master)](https://travis-ci.org/jandamm/JDCoordinator)
 [![Coverage Status](https://coveralls.io/repos/github/jandamm/JDCoordinator/badge.svg)](https://coveralls.io/github/jandamm/JDCoordinator)
-[![Version](https://img.shields.io/cocoapods/v/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
-[![License](https://img.shields.io/cocoapods/l/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
-[![Platform](https://img.shields.io/cocoapods/p/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapods](https://img.shields.io/cocoapods/v/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
+[![Platform](https://img.shields.io/cocoapods/p/JDCoordinator.svg?style=flat)](http://cocoapods.org/pods/JDCoordinator)
+
 
 Library for easier implementation of the [coordinator concept](http://khanlou.com/2015/10/coordinators-redux/) by [@khanlou](https://twitter.com/khanlou).
 
