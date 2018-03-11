@@ -1,6 +1,6 @@
 coverage_service: coveralls
 xcodeproj: Example/Pods/Pods.xcodeproj
-scheme: "JDCoordinator"
+scheme: "JDCoordinator-Example"
 source_directory: JDCoordinator/*
 ignore:
   - Assets/*
