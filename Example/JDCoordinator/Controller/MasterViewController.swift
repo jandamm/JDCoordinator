@@ -35,7 +35,7 @@ class MasterViewController: UIViewController {
 
     override func didMove(toParentViewController parent: UIViewController?) {
         super.didMove(toParentViewController: parent)
-        delegate?.presentedViewController?(self, didMoveTo: parent)
+        delegate?.presentedViewController(self, didMoveTo: parent)
     }
 
     deinit {

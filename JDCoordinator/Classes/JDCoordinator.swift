@@ -42,5 +42,7 @@ open class JDCoordinator: NSObject, JDNavigationCoordinating, _JDChildCoordinati
         started()
     }
 
+    open func presentedViewController(_: UIViewController, didMoveTo _: UIViewController?) {}
+
     var startedCount: Int = 0
 }
