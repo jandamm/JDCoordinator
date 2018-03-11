@@ -20,7 +20,7 @@ public protocol JDCoordinatorViewControllerDelegate: class {
     ///     - viewController: self / presented ViewController
     ///     - parentViewController: The parent given by didMove(toParentViewController:)
     func presentedViewController(_ viewController: UIViewController, didMoveTo parentViewController: UIViewController?)
-    
+
     /// Call this method in your ViewController to tell the Coordinator that its state will changed.
     ///
     /// You may want to check if parent == nil and remove the coordinator from it's parent.
@@ -30,7 +30,7 @@ public protocol JDCoordinatorViewControllerDelegate: class {
     /// - parameters:
     ///     - viewController: self / presented ViewController
     ///     - parentViewController: The parent given by willMove(toParentViewController:)
-    @objc optional func presentedViewController(_ viewController: UIViewController, willMoveTo parentViewController: UIViewController?)
+    func presentedViewController(_ viewController: UIViewController, willMoveTo parentViewController: UIViewController?)
 }
 
 /// Use this protocol for weak pointers to delegates of JDParentCoordinators in JDCoordinators.

@@ -37,6 +37,7 @@ open class JDAppCoordinator: JDRootNavigationCoordinating, _JDParentCoordinating
     }
 
     open func presentedViewController(_: UIViewController, didMoveTo _: UIViewController?) {}
+    open func presentedViewController(_: UIViewController, willMoveTo _: UIViewController?) {}
 
     var startedCount = 0
 }
