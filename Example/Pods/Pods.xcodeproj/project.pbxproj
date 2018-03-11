@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BD3AD461E4E0AE7002A3E9E /* JDAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD421E4E0AE7002A3E9E /* JDAppCoordinator.swift */; };
-		0BD3AD471E4E0AE7002A3E9E /* JDCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD431E4E0AE7002A3E9E /* JDCoordinator.swift */; };
-		0BD3AD481E4E0AE7002A3E9E /* JDParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD441E4E0AE7002A3E9E /* JDParentCoordinator.swift */; };
-		0BD3AD491E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD451E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift */; };
-		0BD3AD4D1E4E0B10002A3E9E /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD4C1E4E0B10002A3E9E /* UINavigationController.swift */; };
-		0BD3AD531E4E0B20002A3E9E /* JDBaseCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinating.swift */; };
-		0BD3AD541E4E0B20002A3E9E /* JDChildCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinating.swift */; };
-		0BD3AD551E4E0B20002A3E9E /* JDNavigationCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinating.swift */; };
-		0BD3AD561E4E0B20002A3E9E /* JDParentCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD511E4E0B20002A3E9E /* JDParentCoordinating.swift */; };
-		0BD3AD571E4E0B20002A3E9E /* JDSplitViewCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinating.swift */; };
-		40E0B37E1622BB7152125BD1B0943482 /* JDCoordinator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE3AD2674394630414E6EB51D803130 /* JDCoordinator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AF6727992BDAA6089E152DC529E2DC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		699772CF51E91D6CA6CA713C13F94E71 /* Pods-JDCoordinator_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3495D2003DF4B6A1FB4C6FC24A7E6099 /* Pods-JDCoordinator_Tests-dummy.m */; };
-		8BB632FD6367327D236358B9B3ED0408 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		90696490712FC2F86A4D44BC839B994B /* Pods-JDCoordinator_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C982110F1DEC51AC48A0B12760B1EF /* Pods-JDCoordinator_Example-dummy.m */; };
-		98A82FAF0735BC9FAF07D5DFF787B83E /* Pods-JDCoordinator_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BC0B399BECC240CDE2CB67A7FB88F62 /* Pods-JDCoordinator_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7BAD6611F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6601F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift */; };
-		A7BAD6631F2A337900FF72F0 /* JDViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */; };
-		A7BAD6661F2A343B00FF72F0 /* JDCoordinatorDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6651F2A343B00FF72F0 /* JDCoordinatorDelegates.swift */; };
-		A7BAD6681F2A348400FF72F0 /* _JDChildCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD6671F2A348400FF72F0 /* _JDChildCoordinating.swift */; };
-		A7BAD66B1F2A354C00FF72F0 /* _JDParentCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66A1F2A354C00FF72F0 /* _JDParentCoordinating.swift */; };
-		A7BAD66D1F2A361700FF72F0 /* JDChildCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */; };
-		A7BAD66F1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */; };
-		C8BE2D7096C0E8AC7E2D55DC1F622EDE /* Pods-JDCoordinator_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5CDF9D704ECDB7A8CF979C705F33A8 /* Pods-JDCoordinator_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CB76A1CF2E3E5329115076BE925F348E /* JDCoordinator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBDC7A37A4A2AF4EC0796548E07E153 /* JDCoordinator-dummy.m */; };
-		D8CD509A8F5B8D6C07025BD443A1082B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		FD723FA920544FF800388975 /* AnyHashableConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FA820544FF800388975 /* AnyHashableConvertible.swift */; };
-		FDBDF15820549A5600A36BFC /* _JDStartTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */; };
+		064783F72BDB885188C4C13692FAF6B0 /* _JDChildCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051A8D55539D1B6A78187B6F8A49D5C /* _JDChildCoordinating.swift */; };
+		1CD5BB32A9FC7779161ED907381CADCB /* JDNavigationCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D56B34E6396A0CEB1CF29F90127087 /* JDNavigationCoordinating.swift */; };
+		254AD727B8869D3692F2F2FD444BB353 /* JDSplitViewCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D53475C46DADC6598E4E8BEBD5DE6 /* JDSplitViewCoordinating.swift */; };
+		392F5C9D8101E8321B809C4B66E91E8A /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */; };
+		54F8432DB895E9B81D97538532F728B0 /* JDChildCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F493529C99B4EF077DD3C1F229B41E /* JDChildCoordinatorType.swift */; };
+		5A4B83A349F71C84C2B27447A2CDCEAC /* JDChildCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268BECBE9DA49084F89EAAE190693FB /* JDChildCoordinating.swift */; };
+		681A796398706DE284735C3B1F3E1A56 /* JDViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC541FE27E5E3A051E8BCE8850FAA460 /* JDViewControllerType.swift */; };
+		699772CF51E91D6CA6CA713C13F94E71 /* Pods-JDCoordinator_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD889273A7F14F6CACD49190A386DA3D /* Pods-JDCoordinator_Tests-dummy.m */; };
+		6C9BF2BAEA18C190C933F97B9F5E732C /* JDCoordinator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86C9EC19135DDED620E9499354E59BD2 /* JDCoordinator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		800FE2A9E61BB8DF2275E9B90B1038BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		8986B6ACAC5B749B2A06B69462B91AC6 /* JDCoordinatorDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B256A62C05CD9C1840EF8A6B641208D /* JDCoordinatorDelegates.swift */; };
+		8B2B4ED0B4FDF756EB3A53D665C7250B /* JDSplitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739197348D644977D539D461B8B5455 /* JDSplitViewCoordinator.swift */; };
+		8BFE2E7E1B93AF86A7109A50D59D3995 /* AnyHashableConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BF4648922705E8CA49C0213B16AC72 /* AnyHashableConvertible.swift */; };
+		90696490712FC2F86A4D44BC839B994B /* Pods-JDCoordinator_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD1E64CEBAC633450F3FD4DBBA72679 /* Pods-JDCoordinator_Example-dummy.m */; };
+		9077F9A927E2A9551150E8B8B9295A37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		96AC504DEA1712C2A76AE00A917A9DF6 /* JDChildCoordinatorStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F51C39DB6A3511F8BC6AF5A089E5E9 /* JDChildCoordinatorStorage.swift */; };
+		981166B032AC3D7B3DC99437B41D6099 /* _JDParentCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AEAEA2107341A3D12704EA5788EF46 /* _JDParentCoordinating.swift */; };
+		98A82FAF0735BC9FAF07D5DFF787B83E /* Pods-JDCoordinator_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDAB55384E0167762572CABC625C19E6 /* Pods-JDCoordinator_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A846445B7E1B5C27FD2882BE57B95D1F /* JDBaseCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F7B0B4F3089456071AC9BA6648CE9 /* JDBaseCoordinating.swift */; };
+		AD46B236425DFA686D1A6147009B4433 /* JDParentCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3FC221AC59D638647B8EEA4AE3B16 /* JDParentCoordinating.swift */; };
+		AE7D7617777015186389DFCA2F68CC9B /* JDCoordinator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC57A9C31D015FE2F04820262398B1 /* JDCoordinator-dummy.m */; };
+		B5AFC3FF08CF967334B364C35D94755D /* JDAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5AAD67C2DF6588B228FA0DF85BB075 /* JDAppCoordinator.swift */; };
+		C8BE2D7096C0E8AC7E2D55DC1F622EDE /* Pods-JDCoordinator_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FAB5222EDC51A1D821F725CD964951C3 /* Pods-JDCoordinator_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD4C373C44BF9AAC191174E8F5689865 /* JDRootNavigationCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6DD18DA83AFF314298DD69CA00571 /* JDRootNavigationCoordinating.swift */; };
+		D288F88DB4157315DB8C322EEFF3B829 /* _JDStartTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670EF399ECBA365D916F5C400B48B83 /* _JDStartTestable.swift */; };
+		D2AD0C95F55B2DC80AB1EF7219D61C89 /* JDParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182AFD6A5E6DA61B85E639EC66DCB8A /* JDParentCoordinator.swift */; };
+		DF4194D0EFB441BB2B7CFBAA26EEF731 /* JDCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FAD6FBB5B67D502762DE11B61F6C1 /* JDCoordinator.swift */; };
+		F18A3322862F33F20508A27D19E24705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,71 +42,73 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 200E8C71A568AB2C6838AE6FFDCF0BA3;
+			remoteGlobalIDString = A7AA1716763A6EF1EC55A5000A14FFDA;
 			remoteInfo = JDCoordinator;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B4FB580DA5648ECDF2A97AB300C2B51 /* JDCoordinator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JDCoordinator.xcconfig; sourceTree = "<group>"; };
-		0BD3AD1F1E4E0932002A3E9E /* JDCoordinator.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = JDCoordinator.podspec; path = ../../JDCoordinator.podspec; sourceTree = "<group>"; };
-		0BD3AD421E4E0AE7002A3E9E /* JDAppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDAppCoordinator.swift; sourceTree = "<group>"; };
-		0BD3AD431E4E0AE7002A3E9E /* JDCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCoordinator.swift; sourceTree = "<group>"; };
-		0BD3AD441E4E0AE7002A3E9E /* JDParentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinator.swift; sourceTree = "<group>"; };
-		0BD3AD451E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinator.swift; sourceTree = "<group>"; };
-		0BD3AD4C1E4E0B10002A3E9E /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDBaseCoordinating.swift; sourceTree = "<group>"; };
-		0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDChildCoordinating.swift; sourceTree = "<group>"; };
-		0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDNavigationCoordinating.swift; sourceTree = "<group>"; };
-		0BD3AD511E4E0B20002A3E9E /* JDParentCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDParentCoordinating.swift; sourceTree = "<group>"; };
-		0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinating.swift; sourceTree = "<group>"; };
-		0E6CE4E537B760BCD5361B1610AEEB35 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		17DA5167EDBF02FBC9729B497AD89611 /* Pods-JDCoordinator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		1898084ED57092AF40D9E0B235B34C5A /* Pods-JDCoordinator_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDCoordinator_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		2E5CDF9D704ECDB7A8CF979C705F33A8 /* Pods-JDCoordinator_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDCoordinator_Tests-umbrella.h"; sourceTree = "<group>"; };
-		3495D2003DF4B6A1FB4C6FC24A7E6099 /* Pods-JDCoordinator_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JDCoordinator_Tests-dummy.m"; sourceTree = "<group>"; };
-		34C982110F1DEC51AC48A0B12760B1EF /* Pods-JDCoordinator_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JDCoordinator_Example-dummy.m"; sourceTree = "<group>"; };
-		3BBDC7A37A4A2AF4EC0796548E07E153 /* JDCoordinator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JDCoordinator-dummy.m"; sourceTree = "<group>"; };
-		3E246C48ED880439C302F68B532F02DC /* JDCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JDCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		42C86EC1705E33DED3F42BF206E5844E /* Pods-JDCoordinator_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		4CB1BAE45FEE5930D5E774A084EC48E7 /* JDCoordinator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDCoordinator-prefix.pch"; sourceTree = "<group>"; };
-		5197DA4D4D8A8CEA9DDF84923CCB8F43 /* Pods-JDCoordinator_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JDCoordinator_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7B30727C2B92EEEDBBE76E9C3B992407 /* Pods-JDCoordinator_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JDCoordinator_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7BC0B399BECC240CDE2CB67A7FB88F62 /* Pods-JDCoordinator_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDCoordinator_Example-umbrella.h"; sourceTree = "<group>"; };
-		8AB250D70D475B83D0C8578794125382 /* JDCoordinator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JDCoordinator.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D72E5300AB6793686A361CCCE6E28C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A686B225ED59FA35D20FD9D050FAFE3E /* Pods-JDCoordinator_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDCoordinator_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A7BAD6601F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDRootNavigationCoordinating.swift; sourceTree = "<group>"; };
-		A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDViewControllerType.swift; sourceTree = "<group>"; };
-		A7BAD6651F2A343B00FF72F0 /* JDCoordinatorDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDCoordinatorDelegates.swift; sourceTree = "<group>"; };
-		A7BAD6671F2A348400FF72F0 /* _JDChildCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _JDChildCoordinating.swift; sourceTree = "<group>"; };
-		A7BAD66A1F2A354C00FF72F0 /* _JDParentCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _JDParentCoordinating.swift; sourceTree = "<group>"; };
-		A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorType.swift; sourceTree = "<group>"; };
-		A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorStorage.swift; sourceTree = "<group>"; };
-		ADE3AD2674394630414E6EB51D803130 /* JDCoordinator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDCoordinator-umbrella.h"; sourceTree = "<group>"; };
-		C2D742151EFB8B3967F05CEC5160A2F2 /* Pods-JDCoordinator_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JDCoordinator_Tests.modulemap"; sourceTree = "<group>"; };
-		C3B8E1DA25E74A1841E1122595EC8AFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4F3B9BE56C17ABB63E4EFF93279DB8A /* Pods_JDCoordinator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDCoordinator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB7236E77F5B6BE795C00F4A990C2AB2 /* Pods-JDCoordinator_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Example-resources.sh"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CDE151EE7D060C5AD0F0D1EF5F180D15 /* Pods-JDCoordinator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CFA9F10BCC95135A8FEA9D8B4D686E3E /* Pods-JDCoordinator_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Tests-resources.sh"; sourceTree = "<group>"; };
-		D24A738D7009540BF653980C04B44D51 /* Pods_JDCoordinator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDCoordinator_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6F7066ADD769B1C7672FA055D6CD6EE /* Pods-JDCoordinator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		EFD4D4C671AE7263EE98AECF3E23816D /* Pods-JDCoordinator_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-JDCoordinator_Example.modulemap"; sourceTree = "<group>"; };
-		F5D02BC31633E17404CFD1274791E0E5 /* Pods-JDCoordinator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F634E10F03F00C076E77918E7F31CC30 /* Pods-JDCoordinator_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Example-frameworks.sh"; sourceTree = "<group>"; };
-		FD723FA820544FF800388975 /* AnyHashableConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyHashableConvertible.swift; sourceTree = "<group>"; };
-		FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _JDStartTestable.swift; sourceTree = "<group>"; };
+		0051A8D55539D1B6A78187B6F8A49D5C /* _JDChildCoordinating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = _JDChildCoordinating.swift; sourceTree = "<group>"; };
+		0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		0729C67BEEB82F1556B11CCA03A07C89 /* Pods-JDCoordinator_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		0AD4A15670F96203B2EA1F1B170D006A /* Pods-JDCoordinator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		0B69FF528B7771E00F12B1F17D27215C /* Pods-JDCoordinator_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Tests-resources.sh"; sourceTree = "<group>"; };
+		12F2E3F4909C55FBF12731B467754228 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		23C2095A804D730B12FDFA0B84C3098D /* JDCoordinator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JDCoordinator.modulemap; sourceTree = "<group>"; };
+		25F493529C99B4EF077DD3C1F229B41E /* JDChildCoordinatorType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorType.swift; sourceTree = "<group>"; };
+		302BD1B4AFDD2031A3FB1956A8891C39 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		34AAB56D9931A2C0202F1E11FCD5F62E /* Pods-JDCoordinator_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDCoordinator_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3670EF399ECBA365D916F5C400B48B83 /* _JDStartTestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = _JDStartTestable.swift; sourceTree = "<group>"; };
+		3BB93A43026ED46807A8AEB0C3B2EA07 /* Pods-JDCoordinator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.release.xcconfig"; sourceTree = "<group>"; };
+		3E246C48ED880439C302F68B532F02DC /* JDCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JDCoordinator.framework; path = JDCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		431D53475C46DADC6598E4E8BEBD5DE6 /* JDSplitViewCoordinating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinating.swift; sourceTree = "<group>"; };
+		46B5825B619145E15E8BA12FF313C2AC /* Pods-JDCoordinator_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JDCoordinator_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4B4E9C4CBF8267CDB68458F7230A065E /* Pods-JDCoordinator_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Example-frameworks.sh"; sourceTree = "<group>"; };
+		599F6BD1685ED83B7C7147A9510C4E75 /* Pods-JDCoordinator_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JDCoordinator_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		59D56B34E6396A0CEB1CF29F90127087 /* JDNavigationCoordinating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDNavigationCoordinating.swift; sourceTree = "<group>"; };
+		5ABC57A9C31D015FE2F04820262398B1 /* JDCoordinator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JDCoordinator-dummy.m"; sourceTree = "<group>"; };
+		5C364BCFC5D165A26E748B61470B60E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63AEAEA2107341A3D12704EA5788EF46 /* _JDParentCoordinating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = _JDParentCoordinating.swift; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		74591C06061D8EE3A229569E6DF6300E /* Pods-JDCoordinator_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JDCoordinator_Tests.modulemap"; sourceTree = "<group>"; };
+		79B0F7F1FE9121712B08BBE1862F4666 /* Pods-JDCoordinator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7B256A62C05CD9C1840EF8A6B641208D /* JDCoordinatorDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDCoordinatorDelegates.swift; sourceTree = "<group>"; };
+		7D1C3A79F651D98B987CDCDD3EDD4F51 /* JDCoordinator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDCoordinator-prefix.pch"; sourceTree = "<group>"; };
+		86C9EC19135DDED620E9499354E59BD2 /* JDCoordinator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDCoordinator-umbrella.h"; sourceTree = "<group>"; };
+		8AC2B6F5C8D681B6EC2B93FAB59D125E /* JDCoordinator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JDCoordinator.xcconfig; sourceTree = "<group>"; };
+		8D5AAD67C2DF6588B228FA0DF85BB075 /* JDAppCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDAppCoordinator.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94F51C39DB6A3511F8BC6AF5A089E5E9 /* JDChildCoordinatorStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDChildCoordinatorStorage.swift; sourceTree = "<group>"; };
+		96D9A7432EC8507D9EEA7BF2EB756FE9 /* Pods-JDCoordinator_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0BF4648922705E8CA49C0213B16AC72 /* AnyHashableConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AnyHashableConvertible.swift; sourceTree = "<group>"; };
+		A1F3838EDD47BD7031934844618A7253 /* Pods-JDCoordinator_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Example-resources.sh"; sourceTree = "<group>"; };
+		A268BECBE9DA49084F89EAAE190693FB /* JDChildCoordinating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDChildCoordinating.swift; sourceTree = "<group>"; };
+		AB675289673191551DC771FCD04176D0 /* Pods-JDCoordinator_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JDCoordinator_Example.modulemap"; sourceTree = "<group>"; };
+		B0173E75FCFFB39643FC4BA17FD3F8A5 /* JDCoordinator.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JDCoordinator.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B182AFD6A5E6DA61B85E639EC66DCB8A /* JDParentCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDParentCoordinator.swift; sourceTree = "<group>"; };
+		BDD1E64CEBAC633450F3FD4DBBA72679 /* Pods-JDCoordinator_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JDCoordinator_Example-dummy.m"; sourceTree = "<group>"; };
+		C4F3B9BE56C17ABB63E4EFF93279DB8A /* Pods_JDCoordinator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JDCoordinator_Example.framework; path = "Pods-JDCoordinator_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C739197348D644977D539D461B8B5455 /* JDSplitViewCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDSplitViewCoordinator.swift; sourceTree = "<group>"; };
+		CC7FAD6FBB5B67D502762DE11B61F6C1 /* JDCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDCoordinator.swift; sourceTree = "<group>"; };
+		D24A738D7009540BF653980C04B44D51 /* Pods_JDCoordinator_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JDCoordinator_Tests.framework; path = "Pods-JDCoordinator_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38F7B0B4F3089456071AC9BA6648CE9 /* JDBaseCoordinating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDBaseCoordinating.swift; sourceTree = "<group>"; };
+		D78A1DE90949A5C76036370A7EA95824 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCB6DD18DA83AFF314298DD69CA00571 /* JDRootNavigationCoordinating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDRootNavigationCoordinating.swift; sourceTree = "<group>"; };
+		DD889273A7F14F6CACD49190A386DA3D /* Pods-JDCoordinator_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JDCoordinator_Tests-dummy.m"; sourceTree = "<group>"; };
+		E04FE8974CD59652B6EEEF5A45531A86 /* Pods-JDCoordinator_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDCoordinator_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		EDAB55384E0167762572CABC625C19E6 /* Pods-JDCoordinator_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDCoordinator_Example-umbrella.h"; sourceTree = "<group>"; };
+		EE57DA07BF37792D94ED85F43331042C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3D3FC221AC59D638647B8EEA4AE3B16 /* JDParentCoordinating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDParentCoordinating.swift; sourceTree = "<group>"; };
+		FAB5222EDC51A1D821F725CD964951C3 /* Pods-JDCoordinator_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDCoordinator_Tests-umbrella.h"; sourceTree = "<group>"; };
+		FC541FE27E5E3A051E8BCE8850FAA460 /* JDViewControllerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDViewControllerType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0D5AD0CD34CBCCC8424A5D8E1863E312 /* Frameworks */ = {
+		16890E1CD0074D6FF57020961164D522 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB632FD6367327D236358B9B3ED0408 /* Foundation.framework in Frameworks */,
+				F18A3322862F33F20508A27D19E24705 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8CD509A8F5B8D6C07025BD443A1082B /* Foundation.framework in Frameworks */,
+				800FE2A9E61BB8DF2275E9B90B1038BD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,88 +124,102 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AF6727992BDAA6089E152DC529E2DC3 /* Foundation.framework in Frameworks */,
+				9077F9A927E2A9551150E8B8B9295A37 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05E3C1F251EB3B0C0A3291D3EBC7C35A /* Pods-JDCoordinator_Example */ = {
+		03DA18550FE4474E6A07CDF92E5D8B2E /* Pods-JDCoordinator_Example */ = {
 			isa = PBXGroup;
 			children = (
-				0E6CE4E537B760BCD5361B1610AEEB35 /* Info.plist */,
-				EFD4D4C671AE7263EE98AECF3E23816D /* Pods-JDCoordinator_Example.modulemap */,
-				5197DA4D4D8A8CEA9DDF84923CCB8F43 /* Pods-JDCoordinator_Example-acknowledgements.markdown */,
-				1898084ED57092AF40D9E0B235B34C5A /* Pods-JDCoordinator_Example-acknowledgements.plist */,
-				34C982110F1DEC51AC48A0B12760B1EF /* Pods-JDCoordinator_Example-dummy.m */,
-				F634E10F03F00C076E77918E7F31CC30 /* Pods-JDCoordinator_Example-frameworks.sh */,
-				CB7236E77F5B6BE795C00F4A990C2AB2 /* Pods-JDCoordinator_Example-resources.sh */,
-				7BC0B399BECC240CDE2CB67A7FB88F62 /* Pods-JDCoordinator_Example-umbrella.h */,
-				CDE151EE7D060C5AD0F0D1EF5F180D15 /* Pods-JDCoordinator_Example.debug.xcconfig */,
-				F5D02BC31633E17404CFD1274791E0E5 /* Pods-JDCoordinator_Example.release.xcconfig */,
+				5C364BCFC5D165A26E748B61470B60E5 /* Info.plist */,
+				AB675289673191551DC771FCD04176D0 /* Pods-JDCoordinator_Example.modulemap */,
+				46B5825B619145E15E8BA12FF313C2AC /* Pods-JDCoordinator_Example-acknowledgements.markdown */,
+				E04FE8974CD59652B6EEEF5A45531A86 /* Pods-JDCoordinator_Example-acknowledgements.plist */,
+				BDD1E64CEBAC633450F3FD4DBBA72679 /* Pods-JDCoordinator_Example-dummy.m */,
+				4B4E9C4CBF8267CDB68458F7230A065E /* Pods-JDCoordinator_Example-frameworks.sh */,
+				A1F3838EDD47BD7031934844618A7253 /* Pods-JDCoordinator_Example-resources.sh */,
+				EDAB55384E0167762572CABC625C19E6 /* Pods-JDCoordinator_Example-umbrella.h */,
+				79B0F7F1FE9121712B08BBE1862F4666 /* Pods-JDCoordinator_Example.debug.xcconfig */,
+				3BB93A43026ED46807A8AEB0C3B2EA07 /* Pods-JDCoordinator_Example.release.xcconfig */,
 			);
 			name = "Pods-JDCoordinator_Example";
 			path = "Target Support Files/Pods-JDCoordinator_Example";
 			sourceTree = "<group>";
 		};
-		0A5029B1320B717236E98853BB24DEB0 /* JDCoordinator */ = {
+		03E75C9E46D8EABE47236960957DE27B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5C6E690E614B333DF233B1B88CD5FA03 /* Classes */,
-				0BD3AD4A1E4E0AEB002A3E9E /* Extensions */,
-				0BD3AD4B1E4E0AFB002A3E9E /* Protocols */,
-				A7BAD6641F2A33BE00FF72F0 /* Types */,
+				0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */,
 			);
-			name = JDCoordinator;
-			path = ../../JDCoordinator;
+			name = Extensions;
+			path = JDCoordinator/Extensions;
 			sourceTree = "<group>";
 		};
-		0BD3AD4A1E4E0AEB002A3E9E /* Extensions */ = {
+		17B728733FD6830A64F74E5AA97E63FF /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				0BD3AD4C1E4E0B10002A3E9E /* UINavigationController.swift */,
+				0051A8D55539D1B6A78187B6F8A49D5C /* _JDChildCoordinating.swift */,
+				63AEAEA2107341A3D12704EA5788EF46 /* _JDParentCoordinating.swift */,
+				3670EF399ECBA365D916F5C400B48B83 /* _JDStartTestable.swift */,
 			);
-			path = Extensions;
+			name = Internal;
+			path = Internal;
 			sourceTree = "<group>";
 		};
-		0BD3AD4B1E4E0AFB002A3E9E /* Protocols */ = {
+		23F0F93B3E8CCFACA3281A75F225A48C /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				A7BAD6691F2A34A500FF72F0 /* Internal */,
-				A7BAD6651F2A343B00FF72F0 /* JDCoordinatorDelegates.swift */,
-				0BD3AD4E1E4E0B20002A3E9E /* JDBaseCoordinating.swift */,
-				0BD3AD4F1E4E0B20002A3E9E /* JDChildCoordinating.swift */,
-				0BD3AD501E4E0B20002A3E9E /* JDNavigationCoordinating.swift */,
-				0BD3AD511E4E0B20002A3E9E /* JDParentCoordinating.swift */,
-				A7BAD6601F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift */,
-				0BD3AD521E4E0B20002A3E9E /* JDSplitViewCoordinating.swift */,
+				A0BF4648922705E8CA49C0213B16AC72 /* AnyHashableConvertible.swift */,
+				94F51C39DB6A3511F8BC6AF5A089E5E9 /* JDChildCoordinatorStorage.swift */,
+				25F493529C99B4EF077DD3C1F229B41E /* JDChildCoordinatorType.swift */,
+				FC541FE27E5E3A051E8BCE8850FAA460 /* JDViewControllerType.swift */,
 			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		2DA88938EE489E3556327879AA81C5FF /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C3B8E1DA25E74A1841E1122595EC8AFF /* Info.plist */,
-				8AB250D70D475B83D0C8578794125382 /* JDCoordinator.modulemap */,
-				0B4FB580DA5648ECDF2A97AB300C2B51 /* JDCoordinator.xcconfig */,
-				3BBDC7A37A4A2AF4EC0796548E07E153 /* JDCoordinator-dummy.m */,
-				4CB1BAE45FEE5930D5E774A084EC48E7 /* JDCoordinator-prefix.pch */,
-				ADE3AD2674394630414E6EB51D803130 /* JDCoordinator-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Target Support Files/JDCoordinator";
+			name = Types;
+			path = JDCoordinator/Types;
 			sourceTree = "<group>";
 		};
 		2E4CA4765956E1518057594E3A36144E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				2DA88938EE489E3556327879AA81C5FF /* Support Files */,
-				05E3C1F251EB3B0C0A3291D3EBC7C35A /* Pods-JDCoordinator_Example */,
-				6CE2ACA3F14D1D278E987BD3BEAB1AC6 /* Pods-JDCoordinator_Tests */,
+				03DA18550FE4474E6A07CDF92E5D8B2E /* Pods-JDCoordinator_Example */,
+				4FC80306A2B9332ED5C29753AFE66343 /* Pods-JDCoordinator_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		340290AEE935CE135F4D16DB4A191F77 /* JDCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DAFBF99BC0A6891E794D249682BF2525 /* Classes */,
+				03E75C9E46D8EABE47236960957DE27B /* Extensions */,
+				DE8D9C1E811A8B0E612FB6406C4D06AB /* Pod */,
+				6DF5F15E400322AD2E8A7B05F57B57AA /* Protocols */,
+				8FC59BA29985B1BA38235F3C25BE92FE /* Support Files */,
+				23F0F93B3E8CCFACA3281A75F225A48C /* Types */,
+			);
+			name = JDCoordinator;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		4FC80306A2B9332ED5C29753AFE66343 /* Pods-JDCoordinator_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EE57DA07BF37792D94ED85F43331042C /* Info.plist */,
+				74591C06061D8EE3A229569E6DF6300E /* Pods-JDCoordinator_Tests.modulemap */,
+				599F6BD1685ED83B7C7147A9510C4E75 /* Pods-JDCoordinator_Tests-acknowledgements.markdown */,
+				34AAB56D9931A2C0202F1E11FCD5F62E /* Pods-JDCoordinator_Tests-acknowledgements.plist */,
+				DD889273A7F14F6CACD49190A386DA3D /* Pods-JDCoordinator_Tests-dummy.m */,
+				0729C67BEEB82F1556B11CCA03A07C89 /* Pods-JDCoordinator_Tests-frameworks.sh */,
+				0B69FF528B7771E00F12B1F17D27215C /* Pods-JDCoordinator_Tests-resources.sh */,
+				FAB5222EDC51A1D821F725CD964951C3 /* Pods-JDCoordinator_Tests-umbrella.h */,
+				96D9A7432EC8507D9EEA7BF2EB756FE9 /* Pods-JDCoordinator_Tests.debug.xcconfig */,
+				0AD4A15670F96203B2EA1F1B170D006A /* Pods-JDCoordinator_Tests.release.xcconfig */,
+			);
+			name = "Pods-JDCoordinator_Tests";
+			path = "Target Support Files/Pods-JDCoordinator_Tests";
 			sourceTree = "<group>";
 		};
 		587C6D5B68E3198DECA51BABF23D8705 /* Products */ = {
@@ -216,92 +232,101 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5C6E690E614B333DF233B1B88CD5FA03 /* Classes */ = {
+		6DF5F15E400322AD2E8A7B05F57B57AA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				0BD3AD421E4E0AE7002A3E9E /* JDAppCoordinator.swift */,
-				0BD3AD431E4E0AE7002A3E9E /* JDCoordinator.swift */,
-				0BD3AD441E4E0AE7002A3E9E /* JDParentCoordinator.swift */,
-				0BD3AD451E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift */,
+				D38F7B0B4F3089456071AC9BA6648CE9 /* JDBaseCoordinating.swift */,
+				A268BECBE9DA49084F89EAAE190693FB /* JDChildCoordinating.swift */,
+				7B256A62C05CD9C1840EF8A6B641208D /* JDCoordinatorDelegates.swift */,
+				59D56B34E6396A0CEB1CF29F90127087 /* JDNavigationCoordinating.swift */,
+				F3D3FC221AC59D638647B8EEA4AE3B16 /* JDParentCoordinating.swift */,
+				DCB6DD18DA83AFF314298DD69CA00571 /* JDRootNavigationCoordinating.swift */,
+				431D53475C46DADC6598E4E8BEBD5DE6 /* JDSplitViewCoordinating.swift */,
+				17B728733FD6830A64F74E5AA97E63FF /* Internal */,
 			);
-			path = Classes;
+			name = Protocols;
+			path = JDCoordinator/Protocols;
 			sourceTree = "<group>";
 		};
-		6CE2ACA3F14D1D278E987BD3BEAB1AC6 /* Pods-JDCoordinator_Tests */ = {
+		6F84916DC7BF06C30CD992C736DC1572 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9D72E5300AB6793686A361CCCE6E28C8 /* Info.plist */,
-				C2D742151EFB8B3967F05CEC5160A2F2 /* Pods-JDCoordinator_Tests.modulemap */,
-				7B30727C2B92EEEDBBE76E9C3B992407 /* Pods-JDCoordinator_Tests-acknowledgements.markdown */,
-				A686B225ED59FA35D20FD9D050FAFE3E /* Pods-JDCoordinator_Tests-acknowledgements.plist */,
-				3495D2003DF4B6A1FB4C6FC24A7E6099 /* Pods-JDCoordinator_Tests-dummy.m */,
-				42C86EC1705E33DED3F42BF206E5844E /* Pods-JDCoordinator_Tests-frameworks.sh */,
-				CFA9F10BCC95135A8FEA9D8B4D686E3E /* Pods-JDCoordinator_Tests-resources.sh */,
-				2E5CDF9D704ECDB7A8CF979C705F33A8 /* Pods-JDCoordinator_Tests-umbrella.h */,
-				E6F7066ADD769B1C7672FA055D6CD6EE /* Pods-JDCoordinator_Tests.debug.xcconfig */,
-				17DA5167EDBF02FBC9729B497AD89611 /* Pods-JDCoordinator_Tests.release.xcconfig */,
+				340290AEE935CE135F4D16DB4A191F77 /* JDCoordinator */,
 			);
-			name = "Pods-JDCoordinator_Tests";
-			path = "Target Support Files/Pods-JDCoordinator_Tests";
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				0BD3AD1F1E4E0932002A3E9E /* JDCoordinator.podspec */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				0A5029B1320B717236E98853BB24DEB0 /* JDCoordinator */,
+				6F84916DC7BF06C30CD992C736DC1572 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				587C6D5B68E3198DECA51BABF23D8705 /* Products */,
 				2E4CA4765956E1518057594E3A36144E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A7BAD6641F2A33BE00FF72F0 /* Types */ = {
+		8FC59BA29985B1BA38235F3C25BE92FE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				FD723FA820544FF800388975 /* AnyHashableConvertible.swift */,
-				A7BAD6621F2A337900FF72F0 /* JDViewControllerType.swift */,
-				A7BAD66C1F2A361700FF72F0 /* JDChildCoordinatorType.swift */,
-				A7BAD66E1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift */,
+				D78A1DE90949A5C76036370A7EA95824 /* Info.plist */,
+				23C2095A804D730B12FDFA0B84C3098D /* JDCoordinator.modulemap */,
+				8AC2B6F5C8D681B6EC2B93FAB59D125E /* JDCoordinator.xcconfig */,
+				5ABC57A9C31D015FE2F04820262398B1 /* JDCoordinator-dummy.m */,
+				7D1C3A79F651D98B987CDCDD3EDD4F51 /* JDCoordinator-prefix.pch */,
+				86C9EC19135DDED620E9499354E59BD2 /* JDCoordinator-umbrella.h */,
 			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		A7BAD6691F2A34A500FF72F0 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				FDBDF15720549A5600A36BFC /* _JDStartTestable.swift */,
-				A7BAD6671F2A348400FF72F0 /* _JDChildCoordinating.swift */,
-				A7BAD66A1F2A354C00FF72F0 /* _JDParentCoordinating.swift */,
-			);
-			path = Internal;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/JDCoordinator";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DAFBF99BC0A6891E794D249682BF2525 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D5AAD67C2DF6588B228FA0DF85BB075 /* JDAppCoordinator.swift */,
+				CC7FAD6FBB5B67D502762DE11B61F6C1 /* JDCoordinator.swift */,
+				B182AFD6A5E6DA61B85E639EC66DCB8A /* JDParentCoordinator.swift */,
+				C739197348D644977D539D461B8B5455 /* JDSplitViewCoordinator.swift */,
+			);
+			name = Classes;
+			path = JDCoordinator/Classes;
+			sourceTree = "<group>";
+		};
+		DE8D9C1E811A8B0E612FB6406C4D06AB /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B0173E75FCFFB39643FC4BA17FD3F8A5 /* JDCoordinator.podspec */,
+				302BD1B4AFDD2031A3FB1956A8891C39 /* LICENSE */,
+				12F2E3F4909C55FBF12731B467754228 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		69CE24E3365BAF05FC9CE6CBCBB3F109 /* Headers */ = {
+		57C99FCE1E543392EEBBD60A67C501EE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E0B37E1622BB7152125BD1B0943482 /* JDCoordinator-umbrella.h in Headers */,
+				6C9BF2BAEA18C190C933F97B9F5E732C /* JDCoordinator-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,24 +367,6 @@
 			productReference = C4F3B9BE56C17ABB63E4EFF93279DB8A /* Pods_JDCoordinator_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		200E8C71A568AB2C6838AE6FFDCF0BA3 /* JDCoordinator */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A8B8967BD8D47F89774403B6AA76AE7D /* Build configuration list for PBXNativeTarget "JDCoordinator" */;
-			buildPhases = (
-				0BD3AD201E4E094D002A3E9E /* SwiftFormat */,
-				E432F5E025B8AD4B92462B80EE0BA8B7 /* Sources */,
-				0D5AD0CD34CBCCC8424A5D8E1863E312 /* Frameworks */,
-				69CE24E3365BAF05FC9CE6CBCBB3F109 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = JDCoordinator;
-			productName = JDCoordinator;
-			productReference = 3E246C48ED880439C302F68B532F02DC /* JDCoordinator.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		5766879084DCCAE3A1F4D7B0337E2939 /* Pods-JDCoordinator_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C92B009032582C42D9F5E03ADA5AB5C /* Build configuration list for PBXNativeTarget "Pods-JDCoordinator_Tests" */;
@@ -377,25 +384,31 @@
 			productReference = D24A738D7009540BF653980C04B44D51 /* Pods_JDCoordinator_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A7AA1716763A6EF1EC55A5000A14FFDA /* JDCoordinator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8B096399C00B95994EFE6F13008B77F /* Build configuration list for PBXNativeTarget "JDCoordinator" */;
+			buildPhases = (
+				4E4D12817EB665E5694A3DDB7C667AD9 /* Sources */,
+				16890E1CD0074D6FF57020961164D522 /* Frameworks */,
+				57C99FCE1E543392EEBBD60A67C501EE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JDCoordinator;
+			productName = JDCoordinator;
+			productReference = 3E246C48ED880439C302F68B532F02DC /* JDCoordinator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0920;
-				TargetAttributes = {
-					058B8E9A80F8AC4FF8F5AA064BCC29AD = {
-						LastSwiftMigration = 0820;
-					};
-					200E8C71A568AB2C6838AE6FFDCF0BA3 = {
-						LastSwiftMigration = 0900;
-					};
-					5766879084DCCAE3A1F4D7B0337E2939 = {
-						LastSwiftMigration = 0820;
-					};
-				};
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -409,29 +422,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				200E8C71A568AB2C6838AE6FFDCF0BA3 /* JDCoordinator */,
+				A7AA1716763A6EF1EC55A5000A14FFDA /* JDCoordinator */,
 				058B8E9A80F8AC4FF8F5AA064BCC29AD /* Pods-JDCoordinator_Example */,
 				5766879084DCCAE3A1F4D7B0337E2939 /* Pods-JDCoordinator_Tests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0BD3AD201E4E094D002A3E9E /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/../SwiftFormat ../../JDCoordinator --semicolons \"never\"\n${SRCROOT}/../SwiftFormat ../JDCoordinator --semicolons \"never\"";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3AA9CF0314C88D169EFC7A7082A6E0DD /* Sources */ = {
@@ -439,6 +435,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				699772CF51E91D6CA6CA713C13F94E71 /* Pods-JDCoordinator_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E4D12817EB665E5694A3DDB7C667AD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				064783F72BDB885188C4C13692FAF6B0 /* _JDChildCoordinating.swift in Sources */,
+				981166B032AC3D7B3DC99437B41D6099 /* _JDParentCoordinating.swift in Sources */,
+				D288F88DB4157315DB8C322EEFF3B829 /* _JDStartTestable.swift in Sources */,
+				8BFE2E7E1B93AF86A7109A50D59D3995 /* AnyHashableConvertible.swift in Sources */,
+				B5AFC3FF08CF967334B364C35D94755D /* JDAppCoordinator.swift in Sources */,
+				A846445B7E1B5C27FD2882BE57B95D1F /* JDBaseCoordinating.swift in Sources */,
+				5A4B83A349F71C84C2B27447A2CDCEAC /* JDChildCoordinating.swift in Sources */,
+				96AC504DEA1712C2A76AE00A917A9DF6 /* JDChildCoordinatorStorage.swift in Sources */,
+				54F8432DB895E9B81D97538532F728B0 /* JDChildCoordinatorType.swift in Sources */,
+				AE7D7617777015186389DFCA2F68CC9B /* JDCoordinator-dummy.m in Sources */,
+				DF4194D0EFB441BB2B7CFBAA26EEF731 /* JDCoordinator.swift in Sources */,
+				8986B6ACAC5B749B2A06B69462B91AC6 /* JDCoordinatorDelegates.swift in Sources */,
+				1CD5BB32A9FC7779161ED907381CADCB /* JDNavigationCoordinating.swift in Sources */,
+				AD46B236425DFA686D1A6147009B4433 /* JDParentCoordinating.swift in Sources */,
+				D2AD0C95F55B2DC80AB1EF7219D61C89 /* JDParentCoordinator.swift in Sources */,
+				CD4C373C44BF9AAC191174E8F5689865 /* JDRootNavigationCoordinating.swift in Sources */,
+				254AD727B8869D3692F2F2FD444BB353 /* JDSplitViewCoordinating.swift in Sources */,
+				8B2B4ED0B4FDF756EB3A53D665C7250B /* JDSplitViewCoordinator.swift in Sources */,
+				681A796398706DE284735C3B1F3E1A56 /* JDViewControllerType.swift in Sources */,
+				392F5C9D8101E8321B809C4B66E91E8A /* UINavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,201 +473,114 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E432F5E025B8AD4B92462B80EE0BA8B7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD723FA920544FF800388975 /* AnyHashableConvertible.swift in Sources */,
-				A7BAD66F1F2A725F00FF72F0 /* JDChildCoordinatorStorage.swift in Sources */,
-				0BD3AD481E4E0AE7002A3E9E /* JDParentCoordinator.swift in Sources */,
-				0BD3AD461E4E0AE7002A3E9E /* JDAppCoordinator.swift in Sources */,
-				A7BAD6631F2A337900FF72F0 /* JDViewControllerType.swift in Sources */,
-				A7BAD6611F2A332B00FF72F0 /* JDRootNavigationCoordinating.swift in Sources */,
-				0BD3AD571E4E0B20002A3E9E /* JDSplitViewCoordinating.swift in Sources */,
-				0BD3AD551E4E0B20002A3E9E /* JDNavigationCoordinating.swift in Sources */,
-				0BD3AD531E4E0B20002A3E9E /* JDBaseCoordinating.swift in Sources */,
-				A7BAD6661F2A343B00FF72F0 /* JDCoordinatorDelegates.swift in Sources */,
-				A7BAD6681F2A348400FF72F0 /* _JDChildCoordinating.swift in Sources */,
-				A7BAD66B1F2A354C00FF72F0 /* _JDParentCoordinating.swift in Sources */,
-				FDBDF15820549A5600A36BFC /* _JDStartTestable.swift in Sources */,
-				A7BAD66D1F2A361700FF72F0 /* JDChildCoordinatorType.swift in Sources */,
-				CB76A1CF2E3E5329115076BE925F348E /* JDCoordinator-dummy.m in Sources */,
-				0BD3AD4D1E4E0B10002A3E9E /* UINavigationController.swift in Sources */,
-				0BD3AD471E4E0AE7002A3E9E /* JDCoordinator.swift in Sources */,
-				0BD3AD541E4E0B20002A3E9E /* JDChildCoordinating.swift in Sources */,
-				0BD3AD561E4E0B20002A3E9E /* JDParentCoordinating.swift in Sources */,
-				0BD3AD491E4E0AE7002A3E9E /* JDSplitViewCoordinator.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		109363186AFBBF32A3DEC115E8AF680E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JDCoordinator;
-			target = 200E8C71A568AB2C6838AE6FFDCF0BA3 /* JDCoordinator */;
+			target = A7AA1716763A6EF1EC55A5000A14FFDA /* JDCoordinator */;
 			targetProxy = F3855ACE76C72E0EB66570A739A2BCEB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		5430A901B4011D65BF7166C5BB11484F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDE151EE7D060C5AD0F0D1EF5F180D15 /* Pods-JDCoordinator_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JDCoordinator_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JDCoordinator_Example/Pods-JDCoordinator_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JDCoordinator_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6D1B0268B71D8562EE0984936448B378 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17DA5167EDBF02FBC9729B497AD89611 /* Pods-JDCoordinator_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-JDCoordinator_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-JDCoordinator_Tests/Pods-JDCoordinator_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_JDCoordinator_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+		1C3ED16E144B9A188CC88F2343EB3B4F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+		51F393FE91B4B6C835FB4B238187AD09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -653,44 +589,74 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		CDA6BB1AF620C98193834D1813179101 /* Release */ = {
+		65D7531C7C6A25308397035A1FB1CCBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5D02BC31633E17404CFD1274791E0E5 /* Pods-JDCoordinator_Example.release.xcconfig */;
+			baseConfigurationReference = 8AC2B6F5C8D681B6EC2B93FAB59D125E /* JDCoordinator.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JDCoordinator/JDCoordinator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JDCoordinator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JDCoordinator/JDCoordinator.modulemap";
+				PRODUCT_NAME = JDCoordinator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9AB6E7CBA55C843E1933FDA42375430E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BB93A43026ED46807A8AEB0C3B2EA07 /* Pods-JDCoordinator_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-JDCoordinator_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-JDCoordinator_Example/Pods-JDCoordinator_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -698,35 +664,33 @@
 				PRODUCT_NAME = Pods_JDCoordinator_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		EDC146D09550B92E6FCEB6EE09F8F257 /* Debug */ = {
+		A0623225E1266C9192158541D850EA94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6F7066ADD769B1C7672FA055D6CD6EE /* Pods-JDCoordinator_Tests.debug.xcconfig */;
+			baseConfigurationReference = 96D9A7432EC8507D9EEA7BF2EB756FE9 /* Pods-JDCoordinator_Tests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-JDCoordinator_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-JDCoordinator_Tests/Pods-JDCoordinator_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -734,81 +698,109 @@
 				PRODUCT_NAME = Pods_JDCoordinator_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		F942DC2172B3BF2D0C7ED9C77B08B073 /* Release */ = {
+		D9243F4FD3B23BE6764C18445C5BD27C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B4FB580DA5648ECDF2A97AB300C2B51 /* JDCoordinator.xcconfig */;
+			baseConfigurationReference = 8AC2B6F5C8D681B6EC2B93FAB59D125E /* JDCoordinator.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/JDCoordinator/JDCoordinator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JDCoordinator/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/JDCoordinator/JDCoordinator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = JDCoordinator;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F137209E5696562B3440378EFEA1F198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B0F7F1FE9121712B08BBE1862F4666 /* Pods-JDCoordinator_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JDCoordinator_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JDCoordinator_Example/Pods-JDCoordinator_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JDCoordinator_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FC6943EC7725FE5B3D588DA425BD06BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AD4A15670F96203B2EA1F1B170D006A /* Pods-JDCoordinator_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JDCoordinator_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JDCoordinator_Tests/Pods-JDCoordinator_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_JDCoordinator_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		FC3E8878FBF1B2FF58548DCA9DCADB00 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B4FB580DA5648ECDF2A97AB300C2B51 /* JDCoordinator.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/JDCoordinator/JDCoordinator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JDCoordinator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/JDCoordinator/JDCoordinator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = JDCoordinator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -816,8 +808,8 @@
 		28F3BE5A1BDC55C6684535CB5F63C18C /* Build configuration list for PBXNativeTarget "Pods-JDCoordinator_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5430A901B4011D65BF7166C5BB11484F /* Debug */,
-				CDA6BB1AF620C98193834D1813179101 /* Release */,
+				F137209E5696562B3440378EFEA1F198 /* Debug */,
+				9AB6E7CBA55C843E1933FDA42375430E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -825,8 +817,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
-				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+				51F393FE91B4B6C835FB4B238187AD09 /* Debug */,
+				1C3ED16E144B9A188CC88F2343EB3B4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -834,17 +826,17 @@
 		8C92B009032582C42D9F5E03ADA5AB5C /* Build configuration list for PBXNativeTarget "Pods-JDCoordinator_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EDC146D09550B92E6FCEB6EE09F8F257 /* Debug */,
-				6D1B0268B71D8562EE0984936448B378 /* Release */,
+				A0623225E1266C9192158541D850EA94 /* Debug */,
+				FC6943EC7725FE5B3D588DA425BD06BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A8B8967BD8D47F89774403B6AA76AE7D /* Build configuration list for PBXNativeTarget "JDCoordinator" */ = {
+		A8B096399C00B95994EFE6F13008B77F /* Build configuration list for PBXNativeTarget "JDCoordinator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC3E8878FBF1B2FF58548DCA9DCADB00 /* Debug */,
-				F942DC2172B3BF2D0C7ED9C77B08B073 /* Release */,
+				D9243F4FD3B23BE6764C18445C5BD27C /* Debug */,
+				65D7531C7C6A25308397035A1FB1CCBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
