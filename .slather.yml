@@ -1,5 +1,5 @@
 coverage_service: coveralls
-xcodeproj: Example/JDCoordinator.xcworkspace
+xcodeproj: Example/Pods/Pods.xcodeproj
 scheme: "JDCoordinator"
 source_directory: JDCoordinator/*
 ignore:
