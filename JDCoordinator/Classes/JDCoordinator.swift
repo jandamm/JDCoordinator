@@ -8,6 +8,11 @@
 
 import UIKit
 
+// TODO: - remove NSObject inheritance once Swift 4.1 is released. Using Hashable instead.
+#if swift(>=4.1)
+    extension JDCoordinator: Hashable {}
+#endif
+
 /**
  The Coordinator is the simplest class in a NavigationController based application.
 
