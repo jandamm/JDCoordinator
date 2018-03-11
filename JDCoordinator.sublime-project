@@ -2,7 +2,25 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
+			"name": "project",
+			"folder_exclude_patterns": ["*"]
+		},
+		{
+			"path": "JDCoordinator",
+			"folder_exclude_patterns": ["Assets"],
+			"file_exclude_patterns": [".gitkeep"]
+		},
+		{
+			"path": "Example/Tests",
+			"name": "Unit Tests",
+			"file_exclude_patterns": ["Info.plist"]
+		},
+		{
+			"path": "Example",
+			"name": "Example App",
+			"folder_exclude_patterns": ["build","JDCoordinator.*","Pods","Tests", "Assets.xcassets"],
+			"file_exclude_patterns": ["SwiftFormat"]
 		}
 	]
 }
