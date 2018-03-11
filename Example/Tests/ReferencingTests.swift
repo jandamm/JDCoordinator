@@ -48,7 +48,7 @@ class ReferencingTests: XCTestCase {
         parentCoordinator?.removeChild(childCoordinator!)
 
         XCTAssertNil(childCoordinator)
-        XCTAssertNil(childNavigationController)
+        wait(for: expectNil(at: "childNavigationController"), timeout: 0.2)
         XCTAssertNotNil(parentCoordinator)
 
         // Should deallocate parentCoordinator but not parentNavigationController (=== appNavigationController)
@@ -61,12 +61,25 @@ class ReferencingTests: XCTestCase {
         appCoordinator = nil
 
         XCTAssertNil(appCoordinator)
-        XCTAssertNil(appNavigationController)
-        XCTAssertNil(parentNavigationController)
+
+        let expectations = [
+            "appNavigationController",
+            "parentNavigationController",
+        ].map(expectNil)
+
+        wait(for: expectations, timeout: 0.2)
     }
 }
 
 extension ReferencingTests {
+    func expectNil(at keyPath: String) -> XCTKVOExpectation {
+        return XCTKVOExpectation(keyPath: keyPath, object: self, expectedValue: nil)
+    }
+
+    func wait(for expectation: XCTestExpectation, timeout seconds: TimeInterval) {
+        wait(for: [expectation], timeout: seconds)
+    }
+
     struct Assert: Asserting {
     }
 }
