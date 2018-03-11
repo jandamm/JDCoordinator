@@ -9,7 +9,7 @@
 import Foundation
 
 /// BaseProtocol where every other CoordinatorProtocol inherits from.
-public protocol JDBaseCoordinating: class, AnyHashableConvertible {
+public protocol JDBaseCoordinating: class {
     /// You need to override this method so it pushes the initial ViewController.
     /// You can also load data in this method.
     func start()

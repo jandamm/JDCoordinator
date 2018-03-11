@@ -9,7 +9,7 @@
 import Foundation
 
 /// Defines Coordinators which can be children to other coordinators.
-public protocol JDChildCoordinating: JDBaseCoordinating {
+public protocol JDChildCoordinating: JDBaseCoordinating, AnyHashableConvertible {
     /// Returns the parentCoordinator of this child.
     var parentCoordinator: JDParentCoordinating! { get }
 

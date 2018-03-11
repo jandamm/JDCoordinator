@@ -21,13 +21,11 @@ import Foundation
 
  Depending on your apps navigation structure, you may want to make it a singleton.
  */
-open class JDAppCoordinator: NSObject, JDRootNavigationCoordinating, _JDParentCoordinating, JDCoordinatorCoordinatorDelegate, JDCoordinatorViewControllerDelegate, _JDStartTestable {
+open class JDAppCoordinator: JDRootNavigationCoordinating, _JDParentCoordinating, JDCoordinatorCoordinatorDelegate, JDCoordinatorViewControllerDelegate, _JDStartTestable {
     /// Initialize the JDAppCoordinator a UINavigationController
     /// - parameter navigationController: NavigationController which is keyWindow.rootViewController
     public init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
-
-        super.init()
     }
 
     // MARK: - Protocols
