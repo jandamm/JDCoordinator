@@ -19,3 +19,8 @@ class StorageTests: XCTestCase {
         super.tearDown()
     }
 }
+
+extension StorageTests {
+    struct Assert: Asserting {
+    }
+}

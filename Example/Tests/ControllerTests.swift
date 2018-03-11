@@ -19,3 +19,8 @@ class ControllerTests: XCTestCase {
         super.tearDown()
     }
 }
+
+extension ControllerTests {
+    struct Assert: Asserting {
+    }
+}

@@ -32,41 +32,34 @@ class CoordinatorTests: XCTestCase {
     }
 
     func testStart() {
-        func expectations(for startable: _JDStartTestable, count: Int = 1) {
-            XCTAssertTrue(startable.isStarted)
-            XCTAssertEqual(startable.startedCount, count)
-        }
-
-        XCTAssertFalse(appCoordinator.isStarted)
-        XCTAssertFalse(coordinator.isStarted)
+        Assert.notStarted(appCoordinator)
+        Assert.notStarted(coordinator)
 
         appCoordinator.start()
         coordinator.start()
 
-        expectations(for: appCoordinator)
-        expectations(for: coordinator)
+        Assert.started(appCoordinator, times: 1)
+        Assert.started(coordinator, times: 1)
 
         coordinator.start()
 
-        expectations(for: coordinator, count: 2)
+        Assert.started(coordinator, times: 2)
     }
 
     func testNavigationControllerSetup() {
-        XCTAssertEqual(appCoordinator.navigationController, parentCoordinator.navigationController)
-        XCTAssertEqual(appCoordinator.navigationController, coordinator.navigationController)
-        XCTAssertEqual(parentCoordinator.navigationController, coordinator.navigationController)
-
-        XCTAssertTrue(appCoordinator.navigationController === parentCoordinator.navigationController)
-        XCTAssertTrue(appCoordinator.navigationController === coordinator.navigationController)
-        XCTAssertTrue(parentCoordinator.navigationController === coordinator.navigationController)
+        Assert.identical(appCoordinator.navigationController, parentCoordinator.navigationController)
+        Assert.identical(appCoordinator.navigationController, coordinator.navigationController)
+        Assert.identical(coordinator.navigationController, parentCoordinator.navigationController)
     }
 
     func testParentChildSetup() {
         XCTAssertTrue(parentCoordinator.parentCoordinator === appCoordinator)
         XCTAssertTrue(appCoordinator.childCoordinators.contains(parentCoordinator))
+        XCTAssertTrue(appCoordinator.hasChild(parentCoordinator))
 
         XCTAssertTrue(coordinator.parentCoordinator === parentCoordinator)
         XCTAssertTrue(parentCoordinator.childCoordinators.contains(coordinator))
+        XCTAssertTrue(parentCoordinator.hasChild(coordinator))
     }
 
     func testParentCoordinators() {
@@ -99,14 +92,23 @@ class CoordinatorTests: XCTestCase {
     }
 
     func testAddChild() {
-        let formerParent = coordinator.getFormerParent(parentIsNot: appCoordinator)
+        var formerParent = coordinator.getFormerParent(parentIsNot: appCoordinator)
 
         // Adding child twice should not change anything
         (1 ... 2).forEach { _ in
             appCoordinator.addChild(coordinator)
 
-            childParentExpectations(with: formerParent)
+            Assert.coordinator(coordinator, isChildOf: appCoordinator, not: formerParent, parentCount: 1)
         }
+
+        formerParent = coordinator.getFormerParent(parentIsNot: parentCoordinator)
+
+        Assert.notStarted(coordinator)
+
+        parentCoordinator.addChild(andStart: coordinator)
+
+        Assert.coordinator(coordinator, isChildOf: parentCoordinator, not: formerParent, parentCount: 2)
+        Assert.started(coordinator, times: 1)
     }
 
     func testSetParent() {
@@ -116,19 +118,41 @@ class CoordinatorTests: XCTestCase {
         (1 ... 2).forEach { _ in
             coordinator.setParent(to: appCoordinator)
 
-            childParentExpectations(with: formerParent)
+            Assert.coordinator(coordinator, isChildOf: appCoordinator, not: formerParent, parentCount: 1)
         }
     }
 
-    func childParentExpectations(with formerParent: JDParentCoordinating) {
-        // Is now in corrects parent childCoordinators
-        XCTAssertTrue(appCoordinator.childCoordinators.contains(coordinator))
-        XCTAssertTrue(appCoordinator.hasChild(coordinator))
-        XCTAssertTrue(!formerParent.hasChild(coordinator))
+    func testRemoveChild() {
+        XCTFail("not implemented yet")
+    }
+}
 
-        // ParentCoordinator is set correctly
-        XCTAssertTrue(coordinator.parentCoordinator === appCoordinator)
-        XCTAssertEqual(coordinator.parentCoordinators.count, 1)
+extension CoordinatorTests {
+    struct Assert: Asserting {
+        static func started(_ startable: _JDStartTestable, file: StaticString = #file, line: UInt = #line) {
+            XCTAssertTrue(startable.isStarted, file: file, line: line)
+        }
+
+        static func started(_ startable: _JDStartTestable, times count: Int, file: StaticString = #file, line: UInt = #line) {
+            started(startable, file: file, line: line)
+            XCTAssertEqual(startable.startedCount, count, file: file, line: line)
+        }
+
+        static func notStarted(_ startable: _JDStartTestable, file: StaticString = #file, line: UInt = #line) {
+            XCTAssertFalse(startable.isStarted, file: file, line: line)
+            XCTAssertEqual(startable.startedCount, 0, file: file, line: line)
+        }
+
+        static func coordinator(_ coordinator: JDChildCoordinating, isChildOf parent: _JDParentCoordinating, not formerParent: JDParentCoordinating, parentCount count: Int, file: StaticString = #file, line: UInt = #line) {
+            // Is now in corrects parent childCoordinators
+            XCTAssertTrue(parent.childCoordinators.contains(coordinator), file: file, line: line)
+            XCTAssertTrue(parent.hasChild(coordinator), file: file, line: line)
+            XCTAssertFalse(formerParent.hasChild(coordinator), file: file, line: line)
+
+            // ParentCoordinator is set correctly
+            XCTAssertTrue(coordinator.parentCoordinator === parent, file: file, line: line)
+            XCTAssertEqual(coordinator.parentCoordinators.count, count, file: file, line: line)
+        }
     }
 }
 

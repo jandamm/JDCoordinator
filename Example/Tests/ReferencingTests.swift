@@ -42,8 +42,7 @@ class ReferencingTests: XCTestCase {
         XCTAssertNotNil(childCoordinator)
         XCTAssertNotNil(childNavigationController)
 
-        XCTAssertEqual(appNavigationController, parentNavigationController)
-        XCTAssertTrue(appNavigationController === parentNavigationController)
+        Assert.identical(appNavigationController, parentNavigationController)
 
         // Should deallocate childCoordinator and childNavigationController
         parentCoordinator?.removeChild(childCoordinator!)
@@ -64,5 +63,10 @@ class ReferencingTests: XCTestCase {
         XCTAssertNil(appCoordinator)
         XCTAssertNil(appNavigationController)
         XCTAssertNil(parentNavigationController)
+    }
+}
+
+extension ReferencingTests {
+    struct Assert: Asserting {
     }
 }
