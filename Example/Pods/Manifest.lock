@@ -1,16 +1,16 @@
 PODS:
-  - JDCoordinator (0.1.0)
+  - JDCoordinator (0.8.1)
 
 DEPENDENCIES:
   - JDCoordinator (from `../`)
 
 EXTERNAL SOURCES:
   JDCoordinator:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  JDCoordinator: f5a97cddb0f454ab7afe420e94e7ab1dc0656084
+  JDCoordinator: a3fa1004f24cfe0fe260270c9930bd0666b070f8
 
 PODFILE CHECKSUM: 511a4f43780a259f7d1ccdeb51de5e3ea0c2730b
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0

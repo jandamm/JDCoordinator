@@ -1,0 +1,8 @@
+coverage_service: coveralls
+workspace: Example/JDCoordinator.xcworkspace
+xcodeproj: Example/JDCoordinator.xcodeproj
+scheme: "JDCoordinator-Example"
+configuration: Debug
+source_directory: JDCoordinator/*
+ignore:
+  - Assets/*
