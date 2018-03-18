@@ -8,7 +8,7 @@
 import Foundation
 
 protocol _Parent: Parent {
-    var childCoordinators: JDChildCoordinatorStorage { get set }
+    var childCoordinators: ChildStorage { get set }
 }
 
 extension _Parent {

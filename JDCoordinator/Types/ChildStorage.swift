@@ -7,11 +7,11 @@
 
 import Foundation
 
-public protocol JDChildCoordinatorStoring: Collection where Element == Child {}
+public protocol ChildStoring: Collection where Element == Child {}
 
 // TODO: - This has to be improved before release.
 /// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
-public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, Equatable, ExpressibleByArrayLiteral {
+public struct ChildStorage: ChildStoring, SetAlgebra, Equatable, ExpressibleByArrayLiteral {
 
     // MARK: - Internal Storage
 
@@ -67,7 +67,7 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
 
     // MARK: - Equatable
 
-    public static func == (lhs: JDChildCoordinatorStorage, rhs: JDChildCoordinatorStorage) -> Bool {
+    public static func == (lhs: ChildStorage, rhs: ChildStorage) -> Bool {
         return lhs.storage == rhs.storage
     }
 
@@ -77,9 +77,9 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
         return storage.isEmpty
     }
 
-    public func symmetricDifference(_ other: JDChildCoordinatorStorage) -> JDChildCoordinatorStorage {
+    public func symmetricDifference(_ other: ChildStorage) -> ChildStorage {
         let difference = storage.symmetricDifference(other.storage)
-        return JDChildCoordinatorStorage(storage: difference)
+        return ChildStorage(storage: difference)
     }
 
     @discardableResult
@@ -87,15 +87,15 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
         return storage.update(with: newMember.anyHashable)?.element
     }
 
-    public mutating func formUnion(_ other: JDChildCoordinatorStorage) {
+    public mutating func formUnion(_ other: ChildStorage) {
         storage.formUnion(other.storage)
     }
 
-    public mutating func formIntersection(_ other: JDChildCoordinatorStorage) {
+    public mutating func formIntersection(_ other: ChildStorage) {
         storage.formIntersection(other.storage)
     }
 
-    public mutating func formSymmetricDifference(_ other: JDChildCoordinatorStorage) {
+    public mutating func formSymmetricDifference(_ other: ChildStorage) {
         storage.formSymmetricDifference(other.storage)
     }
 
@@ -114,24 +114,24 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
         return (inserted, memberAfterInsert.element)
     }
 
-    public func union(_ other: JDChildCoordinatorStorage) -> JDChildCoordinatorStorage {
+    public func union(_ other: ChildStorage) -> ChildStorage {
         let union = storage.union(other.storage)
-        return JDChildCoordinatorStorage(storage: union)
+        return ChildStorage(storage: union)
     }
 
-    public func intersection(_ other: JDChildCoordinatorStorage) -> JDChildCoordinatorStorage {
+    public func intersection(_ other: ChildStorage) -> ChildStorage {
         let intersection = storage.intersection(other.storage)
-        return JDChildCoordinatorStorage(storage: intersection)
+        return ChildStorage(storage: intersection)
     }
 }
 
-public extension JDChildCoordinatorStorage {
+public extension ChildStorage {
     mutating func removeAll(keepingCapacity keepCapacity: Bool = false) {
         storage.removeAll(keepingCapacity: keepCapacity)
     }
 
-    func subtracting(_ coordinators: [Element]) -> JDChildCoordinatorStorage {
-        let other = JDChildCoordinatorStorage(elements: coordinators)
+    func subtracting(_ coordinators: [Element]) -> ChildStorage {
+        let other = ChildStorage(elements: coordinators)
 
         return subtracting(other)
     }

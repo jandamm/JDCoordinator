@@ -30,7 +30,7 @@ open class AppCoordinator: Coordinating, RootNavigating, _Parent, CoordinatorDel
 
     // MARK: - Protocols
 
-    public internal(set) var childCoordinators = JDChildCoordinatorStorage()
+    public internal(set) var childCoordinators = ChildStorage()
     public let navigationController: UINavigationController
     open func start() {
         started()
