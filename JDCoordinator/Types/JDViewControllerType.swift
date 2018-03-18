@@ -7,9 +7,9 @@
 
 import Foundation
 
-/// Defines viewController for JDRootNavigationCoordinatorProtocol and JDNavigationCoordinatorProtocol
+/// Defines viewController for RootNavigating
 ///
-/// Be aware that not all choices are available for JDRootNavigationCoordinatorProtocol.
+/// Be aware that not all choices are available for RootNavigating.
 /// - current: navigationController.topViewController
 /// - previous: previousViewController
 /// - root: navigationController.visibleViewController.first

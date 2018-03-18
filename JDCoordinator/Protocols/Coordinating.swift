@@ -8,9 +8,9 @@
 
 import Foundation
 
-/// BaseProtocol where every other CoordinatorProtocol inherits from.
+/// Defines Coordinators.
 public protocol Coordinating: AnyObject {
-    /// You need to override this method so it pushes the initial ViewController.
+    /// You need to override this method so it pushes the initial `UIViewController`.
     /// You can also load data in this method.
     func start()
 }

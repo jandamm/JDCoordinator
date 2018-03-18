@@ -8,33 +8,33 @@
 
 import Foundation
 
-/// Use this protocol for weak pointers to delegates of JDCoordinators in ViewControllers.
+/// Use this protocol for weak pointers to delegates of `Coordinating` in `UIViewControllers`.
 public protocol ControllerDelegate: Coordinating {
-    /// Call this method in your ViewController to tell the Coordinator that its state has changed.
+    /// Call this method in your `UIViewController` to tell the `Coordinating` that its state has changed.
     ///
-    /// You may want to check if parent == nil and remove the coordinator from it's parent.
+    /// You may want to check if `parentViewController == nil` and remove the coordinator from it's parent.
     ///
-    /// Implement it into UIViewController.didMove(to:)
+    /// Implement it into `UIViewController.didMove(to:)`
     ///
     /// - parameters:
-    ///     - viewController: self / presented ViewController
-    ///     - parentViewController: The parent given by didMove(toParentViewController:)
+    ///     - viewController: `self` / presented `UIViewController`
+    ///     - parentViewController: The parent given by `didMove(toParentViewController:)`
     func presentedViewController(_ viewController: UIViewController, didMoveTo parentViewController: UIViewController?)
 
-    /// Call this method in your ViewController to tell the Coordinator that its state will changed.
+    /// Call this method in your `UIViewController` to tell the `Coordinating` that its state will change.
     ///
-    /// You may want to check if parent == nil and remove the coordinator from it's parent.
+    /// You may want to check if `parentViewController == nil` and remove the coordinator from it's parent.
     ///
-    /// Implement it into UIViewController.willMove(to:)
+    /// Implement it into `UIViewController.willMove(to:)`
     ///
     /// - parameters:
-    ///     - viewController: self / presented ViewController
-    ///     - parentViewController: The parent given by willMove(toParentViewController:)
+    ///     - viewController: `self` / presented `UIViewController`
+    ///     - parentViewController: The parent given by `willMove(toParentViewController:)`
     func presentedViewController(_ viewController: UIViewController, willMoveTo parentViewController: UIViewController?)
 }
 
-/// Use this protocol for weak pointers to delegates of JDParentCoordinators in JDCoordinators.
+/// Use this protocol for weak pointers to delegates of `Parent`s in `Child`s.
 ///
-/// You only need to implement a delegate if you have to return values from the childCoordinator or execute an action if the child is removed.
-/// Otherwise use its parentCoordinator.
+/// You only need to implement a delegate if you have to return values from the `Child` or execute an action if the `Child` is removed.
+/// Otherwise use its `parentCoordinator`.
 public protocol CoordinatorDelegate: Coordinating {}

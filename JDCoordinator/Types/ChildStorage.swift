@@ -1,5 +1,5 @@
 //
-//  JDChildCoordinatorStorage.swift
+//  ChildStorage.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -7,10 +7,11 @@
 
 import Foundation
 
+// TODO: - Add constraints
 public protocol ChildStoring: Collection where Element == Child {}
 
 // TODO: - This has to be improved before release.
-/// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
+/// Quick and temporary solution to replace the store Child of an Array with a Set
 public struct ChildStorage: ChildStoring, SetAlgebra, Equatable, ExpressibleByArrayLiteral {
 
     // MARK: - Internal Storage

@@ -9,21 +9,19 @@
 import Foundation
 
 /**
- Use the AppCoordinator only in a NavigationController based application.
+ Use the `AppCoordinator` only in a `UINavigationController` based application.
 
- The coordinator structure in your app can be seen as a tree. In this example the AppCoordinator is the root of every other coordinator.
+ The coordinator structure in your app can be seen as a tree. In this example the `AppCoordinator` is the root of every other coordinator.
  In order to prevent a coordinator from beeing deinitialized it has to have a strong reference somewhere.
- The AppCoordinator should either reference himself (as a singleton) or referenced by the AppDelegate.
- Every other coordinator should be referenced by the AppCoordinator or one of its childs.
+ The `AppCoordinator` should be referenced by the `AppDelegate`.
+ Every other `Coordinator` should be referenced by the `AppCoordinator` or one of its `Child`s.
 
- Use this class only once in your app. It should be the Coordinator where every navigation is started from.
- The AppCoordinator has to use the UINavigationController which the AppDelegate declares as keyWindow.
-
- Depending on your apps navigation structure, you may want to make it a singleton.
+ Use this class only once in your app. It should be the `Coordinator` where every navigation is started from.
+ The `AppCoordinator` has to use the `UINavigationController` which the `AppDelegate` declares as `keyWindow`.
  */
 open class AppCoordinator: Coordinating, RootNavigating, _Parent, CoordinatorDelegate, ControllerDelegate, _StartTestable {
-    /// Initialize the JDAppCoordinator a UINavigationController
-    /// - parameter navigationController: NavigationController which is keyWindow.rootViewController
+    /// Initialize the `AppCoordinator` with a UINavigationController.
+    /// - parameter navigationController: `UINavigationController` which is / will be `keyWindow.rootViewController`
     public init(with navigationController: UINavigationController) {
         self.navigationController = navigationController
     }

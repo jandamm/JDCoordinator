@@ -8,23 +8,23 @@
 
 import Foundation
 
-/// Defines Coordinators which can be children to other coordinators.
+/// Defines childs of coordinators.
 public protocol Child: Coordinating, AnyHashableConvertible {
-    /// Returns the parentCoordinator of this child.
+    /// Returns the `parentCoordinator` of this child.
     var parentCoordinator: Parent! { get }
 
-    /// Set the parentCoordinator and add it to parentCoordinators childCoordinators.
+    /// Set the `parentCoordinator` and add it to `parentCoordinators.childCoordinators`.
     ///
-    /// You do not have to both setParent(to:) and addChild(:)
+    /// You do not have to both `setParent(to:)` and `addChild(:)`
     ///
-    /// - parameter coordinator: The new parentCoordinator
+    /// - parameter coordinator: The new `parentCoordinator`
     func setParent(to coordinator: Parent)
 }
 
 public extension Child {
-    /// Returns every parentCoordinator.
+    /// Returns every `parentCoordinator`.
     ///
-    /// .first is .parentCoordinator. .last is the AppCoordinator.
+    /// `.first` is `parentCoordinator`. `.last` is the `AppCoordinator`.
     var parentCoordinators: [Parent] {
         var coordinators: [Parent] = []
         var coordinator: Child? = self
@@ -37,9 +37,9 @@ public extension Child {
         return coordinators
     }
 
-    /// Returns every parentCoordinator that is a JDChildCoordinator.
+    /// Returns every `parentCoordinator` that is a `Child`.
     ///
-    /// .first is self. .last is uppermost parent which is also a child. Which is the AppCoordinators direct childCoordinator.
+    /// `.first` is `self`. `.last` is uppermost parent which is also a child. Which is the `AppCoordinator`s direct childCoordinator.
     internal var parentChildStack: [Child] {
         var coordinators: [Child] = [self]
         var coordinator: Child = self

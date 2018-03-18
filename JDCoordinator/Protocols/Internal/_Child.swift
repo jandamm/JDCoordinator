@@ -1,5 +1,5 @@
 //
-//  _JDChildCoordinating.swift
+//  _Child.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.

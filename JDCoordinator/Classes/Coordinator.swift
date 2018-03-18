@@ -14,15 +14,15 @@ import UIKit
 #endif
 
 /**
- The Coordinator is the simplest class in a NavigationController based application.
+ The `Coordinator` is the simplest class in a `UINavigationController` based application.
 
- The coordinator structure in your app can be seen as a tree. In this example the Coordinator is the end of any branch.
- A Coordinator can only manage ViewControllers and should not reference any other coordinator (except as delegate).
+ The coordinator structure in your app can be seen as a tree. In this example the `Coordinator` is the end of any branch.
+ A `Coordinator` can only manage `UIViewController`s and should not instantiate or strongly reference any other coordinator.
  */
 open class Coordinator: NSObject, Coordinating, Navigating, _Child, ControllerDelegate, _StartTestable {
-    /// Initialize the JDCoordinator with a UINavigationController and adds it to a parentCoordinator
-    /// - parameter navigationController: NavigationController where any further navigation should take place.
-    /// - parameter parentCoordinator: Coordinator that should reference this coordinator.
+    /// Initialize the `Coordinator` with a `UINavigationController` and adds it to a `parentCoordinator`.
+    /// - parameter navigationController: `UINavigationController` where any further navigation should take place.
+    /// - parameter parentCoordinator: `ParentCoordinator` that should reference this coordinator.
     public init(with navigationController: UINavigationController, andAddToParent parentCoordinator: Parent) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator
@@ -32,7 +32,7 @@ open class Coordinator: NSObject, Coordinating, Navigating, _Child, ControllerDe
         parentCoordinator.addChild(self)
     }
 
-    /// Initializes the JDCoordinator by calling init(with:andAddToParent:) using the parentCoordinators navigationController.
+    /// Initializes the `Coordinator` by calling `init(with:andAddToParent:)` using the `parentCoordinator.navigationController`.
     /// - parameter parentCoordinator: The parent of this Coordinator and the provider of the navigationController.
     public convenience init<ParentCoordinator>(withParent parentCoordinator: ParentCoordinator) where ParentCoordinator: Parent & RootNavigating {
         self.init(with: parentCoordinator.navigationController, andAddToParent: parentCoordinator)
