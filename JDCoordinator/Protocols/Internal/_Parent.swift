@@ -35,22 +35,13 @@ extension _Parent {
     }
 
     /// Removes all childCoordinators.
-    /// - parameter type: Define which type of ChildCoordinators should stay childs.
-    public func removeChilds(_ type: JDChildCoordinatorType) {
-        let oldCoordinators = childCoordinators
-
+    public func removeAllChilds() {
         childCoordinators.removeAll()
-
-        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(coordinator) else {
-            return
-        }
-
-        childCoordinators.insert(coordinator)
     }
 
     /// Removes all Coordinators except the given ones
     /// - parameter coordinators: Coordinators which should not be removed
-    func removeChilds(except coordinators: [Child]) {
+    func removeChildsExcept(_ coordinators: [Child]) {
         for coordinator in childCoordinators.subtracting(coordinators) {
             removeChild(coordinator)
         }
