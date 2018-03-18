@@ -12,7 +12,7 @@ protocol MainCoordinatorDelegate: JDCoordinatorCoordinatorDelegate {
     func reloadData()
 }
 
-class MainCoordinator: JDParentCoordinator, MainDelegate {
+class MainCoordinator: ParentCoordinator, MainDelegate {
     weak var delegate: MainCoordinatorDelegate?
 
     override func start() {

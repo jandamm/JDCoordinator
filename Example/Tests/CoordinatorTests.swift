@@ -11,16 +11,16 @@ import XCTest
 
 class CoordinatorTests: XCTestCase {
     var navigationController: UINavigationController!
-    var appCoordinator: JDAppCoordinator!
-    var parentCoordinator: JDParentCoordinator!
-    var coordinator: JDCoordinator!
+    var appCoordinator: AppCoordinator!
+    var parentCoordinator: ParentCoordinator!
+    var coordinator: Coordinator!
 
     override func setUp() {
         super.setUp()
         navigationController = UINavigationController()
-        appCoordinator = JDAppCoordinator(with: navigationController)
-        parentCoordinator = JDParentCoordinator(with: navigationController, andAddToParent: appCoordinator)
-        coordinator = JDCoordinator(withParent: parentCoordinator)
+        appCoordinator = AppCoordinator(with: navigationController)
+        parentCoordinator = ParentCoordinator(with: navigationController, andAddToParent: appCoordinator)
+        coordinator = Coordinator(withParent: parentCoordinator)
     }
 
     override func tearDown() {

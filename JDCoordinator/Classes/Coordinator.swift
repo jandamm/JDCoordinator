@@ -1,5 +1,5 @@
 //
-//  JDCoordinator.swift
+//  Coordinator.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 30.08.16.
@@ -10,7 +10,7 @@ import UIKit
 
 // TODO: - remove NSObject inheritance once Swift 4.1 is released. Using Hashable instead.
 #if swift(>=4.1)
-    extension JDCoordinator: Hashable {}
+    extension Coordinator: Hashable {}
 #endif
 
 /**
@@ -19,7 +19,7 @@ import UIKit
  The coordinator structure in your app can be seen as a tree. In this example the Coordinator is the end of any branch.
  A Coordinator can only manage ViewControllers and should not reference any other coordinator (except as delegate).
  */
-open class JDCoordinator: NSObject, JDNavigationCoordinating, _JDChildCoordinating, JDCoordinatorViewControllerDelegate, _JDStartTestable {
+open class Coordinator: NSObject, JDNavigationCoordinating, _JDChildCoordinating, JDCoordinatorViewControllerDelegate, _JDStartTestable {
     /// Initialize the JDCoordinator with a UINavigationController and adds it to a parentCoordinator
     /// - parameter navigationController: NavigationController where any further navigation should take place.
     /// - parameter parentCoordinator: Coordinator that should reference this coordinator.

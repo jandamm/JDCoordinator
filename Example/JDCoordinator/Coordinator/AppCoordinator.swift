@@ -8,6 +8,8 @@
 
 import JDCoordinator
 
+typealias JDAppCoordinator = JDCoordinator.AppCoordinator
+
 class AppCoordinator: JDAppCoordinator, MainCoordinatorDelegate {
     weak var main: MainCoordinator!
 

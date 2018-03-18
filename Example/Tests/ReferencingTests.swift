@@ -10,21 +10,21 @@
 import XCTest
 
 class ReferencingTests: XCTestCase {
-    var appCoordinator: JDAppCoordinator!
+    var appCoordinator: AppCoordinator!
     weak var appNavigationController: UINavigationController?
-    weak var parentCoordinator: JDParentCoordinator?
+    weak var parentCoordinator: ParentCoordinator?
     weak var parentNavigationController: UINavigationController?
-    weak var childCoordinator: JDCoordinator?
+    weak var childCoordinator: Coordinator?
     weak var childNavigationController: UINavigationController?
 
     override func setUp() {
         super.setUp()
 
-        appCoordinator = JDAppCoordinator(with: UINavigationController())
+        appCoordinator = AppCoordinator(with: UINavigationController())
         appNavigationController = appCoordinator.navigationController
-        parentCoordinator = JDParentCoordinator(with: appCoordinator.navigationController, andAddToParent: appCoordinator)
+        parentCoordinator = ParentCoordinator(with: appCoordinator.navigationController, andAddToParent: appCoordinator)
         parentNavigationController = parentCoordinator?.navigationController
-        childCoordinator = JDCoordinator(with: UINavigationController(), andAddToParent: parentCoordinator!)
+        childCoordinator = Coordinator(with: UINavigationController(), andAddToParent: parentCoordinator!)
         childNavigationController = childCoordinator?.navigationController
     }
 

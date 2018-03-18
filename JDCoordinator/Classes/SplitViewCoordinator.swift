@@ -1,6 +1,6 @@
 //
-//  JDSplitViewCoordinator.swift
-//  SplitViewCoordinator
+//  SplitViewCoordinator.swift
+//  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 24.12.16.
 //  Copyright © 2016 Jan Dammshäuser. All rights reserved.
@@ -11,7 +11,7 @@ import UIKit
 // TODO: - Implement Protocol
 
 /// JDSplitViewCoordinators are meant to coordinate one or more JDCoordinators and ViewControllers within an UISplitViewController and presented within an UINavigationController.
-// @objc class JDSplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinating, UISplitViewControllerDelegate {
+// @objc class SplitViewCoordinator: JDParentCoordinator, JDSplitViewCoordinating, UISplitViewControllerDelegate {
 //
 //    var _rootSplitViewCoordinator = false
 //

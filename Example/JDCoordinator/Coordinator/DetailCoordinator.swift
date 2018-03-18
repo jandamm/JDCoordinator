@@ -8,7 +8,7 @@
 
 import JDCoordinator
 
-class DetailCoordinator: JDCoordinator {
+class DetailCoordinator: Coordinator {
     var data: String?
 
     weak var delegate: JDCoordinatorCoordinatorDelegate!
