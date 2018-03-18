@@ -8,7 +8,7 @@
 
 import JDCoordinator
 
-protocol MainCoordinatorDelegate: JDCoordinatorCoordinatorDelegate {
+protocol MainCoordinatorDelegate: CoordinatorDelegate {
     func reloadData()
 }
 

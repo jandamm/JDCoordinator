@@ -129,21 +129,21 @@ class CoordinatorTests: XCTestCase {
 
 extension CoordinatorTests {
     struct Assert: Asserting {
-        static func started(_ startable: _JDStartTestable, file: StaticString = #file, line: UInt = #line) {
+        static func started(_ startable: _StartTestable, file: StaticString = #file, line: UInt = #line) {
             XCTAssertTrue(startable.isStarted, file: file, line: line)
         }
 
-        static func started(_ startable: _JDStartTestable, times count: Int, file: StaticString = #file, line: UInt = #line) {
+        static func started(_ startable: _StartTestable, times count: Int, file: StaticString = #file, line: UInt = #line) {
             started(startable, file: file, line: line)
             XCTAssertEqual(startable.startedCount, count, file: file, line: line)
         }
 
-        static func notStarted(_ startable: _JDStartTestable, file: StaticString = #file, line: UInt = #line) {
+        static func notStarted(_ startable: _StartTestable, file: StaticString = #file, line: UInt = #line) {
             XCTAssertFalse(startable.isStarted, file: file, line: line)
             XCTAssertEqual(startable.startedCount, 0, file: file, line: line)
         }
 
-        static func coordinator(_ coordinator: JDChildCoordinating, isChildOf parent: _JDParentCoordinating, not formerParent: JDParentCoordinating, parentCount count: Int, file: StaticString = #file, line: UInt = #line) {
+        static func coordinator(_ coordinator: Child, isChildOf parent: _Parent, not formerParent: Parent, parentCount count: Int, file: StaticString = #file, line: UInt = #line) {
             // Is now in corrects parent childCoordinators
             XCTAssertTrue(parent.childCoordinators.contains(coordinator), file: file, line: line)
             XCTAssertTrue(parent.hasChild(coordinator), file: file, line: line)
@@ -156,8 +156,8 @@ extension CoordinatorTests {
     }
 }
 
-private extension JDChildCoordinating {
-    func getFormerParent(parentIsNot potentialParent: JDParentCoordinating) -> JDParentCoordinating {
+private extension Child {
+    func getFormerParent(parentIsNot potentialParent: Parent) -> Parent {
         let formerParent = parentCoordinator!
         XCTAssertTrue(potentialParent !== formerParent)
         return formerParent

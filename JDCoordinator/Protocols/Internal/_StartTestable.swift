@@ -1,5 +1,5 @@
 //
-//  _JDStartTestable.swift
+//  _StartTestable.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 10.03.18.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol _JDStartTestable: class {
+protocol _StartTestable: Coordinating {
     var startedCount: Int { get set }
 }
 
-extension _JDStartTestable {
+extension _StartTestable {
     var isStarted: Bool {
         return startedCount >= 1
     }

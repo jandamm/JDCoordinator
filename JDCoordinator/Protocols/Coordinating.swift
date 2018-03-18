@@ -1,5 +1,5 @@
 //
-//  JDBaseCoordinating.swift
+//  Coordinating.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// BaseProtocol where every other CoordinatorProtocol inherits from.
-public protocol JDBaseCoordinating: class {
+public protocol Coordinating: AnyObject {
     /// You need to override this method so it pushes the initial ViewController.
     /// You can also load data in this method.
     func start()

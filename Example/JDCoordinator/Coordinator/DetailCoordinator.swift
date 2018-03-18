@@ -11,7 +11,7 @@ import JDCoordinator
 class DetailCoordinator: Coordinator {
     var data: String?
 
-    weak var delegate: JDCoordinatorCoordinatorDelegate!
+    weak var delegate: CoordinatorDelegate!
 
     override func start() {
         super.start()

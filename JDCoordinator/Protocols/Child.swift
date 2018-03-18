@@ -1,5 +1,5 @@
 //
-//  JDChildCoordinating.swift
+//  Child.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -9,29 +9,29 @@
 import Foundation
 
 /// Defines Coordinators which can be children to other coordinators.
-public protocol JDChildCoordinating: JDBaseCoordinating, AnyHashableConvertible {
+public protocol Child: Coordinating, AnyHashableConvertible {
     /// Returns the parentCoordinator of this child.
-    var parentCoordinator: JDParentCoordinating! { get }
+    var parentCoordinator: Parent! { get }
 
     /// Set the parentCoordinator and add it to parentCoordinators childCoordinators.
     ///
     /// You do not have to both setParent(to:) and addChild(:)
     ///
     /// - parameter coordinator: The new parentCoordinator
-    func setParent(to coordinator: JDParentCoordinating)
+    func setParent(to coordinator: Parent)
 }
 
-public extension JDChildCoordinating {
+public extension Child {
     /// Returns every parentCoordinator.
     ///
     /// .first is .parentCoordinator. .last is the AppCoordinator.
-    var parentCoordinators: [JDParentCoordinating] {
-        var coordinators: [JDParentCoordinating] = []
-        var coordinator: JDChildCoordinating? = self
+    var parentCoordinators: [Parent] {
+        var coordinators: [Parent] = []
+        var coordinator: Child? = self
 
         while let parentCoordinator = coordinator?.parentCoordinator {
             coordinators.append(parentCoordinator)
-            coordinator = parentCoordinator as? JDChildCoordinating
+            coordinator = parentCoordinator as? Child
         }
 
         return coordinators
@@ -40,11 +40,11 @@ public extension JDChildCoordinating {
     /// Returns every parentCoordinator that is a JDChildCoordinator.
     ///
     /// .first is self. .last is uppermost parent which is also a child. Which is the AppCoordinators direct childCoordinator.
-    internal var parentChildStack: [JDChildCoordinating] {
-        var coordinators: [JDChildCoordinating] = [self]
-        var coordinator: JDChildCoordinating = self
+    internal var parentChildStack: [Child] {
+        var coordinators: [Child] = [self]
+        var coordinator: Child = self
 
-        while let parentCoordinator = coordinator.parentCoordinator as? JDChildCoordinating {
+        while let parentCoordinator = coordinator.parentCoordinator as? Child {
             coordinators.append(parentCoordinator)
             coordinator = parentCoordinator
         }

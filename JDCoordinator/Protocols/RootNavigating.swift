@@ -1,5 +1,5 @@
 //
-//  JDRootNavigationCoordinating.swift
+//  RootNavigating.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -7,8 +7,9 @@
 
 import Foundation
 
-/// A Coordinator that has a navigationController
-public protocol JDRootNavigationCoordinating: JDBaseCoordinating {
+/// A Coordinator that has a navigationController.
+/// In most cases this is only the AppCoordinator or the Root of each Tab.
+public protocol RootNavigating: Coordinating {
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
 
@@ -21,7 +22,7 @@ public protocol JDRootNavigationCoordinating: JDBaseCoordinating {
     func viewController(for type: JDViewControllerType) -> UIViewController?
 }
 
-public extension JDRootNavigationCoordinating {
+public extension RootNavigating {
     /// Provides the ViewController for the given type.
     /// This method is called by some methods to replace ViewControllers.
     ///
@@ -33,7 +34,7 @@ public extension JDRootNavigationCoordinating {
         case .current:
             return navigationController.topViewController
         case .previous:
-            return (self as? JDNavigationCoordinating)?.previousViewController
+            return (self as? Navigating)?.previousViewController
         case .visible:
             return navigationController.visibleViewController
         case .root:
@@ -76,19 +77,19 @@ public extension JDRootNavigationCoordinating {
 
     /// Convenience method to popViewController directly within JDCoordinators navigationController
     @discardableResult
-func popViewController(animated: Bool = true) -> UIViewController? {
+    func popViewController(animated: Bool = true) -> UIViewController? {
         return navigationController.popViewController(animated: animated)
     }
 
     /// Convenience method to popToViewController directly within JDCoordinators navigationController
     @discardableResult
-func popToViewController(_ viewController: UIViewController, animated: Bool = true) -> [UIViewController]? {
+    func popToViewController(_ viewController: UIViewController, animated: Bool = true) -> [UIViewController]? {
         return navigationController.popToViewController(viewController, animated: animated)
     }
 
     /// Convenience method to popToRootViewController directly within JDCoordinators navigationController
     @discardableResult
-func popToRootViewController(animated: Bool = true) -> [UIViewController]? {
+    func popToRootViewController(animated: Bool = true) -> [UIViewController]? {
         return navigationController.popToRootViewController(animated: animated)
     }
 

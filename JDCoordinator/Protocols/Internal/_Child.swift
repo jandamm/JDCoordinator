@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol _JDChildCoordinating: JDChildCoordinating {
-    var parentCoordinator: JDParentCoordinating! { get set }
+protocol _Child: Child {
+    var parentCoordinator: Parent! { get set }
 }
 
-extension _JDChildCoordinating {
-    public func setParent(to coordinator: JDParentCoordinating) {
+extension _Child {
+    public func setParent(to coordinator: Parent) {
         guard parentCoordinator !== coordinator else {
             return
         }

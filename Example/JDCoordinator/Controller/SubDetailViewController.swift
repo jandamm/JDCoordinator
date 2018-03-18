@@ -18,7 +18,7 @@ class SubDetailViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
-    weak var delegate: JDCoordinatorViewControllerDelegate!
+    weak var delegate: ControllerDelegate!
 
     @IBOutlet var dataLbl: UILabel!
 

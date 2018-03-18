@@ -1,5 +1,5 @@
 //
-//  _JDParentCoordinating.swift
+//  _Parent.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol _JDParentCoordinating: JDParentCoordinating {
+protocol _Parent: Parent {
     var childCoordinators: JDChildCoordinatorStorage { get set }
 }
 
-extension _JDParentCoordinating {
-    public func addChild(_ coordinator: JDChildCoordinating) {
+extension _Parent {
+    public func addChild(_ coordinator: Child) {
         guard !childCoordinators.contains(coordinator) else {
             return
         }
@@ -26,11 +26,11 @@ extension _JDParentCoordinating {
         coordinator.setParent(to: self)
     }
 
-    public func removeChild(_ coordinator: JDChildCoordinating) {
+    public func removeChild(_ coordinator: Child) {
         childCoordinators.remove(coordinator)
     }
 
-    public func hasChild(_ coordinator: JDChildCoordinating) -> Bool {
+    public func hasChild(_ coordinator: Child) -> Bool {
         return childCoordinators.contains(coordinator)
     }
 
@@ -50,7 +50,7 @@ extension _JDParentCoordinating {
 
     /// Removes all Coordinators except the given ones
     /// - parameter coordinators: Coordinators which should not be removed
-    func removeChilds(except coordinators: [JDChildCoordinating]) {
+    func removeChilds(except coordinators: [Child]) {
         for coordinator in childCoordinators.subtracting(coordinators) {
             removeChild(coordinator)
         }

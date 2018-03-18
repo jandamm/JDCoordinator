@@ -1,5 +1,5 @@
 //
-//  JDCoordinatorDelegates.swift
+//  Delegates.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Use this protocol for weak pointers to delegates of JDCoordinators in ViewControllers.
-public protocol JDCoordinatorViewControllerDelegate: class {
+public protocol ControllerDelegate: Coordinating {
     /// Call this method in your ViewController to tell the Coordinator that its state has changed.
     ///
     /// You may want to check if parent == nil and remove the coordinator from it's parent.
@@ -37,4 +37,4 @@ public protocol JDCoordinatorViewControllerDelegate: class {
 ///
 /// You only need to implement a delegate if you have to return values from the childCoordinator or execute an action if the child is removed.
 /// Otherwise use its parentCoordinator.
-public protocol JDCoordinatorCoordinatorDelegate: class {}
+public protocol CoordinatorDelegate: Coordinating {}

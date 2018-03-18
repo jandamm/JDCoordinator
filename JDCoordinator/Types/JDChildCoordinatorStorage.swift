@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol JDChildCoordinatorStoring: Collection where Element == JDChildCoordinating {}
+public protocol JDChildCoordinatorStoring: Collection where Element == Child {}
 
 // TODO: - This has to be improved before release.
 /// Quick and temporary solution to replace the store JDChildCoordinators of an Array with a Set
@@ -37,7 +37,7 @@ public struct JDChildCoordinatorStorage: JDChildCoordinatorStoring, SetAlgebra, 
 
     // MARK: - Sequence
 
-    public typealias Element = JDChildCoordinating
+    public typealias Element = Child
 
     // MARK: - Collection
 
@@ -138,7 +138,7 @@ public extension JDChildCoordinatorStorage {
 }
 
 private extension AnyHashable {
-    var element: JDChildCoordinating {
-        return base as! JDChildCoordinating
+    var element: Child {
+        return base as! Child
     }
 }

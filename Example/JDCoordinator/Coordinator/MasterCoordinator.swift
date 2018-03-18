@@ -9,7 +9,7 @@
 import JDCoordinator
 
 class MasterCoordinator: Coordinator {
-    weak var delegate: (JDCoordinatorCoordinatorDelegate & MasterDelegate)!
+    weak var delegate: (CoordinatorDelegate & MasterDelegate)!
 
     override func start() {
         super.start()
