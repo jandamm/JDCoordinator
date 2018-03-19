@@ -43,7 +43,7 @@ open class Coordinator: NSObject, Coordinating, Navigating, _Child, ControllerDe
     public internal(set) weak var parentCoordinator: Parent!
     public let navigationController: UINavigationController
     public weak var previousViewController: UIViewController?
-	var startedCount: Int = 0
+    var startedCount: Int = 0
 
     open func start() {
         started()
@@ -51,5 +51,5 @@ open class Coordinator: NSObject, Coordinating, Navigating, _Child, ControllerDe
 
     open func presentedViewController(_: UIViewController, didMoveTo _: UIViewController?) {}
 
-	open func presentedViewController(_: UIViewController, willMoveTo _: UIViewController?) {}
+    open func presentedViewController(_: UIViewController, willMoveTo _: UIViewController?) {}
 }

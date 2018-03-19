@@ -2,10 +2,23 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
+env:
+  global:
+  - RVM_RUBY_VERSION=2.4.2
+  - POD_NAME=JDCoordinator
+  matrix:
+  - PHONE_VERSION=8 OS_VERSION=11.2
 osx_image: xcode9.2
 language: swift
 cache: cocoapods
 podfile: Example/Podfile
+notifications:
+  email: false
+  slack:
+    rooms:
+      secure: IsPWBNanfmDWJb0rxGTfz4Wwk+t3mvZROhYlVpp22mSbjAyk6qcdiCixZcDnzEe72OQWqHpFj1rUK77iiVEn8QQJv51RCR6y8SPX4NvlBvmqSDJ9ClspUs2neY7M766MKcannD5TUvYIyxCMRKe4NG9JNDlgX7vqd5ZLRFL5AenSOf1JPsCkrSNNaF24Q9GxHHKgo/NKvjp41ZFG0bbzRPlbLQZXuhdfI75zEIcRsjHTzR9Nv5pv/JyljSwmZEkzaeom7Z5aK/G/8PgMj+IQ7wjxkd7UvDjVWGtbaMax8oyS+fktrsO6Szr6/cutPHH0NfAOzRx39+jzue16zLfl0GbJi5iYcvufYITaTmFu7mZE817kcoztdG1rBx9TDfAKwryFl24+12sXiA6gv6bBqAAUmq0Jx4Ybh5Y+oImXQP67VNRxLoJ5QbNXhwLzEOedLnq4vEd5kvOAc2RGTKs6jPW7Cdo9cXphcHrv+bJ0K3u+UusgUSfdWr7m3eeH7JRlsGkH2A5eeMcW7X4x9y2WqZBmxkPogjML1pNhj4nmhuytZvM5grRR35gDDCO7LHt4EUFbcYR2Y9ejdwYrb0HkaIAgEUntC+yDFjxma7XLjGVlQpjRiLQcrbhmBN4Mk9rQdxh0y8qSZK2LKmoqWL0JljonmgfEnR1xYrfB210/KTI=
+    on_success: always
+    on_failure: always
 before_install:
   - rvm install ruby-$RVM_RUBY_VERSION
   - rvm use $RVM_RUBY_VERSION
