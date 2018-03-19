@@ -2,6 +2,13 @@ version: 2
 plugins:
   tailor:
     enabled: true
+    checks:
+      function-whitespace:
+        enabled: false
+      brace-style:
+        enabled: false
+    exclude_paths:
+      - Example/
 exclude_patterns:
 - "!JDCoordinator/"
 - "JDCoordinator/Assets/"

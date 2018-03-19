@@ -1,14 +1,14 @@
-////
-////  JDSplitViewCoordinating.swift
-////  JDCoordinator
-////
-////  Created by Jan Dammshäuser on 05/02/2017.
-////  Copyright © 2017 Jan Dammshäuser. All rights reserved.
-////
+//
+//  JDSplitViewCoordinating.swift
+//  JDCoordinator
+//
+//  Created by Jan Dammshäuser on 05/02/2017.
+//  Copyright © 2017 Jan Dammshäuser. All rights reserved.
+//
 //
 // import Foundation
 //
-///// Blueprint of JDSplitViewCoordinating
+/// Blueprint of JDSplitViewCoordinating
 //
 // public protocol JDSplitViewCoordinating: JDBaseCoordinator {
 //    var splitViewPresenter: UIViewController { get }
