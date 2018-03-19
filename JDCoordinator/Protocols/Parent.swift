@@ -32,7 +32,7 @@ public protocol Parent: AnyObject {
 public extension Parent where Self: Coordinating {
     /// Adds a `Coordinator` as a child, removes it from previous `parentCoordinator` and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.
-    func addChild<Coordinator: Child & Coordinating>(andStart coordinator: Coordinator) {
+    func addChildAndStart(_ coordinator: ChildCoordinating) {
         addChild(coordinator)
         coordinator.start()
     }
@@ -47,7 +47,7 @@ public extension Parent where Self: Coordinating {
 
     /// Removes a whole branch of coordinators by giving one child within this tree.
     /// - parameter coordinator: ChildCoordinator whose tree should be removed.
-    func removeChilds(withStackOf coordinator: Child) {
+    func removeChildTree(of coordinator: ChildCoordinating) {
         guard coordinator.parentCoordinator !== self else {
             return removeChild(coordinator)
         }
@@ -56,7 +56,7 @@ public extension Parent where Self: Coordinating {
             return
         }
 
-        let coordinator = coordinator.parentChildStack[index]
+        let coordinator = coordinator.childTree[index]
         removeChild(coordinator)
     }
 }

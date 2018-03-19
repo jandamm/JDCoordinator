@@ -44,7 +44,7 @@ public extension Child where Self: Coordinating {
     /// Returns every `parentCoordinator` that is a `Child`.
     ///
     /// `.first` is `self`. `.last` is uppermost parent which is also a child. Which is the `AppCoordinator`s direct childCoordinator.
-    internal var parentChildStack: [Child] {
+    internal var childTree: [Child] {
         var coordinators: [Child] = [self]
         var coordinator: Child = self
 

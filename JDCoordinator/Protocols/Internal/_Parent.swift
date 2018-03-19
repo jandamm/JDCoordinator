@@ -41,7 +41,7 @@ extension _Parent {
 
     /// Removes all Coordinators except the given ones
     /// - parameter coordinators: Coordinators which should not be removed
-    func removeChildsExcept(_ coordinators: [Child]) {
+    public func removeChildsExcept(_ coordinators: [Child]) {
         for coordinator in childCoordinators.subtracting(coordinators) {
             removeChild(coordinator)
         }

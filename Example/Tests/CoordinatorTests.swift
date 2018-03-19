@@ -79,16 +79,16 @@ class CoordinatorTests: XCTestCase {
     }
 
     func testParentChildStack() {
-        let coordParentChildStack = coordinator.parentChildStack
-        XCTAssertTrue(coordParentChildStack.contains(parentCoordinator))
-        XCTAssertTrue(coordParentChildStack.contains(coordinator))
-        XCTAssertTrue(coordParentChildStack.first === coordinator)
-        XCTAssertTrue(coordParentChildStack.last === parentCoordinator)
-        XCTAssertEqual(coordParentChildStack.count, 2)
+        let coordinatorChildTree = coordinator.childTree
+        XCTAssertTrue(coordinatorChildTree.contains(parentCoordinator))
+        XCTAssertTrue(coordinatorChildTree.contains(coordinator))
+        XCTAssertTrue(coordinatorChildTree.first === coordinator)
+        XCTAssertTrue(coordinatorChildTree.last === parentCoordinator)
+        XCTAssertEqual(coordinatorChildTree.count, 2)
 
-        let parentParentChildStack = parentCoordinator.parentChildStack
-        XCTAssertEqual(parentParentChildStack.count, 1)
-        XCTAssertTrue(parentParentChildStack.first === parentCoordinator)
+        let parentChildTree = parentCoordinator.childTree
+        XCTAssertEqual(parentChildTree.count, 1)
+        XCTAssertTrue(parentChildTree.first === parentCoordinator)
     }
 
     func testAddChild() {
@@ -105,7 +105,7 @@ class CoordinatorTests: XCTestCase {
 
         Assert.notStarted(coordinator)
 
-        parentCoordinator.addChild(andStart: coordinator)
+        parentCoordinator.addChildAndStart(coordinator)
 
         Assert.coordinator(coordinator, isChildOf: parentCoordinator, not: formerParent, parentCount: 2)
         Assert.started(coordinator, times: 1)
@@ -122,9 +122,9 @@ class CoordinatorTests: XCTestCase {
         }
     }
 
-    func testRemoveChild() {
-        // XCTFail("not implemented yet")
-    }
+//    func testRemoveChild() {
+//        XCTFail("not implemented yet")
+//    }
 }
 
 extension CoordinatorTests {

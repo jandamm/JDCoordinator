@@ -16,7 +16,7 @@ public protocol Navigating: RootNavigating {
 
 public extension Navigating where Self: Coordinating {
     /// This method sets `previousViewController` to `navigationController.topViewController`
-    func setPreviousViewControllerToCurrent() {
+    func storePreviousViewController() {
         previousViewController = navigationController.topViewController
     }
 }
