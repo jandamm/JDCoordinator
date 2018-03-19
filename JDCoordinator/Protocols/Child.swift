@@ -9,8 +9,12 @@
 import Foundation
 
 /// Defines childs of coordinators.
-public protocol Child: Coordinating, AnyHashableConvertible {
+public typealias ChildCoordinating = Coordinating & Child
+
+/// Defines a child.
+public protocol Child: AnyObject, AnyHashableConvertible {
     /// Returns the `parentCoordinator` of this child.
+    /// The parent should always be set except at deallocation it may not be present.
     var parentCoordinator: Parent! { get }
 
     /// Set the `parentCoordinator` and add it to `parentCoordinators.childCoordinators`.
@@ -21,7 +25,7 @@ public protocol Child: Coordinating, AnyHashableConvertible {
     func setParent(to coordinator: Parent)
 }
 
-public extension Child {
+public extension Child where Self: Coordinating {
     /// Returns every `parentCoordinator`.
     ///
     /// `.first` is `parentCoordinator`. `.last` is the `AppCoordinator`.

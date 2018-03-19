@@ -10,7 +10,7 @@
 //
 ///// Blueprint of SplitViewing
 //
-// public protocol SplitViewing: Coordinating {
+// public protocol SplitViewing: AnyObject {
 //    var splitViewPresenter: UIViewController { get }
 //    //    var splitViewController: JDSplitViewController { get }
 //    var masterCoordinator: JDCoordinator? { get }

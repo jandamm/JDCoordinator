@@ -9,7 +9,7 @@ import Foundation
 
 /// A Coordinator that has a navigationController.
 /// In most cases this is only the AppCoordinator or the Root of each Tab.
-public protocol RootNavigating: Coordinating {
+public protocol RootNavigating: AnyObject {
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
 
@@ -22,7 +22,7 @@ public protocol RootNavigating: Coordinating {
     func viewController(for type: JDViewControllerType) -> UIViewController?
 }
 
-public extension RootNavigating {
+public extension RootNavigating where Self: Coordinating {
     /// Provides the ViewController for the given type.
     /// This method is called by some methods to replace ViewControllers.
     ///

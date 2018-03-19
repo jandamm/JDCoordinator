@@ -143,7 +143,7 @@ extension CoordinatorTests {
             XCTAssertEqual(startable.startedCount, 0, file: file, line: line)
         }
 
-        static func coordinator(_ coordinator: Child, isChildOf parent: _Parent, not formerParent: Parent, parentCount count: Int, file: StaticString = #file, line: UInt = #line) {
+        static func coordinator(_ coordinator: ChildCoordinating, isChildOf parent: _Parent, not formerParent: Parent, parentCount count: Int, file: StaticString = #file, line: UInt = #line) {
             // Is now in corrects parent childCoordinators
             XCTAssertTrue(parent.childCoordinators.contains(coordinator), file: file, line: line)
             XCTAssertTrue(parent.hasChild(coordinator), file: file, line: line)

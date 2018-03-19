@@ -9,7 +9,7 @@
 import Foundation
 
 /// Use this protocol for weak pointers to delegates of `Coordinating` in `UIViewControllers`.
-public protocol ControllerDelegate: Coordinating {
+public protocol ControllerDelegate: AnyObject {
     /// Call this method in your `UIViewController` to tell the `Coordinating` that its state has changed.
     ///
     /// You may want to check if `parentViewController == nil` and remove the coordinator from it's parent.
@@ -37,4 +37,4 @@ public protocol ControllerDelegate: Coordinating {
 ///
 /// You only need to implement a delegate if you have to return values from the `Child` or execute an action if the `Child` is removed.
 /// Otherwise use its `parentCoordinator`.
-public protocol CoordinatorDelegate: Coordinating {}
+public protocol CoordinatorDelegate: AnyObject {}

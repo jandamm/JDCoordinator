@@ -9,9 +9,11 @@
 import Foundation
 
 /// Defines parents of coordinators.
+public typealias ParentCoordinating = Coordinating & Parent
+
 /// If you're adopting this protocol by yourself you have to add a strong reference to child coordinators.
 /// You can use `ChildStorage` or implement a `ChildStoraging`.
-public protocol Parent: Coordinating {
+public protocol Parent: AnyObject {
     /// Adds a `Child` and removes it from previous `parentCoordinator`.
     ///
     /// You do not have to both `setParent(to:)` and `addChild(:)`
@@ -27,7 +29,7 @@ public protocol Parent: Coordinating {
     func hasChild(_ coordinator: Child) -> Bool
 }
 
-public extension Parent {
+public extension Parent where Self: Coordinating {
     /// Adds a `Coordinator` as a child, removes it from previous `parentCoordinator` and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.
     func addChild<Coordinator: Child & Coordinating>(andStart coordinator: Coordinator) {

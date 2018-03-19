@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol _StartTestable: Coordinating {
+protocol _StartTestable: AnyObject {
     var startedCount: Int { get set }
 }
 
