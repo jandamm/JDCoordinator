@@ -1,2 +1,7 @@
+version: 2
+plugins:
+  tailor:
+    enabled: true
 exclude_patterns:
-- "Examples/**"
+- "!JDCoordinator/"
+- "JDCoordinator/Assets/"

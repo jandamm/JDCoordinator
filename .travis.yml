@@ -2,10 +2,22 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
+env:
+  global:
+    - RVM_RUBY_VERSION=2.4.2
+    - POD_NAME=JDCoordinator
+  matrix:
+    - PHONE_VERSION=8 OS_VERSION=11.2
 osx_image: xcode9.2
 language: swift
 cache: cocoapods
 podfile: Example/Podfile
+notifications:
+  email: false
+  slack: 
+    rooms: jandamm:$SLACK#jdcoordinator
+    on_success: always
+    on_failure: always
 before_install:
   - rvm install ruby-$RVM_RUBY_VERSION
   - rvm use $RVM_RUBY_VERSION

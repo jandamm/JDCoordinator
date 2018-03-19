@@ -3,7 +3,7 @@
 	[
 		{
 			"path": ".",
-			"name": "project",
+			"name": "Project",
 			"folder_exclude_patterns": ["*"]
 		},
 		{
