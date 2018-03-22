@@ -1,5 +1,5 @@
 //
-//  _Parent.swift
+//  MutableParent.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol _Parent: Parent {
+protocol MutableParent: Parent {
     var childCoordinators: ChildStorage { get set }
 }
 
-extension _Parent {
+extension MutableParent {
     public func addChild(_ coordinator: Child) {
         guard !childCoordinators.contains(coordinator) else {
             return

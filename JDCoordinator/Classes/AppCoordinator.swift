@@ -19,7 +19,7 @@ import Foundation
  Use this class only once in your app. It should be the `Coordinator` where every navigation is started from.
  The `AppCoordinator` has to use the `UINavigationController` which the `AppDelegate` declares as `keyWindow`.
  */
-open class AppCoordinator: Coordinating, RootNavigating, _Parent, CoordinatorDelegate, ControllerDelegate, _StartTestable {
+open class AppCoordinator: Coordinating, RootNavigating, MutableParent, CoordinatorDelegate, ControllerDelegate, StartTestable {
     /// Initialize the `AppCoordinator` with a UINavigationController.
     /// - parameter navigationController: `UINavigationController` which is / will be `keyWindow.rootViewController`
     public init(with navigationController: UINavigationController) {

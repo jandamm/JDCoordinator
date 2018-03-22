@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		064783F72BDB885188C4C13692FAF6B0 /* _Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051A8D55539D1B6A78187B6F8A49D5C /* _Child.swift */; };
+		064783F72BDB885188C4C13692FAF6B0 /* MutableChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051A8D55539D1B6A78187B6F8A49D5C /* MutableChild.swift */; };
 		1CD5BB32A9FC7779161ED907381CADCB /* Navigating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D56B34E6396A0CEB1CF29F90127087 /* Navigating.swift */; };
 		254AD727B8869D3692F2F2FD444BB353 /* SplitViewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D53475C46DADC6598E4E8BEBD5DE6 /* SplitViewing.swift */; };
 		392F5C9D8101E8321B809C4B66E91E8A /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */; };
@@ -22,7 +22,7 @@
 		90696490712FC2F86A4D44BC839B994B /* Pods-JDCoordinator_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDD1E64CEBAC633450F3FD4DBBA72679 /* Pods-JDCoordinator_Example-dummy.m */; };
 		9077F9A927E2A9551150E8B8B9295A37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		96AC504DEA1712C2A76AE00A917A9DF6 /* ChildStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F51C39DB6A3511F8BC6AF5A089E5E9 /* ChildStorage.swift */; };
-		981166B032AC3D7B3DC99437B41D6099 /* _Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AEAEA2107341A3D12704EA5788EF46 /* _Parent.swift */; };
+		981166B032AC3D7B3DC99437B41D6099 /* MutableParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AEAEA2107341A3D12704EA5788EF46 /* MutableParent.swift */; };
 		98A82FAF0735BC9FAF07D5DFF787B83E /* Pods-JDCoordinator_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDAB55384E0167762572CABC625C19E6 /* Pods-JDCoordinator_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A846445B7E1B5C27FD2882BE57B95D1F /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F7B0B4F3089456071AC9BA6648CE9 /* Coordinating.swift */; };
 		AD46B236425DFA686D1A6147009B4433 /* Parent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3FC221AC59D638647B8EEA4AE3B16 /* Parent.swift */; };
@@ -30,7 +30,7 @@
 		B5AFC3FF08CF967334B364C35D94755D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5AAD67C2DF6588B228FA0DF85BB075 /* AppCoordinator.swift */; };
 		C8BE2D7096C0E8AC7E2D55DC1F622EDE /* Pods-JDCoordinator_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FAB5222EDC51A1D821F725CD964951C3 /* Pods-JDCoordinator_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD4C373C44BF9AAC191174E8F5689865 /* RootNavigating.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6DD18DA83AFF314298DD69CA00571 /* RootNavigating.swift */; };
-		D288F88DB4157315DB8C322EEFF3B829 /* _StartTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670EF399ECBA365D916F5C400B48B83 /* _StartTestable.swift */; };
+		D288F88DB4157315DB8C322EEFF3B829 /* StartTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670EF399ECBA365D916F5C400B48B83 /* StartTestable.swift */; };
 		D2AD0C95F55B2DC80AB1EF7219D61C89 /* ParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182AFD6A5E6DA61B85E639EC66DCB8A /* ParentCoordinator.swift */; };
 		DF4194D0EFB441BB2B7CFBAA26EEF731 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FAD6FBB5B67D502762DE11B61F6C1 /* Coordinator.swift */; };
 		F18A3322862F33F20508A27D19E24705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -47,7 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0051A8D55539D1B6A78187B6F8A49D5C /* _Child.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = _Child.swift; sourceTree = "<group>"; };
+		0051A8D55539D1B6A78187B6F8A49D5C /* MutableChild.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MutableChild.swift; sourceTree = "<group>"; };
 		0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		0729C67BEEB82F1556B11CCA03A07C89 /* Pods-JDCoordinator_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JDCoordinator_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		0AD4A15670F96203B2EA1F1B170D006A /* Pods-JDCoordinator_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		23C2095A804D730B12FDFA0B84C3098D /* JDCoordinator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JDCoordinator.modulemap; sourceTree = "<group>"; };
 		302BD1B4AFDD2031A3FB1956A8891C39 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		34AAB56D9931A2C0202F1E11FCD5F62E /* Pods-JDCoordinator_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JDCoordinator_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3670EF399ECBA365D916F5C400B48B83 /* _StartTestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = _StartTestable.swift; sourceTree = "<group>"; };
+		3670EF399ECBA365D916F5C400B48B83 /* StartTestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartTestable.swift; sourceTree = "<group>"; };
 		3BB93A43026ED46807A8AEB0C3B2EA07 /* Pods-JDCoordinator_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3E246C48ED880439C302F68B532F02DC /* JDCoordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JDCoordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		431D53475C46DADC6598E4E8BEBD5DE6 /* SplitViewing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SplitViewing.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		59D56B34E6396A0CEB1CF29F90127087 /* Navigating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Navigating.swift; sourceTree = "<group>"; };
 		5ABC57A9C31D015FE2F04820262398B1 /* JDCoordinator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JDCoordinator-dummy.m"; sourceTree = "<group>"; };
 		5C364BCFC5D165A26E748B61470B60E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63AEAEA2107341A3D12704EA5788EF46 /* _Parent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = _Parent.swift; sourceTree = "<group>"; };
+		63AEAEA2107341A3D12704EA5788EF46 /* MutableParent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MutableParent.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		74591C06061D8EE3A229569E6DF6300E /* Pods-JDCoordinator_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JDCoordinator_Tests.modulemap"; sourceTree = "<group>"; };
 		79B0F7F1FE9121712B08BBE1862F4666 /* Pods-JDCoordinator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JDCoordinator_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,9 +159,9 @@
 		17B728733FD6830A64F74E5AA97E63FF /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				0051A8D55539D1B6A78187B6F8A49D5C /* _Child.swift */,
-				63AEAEA2107341A3D12704EA5788EF46 /* _Parent.swift */,
-				3670EF399ECBA365D916F5C400B48B83 /* _StartTestable.swift */,
+				0051A8D55539D1B6A78187B6F8A49D5C /* MutableChild.swift */,
+				63AEAEA2107341A3D12704EA5788EF46 /* MutableParent.swift */,
+				3670EF399ECBA365D916F5C400B48B83 /* StartTestable.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -231,6 +231,7 @@
 		6DF5F15E400322AD2E8A7B05F57B57AA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				17B728733FD6830A64F74E5AA97E63FF /* Internal */,
 				A268BECBE9DA49084F89EAAE190693FB /* Child.swift */,
 				D38F7B0B4F3089456071AC9BA6648CE9 /* Coordinating.swift */,
 				7B256A62C05CD9C1840EF8A6B641208D /* Delegates.swift */,
@@ -238,7 +239,6 @@
 				F3D3FC221AC59D638647B8EEA4AE3B16 /* Parent.swift */,
 				DCB6DD18DA83AFF314298DD69CA00571 /* RootNavigating.swift */,
 				431D53475C46DADC6598E4E8BEBD5DE6 /* SplitViewing.swift */,
-				17B728733FD6830A64F74E5AA97E63FF /* Internal */,
 			);
 			name = Protocols;
 			path = JDCoordinator/Protocols;
@@ -438,9 +438,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				064783F72BDB885188C4C13692FAF6B0 /* _Child.swift in Sources */,
-				981166B032AC3D7B3DC99437B41D6099 /* _Parent.swift in Sources */,
-				D288F88DB4157315DB8C322EEFF3B829 /* _StartTestable.swift in Sources */,
+				064783F72BDB885188C4C13692FAF6B0 /* MutableChild.swift in Sources */,
+				981166B032AC3D7B3DC99437B41D6099 /* MutableParent.swift in Sources */,
+				D288F88DB4157315DB8C322EEFF3B829 /* StartTestable.swift in Sources */,
 				8BFE2E7E1B93AF86A7109A50D59D3995 /* AnyHashableConvertible.swift in Sources */,
 				B5AFC3FF08CF967334B364C35D94755D /* AppCoordinator.swift in Sources */,
 				A846445B7E1B5C27FD2882BE57B95D1F /* Coordinating.swift in Sources */,

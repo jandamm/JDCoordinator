@@ -19,7 +19,7 @@ import UIKit
  The coordinator structure in your app can be seen as a tree. In this example the `Coordinator` is the end of any branch.
  A `Coordinator` can only manage `UIViewController`s and should not instantiate or strongly reference any other coordinator.
  */
-open class Coordinator: NSObject, Coordinating, Navigating, _Child, ControllerDelegate, _StartTestable {
+open class Coordinator: NSObject, Coordinating, Navigating, MutableChild, ControllerDelegate, StartTestable {
     /// Initialize the `Coordinator` with a `UINavigationController` and adds it to a `parentCoordinator`.
     /// - parameter navigationController: `UINavigationController` where any further navigation should take place.
     /// - parameter parentCoordinator: `ParentCoordinator` that should reference this coordinator.

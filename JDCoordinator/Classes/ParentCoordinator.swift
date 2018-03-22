@@ -15,6 +15,6 @@ import UIKit
  A `ParentCoordinator` can manage other `Coordinator`s as childs and also manage `UIViewController`s (usage of a `Child` is preferred).
  It is totally safe to add another `ParentCoordinator` as a child.
  */
-open class ParentCoordinator: Coordinator, _Parent, CoordinatorDelegate {
+open class ParentCoordinator: Coordinator, MutableParent, CoordinatorDelegate {
     public internal(set) var childCoordinators: ChildStorage = []
 }

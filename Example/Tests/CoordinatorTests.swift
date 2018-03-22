@@ -129,21 +129,21 @@ class CoordinatorTests: XCTestCase {
 
 extension CoordinatorTests {
     struct Assert: Asserting {
-        static func started(_ startable: _StartTestable, file: StaticString = #file, line: UInt = #line) {
+        static func started(_ startable: StartTestable, file: StaticString = #file, line: UInt = #line) {
             XCTAssertTrue(startable.isStarted, file: file, line: line)
         }
 
-        static func started(_ startable: _StartTestable, times count: Int, file: StaticString = #file, line: UInt = #line) {
+        static func started(_ startable: StartTestable, times count: Int, file: StaticString = #file, line: UInt = #line) {
             started(startable, file: file, line: line)
             XCTAssertEqual(startable.startedCount, count, file: file, line: line)
         }
 
-        static func notStarted(_ startable: _StartTestable, file: StaticString = #file, line: UInt = #line) {
+        static func notStarted(_ startable: StartTestable, file: StaticString = #file, line: UInt = #line) {
             XCTAssertFalse(startable.isStarted, file: file, line: line)
             XCTAssertEqual(startable.startedCount, 0, file: file, line: line)
         }
 
-        static func coordinator(_ coordinator: ChildCoordinating, isChildOf parent: _Parent, not formerParent: Parent, parentCount count: Int, file: StaticString = #file, line: UInt = #line) {
+        static func coordinator(_ coordinator: ChildCoordinating, isChildOf parent: MutableParent, not formerParent: Parent, parentCount count: Int, file: StaticString = #file, line: UInt = #line) {
             // Is now in corrects parent childCoordinators
             XCTAssertTrue(parent.childCoordinators.contains(coordinator), file: file, line: line)
             XCTAssertTrue(parent.hasChild(coordinator), file: file, line: line)
