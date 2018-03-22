@@ -18,7 +18,7 @@ public struct ChildStorage: ChildStoring, SetAlgebra, Equatable, ExpressibleByAr
 
     public typealias Storage = Set<AnyHashable>
 
-    private var storage: Storage
+    private(set) var storage: Storage
 
     // MARK: - Initializers
 
@@ -26,13 +26,13 @@ public struct ChildStorage: ChildStoring, SetAlgebra, Equatable, ExpressibleByAr
         storage = []
     }
 
-    private init(elements: [Element]) {
+    init(elements: [Element]) {
         storage = elements.reduce(into: []) { storage, element in
             storage.insert(element.anyHashable)
         }
     }
 
-    private init(storage: Storage) {
+    init(storage: Storage) {
         self.storage = storage
     }
 
