@@ -11,6 +11,16 @@ import UIKit
 // TODO: - remove NSObject inheritance once Swift 4.1 is released. Using Hashable instead.
 #if swift(>=4.1)
     extension Coordinator: Hashable {}
+#else
+    extension Coordinator: Hashable {
+        public static func == (lhs: Coordinator, rhs: Coordinator) -> Bool {
+            return lhs.uuid == rhs.uuid
+        }
+
+        public var hashValue: Int {
+            return uuid.hashValue
+        }
+    }
 #endif
 
 /**
@@ -19,15 +29,14 @@ import UIKit
  The coordinator structure in your app can be seen as a tree. In this example the `Coordinator` is the end of any branch.
  A `Coordinator` can only manage `UIViewController`s and should not instantiate or strongly reference any other coordinator.
  */
-open class Coordinator: NSObject, Coordinating, Navigating, MutableChild, ControllerDelegate, StartTestable {
+open class Coordinator: Coordinating, Navigating, MutableChild, ControllerDelegate, StartTestable {
+    let uuid = UUID()
     /// Initialize the `Coordinator` with a `UINavigationController` and adds it to a `parentCoordinator`.
     /// - parameter navigationController: `UINavigationController` where any further navigation should take place.
     /// - parameter parentCoordinator: `ParentCoordinator` that should reference this coordinator.
     public init(with navigationController: UINavigationController, andAddToParent parentCoordinator: Parent) {
         self.navigationController = navigationController
         self.parentCoordinator = parentCoordinator
-
-        super.init()
 
         parentCoordinator.addChild(self)
     }
