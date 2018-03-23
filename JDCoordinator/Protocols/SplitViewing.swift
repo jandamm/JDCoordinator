@@ -1,5 +1,5 @@
 //
-//  JDSplitViewCoordinating.swift
+//  SplitViewing.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 05/02/2017.
@@ -8,9 +8,9 @@
 //
 // import Foundation
 //
-/// Blueprint of JDSplitViewCoordinating
+/// Blueprint of SplitViewing
 //
-// public protocol JDSplitViewCoordinating: JDBaseCoordinator {
+// public protocol SplitViewing: AnyObject {
 //    var splitViewPresenter: UIViewController { get }
 //    //    var splitViewController: JDSplitViewController { get }
 //    var masterCoordinator: JDCoordinator? { get }

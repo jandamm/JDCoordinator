@@ -8,8 +8,8 @@
 
 import JDCoordinator
 
-class MasterCoordinator: JDCoordinator {
-    weak var delegate: (JDCoordinatorCoordinatorDelegate & MasterDelegate)!
+class MasterCoordinator: Coordinator {
+    weak var delegate: (CoordinatorDelegate & MasterDelegate)!
 
     override func start() {
         super.start()

@@ -1,5 +1,5 @@
 //
-//  JDRootNavigationCoordinating.swift
+//  RootNavigating.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -7,8 +7,9 @@
 
 import Foundation
 
-/// A Coordinator that has a navigationController
-public protocol JDRootNavigationCoordinating: JDBaseCoordinating {
+/// A Coordinator that has a navigationController.
+/// In most cases this is only the AppCoordinator or the Root of each Tab.
+public protocol RootNavigating: AnyObject {
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
 
@@ -21,7 +22,7 @@ public protocol JDRootNavigationCoordinating: JDBaseCoordinating {
     func viewController(for type: JDViewControllerType) -> UIViewController?
 }
 
-public extension JDRootNavigationCoordinating {
+public extension RootNavigating where Self: Coordinating {
     /// Provides the ViewController for the given type.
     /// This method is called by some methods to replace ViewControllers.
     ///
@@ -33,7 +34,7 @@ public extension JDRootNavigationCoordinating {
         case .current:
             return navigationController.topViewController
         case .previous:
-            return (self as? JDNavigationCoordinating)?.previousViewController
+            return (self as? Navigating)?.previousViewController
         case .visible:
             return navigationController.visibleViewController
         case .root:
@@ -69,47 +70,47 @@ public extension JDRootNavigationCoordinating {
 
     // MARK: - Default Methods
 
-    /// Convenience method to pushViewController directly within JDCoordinators navigationController
+    /// Convenience method to pushViewController directly within Coordinators navigationController
     func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.pushViewController(viewController, animated: animated)
     }
 
-    /// Convenience method to popViewController directly within JDCoordinators navigationController
+    /// Convenience method to popViewController directly within Coordinators navigationController
     @discardableResult
-func popViewController(animated: Bool = true) -> UIViewController? {
+    func popViewController(animated: Bool = true) -> UIViewController? {
         return navigationController.popViewController(animated: animated)
     }
 
-    /// Convenience method to popToViewController directly within JDCoordinators navigationController
+    /// Convenience method to popToViewController directly within Coordinators navigationController
     @discardableResult
-func popToViewController(_ viewController: UIViewController, animated: Bool = true) -> [UIViewController]? {
+    func popToViewController(_ viewController: UIViewController, animated: Bool = true) -> [UIViewController]? {
         return navigationController.popToViewController(viewController, animated: animated)
     }
 
-    /// Convenience method to popToRootViewController directly within JDCoordinators navigationController
+    /// Convenience method to popToRootViewController directly within Coordinators navigationController
     @discardableResult
-func popToRootViewController(animated: Bool = true) -> [UIViewController]? {
+    func popToRootViewController(animated: Bool = true) -> [UIViewController]? {
         return navigationController.popToRootViewController(animated: animated)
     }
 
-    /// Convenience method to setViewControllers directly within JDCoordinators navigationController
+    /// Convenience method to setViewControllers directly within Coordinators navigationController
     func setViewControllers(_ viewControllers: [UIViewController], animated: Bool = true) {
         navigationController.setViewControllers(viewControllers, animated: animated)
     }
 
-    /// Convenience method to present directly within JDCoordinators navigationController
+    /// Convenience method to present directly within Coordinators navigationController
     func present(_ viewControllerToPresent: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
         navigationController.present(viewControllerToPresent, animated: animated, completion: completion)
     }
 
-    /// Convenience method to dismiss directly within JDCoordinators navigationController
+    /// Convenience method to dismiss directly within Coordinators navigationController
     func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
         navigationController.dismiss(animated: animated, completion: completion)
     }
 
     // MARK: - Custom Methods
 
-    /// Convenience method to setViewController directly within JDCoordinators navigationController
+    /// Convenience method to setViewController directly within Coordinators navigationController
     func setViewController(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.setViewController(viewController, animated: animated)
     }

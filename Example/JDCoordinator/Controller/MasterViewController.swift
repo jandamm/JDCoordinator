@@ -8,7 +8,7 @@
 
 import JDCoordinator
 
-protocol MasterDelegate: JDCoordinatorViewControllerDelegate {
+protocol MasterDelegate: ControllerDelegate {
     func showDetail(withData data: String?)
     func close()
 }

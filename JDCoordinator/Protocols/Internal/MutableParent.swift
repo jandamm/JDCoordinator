@@ -1,5 +1,5 @@
 //
-//  _JDParentCoordinating.swift
+//  MutableParent.swift
 //  JDCoordinator
 //
 //  Created by Jan Dammshäuser on 27.07.17.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol _JDParentCoordinating: JDParentCoordinating {
-    var childCoordinators: JDChildCoordinatorStorage { get set }
+protocol MutableParent: Parent {
+    var childCoordinators: ChildStorage { get set }
 }
 
-extension _JDParentCoordinating {
-    public func addChild(_ coordinator: JDChildCoordinating) {
+extension MutableParent {
+    public func addChild(_ coordinator: Child) {
         guard !childCoordinators.contains(coordinator) else {
             return
         }
@@ -26,31 +26,22 @@ extension _JDParentCoordinating {
         coordinator.setParent(to: self)
     }
 
-    public func removeChild(_ coordinator: JDChildCoordinating) {
+    public func removeChild(_ coordinator: Child) {
         childCoordinators.remove(coordinator)
     }
 
-    public func hasChild(_ coordinator: JDChildCoordinating) -> Bool {
+    public func hasChild(_ coordinator: Child) -> Bool {
         return childCoordinators.contains(coordinator)
     }
 
     /// Removes all childCoordinators.
-    /// - parameter type: Define which type of ChildCoordinators should stay childs.
-    public func removeChilds(_ type: JDChildCoordinatorType) {
-        let oldCoordinators = childCoordinators
-
+    public func removeAllChilds() {
         childCoordinators.removeAll()
-
-        guard case let JDChildCoordinatorType.except(coordinator) = type, oldCoordinators.contains(coordinator) else {
-            return
-        }
-
-        childCoordinators.insert(coordinator)
     }
 
     /// Removes all Coordinators except the given ones
     /// - parameter coordinators: Coordinators which should not be removed
-    func removeChilds(except coordinators: [JDChildCoordinating]) {
+    public func removeChildsExcept(_ coordinators: [Child]) {
         for coordinator in childCoordinators.subtracting(coordinators) {
             removeChild(coordinator)
         }

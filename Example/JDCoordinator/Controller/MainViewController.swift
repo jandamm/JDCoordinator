@@ -8,7 +8,7 @@
 
 import JDCoordinator
 
-protocol MainDelegate: JDCoordinatorViewControllerDelegate {
+protocol MainDelegate: ControllerDelegate {
     func reloadData()
     func showSplit()
 }

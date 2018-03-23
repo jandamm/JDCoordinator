@@ -7,9 +7,9 @@
 
 import Foundation
 
-/// Defines viewController for JDRootNavigationCoordinatorProtocol and JDNavigationCoordinatorProtocol
+/// Defines viewController for RootNavigating
 ///
-/// Be aware that not all choices are available for JDRootNavigationCoordinatorProtocol.
+/// Be aware that not all choices are available for RootNavigating.
 /// - current: navigationController.topViewController
 /// - previous: previousViewController
 /// - root: navigationController.visibleViewController.first
@@ -23,7 +23,7 @@ public enum JDViewControllerType {
     /// Calls viewController(for:) on the Coordinator.
     /// - parameter coordinator: The Coordinator whose controller should be returned.
     /// - returns: The viewController for its type.
-    public func viewController(from coordinator: JDRootNavigationCoordinating) -> UIViewController? {
+    public func viewController(from coordinator: RootNavigating) -> UIViewController? {
         return coordinator.viewController(for: self)
     }
 }

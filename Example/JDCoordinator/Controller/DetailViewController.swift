@@ -8,7 +8,7 @@
 
 import JDCoordinator
 
-protocol DetailViewDelegate: JDCoordinatorViewControllerDelegate {
+protocol DetailViewDelegate: ControllerDelegate {
     func showSubDetails()
 }
 

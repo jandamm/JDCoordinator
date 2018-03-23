@@ -8,11 +8,11 @@
 
 import JDCoordinator
 
-protocol MainCoordinatorDelegate: JDCoordinatorCoordinatorDelegate {
+protocol MainCoordinatorDelegate: CoordinatorDelegate {
     func reloadData()
 }
 
-class MainCoordinator: JDParentCoordinator, MainDelegate {
+class MainCoordinator: ParentCoordinator, MainDelegate {
     weak var delegate: MainCoordinatorDelegate?
 
     override func start() {
