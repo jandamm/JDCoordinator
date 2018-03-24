@@ -12,36 +12,9 @@ import Foundation
 public protocol RootNavigating: AnyObject {
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
-
-    /// Provides the ViewController for the given type.
-    /// This method is called by some methods to replace ViewControllers.
-    ///
-    /// A default implementation is provided. Overwrite if you need to modify its behavior.
-    /// - parameter type: The requested type of ViewController.
-    /// - returns: The viewController matching the given type.
-    func viewController(for type: JDViewControllerType) -> UIViewController?
 }
 
 public extension RootNavigating where Self: Coordinating {
-    /// Provides the ViewController for the given type.
-    /// This method is called by some methods to replace ViewControllers.
-    ///
-    /// A default implementation is provided. Overwrite if you need to modify its behavior.
-    /// - parameter type: The requested type of ViewController.
-    /// - returns: The viewController matching the given type.
-    func viewController(for type: JDViewControllerType) -> UIViewController? {
-        switch type {
-        case .current:
-            return navigationController.topViewController
-        case .previous:
-            return (self as? Navigating)?.previousViewController
-        case .visible:
-            return navigationController.visibleViewController
-        case .root:
-            return navigationController.viewControllers.first
-        }
-    }
-
     /// Removes the given ViewController and pushes to newViewController.
     ///
     /// If no newViewController and type is empty or on top of stack it does nothing
@@ -50,8 +23,8 @@ public extension RootNavigating where Self: Coordinating {
     ///     - type: Type of ViewController that will be removed.
     ///     - newViewController: The viewController you want to push to. nil to pop.
     ///     - animated: Whether it should be animated or not.
-    func replaceViewController(_ type: JDViewControllerType, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
-        let viewController = self.viewController(for: type)
+    func replaceViewController(_ keyPath: KeyPath<Self, UIViewController?>, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
+        let viewController = self[keyPath: keyPath]
         replaceViewController(viewController, withNew: newViewController, animated: animated)
     }
 
@@ -63,8 +36,8 @@ public extension RootNavigating where Self: Coordinating {
     ///     - type: Type of ViewController after which every viewController will be removed.
     ///     - newViewController: The viewController you want to push to. nil to pop.
     ///     - animated: Whether it should be animated or not.
-    func replaceViewControllers(after type: JDViewControllerType, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
-        let viewController = self.viewController(for: type)
+    func replaceViewControllers(after keyPath: KeyPath<Self, UIViewController?>, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
+        let viewController = self[keyPath: keyPath]
         replaceViewControllers(after: viewController, withNew: newViewController, animated: animated)
     }
 

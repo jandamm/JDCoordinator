@@ -12,7 +12,6 @@
 		254AD727B8869D3692F2F2FD444BB353 /* SplitViewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D53475C46DADC6598E4E8BEBD5DE6 /* SplitViewing.swift */; };
 		392F5C9D8101E8321B809C4B66E91E8A /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */; };
 		5A4B83A349F71C84C2B27447A2CDCEAC /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = A268BECBE9DA49084F89EAAE190693FB /* Child.swift */; };
-		681A796398706DE284735C3B1F3E1A56 /* JDViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC541FE27E5E3A051E8BCE8850FAA460 /* JDViewControllerType.swift */; };
 		699772CF51E91D6CA6CA713C13F94E71 /* Pods-JDCoordinator_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD889273A7F14F6CACD49190A386DA3D /* Pods-JDCoordinator_Tests-dummy.m */; };
 		6C9BF2BAEA18C190C933F97B9F5E732C /* JDCoordinator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86C9EC19135DDED620E9499354E59BD2 /* JDCoordinator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		800FE2A9E61BB8DF2275E9B90B1038BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -98,7 +97,6 @@
 		EE57DA07BF37792D94ED85F43331042C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3D3FC221AC59D638647B8EEA4AE3B16 /* Parent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
 		FAB5222EDC51A1D821F725CD964951C3 /* Pods-JDCoordinator_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDCoordinator_Tests-umbrella.h"; sourceTree = "<group>"; };
-		FC541FE27E5E3A051E8BCE8850FAA460 /* JDViewControllerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JDViewControllerType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +169,6 @@
 			children = (
 				A0BF4648922705E8CA49C0213B16AC72 /* AnyHashableConvertible.swift */,
 				94F51C39DB6A3511F8BC6AF5A089E5E9 /* ChildStorage.swift */,
-				FC541FE27E5E3A051E8BCE8850FAA460 /* JDViewControllerType.swift */,
 			);
 			name = Types;
 			path = JDCoordinator/Types;
@@ -455,7 +452,6 @@
 				CD4C373C44BF9AAC191174E8F5689865 /* RootNavigating.swift in Sources */,
 				254AD727B8869D3692F2F2FD444BB353 /* SplitViewing.swift in Sources */,
 				8B2B4ED0B4FDF756EB3A53D665C7250B /* SplitViewCoordinator.swift in Sources */,
-				681A796398706DE284735C3B1F3E1A56 /* JDViewControllerType.swift in Sources */,
 				392F5C9D8101E8321B809C4B66E91E8A /* UINavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
