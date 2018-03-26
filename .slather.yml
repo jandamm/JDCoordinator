@@ -5,5 +5,5 @@ scheme: "JDCoordinator-Example"
 configuration: Debug
 source_directory: JDCoordinator/*
 ignore:
-  - Assets/*
-  - Generated/*
+  - JDCoordinator/Assets/*
+  - JDCoordinator/Generated/*
