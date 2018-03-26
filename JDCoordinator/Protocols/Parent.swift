@@ -60,23 +60,3 @@ public extension Parent where Self: Coordinating {
         removeChild(coordinator)
     }
 }
-
-public extension Array where Element == Parent {
-    func index(for coordinator: Element) -> Int? {
-        return index(where: { $0 === coordinator })
-    }
-
-    func contains(_ coordinator: Element) -> Bool {
-        return index(for: coordinator) != nil
-    }
-}
-
-public extension Array where Element == Child {
-    func index(for coordinator: Element) -> Int? {
-        return index(where: { $0 === coordinator })
-    }
-
-    func contains(_ coordinator: Element) -> Bool {
-        return index(for: coordinator) != nil
-    }
-}
