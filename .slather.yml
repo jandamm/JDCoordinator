@@ -6,3 +6,4 @@ configuration: Debug
 source_directory: JDCoordinator/*
 ignore:
   - Assets/*
+  - Generated/*

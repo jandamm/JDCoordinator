@@ -12,3 +12,4 @@ plugins:
 exclude_patterns:
 - "!JDCoordinator/"
 - "JDCoordinator/Assets/"
+- "JDCoordinator/Generated/"
