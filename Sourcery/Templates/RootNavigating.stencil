@@ -1,0 +1,11 @@
+public extension RootNavigating {
+{% for method in type.Navigator.methods where not method.isInitializer %}
+	{% if method.returnTypeName|lowercase != "void" %}@discardableResult{% endif %}
+	func {{ method.name }} {% if method.returnTypeName|lowercase != "void" %}-> {{method.returnTypeName}} {% endif %}{
+		{% if method.returnTypeName|lowercase != "void" %}return {% endif %}navigationController.{{method.shortName}}({% for p in method.parameters %}{{p.argumentLabel}}{% if p.argumentLabel != nil %}: {% endif %}{{p.name}}{% if not forloop.last %}, {% endif %}{% endfor %})
+	}
+{% if not forloop.last %}
+
+{% endif %}
+{% endfor %}
+}

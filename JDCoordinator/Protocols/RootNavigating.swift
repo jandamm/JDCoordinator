@@ -9,7 +9,7 @@ import Foundation
 
 /// A Coordinator that has a navigationController.
 /// In most cases this is only the AppCoordinator or the Root of each Tab.
-public protocol RootNavigating: AnyObject {
+public protocol RootNavigating: Navigator {
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
 }
@@ -23,9 +23,9 @@ public extension RootNavigating where Self: Coordinating {
     ///     - type: Type of ViewController that will be removed.
     ///     - newViewController: The viewController you want to push to. nil to pop.
     ///     - animated: Whether it should be animated or not.
-    func replaceViewController(_ keyPath: KeyPath<Self, UIViewController?>, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
+    func replaceViewController(_ keyPath: KeyPath<Self, UIViewController?>, withNew newViewController: UIViewController?, animated: Bool) {
         let viewController = self[keyPath: keyPath]
-        replaceViewController(viewController, withNew: newViewController, animated: animated)
+        navigationController.replaceViewController(viewController, withNew: newViewController, animated: animated)
     }
 
     /// Removes all ViewControllers newer than the given one and pushes to newViewController.
@@ -36,115 +36,8 @@ public extension RootNavigating where Self: Coordinating {
     ///     - type: Type of ViewController after which every viewController will be removed.
     ///     - newViewController: The viewController you want to push to. nil to pop.
     ///     - animated: Whether it should be animated or not.
-    func replaceViewControllers(after keyPath: KeyPath<Self, UIViewController?>, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
+    func replaceViewControllersAfter(_ keyPath: KeyPath<Self, UIViewController?>, withNew newViewController: UIViewController?, animated: Bool) {
         let viewController = self[keyPath: keyPath]
-        replaceViewControllers(after: viewController, withNew: newViewController, animated: animated)
-    }
-
-    // MARK: - Default Methods
-
-    /// Convenience method to pushViewController directly within Coordinators navigationController
-    func pushViewController(_ viewController: UIViewController, animated: Bool = true) {
-        navigationController.pushViewController(viewController, animated: animated)
-    }
-
-    /// Convenience method to popViewController directly within Coordinators navigationController
-    @discardableResult
-    func popViewController(animated: Bool = true) -> UIViewController? {
-        return navigationController.popViewController(animated: animated)
-    }
-
-    /// Convenience method to popToViewController directly within Coordinators navigationController
-    @discardableResult
-    func popToViewController(_ viewController: UIViewController, animated: Bool = true) -> [UIViewController]? {
-        return navigationController.popToViewController(viewController, animated: animated)
-    }
-
-    /// Convenience method to popToRootViewController directly within Coordinators navigationController
-    @discardableResult
-    func popToRootViewController(animated: Bool = true) -> [UIViewController]? {
-        return navigationController.popToRootViewController(animated: animated)
-    }
-
-    /// Convenience method to setViewControllers directly within Coordinators navigationController
-    func setViewControllers(_ viewControllers: [UIViewController], animated: Bool = true) {
-        navigationController.setViewControllers(viewControllers, animated: animated)
-    }
-
-    /// Convenience method to present directly within Coordinators navigationController
-    func present(_ viewControllerToPresent: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
-        navigationController.present(viewControllerToPresent, animated: animated, completion: completion)
-    }
-
-    /// Convenience method to dismiss directly within Coordinators navigationController
-    func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
-        navigationController.dismiss(animated: animated, completion: completion)
-    }
-
-    // MARK: - Custom Methods
-
-    /// Convenience method to setViewController directly within Coordinators navigationController
-    func setViewController(_ viewController: UIViewController, animated: Bool = true) {
-        navigationController.setViewController(viewController, animated: animated)
-    }
-
-    /// Removes the given ViewController and pushes to newViewController.
-    ///
-    /// If no newViewController and type is empty or on top of stack it does nothing
-    ///
-    /// - parameters:
-    ///     - viewController: ViewController that will be removed.
-    ///     - newViewController: The viewController you want to push to. nil to pop.
-    ///     - animated: Whether it should be animated or not.
-    func replaceViewController(_ viewController: UIViewController?, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
-        navigationController.replaceViewController(viewController, withNew: newViewController, animated: animated)
-    }
-
-    /// Removes all given ViewController and pushes to newViewController.
-    ///
-    /// If no newViewController and type is empty or on top of stack it does nothing
-    ///
-    /// - parameters:
-    ///     - viewControllers: ViewControllers that will be removed.
-    ///     - newViewController: The viewController you want to push to. nil to pop.
-    ///     - animated: Whether it should be animated or not.
-    func replaceViewControllers(_ viewControllers: [UIViewController?], withNew newViewController: UIViewController? = nil, animated: Bool = true) {
-        navigationController.replaceViewControllers(viewControllers, withNew: newViewController, animated: animated)
-    }
-
-    /// Removes all ViewControllers newer than the given one and pushes to newViewController.
-    ///
-    /// If no newViewController and type is empty or on top of stack it does nothing
-    ///
-    /// - parameters:
-    ///     - viewController: ViewController after which every viewController will be removed.
-    ///     - newViewController: The viewController you want to push to. nil to pop.
-    ///     - animated: Whether it should be animated or not.
-    func replaceViewControllers(after viewController: UIViewController?, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
         navigationController.replaceViewControllers(after: viewController, withNew: newViewController, animated: animated)
-    }
-
-    /// Removes all ViewControllers newer and the given one and pushes to newViewController.
-    ///
-    /// If no newViewController and type is empty or on top of stack it does nothing
-    ///
-    /// - parameters:
-    ///     - viewController: ViewController that will be removed along with every newer ViewController.
-    ///     - newViewController: The viewController you want to push to. nil to pop.
-    ///     - animated: Whether it should be animated or not.
-    func replaceViewControllers(afterAndIncluding viewController: UIViewController?, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
-        navigationController.replaceViewControllers(afterAndIncluding: viewController, withNew: newViewController, animated: animated)
-    }
-
-    /// Removes the last n ViewControllers and pushes to newViewController.
-    ///
-    /// If no newViewController and type is empty or on top of stack it does nothing
-    ///
-    /// - parameters:
-    ///     - count: Number of viewControllers that will be removed (>0).
-    ///     - newViewController: The viewController you want to push to. nil to pop.
-    ///     - animated: Whether it should be animated or not.
-    func replaceViewControllers(last count: Int, withNew newViewController: UIViewController? = nil, animated: Bool = true) {
-        navigationController.replaceViewControllers(last: count, withNew: newViewController, animated: animated)
     }
 }

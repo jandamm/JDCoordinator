@@ -8,9 +8,11 @@
 
 import Foundation
 
+extension UINavigationController: Navigator {}
+
 public extension UINavigationController {
     /// Convenience method that will set the given ViewController.
-    func setViewController(_ viewController: UIViewController, animated: Bool = true) {
+    func setViewController(_ viewController: UIViewController, animated: Bool) {
         setViewControllers([viewController], animated: animated)
     }
 }
@@ -132,27 +134,5 @@ public extension UINavigationController {
         }
 
         setViewControllers(vcStack, animated: animated)
-    }
-}
-
-extension Array where Element: Comparable & Hashable {
-    var noDuplicatesAndSorted: [Element] {
-        let array = Array(Set(self))
-        return array.sorted(by: <)
-    }
-}
-
-protocol OptionalType {
-    associatedtype Wrapped
-    var value: Wrapped? { get }
-}
-
-extension Optional: OptionalType {
-    var value: Wrapped? { return self }
-}
-
-extension Sequence where Element: OptionalType {
-    var unwrapped: [Element.Wrapped] {
-        return flatMap { $0.value }
     }
 }
