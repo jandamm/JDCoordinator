@@ -21,6 +21,10 @@
 			"name": "Example App",
 			"folder_exclude_patterns": ["build","JDCoordinator.*","Pods","Tests", "Assets.xcassets"],
 			"file_exclude_patterns": ["SwiftFormat"]
+		},
+		{
+			"path": "Sourcery/Templates",
+			"name": "Sourcery"
 		}
 	]
 }
