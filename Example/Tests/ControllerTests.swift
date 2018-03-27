@@ -6,18 +6,56 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
+@testable import JDCoordinator
 import XCTest
 
 class ControllerTests: XCTestCase {
+    var viewControllers: [UIViewController]!
+    var navigationController: UINavigationController!
+    let range = 0 ..< 5
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        navigationController = UINavigationController()
+        viewControllers = range.map { _ in UIViewController() }
+        navigationController.setViewControllers(viewControllers, animated: false)
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        navigationController = nil
+        viewControllers = nil
+
         super.tearDown()
     }
+
+    func testSetViewController() {
+        let first = viewControllers.first!
+
+        navigationController.setViewController(first, animated: false)
+
+        XCTAssertEqual(navigationController.viewControllers.count, 1)
+        XCTAssertEqual(navigationController.viewControllers, [first])
+        XCTAssertTrue(navigationController.viewControllers.first === first)
+    }
+
+    func testReplaceViewController() {
+        for i in range {
+            let new = UIViewController()
+            let old = viewControllers.remove(at: i)
+
+            navigationController.replaceViewController(old, withNew: new, animated: false)
+            viewControllers.append(new) // old should be removed, new appended.
+
+            XCTAssertFalse(navigationController.viewControllers.contains(old))
+            XCTAssertEqual(navigationController.viewControllers.count, viewControllers.count)
+            XCTAssertEqual(navigationController.viewControllers, viewControllers)
+            XCTAssertTrue(navigationController.viewControllers.last === new)
+        }
+    }
+
+    //	func testReplaceViewControllers() {}
+    //	func testReplaceLastViewControllers() {}
 }
 
 extension ControllerTests {
