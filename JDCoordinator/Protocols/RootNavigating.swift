@@ -21,23 +21,10 @@ public extension RootNavigating where Self: Coordinating {
     ///
     /// - parameters:
     ///     - type: Type of ViewController that will be removed.
-    ///     - newViewController: The viewController you want to push to. nil to pop.
+    ///     - newViewController: The viewController you want to push to.
     ///     - animated: Whether it should be animated or not.
-    func replaceViewController(_ keyPath: KeyPath<Self, UIViewController?>, withNew newViewController: UIViewController?, animated: Bool) {
+    func replaceViewController(_ keyPath: KeyPath<Self, UIViewController>, withNew newViewController: UIViewController, animated: Bool) {
         let viewController = self[keyPath: keyPath]
         navigationController.replaceViewController(viewController, withNew: newViewController, animated: animated)
-    }
-
-    /// Removes all ViewControllers newer than the given one and pushes to newViewController.
-    ///
-    /// If no newViewController and type is empty or on top of stack it does nothing
-    ///
-    /// - parameters:
-    ///     - type: Type of ViewController after which every viewController will be removed.
-    ///     - newViewController: The viewController you want to push to. nil to pop.
-    ///     - animated: Whether it should be animated or not.
-    func replaceViewControllersAfter(_ keyPath: KeyPath<Self, UIViewController?>, withNew newViewController: UIViewController?, animated: Bool) {
-        let viewController = self[keyPath: keyPath]
-        navigationController.replaceViewControllers(after: viewController, withNew: newViewController, animated: animated)
     }
 }

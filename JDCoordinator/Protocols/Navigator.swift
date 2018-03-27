@@ -23,4 +23,7 @@ public protocol Navigator: AnyObject {
     // MARK: - Additive methods
 
     func setViewController(_ viewController: UIViewController, animated: Bool)
+    func replaceViewController(_ viewController: UIViewController, withNew newViewController: UIViewController, animated: Bool)
+    func replaceViewControllers(_ viewControllers: [UIViewController], withNew newViewController: UIViewController, animated: Bool)
+    func replaceLastViewControllers(count: Int, withNew newViewController: UIViewController, animated: Bool)
 }

@@ -36,4 +36,16 @@ public extension RootNavigating {
     func setViewController(_ viewController: UIViewController, animated: Bool) {
         navigationController.setViewController(viewController, animated: animated)
     }
+
+    func replaceViewController(_ viewController: UIViewController, withNew newViewController: UIViewController, animated: Bool) {
+        navigationController.replaceViewController(viewController, withNew: newViewController, animated: animated)
+    }
+
+    func replaceViewControllers(_ viewControllers: [UIViewController], withNew newViewController: UIViewController, animated: Bool) {
+        navigationController.replaceViewControllers(viewControllers, withNew: newViewController, animated: animated)
+    }
+
+    func replaceLastViewControllers(count: Int, withNew newViewController: UIViewController, animated: Bool) {
+        navigationController.replaceLastViewControllers(count: count, withNew: newViewController, animated: animated)
+    }
 }
