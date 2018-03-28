@@ -41,6 +41,7 @@ class ControllerTests: XCTestCase {
 
     func testReplaceViewController() {
         for i in range {
+            // Remove viewController at any given index
             let new = UIViewController()
             let old = viewControllers.remove(at: i)
 
@@ -52,6 +53,16 @@ class ControllerTests: XCTestCase {
             XCTAssertEqual(navigationController.viewControllers, viewControllers)
             XCTAssertTrue(navigationController.viewControllers.last === new)
         }
+
+        // Append if to be replaced is not in navigationController
+        let new = UIViewController()
+
+        navigationController.replaceViewController(UIViewController(), withNew: new, animated: false)
+        viewControllers.append(new) // old should be removed, new appended.
+
+        XCTAssertEqual(navigationController.viewControllers.count, viewControllers.count)
+        XCTAssertEqual(navigationController.viewControllers, viewControllers)
+        XCTAssertTrue(navigationController.viewControllers.last === new)
     }
 
     //	func testReplaceViewControllers() {}
