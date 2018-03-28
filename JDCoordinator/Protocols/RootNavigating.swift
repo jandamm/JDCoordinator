@@ -9,7 +9,7 @@ import Foundation
 
 /// A Coordinator that has a navigationController.
 /// In most cases this is only the AppCoordinator or the Root of each Tab.
-public protocol RootNavigating: Navigator {
+public protocol RootNavigating: AnyObject {
     /// The navigationController that is used for every further navigation.
     var navigationController: UINavigationController { get }
 }

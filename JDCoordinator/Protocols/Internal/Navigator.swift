@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Navigator: AnyObject {
+protocol Navigator: AnyObject {
 
     // MARK: - Default methods
 

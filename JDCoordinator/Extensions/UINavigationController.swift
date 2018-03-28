@@ -15,11 +15,9 @@ public extension UINavigationController {
     func setViewController(_ viewController: UIViewController, animated: Bool) {
         setViewControllers([viewController], animated: animated)
     }
-}
 
-// MARK: - Custom Methods
+    // MARK: - Custom Methods
 
-public extension UINavigationController {
     /// Removes the given `UIViewController` and pushes to `newViewController`.
     ///
     /// - parameters:
