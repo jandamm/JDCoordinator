@@ -28,4 +28,4 @@ install:
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/$POD_NAME.xcworkspace -scheme $POD_NAME-Example -sdk iphonesimulator$OS_VERSION -destination 'platform=iOS Simulator,OS='$OS_VERSION',name=iPhone '$PHONE_VERSION ONLY_ACTIVE_ARCH=YES | bundle exec xcpretty
 - bundle exec pod lib lint
-after_success: bundle exec slather coverage -c --binary-basename $POD_NAME
+after_success: bundle exec slather 

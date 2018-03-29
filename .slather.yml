@@ -4,5 +4,6 @@ xcodeproj: Example/JDCoordinator.xcodeproj
 scheme: "JDCoordinator-Example"
 configuration: Debug
 source_directory: JDCoordinator/*
+binary_basename: JDCoordinator
 ignore:
   - Assets/*
