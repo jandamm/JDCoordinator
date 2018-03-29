@@ -29,7 +29,7 @@ public protocol Parent: AnyObject {
     func hasChild(_ coordinator: Child) -> Bool
 }
 
-public extension Parent where Self: Coordinating {
+public extension Parent {
     /// Adds a `Coordinator` as a child, removes it from previous `parentCoordinator` and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.
     func addChildAndStart(_ coordinator: ChildCoordinating) {

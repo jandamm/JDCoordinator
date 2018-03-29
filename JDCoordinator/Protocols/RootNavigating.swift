@@ -14,7 +14,7 @@ public protocol RootNavigating: AnyObject {
     var navigationController: UINavigationController { get }
 }
 
-public extension RootNavigating where Self: Coordinating {
+public extension RootNavigating {
     /// Removes the given ViewController and pushes to newViewController.
     ///
     /// If no newViewController and type is empty or on top of stack it does nothing
