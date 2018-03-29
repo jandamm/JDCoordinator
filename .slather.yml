@@ -6,4 +6,5 @@ configuration: Debug
 source_directory: JDCoordinator/*
 binary_basename: JDCoordinator
 ignore:
-  - Assets/*
+  - JDCoordinator/Assets/*
+  - JDCoordinator/Generated/*

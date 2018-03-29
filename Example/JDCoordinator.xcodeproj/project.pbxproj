@@ -28,6 +28,7 @@
 		607FACEC1AFB9204008FA782 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* CoordinatorTests.swift */; };
 		9F56F65128EF9532925DB8B9 /* Pods_JDCoordinator_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590826EE71D58C42D7CAFB60 /* Pods_JDCoordinator_Tests.framework */; };
 		E566E8146C72F8AB6894ED12 /* Pods_JDCoordinator_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966468E81CE515E56ADE37DA /* Pods_JDCoordinator_Example.framework */; };
+		FD2C8468206D738100F2FF6B /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C8467206D738100F2FF6B /* HelperTests.swift */; };
 		FD723FAD2054803F00388975 /* ReferencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FAC2054803F00388975 /* ReferencingTests.swift */; };
 		FD723FB1205480C100388975 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FAF205480BE00388975 /* TestHelper.swift */; };
 		FDBDF15A20549D6600A36BFC /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDF15920549D6600A36BFC /* StorageTests.swift */; };
@@ -77,6 +78,7 @@
 		966468E81CE515E56ADE37DA /* Pods_JDCoordinator_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDCoordinator_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		992290B49F434B76F584D1A8 /* Pods-JDCoordinator_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDCoordinator_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JDCoordinator_Example/Pods-JDCoordinator_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D2C75947A161A685893E3F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FD2C8467206D738100F2FF6B /* HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
 		FD723FAC2054803F00388975 /* ReferencingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencingTests.swift; sourceTree = "<group>"; };
 		FD723FAF205480BE00388975 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		FDBDF15920549D6600A36BFC /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				607FACEB1AFB9204008FA782 /* CoordinatorTests.swift */,
 				FD723FAC2054803F00388975 /* ReferencingTests.swift */,
 				FDBDF15920549D6600A36BFC /* StorageTests.swift */,
+				FD2C8467206D738100F2FF6B /* HelperTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD723FB1205480C100388975 /* TestHelper.swift in Sources */,
+				FD2C8468206D738100F2FF6B /* HelperTests.swift in Sources */,
 				FDBDF15A20549D6600A36BFC /* StorageTests.swift in Sources */,
 				FDBDF15C20549D9300A36BFC /* ControllerTests.swift in Sources */,
 				FD723FAD2054803F00388975 /* ReferencingTests.swift in Sources */,

@@ -22,6 +22,7 @@ notifications:
 before_install:
 - rvm install ruby-$RVM_RUBY_VERSION
 - rvm use $RVM_RUBY_VERSION
+- brew update && brew bundle
 install:
 - bundle install --without=documentation
 - bundle exec pod install --project-directory=Example

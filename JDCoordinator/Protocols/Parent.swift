@@ -29,7 +29,7 @@ public protocol Parent: AnyObject {
     func hasChild(_ coordinator: Child) -> Bool
 }
 
-public extension Parent where Self: Coordinating {
+public extension Parent {
     /// Adds a `Coordinator` as a child, removes it from previous `parentCoordinator` and starts it.
     /// - parameter coordinator: Coordinator which should be added as child.
     func addChildAndStart(_ coordinator: ChildCoordinating) {
@@ -58,25 +58,5 @@ public extension Parent where Self: Coordinating {
 
         let coordinator = coordinator.childTree[index]
         removeChild(coordinator)
-    }
-}
-
-public extension Array where Element == Parent {
-    func index(for coordinator: Element) -> Int? {
-        return index(where: { $0 === coordinator })
-    }
-
-    func contains(_ coordinator: Element) -> Bool {
-        return index(for: coordinator) != nil
-    }
-}
-
-public extension Array where Element == Child {
-    func index(for coordinator: Element) -> Int? {
-        return index(where: { $0 === coordinator })
-    }
-
-    func contains(_ coordinator: Element) -> Bool {
-        return index(for: coordinator) != nil
     }
 }

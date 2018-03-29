@@ -25,7 +25,7 @@ public protocol Child: AnyObject, AnyHashableConvertible {
     func setParent(to coordinator: Parent)
 }
 
-public extension Child where Self: Coordinating {
+public extension Child {
     /// Returns every `parentCoordinator`.
     ///
     /// `.first` is `parentCoordinator`. `.last` is the `AppCoordinator`.

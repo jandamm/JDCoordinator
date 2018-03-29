@@ -1,0 +1,5 @@
+sources:
+  - JDCoordinator
+templates:
+  - Sourcery/Templates
+output: JDCoordinator/Generated/
