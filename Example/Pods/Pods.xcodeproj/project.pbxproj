@@ -33,6 +33,7 @@
 		D2AD0C95F55B2DC80AB1EF7219D61C89 /* ParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B182AFD6A5E6DA61B85E639EC66DCB8A /* ParentCoordinator.swift */; };
 		DF4194D0EFB441BB2B7CFBAA26EEF731 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7FAD6FBB5B67D502762DE11B61F6C1 /* Coordinator.swift */; };
 		F18A3322862F33F20508A27D19E24705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		FD2C8465206CD43B00F2FF6B /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */; };
 		FDBE634220697C13006F216E /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE634120697C13006F216E /* Navigator.swift */; };
 		FDBE6348206982BA006F216E /* RootNavigating.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE6347206982BA006F216E /* RootNavigating.generated.swift */; };
 		FDBE634A2069832D006F216E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE63492069832D006F216E /* Array.swift */; };
@@ -100,6 +101,7 @@
 		EE57DA07BF37792D94ED85F43331042C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3D3FC221AC59D638647B8EEA4AE3B16 /* Parent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Parent.swift; sourceTree = "<group>"; };
 		FAB5222EDC51A1D821F725CD964951C3 /* Pods-JDCoordinator_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDCoordinator_Tests-umbrella.h"; sourceTree = "<group>"; };
+		FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		FDBE634120697C13006F216E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		FDBE6347206982BA006F216E /* RootNavigating.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigating.generated.swift; sourceTree = "<group>"; };
 		FDBE63492069832D006F216E /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				FDBE63492069832D006F216E /* Array.swift */,
 				0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */,
+				FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */,
 			);
 			name = Extensions;
 			path = JDCoordinator/Extensions;
@@ -487,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				064783F72BDB885188C4C13692FAF6B0 /* MutableChild.swift in Sources */,
+				FD2C8465206CD43B00F2FF6B /* HelperExtensions.swift in Sources */,
 				FDBE634220697C13006F216E /* Navigator.swift in Sources */,
 				981166B032AC3D7B3DC99437B41D6099 /* MutableParent.swift in Sources */,
 				D288F88DB4157315DB8C322EEFF3B829 /* StartTestable.swift in Sources */,

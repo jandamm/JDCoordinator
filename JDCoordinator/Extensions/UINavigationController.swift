@@ -31,12 +31,10 @@ public extension UINavigationController {
     /// Removes all given `UIViewController`s and pushes to `newViewController`.
     ///
     /// - parameters:
-    ///     - viewControllers: `UIViewControllers` that will be removed.
+    ///     - viewControllers: `UIViewController`s that will be removed.
     ///     - newViewController: The viewController you want to push to.
     ///     - animated: Whether it should be animated or not.
     func replaceViewControllers(_ viewControllers: [UIViewController], withNew newViewController: UIViewController, animated: Bool) {
-        guard viewControllers.count > 0 else { return }
-
         let viewControllers = Set(viewControllers)
 
         var viewControllerStack = self.viewControllers.flatMap {
@@ -51,14 +49,14 @@ public extension UINavigationController {
     /// Removes the last n `UIViewControllers` and pushes to newViewController.
     ///
     /// - parameters:
-    ///     - count: Number of viewControllers that will be removed (>0).
+    ///     - count: Number of viewControllers that will be removed. Clamped to be in bounds.
     ///     - newViewController: The viewController you want to push to.
     ///     - animated: Whether it should be animated or not.
     func replaceLastViewControllers(count: Int, withNew newViewController: UIViewController, animated: Bool) {
-        guard count > 0 else { return }
+        let count = count.clamped(to: 0 ... viewControllers.count)
 
-        let viewControllers = Array(self.viewControllers.dropLast(count))
+        let replacing = Array(viewControllers.reversed().prefix(upTo: count))
 
-        replaceViewControllers(viewControllers, withNew: newViewController, animated: animated)
+        replaceViewControllers(replacing, withNew: newViewController, animated: animated)
     }
 }
