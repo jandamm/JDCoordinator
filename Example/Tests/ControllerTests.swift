@@ -150,6 +150,47 @@ class ControllerTests: XCTestCase {
             reset()
         }
     }
+
+    func testRootNavigatingReplaceViewController() {
+        let coordinator = TestCoordinator(navigationController: navigationController)
+        let viewController = UIViewController()
+        let keyPath: KeyPath<TestCoordinator, UIViewController?> = \.previousViewController
+
+        XCTAssertNil(coordinator.previousViewController)
+        XCTAssertEqual(coordinator.navigationController, navigationController)
+
+        // Test keyPath => nil
+        do {
+            viewControllers.append(viewController) // should only append viewController
+
+            coordinator.replaceViewController(keyPath, withNew: viewController, animated: false)
+
+            Assert.viewController(viewController, in: navigationController, supposedStack: viewControllers)
+        }
+
+        // Test storePreviousViewController
+        XCTAssertNil(coordinator.previousViewController)
+
+        coordinator.storePreviousViewController()
+
+        XCTAssertNotNil(coordinator.previousViewController)
+        XCTAssertTrue(coordinator.previousViewController === coordinator.navigationController.viewControllers.last)
+        XCTAssertTrue(coordinator.previousViewController === viewController)
+
+        // Test keyPath => previousViewController
+        do {
+            let new = UIViewController()
+
+            XCTAssertTrue(viewController === viewControllers.last)
+
+            viewControllers.removeLast()
+            viewControllers.append(new)
+
+            coordinator.replaceViewController(keyPath, withNew: new, animated: false)
+
+            Assert.viewController(new, in: navigationController, supposedStack: viewControllers)
+        }
+    }
 }
 
 extension ControllerTests {
@@ -159,5 +200,15 @@ extension ControllerTests {
             XCTAssertEqual(navigationController.viewControllers, supposedStack, file: file, line: line)
             XCTAssertTrue(navigationController.viewControllers.last === viewController, file: file, line: line)
         }
+    }
+}
+
+class TestCoordinator: Navigating {
+    var previousViewController: UIViewController?
+
+    let navigationController: UINavigationController
+
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 }
