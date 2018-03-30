@@ -8,20 +8,15 @@
 
 import UIKit
 
-// TODO: - remove NSObject inheritance once Swift 4.1 is released. Using Hashable instead.
-#if swift(>=4.1)
-    extension Coordinator: Hashable {}
-#else
-    extension Coordinator: Hashable {
-        public static func == (lhs: Coordinator, rhs: Coordinator) -> Bool {
-            return lhs.uuid == rhs.uuid
-        }
-
-        public var hashValue: Int {
-            return uuid.hashValue
-        }
+extension Coordinator: Hashable {
+    public static func == (lhs: Coordinator, rhs: Coordinator) -> Bool {
+        return lhs.uuid == rhs.uuid
     }
-#endif
+
+    public var hashValue: Int {
+        return uuid.hashValue
+    }
+}
 
 /**
  The `Coordinator` is the simplest class in a `UINavigationController` based application.

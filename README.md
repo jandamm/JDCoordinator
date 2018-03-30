@@ -1,7 +1,7 @@
 # JDCoordinator
 
 [![GitHub release](https://img.shields.io/github/release/jandamm/JDCoordinator.svg)](https://github.com/jandamm/JDCoordinator/releases)
-[![Swift 4.0](https://img.shields.io/badge/swift-4.0-red.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift 4.1](https://img.shields.io/badge/swift-4.1-red.svg?style=flat)](https://developer.apple.com/swift)
 [![License](https://img.shields.io/github/license/jandamm/JDCoordinator.svg)](https://github.com/jandamm/JDCoordinator/blob/develop/LICENSE)
 [![Build Status](https://travis-ci.org/jandamm/JDCoordinator.svg?branch=develop)](https://travis-ci.org/jandamm/JDCoordinator)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3d02bf72b4843aa4b95a/maintainability)](https://codeclimate.com/github/jandamm/JDCoordinator/maintainability)

@@ -46,6 +46,6 @@ extension Optional: OptionalType {
 
 extension Sequence where Element: OptionalType {
     var unwrapped: [Element.Wrapped] {
-        return flatMap { $0.value }
+        return compactMap { $0.value }
     }
 }

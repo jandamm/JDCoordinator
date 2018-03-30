@@ -37,7 +37,7 @@ public extension UINavigationController {
     func replaceViewControllers(_ viewControllers: [UIViewController], withNew newViewController: UIViewController, animated: Bool) {
         let viewControllers = Set(viewControllers)
 
-        var viewControllerStack = self.viewControllers.flatMap {
+        var viewControllerStack = self.viewControllers.compactMap {
             viewControllers.contains($0) ? nil : $0
         }
 
