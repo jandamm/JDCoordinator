@@ -21,4 +21,13 @@ class HelperTests: XCTestCase {
 
         XCTAssertEqual(100.clamped(to: 9 ... 12), 12)
     }
+
+    #if swift(>=4.1)
+    #else
+        func testCompactMap() {
+            let array: [String?] = ["aa", nil, "asr", nil, "artt"]
+            let mapper: (String?) -> String? = { $0 }
+            XCTAssertEqual(array.flatMap(mapper), array.compactMap(mapper))
+        }
+    #endif
 }
