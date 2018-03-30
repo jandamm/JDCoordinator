@@ -411,8 +411,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8B096399C00B95994EFE6F13008B77F /* Build configuration list for PBXNativeTarget "JDCoordinator" */;
 			buildPhases = (
-				FDBE634320697EDF006F216E /* Sourcery */,
-				FDBE634620698049006F216E /* SwiftFormat */,
+				FDBE634620698049006F216E /* Pre Compile Script */,
 				4E4D12817EB665E5694A3DDB7C667AD9 /* Sources */,
 				16890E1CD0074D6FF57020961164D522 /* Frameworks */,
 				57C99FCE1E543392EEBBD60A67C501EE /* Headers */,
@@ -455,33 +454,19 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FDBE634320697EDF006F216E /* Sourcery */ = {
+		FDBE634620698049006F216E /* Pre Compile Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = Sourcery;
+			name = "Pre Compile Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sourcery --config ../..";
-		};
-		FDBE634620698049006F216E /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/../SwiftFormat ../.. --semicolons \"never\"";
+			shellScript = "\"${SRCROOT}/../pre_compile.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
