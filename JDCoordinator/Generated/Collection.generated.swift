@@ -5,7 +5,7 @@ public extension Collection where Element == Child {
     /// Returns the index of the element in the collection.
     /// - parameter member: An element to look for in the collection.
     /// - returns: members index if member exists in the collection; otherwise, nil.
-    func index(for member: Element) -> Index? {
+    func index(of member: Element) -> Index? {
         return index(where: { $0 === member })
     }
 }
@@ -23,7 +23,7 @@ public extension Collection where Element == ControllerDelegate {
     /// Returns the index of the element in the collection.
     /// - parameter member: An element to look for in the collection.
     /// - returns: members index if member exists in the collection; otherwise, nil.
-    func index(for member: Element) -> Index? {
+    func index(of member: Element) -> Index? {
         return index(where: { $0 === member })
     }
 }
@@ -41,7 +41,7 @@ public extension Collection where Element == Coordinating {
     /// Returns the index of the element in the collection.
     /// - parameter member: An element to look for in the collection.
     /// - returns: members index if member exists in the collection; otherwise, nil.
-    func index(for member: Element) -> Index? {
+    func index(of member: Element) -> Index? {
         return index(where: { $0 === member })
     }
 }
@@ -59,7 +59,7 @@ public extension Collection where Element == CoordinatorDelegate {
     /// Returns the index of the element in the collection.
     /// - parameter member: An element to look for in the collection.
     /// - returns: members index if member exists in the collection; otherwise, nil.
-    func index(for member: Element) -> Index? {
+    func index(of member: Element) -> Index? {
         return index(where: { $0 === member })
     }
 }
@@ -77,7 +77,7 @@ public extension Collection where Element == Navigating {
     /// Returns the index of the element in the collection.
     /// - parameter member: An element to look for in the collection.
     /// - returns: members index if member exists in the collection; otherwise, nil.
-    func index(for member: Element) -> Index? {
+    func index(of member: Element) -> Index? {
         return index(where: { $0 === member })
     }
 }
@@ -95,7 +95,7 @@ public extension Collection where Element == Parent {
     /// Returns the index of the element in the collection.
     /// - parameter member: An element to look for in the collection.
     /// - returns: members index if member exists in the collection; otherwise, nil.
-    func index(for member: Element) -> Index? {
+    func index(of member: Element) -> Index? {
         return index(where: { $0 === member })
     }
 }
@@ -113,7 +113,7 @@ public extension Collection where Element == RootNavigating {
     /// Returns the index of the element in the collection.
     /// - parameter member: An element to look for in the collection.
     /// - returns: members index if member exists in the collection; otherwise, nil.
-    func index(for member: Element) -> Index? {
+    func index(of member: Element) -> Index? {
         return index(where: { $0 === member })
     }
 }

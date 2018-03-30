@@ -44,8 +44,8 @@ class SequenceTests: XCTestCase {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
-            let includedIndex = array.test.index(for: included)
-            let excludedIndex = array.test.index(for: excluded)
+            let includedIndex = array.test.index(of: included)
+            let excludedIndex = array.test.index(of: excluded)
 
             XCTAssertNotNil(includedIndex, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
@@ -76,8 +76,8 @@ class SequenceTests: XCTestCase {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
-            let includedIndex = array.test.index(for: included)
-            let excludedIndex = array.test.index(for: excluded)
+            let includedIndex = array.test.index(of: included)
+            let excludedIndex = array.test.index(of: excluded)
 
             XCTAssertNotNil(includedIndex, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
@@ -108,8 +108,8 @@ class SequenceTests: XCTestCase {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
-            let includedIndex = array.test.index(for: included)
-            let excludedIndex = array.test.index(for: excluded)
+            let includedIndex = array.test.index(of: included)
+            let excludedIndex = array.test.index(of: excluded)
 
             XCTAssertNotNil(includedIndex, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
@@ -140,8 +140,8 @@ class SequenceTests: XCTestCase {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
-            let includedIndex = array.test.index(for: included)
-            let excludedIndex = array.test.index(for: excluded)
+            let includedIndex = array.test.index(of: included)
+            let excludedIndex = array.test.index(of: excluded)
 
             XCTAssertNotNil(includedIndex, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
@@ -172,8 +172,8 @@ class SequenceTests: XCTestCase {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
-            let includedIndex = array.test.index(for: included)
-            let excludedIndex = array.test.index(for: excluded)
+            let includedIndex = array.test.index(of: included)
+            let excludedIndex = array.test.index(of: excluded)
 
             XCTAssertNotNil(includedIndex, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
@@ -204,8 +204,8 @@ class SequenceTests: XCTestCase {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
-            let includedIndex = array.test.index(for: included)
-            let excludedIndex = array.test.index(for: excluded)
+            let includedIndex = array.test.index(of: included)
+            let excludedIndex = array.test.index(of: excluded)
 
             XCTAssertNotNil(includedIndex, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
@@ -236,8 +236,8 @@ class SequenceTests: XCTestCase {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
-            let includedIndex = array.test.index(for: included)
-            let excludedIndex = array.test.index(for: excluded)
+            let includedIndex = array.test.index(of: included)
+            let excludedIndex = array.test.index(of: excluded)
 
             XCTAssertNotNil(includedIndex, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
