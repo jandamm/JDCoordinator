@@ -1,0 +1,40 @@
+// sourcery:inline:SequenceTests
+
+{% for protocol in types.protocols where protocol.accessLevel == 'public' %}
+{% for i in protocol.inheritedTypes where i == "AnyObject" or i == "RootNavigating" %}
+
+// MARK: - {{protocol.name}} generated tests
+
+	func test{{protocol.name}}Extension() {
+		let testArray = createCoordinators({{protocol.name}}.self)
+		loopFor{{protocol.name}}(testArray)
+    }
+
+    func test{{protocol.name}}ExtensionPerformance() {
+    	let testArray = createCoordinators({{protocol.name}}.self)
+    	measure {
+			loopFor{{protocol.name}}(testArray)
+		}
+    }
+
+    private func loopFor{{protocol.name}}(_ array: TestArray<{{protocol.name}}>, file: StaticString = #file, line: UInt = #line) {
+    	for index in range {
+			let included = array.included[index]
+			let excluded = array.excluded[index]
+            let includedIndex = array.test.index(for: included)
+            let excludedIndex = array.test.index(for: excluded)
+
+            XCTAssertNotNil(includedIndex, file: file, line: line)
+            XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
+
+            XCTAssertNil(excludedIndex, file: file, line: line)
+            XCTAssertEqual(excludedIndex, array.test.index(where: { $0 === excluded }), file: file, line: line)
+
+            XCTAssertTrue(array.test.contains(array.included[index]), file: file, line: line)
+			XCTAssertFalse(array.test.contains(array.excluded[index]), file: file, line: line)
+        }
+    }
+{% endfor %}
+{% endfor %}
+
+// sourcery:end

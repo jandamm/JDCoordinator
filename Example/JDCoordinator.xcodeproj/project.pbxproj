@@ -31,6 +31,7 @@
 		FD2C8468206D738100F2FF6B /* HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C8467206D738100F2FF6B /* HelperTests.swift */; };
 		FD723FAD2054803F00388975 /* ReferencingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FAC2054803F00388975 /* ReferencingTests.swift */; };
 		FD723FB1205480C100388975 /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD723FAF205480BE00388975 /* TestHelper.swift */; };
+		FD8DB79D206EBD1D0037A268 /* SequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8DB79B206EBCE20037A268 /* SequenceTests.swift */; };
 		FDBDF15A20549D6600A36BFC /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDF15920549D6600A36BFC /* StorageTests.swift */; };
 		FDBDF15C20549D9300A36BFC /* ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDF15B20549D9300A36BFC /* ControllerTests.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		FD2C8467206D738100F2FF6B /* HelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperTests.swift; sourceTree = "<group>"; };
 		FD723FAC2054803F00388975 /* ReferencingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferencingTests.swift; sourceTree = "<group>"; };
 		FD723FAF205480BE00388975 /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		FD8DB79B206EBCE20037A268 /* SequenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceTests.swift; sourceTree = "<group>"; };
 		FDBDF15920549D6600A36BFC /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
 		FDBDF15B20549D9300A36BFC /* ControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +204,7 @@
 				FD723FAC2054803F00388975 /* ReferencingTests.swift */,
 				FDBDF15920549D6600A36BFC /* StorageTests.swift */,
 				FD2C8467206D738100F2FF6B /* HelperTests.swift */,
+				FD8DB79B206EBCE20037A268 /* SequenceTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			files = (
 				FD723FB1205480C100388975 /* TestHelper.swift in Sources */,
 				FD2C8468206D738100F2FF6B /* HelperTests.swift in Sources */,
+				FD8DB79D206EBD1D0037A268 /* SequenceTests.swift in Sources */,
 				FDBDF15A20549D6600A36BFC /* StorageTests.swift in Sources */,
 				FDBDF15C20549D9300A36BFC /* ControllerTests.swift in Sources */,
 				FD723FAD2054803F00388975 /* ReferencingTests.swift in Sources */,
