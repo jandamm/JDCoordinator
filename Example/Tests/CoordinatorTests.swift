@@ -46,6 +46,15 @@ class CoordinatorTests: XCTestCase {
         Assert.started(coordinator, times: 2)
     }
 
+    func testPresentedViewController() {
+        // This is not really testable as they don't do anyting.
+        let viewController = UIViewController()
+        appCoordinator.presentedViewController(viewController, didMoveTo: nil)
+        appCoordinator.presentedViewController(viewController, willMoveTo: nil)
+        coordinator.presentedViewController(viewController, didMoveTo: nil)
+        coordinator.presentedViewController(viewController, willMoveTo: nil)
+    }
+
     func testNavigationControllerSetup() {
         Assert.identical(appCoordinator.navigationController, parentCoordinator.navigationController)
         Assert.identical(appCoordinator.navigationController, coordinator.navigationController)
