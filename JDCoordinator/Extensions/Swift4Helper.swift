@@ -10,7 +10,7 @@ import Foundation
 // This is only used so the project can still be build with Swift 4.0
 #if swift(>=4.1)
 #else
-    extension Array {
+    extension Sequence {
         func compactMap<ElementOfResult>(_ transform: (Element) throws -> ElementOfResult?) rethrows -> [ElementOfResult] {
             return try flatMap(transform)
         }
