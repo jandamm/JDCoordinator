@@ -35,6 +35,7 @@
 		F18A3322862F33F20508A27D19E24705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		FD2C8209206E7F1F00A62ACD /* Swift4Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C8208206E7F1F00A62ACD /* Swift4Helper.swift */; };
 		FD2C8465206CD43B00F2FF6B /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */; };
+		FD8DB798206EA9A80037A268 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8DB797206EA9A70037A268 /* Identifiable.swift */; };
 		FDBE634220697C13006F216E /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE634120697C13006F216E /* Navigator.swift */; };
 		FDBE6348206982BA006F216E /* RootNavigating.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE6347206982BA006F216E /* RootNavigating.generated.swift */; };
 		FDBE634A2069832D006F216E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE63492069832D006F216E /* Array.swift */; };
@@ -104,6 +105,7 @@
 		FAB5222EDC51A1D821F725CD964951C3 /* Pods-JDCoordinator_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDCoordinator_Tests-umbrella.h"; sourceTree = "<group>"; };
 		FD2C8208206E7F1F00A62ACD /* Swift4Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift4Helper.swift; sourceTree = "<group>"; };
 		FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		FD8DB797206EA9A70037A268 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		FDBE634120697C13006F216E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		FDBE6347206982BA006F216E /* RootNavigating.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigating.generated.swift; sourceTree = "<group>"; };
 		FDBE63492069832D006F216E /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		17B728733FD6830A64F74E5AA97E63FF /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				FD8DB797206EA9A70037A268 /* Identifiable.swift */,
 				FDBE634120697C13006F216E /* Navigator.swift */,
 				0051A8D55539D1B6A78187B6F8A49D5C /* MutableChild.swift */,
 				63AEAEA2107341A3D12704EA5788EF46 /* MutableParent.swift */,
@@ -505,6 +508,7 @@
 				FDBE634A2069832D006F216E /* Array.swift in Sources */,
 				96AC504DEA1712C2A76AE00A917A9DF6 /* ChildStorage.swift in Sources */,
 				AE7D7617777015186389DFCA2F68CC9B /* JDCoordinator-dummy.m in Sources */,
+				FD8DB798206EA9A80037A268 /* Identifiable.swift in Sources */,
 				DF4194D0EFB441BB2B7CFBAA26EEF731 /* Coordinator.swift in Sources */,
 				8986B6ACAC5B749B2A06B69462B91AC6 /* Delegates.swift in Sources */,
 				1CD5BB32A9FC7779161ED907381CADCB /* Navigating.swift in Sources */,
