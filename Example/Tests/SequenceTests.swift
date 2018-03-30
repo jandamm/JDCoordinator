@@ -10,7 +10,7 @@
 import XCTest
 
 class SequenceTests: XCTestCase {
-    let range = 0 ..< 20
+    let range = 0..<20
 
     typealias TestArray<T> = (test: [T], included: [T], excluded: [T])
 
@@ -18,7 +18,7 @@ class SequenceTests: XCTestCase {
         let appCoordinator = AppCoordinator(with: UINavigationController())
         let mapper: (Int) -> T = { _ in ParentCoordinator(withParent: appCoordinator) as! T }
 
-        let testArray = (0 ..< 400).map(mapper)
+        let testArray = (0..<400).map(mapper)
         let included = Array(testArray[range])
         let excluded = range.map(mapper)
         return (testArray, included, excluded)

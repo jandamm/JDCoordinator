@@ -12,7 +12,7 @@ import XCTest
 class ControllerTests: XCTestCase {
     var viewControllers: [UIViewController]!
     var navigationController: UINavigationController!
-    let range = 0 ..< 5
+    let range = 0..<5
 
     override func setUp() {
         super.setUp()
@@ -69,7 +69,7 @@ class ControllerTests: XCTestCase {
         // Test range sizes from 0 to all.
         for i in range {
             let new = UIViewController()
-            let r = 0 ... i
+            let r = 0...i
             let old = Array(viewControllers[r])
             viewControllers.removeSubrange(r)
             viewControllers.append(new)

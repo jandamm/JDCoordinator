@@ -15,7 +15,7 @@ fi
 
 echo "Run SwiftFormat"
 
-swiftformat ../.. --semicolons "never"
+swiftformat ../.. --semicolons "never" --ranges "noSpace"
 
 if [[ $? -eq 127 ]]; then
 	echo ""

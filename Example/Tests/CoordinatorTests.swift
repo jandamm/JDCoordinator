@@ -104,7 +104,7 @@ class CoordinatorTests: XCTestCase {
         var formerParent = coordinator.getFormerParent(parentIsNot: appCoordinator)
 
         // Adding child twice should not change anything
-        (1 ... 2).forEach { _ in
+        (1...2).forEach { _ in
             appCoordinator.addChild(coordinator)
 
             Assert.coordinator(coordinator, isChildOf: appCoordinator, not: formerParent, parentCount: 1)
@@ -124,7 +124,7 @@ class CoordinatorTests: XCTestCase {
         let formerParent = coordinator.getFormerParent(parentIsNot: appCoordinator)
 
         // Setting parent twice should not change anything
-        (1 ... 2).forEach { _ in
+        (1...2).forEach { _ in
             coordinator.setParent(to: appCoordinator)
 
             Assert.coordinator(coordinator, isChildOf: appCoordinator, not: formerParent, parentCount: 1)
