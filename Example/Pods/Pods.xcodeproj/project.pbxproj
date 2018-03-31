@@ -39,7 +39,6 @@
 		FD8DB79A206EB61C0037A268 /* Collection.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8DB799206EB61C0037A268 /* Collection.generated.swift */; };
 		FDBE634220697C13006F216E /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE634120697C13006F216E /* Navigator.swift */; };
 		FDBE6348206982BA006F216E /* RootNavigating.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE6347206982BA006F216E /* RootNavigating.generated.swift */; };
-		FDBE634A2069832D006F216E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE63492069832D006F216E /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +109,6 @@
 		FD8DB799206EB61C0037A268 /* Collection.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.generated.swift; sourceTree = "<group>"; };
 		FDBE634120697C13006F216E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		FDBE6347206982BA006F216E /* RootNavigating.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigating.generated.swift; sourceTree = "<group>"; };
-		FDBE63492069832D006F216E /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +160,6 @@
 		03E75C9E46D8EABE47236960957DE27B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FDBE63492069832D006F216E /* Array.swift */,
 				0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */,
 				FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */,
 				FD2C8208206E7F1F00A62ACD /* Swift4Helper.swift */,
@@ -494,7 +491,6 @@
 				FDBE6348206982BA006F216E /* RootNavigating.generated.swift in Sources */,
 				A846445B7E1B5C27FD2882BE57B95D1F /* Coordinating.swift in Sources */,
 				5A4B83A349F71C84C2B27447A2CDCEAC /* Child.swift in Sources */,
-				FDBE634A2069832D006F216E /* Array.swift in Sources */,
 				96AC504DEA1712C2A76AE00A917A9DF6 /* ChildStorage.swift in Sources */,
 				AE7D7617777015186389DFCA2F68CC9B /* JDCoordinator-dummy.m in Sources */,
 				FD8DB798206EA9A80037A268 /* Identifiable.swift in Sources */,
