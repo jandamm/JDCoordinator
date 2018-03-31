@@ -16,9 +16,10 @@ public struct ChildStorage: ChildStoring, SetAlgebra, Equatable, ExpressibleByAr
     private(set) var storage: Storage
 
     init(elements: [Element]) {
-        storage = elements.reduce(into: []) { storage, element in
+        func addToStorage(storage: inout Storage, element: Element) {
             storage.insert(element.anyHashable)
         }
+        storage = elements.reduce(into: [], addToStorage)
     }
 
     init(storage: Storage) {
