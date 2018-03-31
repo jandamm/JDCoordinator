@@ -1,0 +1,13 @@
+// sourcery:inline:NavigatorTests
+{% for method in type.Navigator.methods where not method.isInitializer %}
+
+        // MARK: - {{ method.shortName }}
+
+        coordinator.{{method.shortName}}({% for p in method.parameters %}{{ p.argumentLabel }}{% if p.argumentLabel != nil %}: {% endif %}{% if method.shortName == "popToViewController" and p.typeName|lowercase == "uiviewcontroller" %}coordinator.navigationController.viewControllers.last!{% elif p.typeName|lowercase == "uiviewcontroller" %}UIViewController(){% elif p.typeName|lowercase == "[uiviewcontroller]" %}coordinator.navigationController.viewControllers{% else %}{{ p.name }}{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %})
+        navigationController.{{method.shortName}}({% for p in method.parameters %}{{ p.argumentLabel }}{% if p.argumentLabel != nil %}: {% endif %}{% if method.shortName == "popToViewController" and p.typeName|lowercase == "uiviewcontroller" %}navigationController.viewControllers.last!{% elif p.typeName|lowercase == "uiviewcontroller" %}UIViewController(){% elif p.typeName|lowercase == "[uiviewcontroller]" %}navigationController.viewControllers{% else %}{{ p.name }}{% endif %}{% if not forloop.last %}, {% endif %}{% endfor %})
+
+        XCTAssertEqual(navigationController.viewControllers.count, coordinator.navigationController.viewControllers.count)
+
+        setViewControllersAndCheck()
+{% endfor %}
+// sourcery:end

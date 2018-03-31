@@ -26,7 +26,7 @@ class MainCoordinator: ParentCoordinator, MainDelegate {
     }
 
     func reloadData() {
-        parentCoordinator.removeChild(self)
+        parentCoordinator?.removeChild(self)
         delegate?.reloadData()
     }
 

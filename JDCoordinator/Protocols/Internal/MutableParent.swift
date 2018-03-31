@@ -28,6 +28,7 @@ extension MutableParent {
 
     public func removeChild(_ coordinator: Child) {
         childCoordinators.remove(coordinator)
+        coordinator.removed(fromParent: self)
     }
 
     public func hasChild(_ coordinator: Child) -> Bool {
@@ -36,7 +37,9 @@ extension MutableParent {
 
     /// Removes all childCoordinators.
     public func removeAllChilds() {
-        childCoordinators.removeAll()
+        for coordinator in childCoordinators {
+            removeChild(coordinator)
+        }
     }
 
     /// Removes all Coordinators except the given ones

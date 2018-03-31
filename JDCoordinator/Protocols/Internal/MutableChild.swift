@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MutableChild: Child {
-    var parentCoordinator: Parent! { get set }
+    var parentCoordinator: Parent? { get set }
 }
 
 extension MutableChild {
@@ -22,5 +22,11 @@ extension MutableChild {
         }
 
         parentCoordinator = coordinator
+    }
+
+    public func removed(fromParent oldParent: Parent) {
+        guard parentCoordinator === oldParent,
+            !oldParent.hasChild(self) else { return }
+        parentCoordinator = nil
     }
 }

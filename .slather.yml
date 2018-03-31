@@ -7,4 +7,3 @@ source_directory: JDCoordinator/*
 binary_basename: JDCoordinator
 ignore:
   - JDCoordinator/Assets/*
-  - JDCoordinator/Generated/*

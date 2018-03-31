@@ -52,7 +52,7 @@ public extension Parent {
             return removeChild(coordinator)
         }
 
-        guard let index = coordinator.parentCoordinators.index(for: self) else {
+        guard let index = coordinator.parentCoordinators.index(of: self) else {
             return
         }
 

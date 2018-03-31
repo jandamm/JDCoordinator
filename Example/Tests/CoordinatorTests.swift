@@ -46,6 +46,15 @@ class CoordinatorTests: XCTestCase {
         Assert.started(coordinator, times: 2)
     }
 
+    func testPresentedViewController() {
+        // This is not really testable as they don't do anyting.
+        let viewController = UIViewController()
+        appCoordinator.presentedViewController(viewController, didMoveTo: nil)
+        appCoordinator.presentedViewController(viewController, willMoveTo: nil)
+        coordinator.presentedViewController(viewController, didMoveTo: nil)
+        coordinator.presentedViewController(viewController, willMoveTo: nil)
+    }
+
     func testNavigationControllerSetup() {
         Assert.identical(appCoordinator.navigationController, parentCoordinator.navigationController)
         Assert.identical(appCoordinator.navigationController, coordinator.navigationController)
@@ -95,7 +104,7 @@ class CoordinatorTests: XCTestCase {
         var formerParent = coordinator.getFormerParent(parentIsNot: appCoordinator)
 
         // Adding child twice should not change anything
-        (1 ... 2).forEach { _ in
+        (1...2).forEach { _ in
             appCoordinator.addChild(coordinator)
 
             Assert.coordinator(coordinator, isChildOf: appCoordinator, not: formerParent, parentCount: 1)
@@ -115,16 +124,119 @@ class CoordinatorTests: XCTestCase {
         let formerParent = coordinator.getFormerParent(parentIsNot: appCoordinator)
 
         // Setting parent twice should not change anything
-        (1 ... 2).forEach { _ in
+        (1...2).forEach { _ in
             coordinator.setParent(to: appCoordinator)
 
             Assert.coordinator(coordinator, isChildOf: appCoordinator, not: formerParent, parentCount: 1)
         }
     }
 
-//    func testRemoveChild() {
-//        XCTFail("not implemented yet")
-//    }
+    func testRemovedParent() {
+        XCTAssertTrue(coordinator.parentCoordinator !== appCoordinator)
+        XCTAssertTrue(coordinator.parentCoordinator === parentCoordinator)
+
+        // Removing actual parent is tested passively in `testRemoveChild()`
+        coordinator.removed(fromParent: appCoordinator)
+
+        XCTAssertNotNil(coordinator.parentCoordinator)
+        XCTAssertTrue(coordinator.parentCoordinator === parentCoordinator)
+    }
+
+    func testRemoveChild() {
+        XCTAssertTrue(appCoordinator.hasChild(parentCoordinator))
+        XCTAssertEqual(appCoordinator.childCoordinators.count, 1)
+        XCTAssertTrue(parentCoordinator.parentCoordinator === appCoordinator)
+
+        appCoordinator.removeChild(parentCoordinator)
+
+        XCTAssertFalse(appCoordinator.hasChild(parentCoordinator))
+        XCTAssertFalse(appCoordinator.childCoordinators.contains(parentCoordinator))
+        XCTAssertTrue(appCoordinator.childCoordinators.isEmpty)
+        XCTAssertNil(parentCoordinator.parentCoordinator, "Child.removed(fromParent:) was not called, failed")
+    }
+
+    func testRemoveChilds() {
+        let appCoordinator = AppCoordinator(with: self.appCoordinator.navigationController)
+        let remove = (0..<2).map { _ in Coordinator(withParent: appCoordinator) }
+        let keep = (0..<2).map { _ in Coordinator(withParent: appCoordinator) }
+        let childs = ChildStorage(elements: keep + remove)
+
+        XCTAssertTrue(appCoordinator.childCoordinators == childs)
+
+        appCoordinator.removeChilds(remove)
+
+        remove.forEach { removed in
+            XCTAssertFalse(appCoordinator.hasChild(removed))
+            XCTAssertTrue(removed.parentCoordinator !== appCoordinator)
+        }
+
+        keep.forEach { kept in
+            XCTAssertTrue(appCoordinator.hasChild(kept))
+            XCTAssertTrue(kept.parentCoordinator === appCoordinator)
+        }
+
+        remove.forEach(appCoordinator.addChild)
+        XCTAssertTrue(appCoordinator.childCoordinators == childs)
+
+        appCoordinator.removeChildsExcept(keep)
+
+        remove.forEach { removed in
+            XCTAssertFalse(appCoordinator.hasChild(removed))
+            XCTAssertTrue(removed.parentCoordinator !== appCoordinator)
+        }
+
+        keep.forEach { kept in
+            XCTAssertTrue(appCoordinator.hasChild(kept))
+            XCTAssertTrue(kept.parentCoordinator === appCoordinator)
+        }
+
+        remove.forEach(appCoordinator.addChild)
+        XCTAssertTrue(appCoordinator.childCoordinators == childs)
+
+        appCoordinator.removeAllChilds()
+
+        XCTAssertTrue(appCoordinator.childCoordinators.isEmpty)
+
+        childs.forEach { removed in
+            XCTAssertFalse(appCoordinator.hasChild(removed))
+            XCTAssertTrue(removed.parentCoordinator !== appCoordinator)
+        }
+    }
+
+    func testRemoveChildTree() {
+        weak var firstChild = ParentCoordinator(withParent: parentCoordinator)
+        weak var secondChild = ParentCoordinator(withParent: firstChild!)
+        weak var thirdChild = Coordinator(withParent: secondChild!)
+
+        firstChild!.addChild(coordinator)
+
+        XCTAssertEqual(firstChild!.childCoordinators.count, 2)
+
+        firstChild!.removeChildTree(of: thirdChild!)
+
+        XCTAssertEqual(firstChild!.childCoordinators.count, 1)
+        XCTAssertTrue(firstChild!.hasChild(coordinator))
+        XCTAssertTrue(firstChild?.parentCoordinator === parentCoordinator)
+
+        XCTAssertNotNil(firstChild)
+        XCTAssertNil(secondChild)
+        XCTAssertNil(thirdChild)
+
+        firstChild!.removeChildTree(of: coordinator)
+
+        XCTAssertTrue(firstChild!.childCoordinators.isEmpty)
+        XCTAssertTrue(coordinator.parentCoordinator !== firstChild)
+
+        let notChild = Coordinator(withParent: parentCoordinator)
+        firstChild!.addChild(coordinator)
+
+        XCTAssertEqual(firstChild!.childCoordinators.count, 1)
+
+        firstChild!.removeChildTree(of: notChild)
+
+        XCTAssertEqual(firstChild!.childCoordinators.count, 1)
+        XCTAssertTrue(notChild.parentCoordinator === parentCoordinator)
+    }
 }
 
 extension CoordinatorTests {

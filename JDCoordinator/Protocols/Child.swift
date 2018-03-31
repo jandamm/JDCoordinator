@@ -15,7 +15,7 @@ public typealias ChildCoordinating = Coordinating & Child
 public protocol Child: AnyObject, AnyHashableConvertible {
     /// Returns the `parentCoordinator` of this child.
     /// The parent should always be set except at deallocation it may not be present.
-    var parentCoordinator: Parent! { get }
+    var parentCoordinator: Parent? { get }
 
     /// Set the `parentCoordinator` and add it to `parentCoordinators.childCoordinators`.
     ///
@@ -23,6 +23,10 @@ public protocol Child: AnyObject, AnyHashableConvertible {
     ///
     /// - parameter coordinator: The new `parentCoordinator`
     func setParent(to coordinator: Parent)
+
+    /// Should remove the `parentCoordinator` if they are identical and it self not a child anymore.
+    /// - parameter oldParent: The old `parentCoordinator`.
+    func removed(fromParent oldParent: Parent)
 }
 
 public extension Child {

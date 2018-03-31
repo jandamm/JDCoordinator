@@ -53,7 +53,7 @@ public extension UINavigationController {
     ///     - newViewController: The viewController you want to push to.
     ///     - animated: Whether it should be animated or not.
     func replaceLastViewControllers(count: Int, withNew newViewController: UIViewController, animated: Bool) {
-        let count = count.clamped(to: 0 ... viewControllers.count)
+        let count = count.clamped(to: 0...viewControllers.count)
 
         let replacing = Array(viewControllers.reversed().prefix(upTo: count))
 

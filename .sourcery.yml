@@ -1,5 +1,6 @@
 sources:
   - JDCoordinator
+  - Example/Tests
 templates:
-  - Sourcery/Templates
+  - Sourcery
 output: JDCoordinator/Generated/

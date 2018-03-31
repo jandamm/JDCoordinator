@@ -23,8 +23,11 @@
 			"file_exclude_patterns": ["SwiftFormat"]
 		},
 		{
-			"path": "Sourcery/Templates",
-			"name": "Sourcery"
+			"path": "Sourcery"
 		}
-	]
+	],
+	"settings":
+    {
+        "tab_size": 4
+    },
 }

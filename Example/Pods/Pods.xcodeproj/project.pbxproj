@@ -35,9 +35,10 @@
 		F18A3322862F33F20508A27D19E24705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		FD2C8209206E7F1F00A62ACD /* Swift4Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C8208206E7F1F00A62ACD /* Swift4Helper.swift */; };
 		FD2C8465206CD43B00F2FF6B /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */; };
+		FD8DB798206EA9A80037A268 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8DB797206EA9A70037A268 /* Identifiable.swift */; };
+		FD8DB79A206EB61C0037A268 /* Collection.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8DB799206EB61C0037A268 /* Collection.generated.swift */; };
 		FDBE634220697C13006F216E /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE634120697C13006F216E /* Navigator.swift */; };
 		FDBE6348206982BA006F216E /* RootNavigating.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE6347206982BA006F216E /* RootNavigating.generated.swift */; };
-		FDBE634A2069832D006F216E /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBE63492069832D006F216E /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,9 +105,10 @@
 		FAB5222EDC51A1D821F725CD964951C3 /* Pods-JDCoordinator_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JDCoordinator_Tests-umbrella.h"; sourceTree = "<group>"; };
 		FD2C8208206E7F1F00A62ACD /* Swift4Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swift4Helper.swift; sourceTree = "<group>"; };
 		FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		FD8DB797206EA9A70037A268 /* Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		FD8DB799206EB61C0037A268 /* Collection.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.generated.swift; sourceTree = "<group>"; };
 		FDBE634120697C13006F216E /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		FDBE6347206982BA006F216E /* RootNavigating.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootNavigating.generated.swift; sourceTree = "<group>"; };
-		FDBE63492069832D006F216E /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +160,6 @@
 		03E75C9E46D8EABE47236960957DE27B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FDBE63492069832D006F216E /* Array.swift */,
 				0136A11FB4E124769394256EF137AC2A /* UINavigationController.swift */,
 				FD2C8464206CD43B00F2FF6B /* HelperExtensions.swift */,
 				FD2C8208206E7F1F00A62ACD /* Swift4Helper.swift */,
@@ -170,6 +171,7 @@
 		17B728733FD6830A64F74E5AA97E63FF /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				FD8DB797206EA9A70037A268 /* Identifiable.swift */,
 				FDBE634120697C13006F216E /* Navigator.swift */,
 				0051A8D55539D1B6A78187B6F8A49D5C /* MutableChild.swift */,
 				63AEAEA2107341A3D12704EA5788EF46 /* MutableParent.swift */,
@@ -330,6 +332,7 @@
 		FDBE633E20697BE7006F216E /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				FD8DB799206EB61C0037A268 /* Collection.generated.swift */,
 				FDBE6347206982BA006F216E /* RootNavigating.generated.swift */,
 			);
 			name = Generated;
@@ -405,8 +408,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8B096399C00B95994EFE6F13008B77F /* Build configuration list for PBXNativeTarget "JDCoordinator" */;
 			buildPhases = (
-				FDBE634320697EDF006F216E /* Sourcery */,
-				FDBE634620698049006F216E /* SwiftFormat */,
+				FDBE634620698049006F216E /* Pre Compile Script */,
 				4E4D12817EB665E5694A3DDB7C667AD9 /* Sources */,
 				16890E1CD0074D6FF57020961164D522 /* Frameworks */,
 				57C99FCE1E543392EEBBD60A67C501EE /* Headers */,
@@ -449,33 +451,19 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FDBE634320697EDF006F216E /* Sourcery */ = {
+		FDBE634620698049006F216E /* Pre Compile Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = Sourcery;
+			name = "Pre Compile Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sourcery --config ../..";
-		};
-		FDBE634620698049006F216E /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/../SwiftFormat ../.. --semicolons \"never\"";
+			shellScript = "\"${SRCROOT}/../pre_compile.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -493,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				064783F72BDB885188C4C13692FAF6B0 /* MutableChild.swift in Sources */,
+				FD8DB79A206EB61C0037A268 /* Collection.generated.swift in Sources */,
 				FD2C8465206CD43B00F2FF6B /* HelperExtensions.swift in Sources */,
 				FDBE634220697C13006F216E /* Navigator.swift in Sources */,
 				981166B032AC3D7B3DC99437B41D6099 /* MutableParent.swift in Sources */,
@@ -502,9 +491,9 @@
 				FDBE6348206982BA006F216E /* RootNavigating.generated.swift in Sources */,
 				A846445B7E1B5C27FD2882BE57B95D1F /* Coordinating.swift in Sources */,
 				5A4B83A349F71C84C2B27447A2CDCEAC /* Child.swift in Sources */,
-				FDBE634A2069832D006F216E /* Array.swift in Sources */,
 				96AC504DEA1712C2A76AE00A917A9DF6 /* ChildStorage.swift in Sources */,
 				AE7D7617777015186389DFCA2F68CC9B /* JDCoordinator-dummy.m in Sources */,
+				FD8DB798206EA9A80037A268 /* Identifiable.swift in Sources */,
 				DF4194D0EFB441BB2B7CFBAA26EEF731 /* Coordinator.swift in Sources */,
 				8986B6ACAC5B749B2A06B69462B91AC6 /* Delegates.swift in Sources */,
 				1CD5BB32A9FC7779161ED907381CADCB /* Navigating.swift in Sources */,

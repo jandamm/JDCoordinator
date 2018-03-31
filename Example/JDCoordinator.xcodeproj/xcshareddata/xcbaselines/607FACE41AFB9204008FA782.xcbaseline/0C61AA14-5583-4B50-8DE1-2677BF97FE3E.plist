@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>classNames</key>
+	<dict>
+		<key>SequenceTests</key>
+		<dict>
+			<key>testChildExtensionPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0075837</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>30. Mar 2018 at 21:47:56</string>
+				</dict>
+			</dict>
+			<key>testControllerDelegateExtensionPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0076078</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>30. Mar 2018 at 21:47:56</string>
+				</dict>
+			</dict>
+			<key>testCoordinatingExtensionPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0080562</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>30. Mar 2018 at 21:47:56</string>
+				</dict>
+			</dict>
+			<key>testCoordinatorDelegateExtensionPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0078981</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>30. Mar 2018 at 21:47:56</string>
+				</dict>
+			</dict>
+			<key>testNavigatingExtensionPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0081769</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>30. Mar 2018 at 21:47:56</string>
+				</dict>
+			</dict>
+			<key>testParentExtensionPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0081667</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>30. Mar 2018 at 21:47:56</string>
+				</dict>
+			</dict>
+			<key>testRootNavigatingExtensionPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0077952</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>30. Mar 2018 at 21:47:56</string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

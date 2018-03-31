@@ -16,9 +16,7 @@ public struct ChildStorage: ChildStoring, SetAlgebra, Equatable, ExpressibleByAr
     private(set) var storage: Storage
 
     init(elements: [Element]) {
-        storage = elements.reduce(into: []) { storage, element in
-            storage.insert(element.anyHashable)
-        }
+        storage = elements.reduce(into: [], addIntoStorage)
     }
 
     init(storage: Storage) {
@@ -133,9 +131,10 @@ public extension ChildStorage {
     }
 
     func subtracting(_ coordinators: [Element]) -> ChildStorage {
-        let other = ChildStorage(elements: coordinators)
+        let coordinators = coordinators.map { $0.anyHashable }
+        let newStorage = storage.subtracting(coordinators)
 
-        return subtracting(other)
+        return ChildStorage(storage: newStorage)
     }
 }
 
@@ -143,4 +142,8 @@ private extension AnyHashable {
     var element: Child {
         return base as! Child
     }
+}
+
+func addIntoStorage(storage: inout ChildStorage.Storage, element: ChildStorage.Element) {
+    storage.insert(element.anyHashable)
 }
