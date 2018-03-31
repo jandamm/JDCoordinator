@@ -112,7 +112,7 @@ class StorageTests: XCTestCase {
         XCTAssertEqual(storage.remove(b), childStorage.remove(b)?.anyHashable)
         Assert.identicalBehavior(storage: storage, childStorage: childStorage)
 
-        storage.formUnion([b, c])
+        storage.formUnion([b.anyHashable, c.anyHashable])
         childStorage.formUnion([b, c])
         Assert.identicalBehavior(storage: storage, childStorage: childStorage)
 
@@ -120,11 +120,11 @@ class StorageTests: XCTestCase {
         XCTAssertTrue(storage.contains(b))
         XCTAssertTrue(storage.contains(c))
 
-        storage.formIntersection([b, c])
+        storage.formIntersection([b.anyHashable, c.anyHashable])
         childStorage.formIntersection([b, c])
         Assert.identicalBehavior(storage: storage, childStorage: childStorage)
 
-        storage.formSymmetricDifference([a, b])
+        storage.formSymmetricDifference([a.anyHashable, b.anyHashable])
         childStorage.formSymmetricDifference([a, b])
         Assert.identicalBehavior(storage: storage, childStorage: childStorage)
 
