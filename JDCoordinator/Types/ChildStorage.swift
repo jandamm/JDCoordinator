@@ -134,9 +134,10 @@ public extension ChildStorage {
     }
 
     func subtracting(_ coordinators: [Element]) -> ChildStorage {
-        let other = ChildStorage(elements: coordinators)
+        let coordinators = coordinators.map { $0.anyHashable }
+        let newStorage = storage.subtracting(coordinators)
 
-        return subtracting(other)
+        return ChildStorage(storage: newStorage)
     }
 }
 
