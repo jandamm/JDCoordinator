@@ -1,6 +1,11 @@
 // Generated using Sourcery 0.10.1 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
+// Unluckily the type system in Swift still does not allow to be generic on protocols.
+// While it is fine to extend a Collection containing objects implementing a protocol,
+// you cannot extend a Collection containing objects as this protocol.
+// To compensate this I generated this extension with Sourcery.
+
 public extension Collection where Element == Child {
     /// Returns the index of the element in the collection.
     /// - parameter member: An element to look for in the collection.
