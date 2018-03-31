@@ -10,6 +10,6 @@ plugins:
     exclude_paths:
       - Example/
 exclude_patterns:
-- "!JDCoordinator/"
+- "Example/"
 - "JDCoordinator/Assets/"
 - "JDCoordinator/Generated/"
