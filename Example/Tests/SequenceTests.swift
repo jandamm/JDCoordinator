@@ -36,25 +36,31 @@ class SequenceTests: XCTestCase {
     func testChildExtensionPerformance() {
         let testArray = createCoordinators(Child.self)
         measure {
-            loopForChild(testArray)
+            loopForChild(testArray, assert: false)
         }
     }
 
-    private func loopForChild(_ array: TestArray<Child>, file: StaticString = #file, line: UInt = #line) {
+    private func loopForChild(_ array: TestArray<Child>, assert: Bool = true, file: StaticString = #file, line: UInt = #line) {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
+
             let includedIndex = array.test.index(of: included)
             let excludedIndex = array.test.index(of: excluded)
 
+            let includedContains = array.test.contains(included)
+            let excludedContains = array.test.contains(excluded)
+
+            guard assert else { continue }
+
             XCTAssertNotNil(includedIndex, file: file, line: line)
+            XCTAssertEqual(includedIndex, index, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
 
             XCTAssertNil(excludedIndex, file: file, line: line)
-            XCTAssertEqual(excludedIndex, array.test.index(where: { $0 === excluded }), file: file, line: line)
 
-            XCTAssertTrue(array.test.contains(array.included[index]), file: file, line: line)
-            XCTAssertFalse(array.test.contains(array.excluded[index]), file: file, line: line)
+            XCTAssertTrue(includedContains, file: file, line: line)
+            XCTAssertFalse(excludedContains, file: file, line: line)
         }
     }
 
@@ -68,25 +74,31 @@ class SequenceTests: XCTestCase {
     func testControllerDelegateExtensionPerformance() {
         let testArray = createCoordinators(ControllerDelegate.self)
         measure {
-            loopForControllerDelegate(testArray)
+            loopForControllerDelegate(testArray, assert: false)
         }
     }
 
-    private func loopForControllerDelegate(_ array: TestArray<ControllerDelegate>, file: StaticString = #file, line: UInt = #line) {
+    private func loopForControllerDelegate(_ array: TestArray<ControllerDelegate>, assert: Bool = true, file: StaticString = #file, line: UInt = #line) {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
+
             let includedIndex = array.test.index(of: included)
             let excludedIndex = array.test.index(of: excluded)
 
+            let includedContains = array.test.contains(included)
+            let excludedContains = array.test.contains(excluded)
+
+            guard assert else { continue }
+
             XCTAssertNotNil(includedIndex, file: file, line: line)
+            XCTAssertEqual(includedIndex, index, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
 
             XCTAssertNil(excludedIndex, file: file, line: line)
-            XCTAssertEqual(excludedIndex, array.test.index(where: { $0 === excluded }), file: file, line: line)
 
-            XCTAssertTrue(array.test.contains(array.included[index]), file: file, line: line)
-            XCTAssertFalse(array.test.contains(array.excluded[index]), file: file, line: line)
+            XCTAssertTrue(includedContains, file: file, line: line)
+            XCTAssertFalse(excludedContains, file: file, line: line)
         }
     }
 
@@ -100,25 +112,31 @@ class SequenceTests: XCTestCase {
     func testCoordinatingExtensionPerformance() {
         let testArray = createCoordinators(Coordinating.self)
         measure {
-            loopForCoordinating(testArray)
+            loopForCoordinating(testArray, assert: false)
         }
     }
 
-    private func loopForCoordinating(_ array: TestArray<Coordinating>, file: StaticString = #file, line: UInt = #line) {
+    private func loopForCoordinating(_ array: TestArray<Coordinating>, assert: Bool = true, file: StaticString = #file, line: UInt = #line) {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
+
             let includedIndex = array.test.index(of: included)
             let excludedIndex = array.test.index(of: excluded)
 
+            let includedContains = array.test.contains(included)
+            let excludedContains = array.test.contains(excluded)
+
+            guard assert else { continue }
+
             XCTAssertNotNil(includedIndex, file: file, line: line)
+            XCTAssertEqual(includedIndex, index, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
 
             XCTAssertNil(excludedIndex, file: file, line: line)
-            XCTAssertEqual(excludedIndex, array.test.index(where: { $0 === excluded }), file: file, line: line)
 
-            XCTAssertTrue(array.test.contains(array.included[index]), file: file, line: line)
-            XCTAssertFalse(array.test.contains(array.excluded[index]), file: file, line: line)
+            XCTAssertTrue(includedContains, file: file, line: line)
+            XCTAssertFalse(excludedContains, file: file, line: line)
         }
     }
 
@@ -132,25 +150,31 @@ class SequenceTests: XCTestCase {
     func testCoordinatorDelegateExtensionPerformance() {
         let testArray = createCoordinators(CoordinatorDelegate.self)
         measure {
-            loopForCoordinatorDelegate(testArray)
+            loopForCoordinatorDelegate(testArray, assert: false)
         }
     }
 
-    private func loopForCoordinatorDelegate(_ array: TestArray<CoordinatorDelegate>, file: StaticString = #file, line: UInt = #line) {
+    private func loopForCoordinatorDelegate(_ array: TestArray<CoordinatorDelegate>, assert: Bool = true, file: StaticString = #file, line: UInt = #line) {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
+
             let includedIndex = array.test.index(of: included)
             let excludedIndex = array.test.index(of: excluded)
 
+            let includedContains = array.test.contains(included)
+            let excludedContains = array.test.contains(excluded)
+
+            guard assert else { continue }
+
             XCTAssertNotNil(includedIndex, file: file, line: line)
+            XCTAssertEqual(includedIndex, index, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
 
             XCTAssertNil(excludedIndex, file: file, line: line)
-            XCTAssertEqual(excludedIndex, array.test.index(where: { $0 === excluded }), file: file, line: line)
 
-            XCTAssertTrue(array.test.contains(array.included[index]), file: file, line: line)
-            XCTAssertFalse(array.test.contains(array.excluded[index]), file: file, line: line)
+            XCTAssertTrue(includedContains, file: file, line: line)
+            XCTAssertFalse(excludedContains, file: file, line: line)
         }
     }
 
@@ -164,25 +188,31 @@ class SequenceTests: XCTestCase {
     func testNavigatingExtensionPerformance() {
         let testArray = createCoordinators(Navigating.self)
         measure {
-            loopForNavigating(testArray)
+            loopForNavigating(testArray, assert: false)
         }
     }
 
-    private func loopForNavigating(_ array: TestArray<Navigating>, file: StaticString = #file, line: UInt = #line) {
+    private func loopForNavigating(_ array: TestArray<Navigating>, assert: Bool = true, file: StaticString = #file, line: UInt = #line) {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
+
             let includedIndex = array.test.index(of: included)
             let excludedIndex = array.test.index(of: excluded)
 
+            let includedContains = array.test.contains(included)
+            let excludedContains = array.test.contains(excluded)
+
+            guard assert else { continue }
+
             XCTAssertNotNil(includedIndex, file: file, line: line)
+            XCTAssertEqual(includedIndex, index, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
 
             XCTAssertNil(excludedIndex, file: file, line: line)
-            XCTAssertEqual(excludedIndex, array.test.index(where: { $0 === excluded }), file: file, line: line)
 
-            XCTAssertTrue(array.test.contains(array.included[index]), file: file, line: line)
-            XCTAssertFalse(array.test.contains(array.excluded[index]), file: file, line: line)
+            XCTAssertTrue(includedContains, file: file, line: line)
+            XCTAssertFalse(excludedContains, file: file, line: line)
         }
     }
 
@@ -196,25 +226,31 @@ class SequenceTests: XCTestCase {
     func testParentExtensionPerformance() {
         let testArray = createCoordinators(Parent.self)
         measure {
-            loopForParent(testArray)
+            loopForParent(testArray, assert: false)
         }
     }
 
-    private func loopForParent(_ array: TestArray<Parent>, file: StaticString = #file, line: UInt = #line) {
+    private func loopForParent(_ array: TestArray<Parent>, assert: Bool = true, file: StaticString = #file, line: UInt = #line) {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
+
             let includedIndex = array.test.index(of: included)
             let excludedIndex = array.test.index(of: excluded)
 
+            let includedContains = array.test.contains(included)
+            let excludedContains = array.test.contains(excluded)
+
+            guard assert else { continue }
+
             XCTAssertNotNil(includedIndex, file: file, line: line)
+            XCTAssertEqual(includedIndex, index, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
 
             XCTAssertNil(excludedIndex, file: file, line: line)
-            XCTAssertEqual(excludedIndex, array.test.index(where: { $0 === excluded }), file: file, line: line)
 
-            XCTAssertTrue(array.test.contains(array.included[index]), file: file, line: line)
-            XCTAssertFalse(array.test.contains(array.excluded[index]), file: file, line: line)
+            XCTAssertTrue(includedContains, file: file, line: line)
+            XCTAssertFalse(excludedContains, file: file, line: line)
         }
     }
 
@@ -228,25 +264,31 @@ class SequenceTests: XCTestCase {
     func testRootNavigatingExtensionPerformance() {
         let testArray = createCoordinators(RootNavigating.self)
         measure {
-            loopForRootNavigating(testArray)
+            loopForRootNavigating(testArray, assert: false)
         }
     }
 
-    private func loopForRootNavigating(_ array: TestArray<RootNavigating>, file: StaticString = #file, line: UInt = #line) {
+    private func loopForRootNavigating(_ array: TestArray<RootNavigating>, assert: Bool = true, file: StaticString = #file, line: UInt = #line) {
         for index in range {
             let included = array.included[index]
             let excluded = array.excluded[index]
+
             let includedIndex = array.test.index(of: included)
             let excludedIndex = array.test.index(of: excluded)
 
+            let includedContains = array.test.contains(included)
+            let excludedContains = array.test.contains(excluded)
+
+            guard assert else { continue }
+
             XCTAssertNotNil(includedIndex, file: file, line: line)
+            XCTAssertEqual(includedIndex, index, file: file, line: line)
             XCTAssertEqual(includedIndex, array.test.index(where: { $0 === included }), file: file, line: line)
 
             XCTAssertNil(excludedIndex, file: file, line: line)
-            XCTAssertEqual(excludedIndex, array.test.index(where: { $0 === excluded }), file: file, line: line)
 
-            XCTAssertTrue(array.test.contains(array.included[index]), file: file, line: line)
-            XCTAssertFalse(array.test.contains(array.excluded[index]), file: file, line: line)
+            XCTAssertTrue(includedContains, file: file, line: line)
+            XCTAssertFalse(excludedContains, file: file, line: line)
         }
     }
 
