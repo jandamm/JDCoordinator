@@ -159,7 +159,7 @@ class CoordinatorTests: XCTestCase {
         let appCoordinator = AppCoordinator(with: self.appCoordinator.navigationController)
         let remove = (0..<2).map { _ in Coordinator(withParent: appCoordinator) }
         let keep = (0..<2).map { _ in Coordinator(withParent: appCoordinator) }
-        let childs = ChildStorage(keep + remove)
+        let childs = ChildStorage(elements: keep + remove)
 
         XCTAssertTrue(appCoordinator.childCoordinators == childs)
 
