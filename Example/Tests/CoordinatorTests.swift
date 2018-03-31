@@ -131,9 +131,64 @@ class CoordinatorTests: XCTestCase {
         }
     }
 
-//    func testRemoveChild() {
-//        XCTFail("not implemented yet")
-//    }
+    func testRemovedParent() {
+        XCTAssertTrue(coordinator.parentCoordinator !== appCoordinator)
+        XCTAssertTrue(coordinator.parentCoordinator === parentCoordinator)
+
+        // Removing actual parent is tested passively in `testRemoveChild()`
+        coordinator.removed(fromParent: appCoordinator)
+
+        XCTAssertNotNil(coordinator.parentCoordinator)
+        XCTAssertTrue(coordinator.parentCoordinator === parentCoordinator)
+    }
+
+    func testRemoveChild() {
+        XCTAssertTrue(appCoordinator.hasChild(parentCoordinator))
+        XCTAssertEqual(appCoordinator.childCoordinators.count, 1)
+        XCTAssertTrue(parentCoordinator.parentCoordinator === appCoordinator)
+
+        appCoordinator.removeChild(parentCoordinator)
+
+        XCTAssertFalse(appCoordinator.hasChild(parentCoordinator))
+        XCTAssertFalse(appCoordinator.childCoordinators.contains(parentCoordinator))
+        XCTAssertEqual(appCoordinator.childCoordinators.count, 0)
+        XCTAssertNil(parentCoordinator.parentCoordinator, "Child.removed(fromParent:) was not called, failed")
+    }
+
+    func testRemoveChildTree() {
+        weak var firstChild = ParentCoordinator(withParent: parentCoordinator)
+        weak var secondChild = ParentCoordinator(withParent: firstChild!)
+        weak var thirdChild = Coordinator(withParent: secondChild!)
+
+        firstChild!.addChild(coordinator)
+
+        XCTAssertEqual(firstChild!.childCoordinators.count, 2)
+
+        firstChild!.removeChildTree(of: thirdChild!)
+
+        XCTAssertEqual(firstChild!.childCoordinators.count, 1)
+        XCTAssertTrue(firstChild!.hasChild(coordinator))
+        XCTAssertTrue(firstChild?.parentCoordinator === parentCoordinator)
+
+        XCTAssertNotNil(firstChild)
+        XCTAssertNil(secondChild)
+        XCTAssertNil(thirdChild)
+
+        firstChild!.removeChildTree(of: coordinator)
+
+        XCTAssertTrue(firstChild!.childCoordinators.isEmpty)
+        XCTAssertTrue(coordinator.parentCoordinator !== firstChild)
+
+        let notChild = Coordinator(withParent: parentCoordinator)
+        firstChild!.addChild(coordinator)
+
+        XCTAssertEqual(firstChild!.childCoordinators.count, 1)
+
+        firstChild!.removeChildTree(of: notChild)
+
+        XCTAssertEqual(firstChild!.childCoordinators.count, 1)
+        XCTAssertTrue(notChild.parentCoordinator === parentCoordinator)
+    }
 }
 
 extension CoordinatorTests {
