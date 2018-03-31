@@ -34,7 +34,7 @@ open class Coordinator: Coordinating, Navigating, MutableChild, ControllerDelega
 
     // MARK: - Protocols
 
-    public internal(set) weak var parentCoordinator: Parent!
+    public internal(set) weak var parentCoordinator: Parent?
     public let navigationController: UINavigationController
     public weak var previousViewController: UIViewController?
     var startedCount: Int = 0
