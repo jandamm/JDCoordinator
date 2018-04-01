@@ -1,0 +1,8 @@
+clean: true
+podspec: JDCoordinator.podspec
+github_url: https://github.com/jandamm/JDCoordinator
+xcodebuild_arguments: -workspace,Example/JDCoordinator.xcworkspace,-scheme,JDCoordinator
+module: JDCoordinator
+exclude:
+  - JDCoordinator/*/Internal/**
+root_url: https://cdn.rawgit.com/jandamm/JDCoordinator/master/docs
