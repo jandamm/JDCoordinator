@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Classes  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Classes  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">JDCoordinator Docs</a> (84% documented)</p>
+        <p class="header-right"><a href="https://github.com/jandamm/JDCoordinator"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fcdn%2Erawgit%2Ecom%2Fjandamm%2FJDCoordinator%2Fmaster%2Fdocsets%2FJDCoordinator%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">JDCoordinator Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Classes  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AppCoordinator.html">AppCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ParentCoordinator.html">ParentCoordinator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Collection.html">Collection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Sequence.html">Sequence</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UINavigationController.html">UINavigationController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/AnyHashableConvertible.html">AnyHashableConvertible</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Child.html">Child</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:13JDCoordinator12ChildStoringP">ChildStoring</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ControllerDelegate.html">ControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Coordinating.html">Coordinating</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:13JDCoordinator19CoordinatorDelegateP">CoordinatorDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Navigating.html">Navigating</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Parent.html">Parent</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/RootNavigating.html">RootNavigating</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/ChildStorage.html">ChildStorage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:13JDCoordinator17ChildCoordinatinga">ChildCoordinating</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:13JDCoordinator18ParentCoordinatinga">ParentCoordinating</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Classes</h1>
+            <p>The following classes are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13JDCoordinator14AppCoordinatorC"></a>
+                    <a name="//apple_ref/swift/Class/AppCoordinator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13JDCoordinator14AppCoordinatorC">AppCoordinator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use the <code>AppCoordinator</code> only in a <code>UINavigationController</code> based application.</p>
+
+<p>The coordinator structure in your app can be seen as a tree. In this example the <code>AppCoordinator</code> is the root of every other coordinator.
+In order to prevent a coordinator from beeing deinitialized it has to have a strong reference somewhere.
+The <code>AppCoordinator</code> should be referenced by the <code>AppDelegate</code>.
+Every other <code><a href="Classes/Coordinator.html">Coordinator</a></code> should be referenced by the <code>AppCoordinator</code> or one of its <code><a href="Protocols/Child.html">Child</a></code>s.</p>
+
+<p>Use this class only once in your app. It should be the <code><a href="Classes/Coordinator.html">Coordinator</a></code> where every navigation is started from.
+The <code>AppCoordinator</code> has to use the <code>UINavigationController</code> which the <code>AppDelegate</code> declares as <code>keyWindow</code>.</p>
+
+                        <a href="Classes/AppCoordinator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AppCoordinator</span><span class="p">:</span> <span class="kt"><a href="Protocols/Coordinating.html">Coordinating</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/RootNavigating.html">RootNavigating</a></span><span class="p">,</span> <span class="kt">MutableParent</span><span class="p">,</span> <span class="kt"><a href="Protocols.html#/s:13JDCoordinator19CoordinatorDelegateP">CoordinatorDelegate</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/ControllerDelegate.html">ControllerDelegate</a></span><span class="p">,</span> <span class="kt">StartTestable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13JDCoordinator11CoordinatorC"></a>
+                    <a name="//apple_ref/swift/Class/Coordinator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13JDCoordinator11CoordinatorC">Coordinator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>Coordinator</code> is the simplest class in a <code>UINavigationController</code> based application.</p>
+
+<p>The coordinator structure in your app can be seen as a tree. In this example the <code>Coordinator</code> is the end of any branch.
+A <code>Coordinator</code> can only manage <code>UIViewController</code>s and should not instantiate or strongly reference any other coordinator.</p>
+
+                        <a href="Classes/Coordinator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">Coordinator</span><span class="p">:</span> <span class="kt"><a href="Protocols/Coordinating.html">Coordinating</a></span><span class="p">,</span> <span class="kt"><a href="Protocols/Navigating.html">Navigating</a></span><span class="p">,</span> <span class="kt">MutableChild</span><span class="p">,</span> <span class="kt"><a href="Protocols/ControllerDelegate.html">ControllerDelegate</a></span><span class="p">,</span> <span class="kt">StartTestable</span><span class="p">,</span> <span class="kt">Identifiable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13JDCoordinator17ParentCoordinatorC"></a>
+                    <a name="//apple_ref/swift/Class/ParentCoordinator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13JDCoordinator17ParentCoordinatorC">ParentCoordinator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use the <code>ParentCoordinator</code> only in a <code>UINavigationController</code> based application.</p>
+
+<p>The coordinator structure in your app can be seen as a tree. In this example the <code>ParentCoordinator</code> is a branch between the root and a leave.
+A <code>ParentCoordinator</code> can manage other <code><a href="Classes/Coordinator.html">Coordinator</a></code>s as childs and also manage <code>UIViewController</code>s (usage of a <code><a href="Protocols/Child.html">Child</a></code> is preferred).
+It is totally safe to add another <code>ParentCoordinator</code> as a child.</p>
+
+                        <a href="Classes/ParentCoordinator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">ParentCoordinator</span><span class="p">:</span> <span class="kt"><a href="Classes/Coordinator.html">Coordinator</a></span><span class="p">,</span> <span class="kt">MutableParent</span><span class="p">,</span> <span class="kt"><a href="Protocols.html#/s:13JDCoordinator19CoordinatorDelegateP">CoordinatorDelegate</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://jandamm.de" target="_blank" rel="external">Jan Dammshäuser</a>. All rights reserved. (Last updated: 2018-04-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

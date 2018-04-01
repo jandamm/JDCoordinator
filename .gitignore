@@ -40,3 +40,7 @@ playground.xcworkspace
 
 # Carthage
 Carthage/Build
+
+# Jazzy
+docs/undocumented.json
+docs/**/*.tgz
