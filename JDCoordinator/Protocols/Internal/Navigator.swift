@@ -20,8 +20,6 @@ protocol Navigator: AnyObject {
     func present(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)?)
     func dismiss(animated: Bool, completion: (() -> Void)?)
 
-    // MARK: - Additive methods
-
     func setViewController(_ viewController: UIViewController, animated: Bool)
     func replaceViewController(_ viewController: UIViewController, withNew newViewController: UIViewController, animated: Bool)
     func replaceViewControllers(_ viewControllers: [UIViewController], withNew newViewController: UIViewController, animated: Bool)
