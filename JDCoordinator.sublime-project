@@ -7,6 +7,11 @@
 			"folder_exclude_patterns": ["*"]
 		},
 		{
+			"path": "scripts",
+			"name": "Scripts",
+			"folder_exclude_patterns": ["*"]
+		},
+		{
 			"path": "JDCoordinator",
 			"folder_exclude_patterns": ["Assets"],
 			"file_exclude_patterns": [".gitkeep"]
