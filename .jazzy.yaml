@@ -6,3 +6,4 @@ module: JDCoordinator
 exclude:
   - JDCoordinator/*/Internal/**
 root_url: https://cdn.rawgit.com/jandamm/JDCoordinator/master/docs
+copyright: '© 2016 - 2018 <a class="link" href="https://jandamm.de" target="_blank" rel="external">Jan Dammshäuser</a>. All rights reserved.'
