@@ -52,7 +52,7 @@ pod "JDCoordinator"
 
 ## Author
 
-Jan Dammshäuser, [jandammshaeuser@gmail.com](mailto:jandammshaeuser@gmail.com)
+Jan Dammshäuser, [mail@jandamm.de](mailto:mail@jandamm.de)
 
 ## License
 
